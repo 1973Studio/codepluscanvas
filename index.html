@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>code+canvas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2237b2871c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-jakarta antialiased">
+
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex-shrink-0">
+                <a href="https://www.codepluscanvas.com" class="block">
+                    <img src="https://i.imgur.com/gB3H9n7.png" alt="code+canvas logo" class="h-12 w-auto">
+                </a>
+            </div>
+            <nav class="hidden md:flex space-x-6 items-center">
+                <a href="#" class="text-gray-700 hover:text-cyan-600 font-medium">Why Choose Us</a>
+                <a href="#" class="text-gray-700 hover:text-cyan-600 font-medium">Pricing</a>
+                <a href="#" class="text-gray-700 hover:text-cyan-600 font-medium">Portfolio</a>
+                <a href="#" class="text-gray-700 hover:text-cyan-600 font-medium">Domains</a>
+                <a href="#" class="text-gray-700 hover:text-cyan-600 font-medium">SEO</a>
+                <a href="#" class="text-gray-700 hover:text-cyan-600 font-medium">Reviews</a>
+                <a href="#" class="text-gray-700 hover:text-cyan-600 font-medium">Help & Tips</a>
+                <a href="#" class="text-gray-700 hover:text-cyan-600 font-medium">Contact</a>
+            </nav>
+            <button class="md:hidden text-gray-700 focus:outline-none">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="bg-beige-100 py-20 px-4 md:px-8 overflow-hidden relative">
+            <div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+                <div class="md:w-1/2 text-center md:text-left space-y-6">
+                    <h1 class="text-5xl md:text-7xl font-bold text-gray-900 leading-tight">
+                        Websites for complementary therapists
+                    </h1>
+                    <p class="text-xl md:text-2xl text-gray-700 leading-relaxed">
+                        We design, host and manage your website. Helping you to turn your therapy business into a success.
+                    </p>
+                    <a href="#" class="inline-block bg-cyan-600 text-white font-semibold py-4 px-8 rounded-full text-lg hover:bg-cyan-700 transition-colors">
+                        View Our Packages
+                    </a>
+                </div>
+                <div class="relative w-full md:w-1/2 flex justify-center md:justify-end">
+                    <img src="https://i.imgur.com/uFk1E1h.png" alt="Woman on a laptop" class="max-w-full h-auto z-10">
+                    <div class="absolute -bottom-10 right-0 md:right-10 bg-white p-6 rounded-2xl shadow-xl z-20 w-64 text-center transform translate-y-1/2 md:translate-y-0 translate-x-1/4 md:translate-x-0">
+                        <h3 class="text-lg font-semibold text-gray-800">Rated Excellent</h3>
+                        <img src="https://i.imgur.com/8QG8j4C.png" alt="Trustpilot logo" class="mx-auto mt-2 h-8">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-gray-100 py-24 px-4 md:px-8">
+            <div class="container mx-auto flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="https://i.imgur.com/eP407a1.jpeg" alt="Group of people working" class="rounded-3xl shadow-2xl">
+                </div>
+                <div class="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-8 p-6 md:p-0">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg flex items-start space-x-6 transition-transform transform hover:scale-105">
+                        <i class="far fa-star text-4xl text-emerald-600 mt-2"></i>
+                        <div>
+                            <h3 class="text-3xl font-bold text-gray-900">20+ Years</h3>
+                            <p class="text-gray-600 mt-2">We've Been in Business since 2001</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg flex items-start space-x-6 transition-transform transform hover:scale-105">
+                        <i class="far fa-pen-to-square text-4xl text-emerald-600 mt-2"></i>
+                        <div>
+                            <h3 class="text-3xl font-bold text-gray-900">Over 5000</h3>
+                            <p class="text-gray-600 mt-2">Beautifully Designed Websites Created</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg flex items-start space-x-6 transition-transform transform hover:scale-105">
+                        <i class="fas fa-leaf text-4xl text-emerald-600 mt-2"></i>
+                        <div>
+                            <h3 class="text-3xl font-bold text-gray-900">Green Hosting</h3>
+                            <p class="text-gray-600 mt-2">Powered by 100% Renewable Energy</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg flex items-start space-x-6 transition-transform transform hover:scale-105">
+                        <i class="fas fa-arrow-up-short-wide text-4xl text-emerald-600 mt-2"></i>
+                        <div>
+                            <h3 class="text-3xl font-bold text-gray-900">99.99% Uptime</h3>
+                            <p class="text-gray-600 mt-2">Websites Reliability Over Last 12 Months - Stats</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white py-24 px-4 md:px-8">
+            <div class="container mx-auto flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 text-center md:text-left space-y-6">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900">What we do</h2>
+                    <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
+                        From the start HealthHosts mission was to provide affordable, beautiful websites for therapists and yoga studios across the UK and in recent years many international clients have joined us too.
+                    </p>
+                    <a href="#" class="inline-block bg-cyan-600 text-white font-semibold py-4 px-8 rounded-full text-lg hover:bg-cyan-700 transition-colors">
+                        More About Us
+                    </a>
+                </div>
+                <div class="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
+                    <div class="flex items-center space-x-4">
+                        <i class="fas fa-check-circle text-2xl text-emerald-600"></i>
+                        <p class="text-lg font-medium text-gray-700">WordPress Managed Website</p>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <i class="fas fa-check-circle text-2xl text-emerald-600"></i>
+                        <p class="text-lg font-medium text-gray-700">Optmised & Search Engine Ready</p>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <i class="fas fa-check-circle text-2xl text-emerald-600"></i>
+                        <p class="text-lg font-medium text-gray-700">Google Integration</p>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <i class="fas fa-check-circle text-2xl text-emerald-600"></i>
+                        <p class="text-lg font-medium text-gray-700">Website Statistics</p>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <i class="fas fa-check-circle text-2xl text-emerald-600"></i>
+                        <p class="text-lg font-medium text-gray-700">Online Payments</p>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <i class="fas fa-check-circle text-2xl text-emerald-600"></i>
+                        <p class="text-lg font-medium text-gray-700">Unlimited Pages</p>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <i class="fas fa-check-circle text-2xl text-emerald-600"></i>
+                        <p class="text-lg font-medium text-gray-700">Easily Edit & Add Content</p>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <i class="fas fa-check-circle text-2xl text-emerald-600"></i>
+                        <p class="text-lg font-medium text-gray-700">Fully Managed by Us</p>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <i class="fas fa-check-circle text-2xl text-emerald-600"></i>
+                        <p class="text-lg font-medium text-gray-700">Social Media Integration</p>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <i class="fas fa-check-circle text-2xl text-emerald-600"></i>
+                        <p class="text-lg font-medium text-gray-700">Capture Leads & Turn Them into Clients</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-cyan-600 text-white py-24 px-4 md:px-8 relative overflow-hidden">
+            <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('https://i.imgur.com/eP407a1.jpeg');"></div>
+            <div class="container mx-auto relative z-10">
+                <div class="text-center mb-16">
+                    <h2 class="text-5xl md:text-6xl font-bold">How we help you to thrive</h2>
+                    <p class="text-xl mt-4 max-w-2xl mx-auto opacity-90">
+                        Our all-in-one service provides everything you need for your business online
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                    <div class="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg p-10 rounded-3xl shadow-2xl transition-transform transform hover:scale-105">
+                        <img src="https://www.healthhosts.com/wp-content/uploads/2024/10/cloud-1.gif" alt="Cloud icon" class="h-24 w-24 mx-auto mb-6">
+                        <h3 class="text-3xl font-bold mb-4">All-in-one service</h3>
+                        <p class="text-gray-100 opacity-90">
+                            We provide a one-stop shop for all your website requirements, from website design to domain registration and email hosting.
+                        </p>
+                    </div>
+                    <div class="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg p-10 rounded-3xl shadow-2xl transition-transform transform hover:scale-105">
+                        <img src="https://www.healthhosts.com/wp-content/uploads/2024/10/Service.gif" alt="Service icon" class="h-24 w-24 mx-auto mb-6">
+                        <h3 class="text-3xl font-bold mb-4">Support</h3>
+                        <p class="text-gray-100 opacity-90">
+                            Our philosophy is to make working with us easy and a pleasure, not only through the process of setting up but also running your website.
+                        </p>
+                    </div>
+                    <div class="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg p-10 rounded-3xl shadow-2xl transition-transform transform hover:scale-105">
+                        <img src="https://www.healthhosts.com/wp-content/uploads/2024/10/Project.gif" alt="Project icon" class="h-24 w-24 mx-auto mb-6">
+                        <h3 class="text-3xl font-bold mb-4">Management</h3>
+                        <p class="text-gray-100 opacity-90">
+                            With our website service you have as much or as little control as you like. If you want to take the reins and login to your site and edit/add new content every day then that's great!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-gray-100 py-24 px-4 md:px-8">
+            <div class="container mx-auto text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900">Recently completed client websites</h2>
+                <p class="text-lg md:text-xl text-gray-700 mt-4 max-w-2xl mx-auto">
+                    Discover our unique websites for wellness professionals. Check our portfolio.
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+                    <a href="https://www.lunarrosearomatherapy.co.uk" target="_blank" rel="noopener noreferrer" class="group block">
+                        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                            <img src="https://www.healthhosts.com/wp-content/uploads/2025/06/lunarrosearomatherapy-1024x1024.jpg" alt="Lunar Rose Aromatherapy" class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105">
+                            <div class="p-6">
+                                <h3 class="text-lg font-semibold text-gray-900 group-hover:text-cyan-600">Lunar Rose Aromatherapy</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://www.yvonneowen.co.uk/" target="_blank" rel="noopener noreferrer" class="group block">
+                        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                            <img src="https://www.healthhosts.com/wp-content/uploads/2025/06/yvonneowen-1024x1024.jpg" alt="Yvonne Owen Counselling and Reflexology" class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105">
+                            <div class="p-6">
+                                <h3 class="text-lg font-semibold text-gray-900 group-hover:text-cyan-600">Yvonne Owen Counselling and Reflexology</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://www.thevillageyoga.co.uk/" target="_blank" rel="noopener noreferrer" class="group block">
+                        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                            <img src="https://www.healthhosts.com/wp-content/uploads/2025/06/thevillageyoga-1024x1024.jpg" alt="Village Yoga" class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105">
+                            <div class="p-6">
+                                <h3 class="text-lg font-semibold text-gray-900 group-hover:text-cyan-600">Village Yoga</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://www.veritypaz.com/" target="_blank" rel="noopener noreferrer" class="group block">
+                        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                            <img src="https://www.healthhosts.com/wp-content/uploads/2018/01/veritypaz-1-1024x1024.jpg" alt="Verity Paz" class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105">
+                            <div class="p-6">
+                                <h3 class="text-lg font-semibold text-gray-900 group-hover:text-cyan-600">Verity Paz</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="mt-12">
+                    <a href="#" class="inline-block bg-cyan-600 text-white font-semibold py-4 px-10 rounded-full text-lg hover:bg-cyan-700 transition-colors">
+                        View the Portfolio
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white py-24 px-4 md:px-8">
+            <div class="container mx-auto text-center">
+                <div class="max-w-4xl mx-auto p-12 bg-gray-100 rounded-3xl shadow-inner space-y-6">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900">Schedule a Consultation</h2>
+                    <p class="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto">
+                        If you would like to schedule a phone call to have a chat about your new website project please book a consultation call.
+                    </p>
+                    <a href="#" class="inline-block bg-cyan-600 text-white font-semibold py-4 px-10 rounded-full text-lg hover:bg-cyan-700 transition-colors">
+                        Book a Consultation Call
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white py-24 px-4 md:px-8">
+            <div class="container mx-auto text-center md:text-left">
+                <div class="flex flex-col md:flex-row justify-between items-center mb-16">
+                    <div>
+                        <h2 class="text-4xl md:text-5xl font-bold text-gray-900">Latest Help & Tips</h2>
+                        <p class="text-lg md:text-xl text-gray-700 mt-2">
+                            Explore our latest blog posts for insights and updates!
+                        </p>
+                    </div>
+                    <a href="#" class="hidden md:inline-block bg-cyan-600 text-white font-semibold py-3 px-8 rounded-full text-lg hover:bg-cyan-700 transition-colors">
+                        View the Blog
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <a href="#" class="group block">
+                        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                            <img src="https://www.healthhosts.com/wp-content/uploads/2025/05/Google-Business-scaled.jpeg" alt="Google Business Profile" class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105">
+                            <div class="p-8">
+                                <h3 class="text-xl font-bold text-gray-900 group-hover:text-cyan-600">
+                                    How Therapists Can Boost Local Visibility with Google Business
+                                </h3>
+                                <p class="text-gray-600 mt-4 line-clamp-3">
+                                    If you're a complementary therapist offering services online or locally, one of the simplest (and free!) ways to boost your...
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="group block">
+                        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                            <img src="https://www.healthhosts.com/wp-content/uploads/2025/04/Therapist-Website-FAQ-Section-scaled.jpeg" alt="Therapist Website FAQ Section" class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105">
+                            <div class="p-8">
+                                <h3 class="text-xl font-bold text-gray-900 group-hover:text-cyan-600">
+                                    Why Every Therapist’s Website Should Include an FAQ Section
+                                </h3>
+                                <p class="text-gray-600 mt-4 line-clamp-3">
+                                    One powerful (and often overlooked) way to make your website more helpful, more professional, and more visible in search results...
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="group block">
+                        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                            <img src="https://www.healthhosts.com/wp-content/uploads/2023/11/Therapist-Thinking-about-blog-post-scaled.jpeg" alt="Therapist Thinking about blog post" class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105">
+                            <div class="p-8">
+                                <h3 class="text-xl font-bold text-gray-900 group-hover:text-cyan-600">
+                                    The Complementary Therapist’s Guide to Blogging for Connection and Growth
+                                </h3>
+                                <p class="text-gray-600 mt-4 line-clamp-3">
+                                    In the realm of complementary therapy, where holistic healing and personal connections hold paramount importance, a blog can serve as...
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="md:hidden mt-12 text-center">
+                    <a href="#" class="inline-block bg-cyan-600 text-white font-semibold py-4 px-10 rounded-full text-lg hover:bg-cyan-700 transition-colors">
+                        View the Blog
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white py-20 px-4 md:px-8">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="col-span-1 md:col-span-2 space-y-6">
+                <img src="https://www.healthhosts.com/wp-content/uploads/2024/10/healthhosts-logo-white.png" alt="code+canvas logo white" class="h-12 w-auto mb-4 filter brightness-0 invert">
+                <div class="flex items-start space-x-4">
+                    <i class="far fa-envelope text-2xl text-cyan-500 mt-1"></i>
+                    <div>
+                        <p>hello@codepluscanvas.com</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <i class="fas fa-phone-alt text-2xl text-cyan-500 mt-1"></i>
+                    <div>
+                        <p><strong>UK:</strong> 01206 625440</p>
+                        <p><strong>International:</strong> +44 1206 625440</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <i class="fas fa-map-pin text-2xl text-cyan-500 mt-1"></i>
+                    <div>
+                        <p>7 Peartree Centre, Peartree Road, Colchester Essex CO3 0JN</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-6">Other Links</h3>
+                <ul class="space-y-3">
+                    <li><a href="#" class="hover:text-cyan-600 flex items-center"><i class="fas fa-check text-cyan-500 mr-3"></i> My Account</a></li>
+                    <li><a href="#" class="hover:text-cyan-600 flex items-center"><i class="fas fa-check text-cyan-500 mr-3"></i> About</a></li>
+                    <li><a href="#" class="hover:text-cyan-600 flex items-center"><i class="fas fa-check text-cyan-500 mr-3"></i> Blog</a></li>
+                    <li><a href="#" class="hover:text-cyan-600 flex items-center"><i class="fas fa-check text-cyan-500 mr-3"></i> Help & Support</a></li>
+                    <li><a href="#" class="hover:text-cyan-600 flex items-center"><i class="fas fa-check text-cyan-500 mr-3"></i> Switch to Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-6">Join our Newsletter</h3>
+                <form class="space-y-4">
+                    <input type="text" placeholder="Your Name" class="w-full p-4 rounded-lg bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                    <input type="email" placeholder="Your Email" class="w-full p-4 rounded-lg bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                    <button type="submit" class="w-full bg-cyan-600 text-white font-semibold py-4 rounded-lg hover:bg-cyan-700 transition-colors">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="container mx-auto mt-16 pt-8 border-t border-gray-700 text-center md:text-left">
+            <h3 class="text-2xl font-bold mb-6">We Build Websites For:</h3>
+            <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-400">
+                <a href="#" class="hover:text-cyan-600">Acupuncture</a>
+                <a href="#" class="hover:text-cyan-600">Animal Healing</a>
+                <a href="#" class="hover:text-cyan-600">Aromatherapy</a>
+                <a href="#" class="hover:text-cyan-600">Beauty Therapy</a>
+                <a href="#" class="hover:text-cyan-600">Bowen Technique</a>
+                <a href="#" class="hover:text-cyan-600">Chiropractic</a>
+                <a href="#" class="hover:text-cyan-600">Cognitive Behavioural Therapy (CBT)</a>
+                <a href="#" class="hover:text-cyan-600">Colonic Hydrotherapy</a>
+                <a href="#" class="hover:text-cyan-600">Counselling</a>
+                <a href="#" class="hover:text-cyan-600">EFT (Emotional Freedom Techniques)</a>
+                <a href="#" class="hover:text-cyan-600">Homeopathy</a>
+                <a href="#" class="hover:text-cyan-600">Hypnobirthing</a>
+                <a href="#" class="hover:text-cyan-600">Hypnotherapy</a>
+                <a href="#" class="hover:text-cyan-600">Kinesiology</a>
+                <a href="#" class="hover:text-cyan-600">Life Coaching</a>
+                <a href="#" class="hover:text-cyan-600">Massage</a>
+                <a href="#" class="hover:text-cyan-600">Meditation</a>
+                <a href="#" class="hover:text-cyan-600">Medium / Psychic</a>
+                <a href="#" class="hover:text-cyan-600">Naturopathy</a>
+                <a href="#" class="hover:text-cyan-600">Nutrition</a>
+                <a href="#" class="hover:text-cyan-600">Occupational Therapy</a>
+                <a href="#" class="hover:text-cyan-600">Osteopathy</a>
+                <a href="#" class="hover:text-cyan-600">Personal Trainers</a>
+                <a href="#" class="hover:text-cyan-600">Physiotherapy</a>
+                <a href="#" class="hover:text-cyan-600">Pilates</a>
+                <a href="#" class="hover:text-cyan-600">Pregnancy</a>
+                <a href="#" class="hover:text-cyan-600">Psychotherapy</a>
+                <a href="#" class="hover:text-cyan-600">Reflexology</a>
+                <a href="#" class="hover:text-cyan-600">Reiki</a>
+                <a href="#" class="hover:text-cyan-600">Shiatsu</a>
+                <a href="#" class="hover:text-cyan-600">Sports Therapy</a>
+                <a href="#" class="hover:text-cyan-600">Therapy Training Centres</a>
+                <a href="#" class="hover:text-cyan-600">Yoga</a>
+            </div>
+        </div>
+
+        <div class="container mx-auto mt-12 pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+            <p class="text-center md:text-left mb-4 md:mb-0">
+                Copyright © 2024 | code+canvas | 
+                <a href="#" class="hover:text-cyan-600">Cookie Policy</a> | 
+                <a href="#" class="hover:text-cyan-600">Privacy Statement</a> | 
+                <a href="#" class="hover:text-cyan-600">Terms & Conditions</a>
+            </p>
+            <div class="flex space-x-6">
+                <a href="https://www.facebook.com/healthhosts" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="hover:text-cyan-600 text-2xl">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://x.com/healthhosts" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" class="hover:text-cyan-600 text-2xl">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
