@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,24 +7,27 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --color-primary: #120826; /* Dark Purple */
+            --color-secondary: #00FFFF; /* Bright Cyan */
+            --color-accent: #c026d3; /* Fuchsia */
+            --color-light-grey: #1e293b; /* Slate 800 */
+        }
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #0f172a; /* Slate 900 */
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-primary);
             color: #e2e8f0; /* Slate 200 */
             overflow-x: hidden;
         }
-        .playfair-display {
-            font-family: 'Playfair Display', serif;
-        }
         .section-divider {
-            background: linear-gradient(to right, #6d28d9, #c026d3); /* Purple 700 to Fuchsia 600 */
+            background: linear-gradient(to right, var(--color-secondary), var(--color-accent));
             height: 4px;
             width: 100px;
-            margin: 0 auto 2rem auto;
+            margin: 0 auto 2.5rem auto;
         }
-        /* Snow Effect for Santa's Secret Showcase */
+        /* Snow Effect Container for Santa's Secret Showcase */
         .snow-container {
             position: absolute;
             top: 0;
@@ -58,210 +61,217 @@
 </head>
 <body class="antialiased">
 
-    <header class="relative bg-cover bg-center bg-no-repeat h-screen flex flex-col justify-center items-center text-center p-8" style="background-image: url('https://images.unsplash.com/photo-1542831371-29b0f74f9491?q=80&w=2070&auto=format&fit=crop');">
-        <div class="absolute inset-0 bg-black opacity-70"></div>
-        <div class="relative z-10 max-w-4xl mx-auto">
-            <h1 class="text-6xl md:text-8xl playfair-display font-extrabold text-white leading-tight drop-shadow-lg animate-fade-in">
-                Code <span class="text-fuchsia-400">&</span> Canvas
+    <nav class="sticky top-0 z-50 w-full bg-slate-950/80 backdrop-blur-md transition-all duration-300 shadow-xl">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#" class="text-3xl font-bold text-white tracking-wider">
+                Code <span class="text-cyan-400">+</span> Canvas
+            </a>
+            <div class="hidden md:flex space-x-10 items-center font-semibold">
+                <a href="#services" class="text-slate-300 hover:text-white transition-colors">Services</a>
+                <a href="#showcase" class="text-slate-300 hover:text-white transition-colors">Showcase</a>
+                <a href="#pricing" class="text-slate-300 hover:text-white transition-colors">Pricing</a>
+                <a href="#contact" class="bg-cyan-500 hover:bg-cyan-400 text-slate-900 py-2 px-6 rounded-full transition-all transform hover:scale-105 shadow-lg">
+                    Contact Us
+                </a>
+            </div>
+            <button class="md:hidden text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <header class="relative h-screen flex flex-col justify-center items-center text-center p-8 bg-cover bg-center bg-no-repeat" style="background-image: url('https://images.unsplash.com/photo-1542831371-29b0f74f9491?q=80&w=2070&auto=format&fit=crop');">
+        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-90"></div>
+        <div class="relative z-10 max-w-5xl mx-auto py-20">
+            <h1 class="text-7xl md:text-9xl font-extrabold text-white leading-tight drop-shadow-2xl animate-fade-in uppercase">
+                Your Vision. <br>Crafted in Code.
             </h1>
-            <p class="mt-6 text-xl md:text-2xl font-light text-slate-300 animate-slide-up">
-                Crafting bespoke websites in pure HTML, pixel by pixel.
+            <p class="mt-8 text-2xl md:text-3xl font-light text-slate-300 animate-slide-up">
+                Bespoke websites hand-coded in pure HTML for performance and uniqueness.
             </p>
-            <a href="#showcase" class="mt-12 inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 px-10 rounded-full transition duration-300 transform hover:scale-105 shadow-lg animate-bounce-in">
-                See Our Creations
+            <a href="#contact" class="mt-16 inline-block bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-bold py-5 px-12 rounded-full transition duration-300 transform hover:scale-105 shadow-2xl animate-bounce-in text-lg">
+                Get a Free Consultation
             </a>
         </div>
     </header>
 
-    <main class="container mx-auto px-6 py-20">
-
-        <section id="services" class="text-center mb-24">
-            <h2 class="text-5xl playfair-display font-bold mb-4">Our Core Services</h2>
+    <section id="services" class="bg-slate-900 py-24 text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-6xl font-bold mb-4 text-white">Our Core Services</h2>
             <div class="section-divider"></div>
-            <p class="max-w-3xl mx-auto text-lg text-slate-400">
-                At Code + Canvas, we specialise in building tailor-made websites using pure HTML, CSS, and JavaScript. We focus on clean, efficient code and unique interactive elements to bring your vision to life.
+            <p class="max-w-4xl mx-auto text-xl text-slate-400 mb-16">
+                At **Code Plus Canvas**, we don't use templates. We build your online presence from the ground up, ensuring every pixel is aligned with your vision.
             </p>
             <div class="grid md:grid-cols-3 gap-12 mt-16">
-                <div class="bg-slate-800 p-10 rounded-2xl shadow-xl border border-slate-700 hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
-                    <svg class="h-16 w-16 mx-auto text-fuchsia-400 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <div class="bg-slate-950 p-12 rounded-3xl shadow-2xl border border-slate-800 hover:border-cyan-500 transition duration-300 transform hover:-translate-y-2">
+                    <svg class="h-20 w-20 mx-auto text-cyan-500 mb-8 drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
                     </svg>
-                    <h3 class="text-2xl font-semibold mb-3 text-white">Bespoke HTML Websites</h3>
-                    <p class="text-slate-400">
-                        Crafted with precision and care, each website is a unique reflection of your brand and goals. No templates, just pure, optimized code.
+                    <h3 class="text-3xl font-semibold mb-4 text-white">Bespoke HTML Craft</h3>
+                    <p class="text-slate-400 text-lg">
+                        We hand-code every website for superior performance, flexibility, and a truly unique design that stands out.
                     </p>
                 </div>
-                <div class="bg-slate-800 p-10 rounded-2xl shadow-xl border border-slate-700 hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
-                    <svg class="h-16 w-16 mx-auto text-fuchsia-400 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <div class="bg-slate-950 p-12 rounded-3xl shadow-2xl border border-slate-800 hover:border-cyan-500 transition duration-300 transform hover:-translate-y-2">
+                    <svg class="h-20 w-20 mx-auto text-cyan-500 mb-8 drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.085 15.117a3 3 0 01-3.664-4.253L13.75 5.5l2.25 2.25-5.5 5.5zM12 20a8 8 0 100-16 8 8 0 000 16zM15 15l2-2"></path>
                     </svg>
-                    <h3 class="text-2xl font-semibold mb-3 text-white">Interactive Elements & Widgets</h3>
-                    <p class="text-slate-400">
-                        From subtle animations to complex currency converters and unique effects like falling snow, we add engaging elements to enhance user experience.
+                    <h3 class="text-3xl font-semibold mb-4 text-white">Custom Widgets</h3>
+                    <p class="text-slate-400 text-lg">
+                        Enhance user engagement with bespoke widgets, from interactive snow effects to advanced currency converters.
                     </p>
                 </div>
-                <div class="bg-slate-800 p-10 rounded-2xl shadow-xl border border-slate-700 hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
-                    <svg class="h-16 w-16 mx-auto text-fuchsia-400 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <div class="bg-slate-950 p-12 rounded-3xl shadow-2xl border border-slate-800 hover:border-cyan-500 transition duration-300 transform hover:-translate-y-2">
+                    <svg class="h-20 w-20 mx-auto text-cyan-500 mb-8 drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9 4h9M3 6h18"></path>
                     </svg>
-                    <h3 class="text-2xl font-semibold mb-3 text-white">Client-Focused Approach</h3>
-                    <p class="text-slate-400">
-                        Your goals are at the heart of our process. We collaborate closely to ensure the final product not only looks stunning but also achieves your business objectives.
+                    <h3 class="text-3xl font-semibold mb-4 text-white">Client-Centric Design</h3>
+                    <p class="text-slate-400 text-lg">
+                        Your vision is our blueprint. We work closely with you to build a website that authentically represents your brand.
                     </p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="text-center mb-24">
-            <h2 class="text-5xl playfair-display font-bold mb-4">Our Creative Process</h2>
-            <div class="section-divider"></div>
-            <p class="max-w-3xl mx-auto text-lg text-slate-400 mb-12">
-                Just as a master artist works with a canvas, we work with code. See our philosophy in action:
+    <section class="bg-white py-24 text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-6xl font-bold mb-4 text-slate-900">Our Creative Philosophy</h2>
+            <div class="section-divider bg-slate-400"></div>
+            <p class="max-w-4xl mx-auto text-xl text-slate-600 mb-12">
+                Our approach blends artistic creativity with technical precision. Witness our philosophy in action:
             </p>
-            <div class="relative aspect-video max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-700">
+            <div class="relative aspect-video max-w-6xl mx-auto rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-200">
                 <iframe
                     class="absolute top-0 left-0 w-full h-full"
-                    src="https://codepluscanvas.netlify.app/Video.mp4"
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
                     title="Leonardo da Vinci painting a website"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen>
                 </iframe>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="showcase" class="text-center mb-24">
-            <h2 class="text-5xl playfair-display font-bold mb-4">Client Showcase</h2>
+    <section id="showcase" class="bg-slate-900 py-24 text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-6xl font-bold mb-4 text-white">Our Creations</h2>
             <div class="section-divider"></div>
-            <p class="max-w-3xl mx-auto text-lg text-slate-400 mb-12">
-                See some examples of our crafted websites and the unique features we've implemented.
+            <p class="max-w-4xl mx-auto text-xl text-slate-400 mb-16">
+                A glimpse into our portfolio, showcasing custom-built features and designs.
             </p>
 
             <div class="grid md:grid-cols-2 gap-12 mt-16">
-                <div class="bg-slate-800 p-8 rounded-2xl shadow-xl border border-slate-700 hover:shadow-2xl transition duration-300">
-                    <h3 class="text-3xl font-semibold mb-3 text-white">Santa's Secret - Bungendore</h3>
-                    <p class="text-slate-400 mb-4">
-                        We had the pleasure of creating a festive online presence for Santa's Secret, a charming boutique Christmas store in Bungendore. To enhance the holiday spirit, we implemented a delightful **snow effect** across their website, creating an immersive and magical experience for visitors.
+                <div class="bg-slate-950 p-10 rounded-3xl shadow-2xl border border-slate-800 transition duration-300">
+                    <h3 class="text-4xl font-semibold mb-5 text-white">Santa's Secret</h3>
+                    <p class="text-slate-400 text-lg mb-6">
+                        For this charming boutique Christmas store in Bungendore, we crafted a festive and magical online experience, including a delightful **interactive snow effect** to evoke the holiday spirit.
                     </p>
-                    <div class="relative w-full h-64 rounded-md overflow-hidden border-4 border-fuchsia-400">
-                        <div class="absolute inset-0 bg-black opacity-30"></div>
+                    <div class="relative w-full h-80 rounded-2xl overflow-hidden border-4 border-fuchsia-500 shadow-inner">
                         <div id="santas-secret-snow" class="snow-container"></div>
-                        <img src="https://via.placeholder.com/600x400/282828/cccccc?Text=Santa's+Secret+Website+Preview" alt="Santa's Secret Website Preview" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
-                            <a href="#" target="_blank" class="text-purple-400 hover:text-purple-500 font-semibold">Visit Santa's Secret (Placeholder Link)</a>
-                        </div>
+                        <img src="https://via.placeholder.com/800x600/282828/cccccc?Text=Santa's+Secret+Website+Preview" alt="Santa's Secret Website Preview" class="w-full h-full object-cover">
+                        <a href="#" target="_blank" class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-white text-2xl font-bold border-2 border-white py-3 px-8 rounded-full">Visit Site</span>
+                        </a>
                     </div>
                 </div>
 
-                <div class="bg-slate-800 p-8 rounded-2xl shadow-xl border border-slate-700 hover:shadow-2xl transition duration-300">
-                    <h3 class="text-3xl font-semibold mb-3 text-white">More Projects Coming Soon...</h3>
-                    <p class="text-slate-400 mb-4">
-                        We are constantly working on new and exciting projects. Stay tuned for more examples of our web design and development capabilities!
+                <div class="bg-slate-950 p-10 rounded-3xl shadow-2xl border border-slate-800 transition duration-300">
+                    <h3 class="text-4xl font-semibold mb-5 text-white">The AI Integration Project</h3>
+                    <p class="text-slate-400 text-lg mb-6">
+                        This is a conceptual project showcasing the future of web experiences. We're exploring integrating cutting-edge AI technology to create dynamic, intelligent, and personalized content.
                     </p>
-                    <div class="relative w-full h-64 rounded-md overflow-hidden bg-slate-700 flex items-center justify-center">
-                        <svg class="w-16 h-16 text-slate-500 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                        </svg>
+                    <div class="relative w-full h-80 rounded-2xl overflow-hidden border-4 border-cyan-500 shadow-inner bg-slate-900 flex items-center justify-center">
+                        <div class="text-center p-8">
+                            <p class="text-3xl text-cyan-400 font-bold mb-4">
+                                "Hello, Gemini!"
+                            </p>
+                            <p class="text-lg text-slate-500">
+                                This space is reserved for a dynamic, AI-powered feature, showing our commitment to innovation.
+                            </p>
+                            <div class="mt-6">
+                                <span class="bg-slate-800 text-slate-600 px-6 py-3 rounded-full text-sm font-semibold animate-pulse">
+                                    [AI Widget - Coming Soon!]
+                                </span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="text-center mb-24">
-            <h2 class="text-5xl playfair-display font-bold mb-4">The Power of Pure HTML</h2>
-            <div class="section-divider"></div>
-            <p class="max-w-3xl mx-auto text-lg text-slate-400 mb-12">
-                Anything is possible. Our bespoke approach with HTML, CSS, and JavaScript allows us to create dynamic and engaging experiences from scratch.
-            </p>
-            <div class="bg-slate-800 p-12 rounded-3xl shadow-2xl max-w-lg mx-auto border-2 border-purple-400">
-                <p class="text-3xl font-semibold text-white mb-6">A Glimpse into the Future</p>
-                <p class="text-lg text-slate-400 mb-8">
-                    Imagine a website that can provide real-time, AI-powered information, or generate content on the fly. We are always exploring the boundaries of what's possible.
+        <section id="pricing" class="bg-white py-24 text-center">
+            <div class="container mx-auto px-6">
+                <h2 class="text-6xl font-bold mb-4 text-slate-900">Transparent Pricing</h2>
+                <div class="section-divider bg-slate-400"></div>
+                <p class="max-w-4xl mx-auto text-xl text-slate-600 mb-16">
+                    Our simple monthly retainer provides predictable costs and continuous support for your website.
                 </p>
-                <div class="relative w-full max-w-md mx-auto p-6 bg-slate-900 rounded-2xl shadow-inner border border-slate-700">
-                    <p class="text-slate-400 italic mb-4">
-                        <span class="text-fuchsia-400 font-bold">"Hello, Gemini!"</span>
-                        <br>
-                        "Tell me about the latest trends in pure HTML web design."
-                    </p>
-                    <div class="w-full bg-slate-700 h-24 rounded-lg flex items-center justify-center animate-pulse">
-                        <span class="text-slate-500 font-light text-sm">
-                            [AI Widget placeholder - Coming Soon!]
-                        </span>
-                    </div>
-                    <p class="mt-6 text-sm text-slate-500">
-                        *This space is reserved for a dynamic, AI-powered feature to showcase what's possible with modern web development.*
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section id="pricing" class="text-center mb-24">
-            <h2 class="text-5xl playfair-display font-bold mb-4">Transparent Pricing</h2>
-            <div class="section-divider"></div>
-            <p class="max-w-3xl mx-auto text-lg text-slate-400 mb-12">
-                Simple, predictable, and value-driven.
-            </p>
-            <div class="bg-slate-800 p-12 rounded-3xl shadow-2xl max-w-2xl mx-auto border-2 border-fuchsia-400">
-                <div class="text-center">
-                    <p class="text-2xl text-slate-300 font-semibold mb-2">Our Monthly Retainer</p>
-                    <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8">
-                        <div class="flex items-center">
-                            <span class="text-6xl font-bold text-white" id="price-display">$45</span>
-                            <span class="text-4xl text-slate-400 ml-2">/month</span>
+                <div class="bg-slate-950 p-16 rounded-3xl shadow-2xl max-w-3xl mx-auto border-2 border-fuchsia-500 text-white">
+                    <div class="text-center">
+                        <p class="text-3xl font-semibold mb-4 text-slate-300">Monthly Retainer</p>
+                        <div class="flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-12">
+                            <div class="flex items-center">
+                                <span class="text-8xl font-bold text-cyan-500 drop-shadow-lg" id="price-display">$45</span>
+                                <span class="text-5xl text-slate-400 ml-4">/month</span>
+                            </div>
+                            <p class="text-2xl text-slate-400">
+                                (That's just <span class="font-bold text-white">$1.50</span> a day!)
+                            </p>
                         </div>
-                        <p class="text-xl text-slate-400">
-                            (That's <span class="font-bold text-white">$1.50</span> a day!)
+                        <p class="mt-8 text-slate-400 max-w-xl mx-auto text-lg">
+                            This fee covers ongoing maintenance, small content updates, and ensures your site is always running at peak performance.
                         </p>
                     </div>
-                    <p class="mt-6 text-slate-400 max-w-xl mx-auto">
-                        This fee covers all your ongoing needs, from small updates to maintenance, ensuring your site is always running perfectly.
-                    </p>
-                </div>
-                <div class="mt-12">
-                    <label for="currency-select" class="block text-slate-300 font-semibold mb-4 text-xl">
-                        Convert to your currency:
-                    </label>
-                    <div class="relative w-full md:w-3/4 mx-auto">
-                        <select id="currency-select" class="block w-full p-4 pr-10 text-white bg-slate-900 border-2 border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-fuchsia-400 appearance-none transition duration-300">
-                            <option value="USD">USD - US Dollar</option>
-                            <option value="GBP">GBP - UK Pound Sterling</option>
-                            <option value="EUR">EUR - Euro</option>
-                            <option value="NZD">NZD - New Zealand Dollar</option>
-                            <option value="HKD">HKD - Hong Kong Dollar</option>
-                            <option value="CNY">CNY - Chinese Yuan</option>
-                        </select>
-                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-fuchsia-400">
-                            <svg class="fill-current h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
-                            </svg>
+                    <div class="mt-16">
+                        <label for="currency-select" class="block text-slate-300 font-semibold mb-6 text-2xl">
+                            Convert to your currency:
+                        </label>
+                        <div class="relative w-full max-w-md mx-auto">
+                            <select id="currency-select" class="block w-full p-6 pr-12 text-white bg-slate-900 border-2 border-slate-700 rounded-2xl focus:outline-none focus:ring-4 focus:ring-fuchsia-500 appearance-none transition duration-300 text-lg">
+                                <option value="USD">USD - US Dollar</option>
+                                <option value="GBP">GBP - UK Pound Sterling</option>
+                                <option value="EUR">EUR - Euro</option>
+                                <option value="NZD">NZD - New Zealand Dollar</option>
+                                <option value="HKD">HKD - Hong Kong Dollar</option>
+                                <option value="CNY">CNY - Chinese Yuan</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-6 text-fuchsia-400">
+                                <svg class="fill-current h-8 w-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+                                </svg>
+                            </div>
                         </div>
-                    </div>
-                    <div id="converted-price" class="mt-6 text-3xl font-bold text-white">
-                        <span class="text-fuchsia-400"></span>
+                        <div id="converted-price" class="mt-10 text-5xl font-bold text-white">
+                            <span class="text-cyan-500"></span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="text-center">
-            <h2 class="text-5xl playfair-display font-bold mb-4">Let's Bring Your Vision to Life</h2>
-            <div class="section-divider"></div>
-            <p class="max-w-3xl mx-auto text-lg text-slate-400 mb-12">
-                Ready to discuss your project and discover how our bespoke web design services can help your business thrive? Get in touch for a free consultation.
-            </p>
-            <a href="mailto:your_email@example.com" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 px-12 rounded-full transition duration-300 transform hover:scale-105 shadow-xl text-lg">
-                Request a Free Consultation
-            </a>
+        <section id="contact" class="bg-slate-900 py-24 text-center">
+            <div class="container mx-auto px-6">
+                <h2 class="text-6xl font-bold mb-4 text-white">Ready to Start?</h2>
+                <div class="section-divider"></div>
+                <p class="max-w-4xl mx-auto text-xl text-slate-400 mb-12">
+                    Let's discuss your project and discover how a bespoke website can elevate your business.
+                </p>
+                <a href="mailto:your_email@example.com" class="inline-block bg-fuchsia-500 hover:bg-fuchsia-400 text-slate-900 font-bold py-6 px-16 rounded-full transition duration-300 transform hover:scale-105 shadow-2xl text-xl">
+                    Request a Free Consultation
+                </a>
+            </div>
         </section>
 
     </main>
 
-    <footer class="bg-slate-900 text-center p-10 mt-20">
-        <p class="text-slate-500">© 2025 Code Plus Canvas. All rights reserved.</p>
-        <p class="text-slate-500 mt-2">
-            Crafted with <span class="text-fuchsia-400">❤️</span> and pure code.
+    <footer class="bg-slate-950 text-center p-12 mt-0 border-t border-slate-800">
+        <p class="text-slate-500 text-lg">© 2025 Code Plus Canvas. All rights reserved.</p>
+        <p class="text-slate-600 mt-4">
+            Built with <span class="text-fuchsia-400">❤️</span> and pure code.
         </p>
     </footer>
 
@@ -295,7 +305,7 @@
                 const rate = exchangeRates[selectedCurrency];
                 const convertedPrice = (monthlyPriceAUD * rate).toFixed(2);
                 const symbol = currencySymbols[selectedCurrency];
-                convertedPriceEl.innerHTML = `<span class="text-fuchsia-400">${symbol}${convertedPrice}</span> / month`;
+                convertedPriceEl.innerHTML = `<span class="text-cyan-500">${symbol}${convertedPrice}</span> / month`;
             }
 
             // Initial price update on page load
