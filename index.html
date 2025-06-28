@@ -29,6 +29,17 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #64748b; /* Tailwind's slate-500 */
         }
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #6366f1; /* Tailwind indigo-500 */
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -43,6 +54,7 @@
                     <li><a href="#how-it-works" class="text-slate-600 hover:text-indigo-600 transition-colors duration-350 font-medium py-2 px-3 rounded-lg hover:bg-indigo-50">How It Works</a></li>
                     <li><a href="#benefits" class="text-slate-600 hover:text-indigo-600 transition-colors duration-350 font-medium py-2 px-3 rounded-lg hover:bg-indigo-50">Benefits</a></li>
                     <li><a href="#pricing" class="text-slate-600 hover:text-indigo-600 transition-colors duration-350 font-medium py-2 px-3 rounded-lg hover:bg-indigo-50">Pricing</a></li>
+                    <li><a href="#clients" class="text-slate-600 hover:text-indigo-600 transition-colors duration-350 font-medium py-2 px-3 rounded-lg hover:bg-indigo-50">Clients</a></li>
                     <li><a href="#contact" class="text-slate-600 hover:text-indigo-600 transition-colors duration-350 font-medium py-2 px-3 rounded-lg hover:bg-indigo-50">Contact</a></li>
                 </ul>
             </nav>
@@ -200,15 +212,30 @@
                 </p>
                 <div class="bg-white text-slate-800 p-10 rounded-2xl shadow-xl max-w-md mx-auto transform hover:scale-105 transition-transform duration-300 ease-in-out border-4 border-white-400">
                     <p class="text-5xl md:text-6xl font-extrabold mb-4 flex items-baseline justify-center">
-                        <span class="text-3xl mr-2">$</span>45
-                        <span class="text-xl ml-2 text-slate-600">/ month</span>
+                        <span id="displayCurrencySymbol" class="text-3xl mr-2">$</span><span id="displayPrice">45</span>
+                        <span id="displayCurrencyCode" class="text-xl ml-2 text-slate-600">AUD / month</span>
                     </p>
                     <p class="text-lg font-semibold text-indigo-600 mb-2">
                         <span class="font-bold text-2xl">$0</span> Upfront Cost
                     </p>
                     <p class="text-md text-slate-500 mb-8">
-                        (That's just $1.50 / day!)
+                        (That's just <span id="displayDailyPrice">$1.50 AUD</span> / day!)
                     </p>
+
+                    <div class="mb-6 flex flex-col items-center">
+                        <label for="currency-select" class="text-slate-700 text-lg font-medium mb-3">View price in your currency:</label>
+                        <select id="currency-select" class="w-full md:w-auto p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all duration-200 cursor-pointer text-base bg-white">
+                            <option value="AUD" selected>AUD - Australian Dollar</option>
+                            <option value="USD">USD - US Dollar</option>
+                            <option value="GBP">GBP - British Pound</option>
+                            <option value="EUR">EUR - Euro</option>
+                            <option value="NZD">NZD - New Zealand Dollar</option>
+                        </select>
+                        <p class="text-slate-500 text-xs mt-3">
+                            *Conversions are approximate and use fixed rates.
+                        </p>
+                    </div>
+
                     <a href="#contact" class="inline-block bg-indigo-600 text-white hover:bg-indigo-700 font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out text-lg">
                         Get Started Today!
                     </a>
@@ -242,7 +269,7 @@
                                 <td class="py-4 px-6 text-center text-red-600 font-bold">$3,000 - $5,000+</td>
                             </tr>
                             <tr class="border-b border-slate-200 hover:bg-slate-50">
-                                <td class="py-4 px-6 text-center">$45</td>
+                                <td class="py-4 px-6 text-center">$45 AUD</td>
                                 <td class="py-4 px-6 text-center">Often None (but no support)</td>
                             </tr>
                             <tr class="border-b border-slate-200 hover:bg-slate-50">
@@ -281,6 +308,67 @@
             </div>
         </section>
 
+        <!-- Clients/Portfolio Section -->
+        <section id="clients" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-slate-800 mb-12">
+                    Our Canvas: Client Work & Development
+                </h2>
+                <p class="text-lg text-center text-slate-700 mb-12 max-w-3xl mx-auto">
+                    Take a look at some of the digital masterpieces we've crafted and projects currently in development.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Client Project 1: Santas Secret -->
+                    <div class="bg-slate-100 rounded-xl shadow-lg overflow-hidden border border-slate-200">
+                        <img src="https://placehold.co/600x400/D0F0C0/334155?text=Santas+Secret" alt="Santas Secret Website Preview" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-slate-800 mb-2">Santas Secret</h3>
+                            <p class="text-slate-600 text-sm mb-4">
+                                A delightful online experience for a unique holiday service, designed to bring joy and seamless gift management.
+                            </p>
+                            <a href="https://santasecret.com.au/" target="_blank" rel="noopener noreferrer" class="inline-block bg-indigo-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-indigo-700 transition-colors duration-300">
+                                Visit Website
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- In Development Project 1 -->
+                    <div class="bg-slate-100 rounded-xl shadow-lg overflow-hidden border border-slate-200 opacity-80">
+                        <img src="https://placehold.co/600x400/E2E8F0/334155?text=Project+X+-+In+Development" alt="Coming Soon Project Preview" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-slate-800 mb-2">Project X: E-commerce Refresh</h3>
+                            <p class="text-slate-600 text-sm mb-4">
+                                Revitalizing an existing e-commerce platform with a modern design and enhanced performance. Coming soon!
+                            </p>
+                            <span class="inline-block bg-slate-500 text-white px-5 py-2 rounded-full text-sm font-medium">
+                                In Development
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- In Development Project 2 -->
+                    <div class="bg-slate-100 rounded-xl shadow-lg overflow-hidden border border-slate-200 opacity-80">
+                        <img src="https://placehold.co/600x400/E2E8F0/334155?text=New+Business+Site+-+In+Development" alt="New Business Website Preview" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-slate-800 mb-2">New Local Business Site</h3>
+                            <p class="text-slate-600 text-sm mb-4">
+                                Crafting a brand new online presence for a burgeoning local service business. Stay tuned!
+                            </p>
+                            <span class="inline-block bg-slate-500 text-white px-5 py-2 rounded-full text-sm font-medium">
+                                In Development
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <p class="text-slate-700 text-lg">
+                        Have a project in mind? <a href="#contact" class="text-indigo-600 hover:underline font-semibold">Let's talk!</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
         <!-- Contact Section -->
         <section id="contact" class="py-16 md:py-24 bg-gradient-to-tl from-indigo-500 to-blue-600 text-white">
             <div class="container mx-auto px-4 max-w-xl text-center">
@@ -304,11 +392,26 @@
                         <input type="tel" id="phone" name="phone" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all duration-200" placeholder="(123) 456-7890">
                     </div>
                     <div class="mb-8">
+                        <label for="business-description" class="block text-left text-lg font-medium text-slate-700 mb-2">Describe Your Business Briefly</label>
+                        <textarea id="business-description" name="business-description" rows="3" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all duration-200" placeholder="e.g., We sell handmade candles and offer candle-making workshops."></textarea>
+                    </div>
+
+                    <button type="button" id="generate-content-btn" class="w-full bg-blue-500 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out text-lg flex items-center justify-center mb-6">
+                        Generate Website Content Ideas ✨
+                        <div id="loading-spinner" class="spinner ml-3 hidden"></div>
+                    </button>
+
+                    <div id="content-ideas-output" class="bg-indigo-50 border border-indigo-200 p-6 rounded-lg text-left text-slate-700 hidden">
+                        <h3 class="text-xl font-semibold text-indigo-800 mb-4">Suggested Content Ideas:</h3>
+                        <div id="ideas-text"></div>
+                    </div>
+
+                    <div class="mb-8 mt-8">
                         <label for="message" class="block text-left text-lg font-medium text-slate-700 mb-2">Your Message</label>
                         <textarea id="message" name="message" rows="5" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all duration-200" placeholder="Tell us about your business and website needs..." required></textarea>
                     </div>
                     <button type="submit" class="w-full bg-indigo-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out text-lg">
-                        Let's Talk!
+                        Send Your Inquiry
                     </button>
                 </form>
             </div>
@@ -323,5 +426,106 @@
         </div>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Currency Conversion Widget Logic
+            const basePriceAUD = 45; // Base monthly price in AUD
+            const baseDailyPriceAUD = 1.50; // Base daily price in AUD
+
+            const exchangeRates = {
+                'AUD': { rate: 1, symbol: '$', code: 'AUD' },
+                'USD': { rate: 0.66, symbol: '$', code: 'USD' }, // Example: 1 AUD = 0.66 USD
+                'GBP': { rate: 0.52, symbol: '£', code: 'GBP' }, // Example: 1 AUD = 0.52 GBP
+                'EUR': { rate: 0.61, symbol: '€', code: 'EUR' }, // Example: 1 AUD = 0.61 EUR
+                'NZD': { rate: 1.08, symbol: '$', code: 'NZD' }  // Example: 1 AUD = 1.08 NZD
+            };
+
+            const currencySelect = document.getElementById('currency-select');
+            const displayPrice = document.getElementById('displayPrice');
+            const displayCurrencySymbol = document.getElementById('displayCurrencySymbol');
+            const displayCurrencyCode = document.getElementById('displayCurrencyCode');
+            const displayDailyPrice = document.getElementById('displayDailyPrice');
+
+            function updatePrices() {
+                const selectedCurrency = currencySelect.value;
+                const rate = exchangeRates[selectedCurrency].rate;
+                const symbol = exchangeRates[selectedCurrency].symbol;
+                const code = exchangeRates[selectedCurrency].code;
+
+                const convertedMonthlyPrice = (basePriceAUD * rate).toFixed(2);
+                const convertedDailyPrice = (baseDailyPriceAUD * rate).toFixed(2);
+
+                displayPrice.textContent = convertedMonthlyPrice;
+                displayCurrencySymbol.textContent = symbol;
+                displayCurrencyCode.textContent = `${code} / month`;
+                displayDailyPrice.textContent = `${symbol}${convertedDailyPrice} ${code}`;
+            }
+
+            updatePrices(); // Initial update
+            currencySelect.addEventListener('change', updatePrices);
+
+            // Gemini API Integration - Website Content Idea Generator
+            const businessDescriptionInput = document.getElementById('business-description');
+            const generateContentBtn = document.getElementById('generate-content-btn');
+            const loadingSpinner = document.getElementById('loading-spinner');
+            const contentIdeasOutput = document.getElementById('content-ideas-output');
+            const ideasText = document.getElementById('ideas-text');
+
+            generateContentBtn.addEventListener('click', async function() {
+                const businessDesc = businessDescriptionInput.value.trim();
+
+                if (!businessDesc) {
+                    ideasText.innerHTML = '<p class="text-red-600">Please describe your business first!</p>';
+                    contentIdeasOutput.classList.remove('hidden');
+                    return;
+                }
+
+                ideasText.innerHTML = ''; // Clear previous ideas
+                contentIdeasOutput.classList.remove('hidden');
+                loadingSpinner.classList.remove('hidden');
+                generateContentBtn.disabled = true; // Disable button during generation
+                generateContentBtn.classList.add('opacity-70', 'cursor-not-allowed');
+
+                try {
+                    const prompt = `Based on the following business description, suggest 3-5 core sections/pages and a brief content idea for each for a small business website. Format the output using Markdown with bullet points or numbered lists.
+                    \nBusiness Description: ${businessDesc}`;
+
+                    let chatHistory = [];
+                    chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                    const payload = { contents: chatHistory };
+                    const apiKey = ""; // Canvas will automatically provide the API key
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    const result = await response.json();
+
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        const text = result.candidates[0].content.parts[0].text;
+                        // For displaying Markdown, a simple approach is to convert newlines to <br>
+                        // For full Markdown rendering, a library would be needed.
+                        ideasText.innerHTML = text.replace(/\n/g, '<br>');
+                    } else {
+                        ideasText.innerHTML = '<p class="text-red-600">Could not generate ideas. Please try again or refine your description.</p>';
+                        console.error('Gemini API response structure unexpected:', result);
+                    }
+
+                } catch (error) {
+                    ideasText.innerHTML = '<p class="text-red-600">An error occurred while generating ideas. Please try again.</p>';
+                    console.error('Error calling Gemini API:', error);
+                } finally {
+                    loadingSpinner.classList.add('hidden');
+                    generateContentBtn.disabled = false; // Re-enable button
+                    generateContentBtn.classList.remove('opacity-70', 'cursor-not-allowed');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
