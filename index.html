@@ -396,14 +396,14 @@
                         <textarea id="business-description" name="business-description" rows="3" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all duration-200" placeholder="e.g., We sell handmade candles and offer candle-making workshops."></textarea>
                     </div>
 
-                    <button type="button" id="generate-content-btn" class="w-full bg-blue-500 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out text-lg flex items-center justify-center mb-6">
-                        Generate Website Content Ideas ✨
+                    <button type="button" id="generate-seo-keywords-btn" class="w-full bg-green-500 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out text-lg flex items-center justify-center mb-6">
+                        Generate SEO Keywords 📈
                         <div id="loading-spinner" class="spinner ml-3 hidden"></div>
                     </button>
 
-                    <div id="content-ideas-output" class="bg-indigo-50 border border-indigo-200 p-6 rounded-lg text-left text-slate-700 hidden">
-                        <h3 class="text-xl font-semibold text-indigo-800 mb-4">Suggested Content Ideas:</h3>
-                        <div id="ideas-text"></div>
+                    <div id="seo-keywords-output" class="bg-green-50 border border-green-200 p-6 rounded-lg text-left text-slate-700 hidden">
+                        <h3 class="text-xl font-semibold text-green-800 mb-4">Suggested SEO Keywords:</h3>
+                        <div id="keywords-text"></div>
                     </div>
 
                     <div class="mb-8 mt-8">
@@ -464,30 +464,30 @@
             updatePrices(); // Initial update
             currencySelect.addEventListener('change', updatePrices);
 
-            // Gemini API Integration - Website Content Idea Generator
+            // Gemini API Integration - SEO Keyword Suggester
             const businessDescriptionInput = document.getElementById('business-description');
-            const generateContentBtn = document.getElementById('generate-content-btn');
+            const generateSeoKeywordsBtn = document.getElementById('generate-seo-keywords-btn'); // Renamed ID
             const loadingSpinner = document.getElementById('loading-spinner');
-            const contentIdeasOutput = document.getElementById('content-ideas-output');
-            const ideasText = document.getElementById('ideas-text');
+            const seoKeywordsOutput = document.getElementById('seo-keywords-output'); // Renamed ID
+            const keywordsText = document.getElementById('keywords-text'); // Renamed ID
 
-            generateContentBtn.addEventListener('click', async function() {
+            generateSeoKeywordsBtn.addEventListener('click', async function() {
                 const businessDesc = businessDescriptionInput.value.trim();
 
                 if (!businessDesc) {
-                    ideasText.innerHTML = '<p class="text-red-600">Please describe your business first!</p>';
-                    contentIdeasOutput.classList.remove('hidden');
+                    keywordsText.innerHTML = '<p class="text-red-600">Please describe your business first to generate keywords!</p>';
+                    seoKeywordsOutput.classList.remove('hidden');
                     return;
                 }
 
-                ideasText.innerHTML = ''; // Clear previous ideas
-                contentIdeasOutput.classList.remove('hidden');
+                keywordsText.innerHTML = ''; // Clear previous keywords
+                seoKeywordsOutput.classList.remove('hidden');
                 loadingSpinner.classList.remove('hidden');
-                generateContentBtn.disabled = true; // Disable button during generation
-                generateContentBtn.classList.add('opacity-70', 'cursor-not-allowed');
+                generateSeoKeywordsBtn.disabled = true; // Disable button during generation
+                generateSeoKeywordsBtn.classList.add('opacity-70', 'cursor-not-allowed');
 
                 try {
-                    const prompt = `Based on the following business description, suggest 3-5 core sections/pages and a brief content idea for each for a small business website. Format the output using Markdown with bullet points or numbered lists.
+                    const prompt = `Based on the following business description, suggest 5-10 relevant SEO keywords and short phrases that a potential customer might use to find this business online. Focus on practical, actionable keywords.
                     \nBusiness Description: ${businessDesc}`;
 
                     let chatHistory = [];
@@ -508,21 +508,19 @@
                         result.candidates[0].content && result.candidates[0].content.parts &&
                         result.candidates[0].content.parts.length > 0) {
                         const text = result.candidates[0].content.parts[0].text;
-                        // For displaying Markdown, a simple approach is to convert newlines to <br>
-                        // For full Markdown rendering, a library would be needed.
-                        ideasText.innerHTML = text.replace(/\n/g, '<br>');
+                        keywordsText.innerHTML = text.replace(/\n/g, '<br>');
                     } else {
-                        ideasText.innerHTML = '<p class="text-red-600">Could not generate ideas. Please try again or refine your description.</p>';
+                        keywordsText.innerHTML = '<p class="text-red-600">Could not generate keywords. Please try again or refine your description.</p>';
                         console.error('Gemini API response structure unexpected:', result);
                     }
 
                 } catch (error) {
-                    ideasText.innerHTML = '<p class="text-red-600">An error occurred while generating ideas. Please try again.</p>';
+                    keywordsText.innerHTML = '<p class="text-red-600">An error occurred while generating keywords. Please try again.</p>';
                     console.error('Error calling Gemini API:', error);
                 } finally {
                     loadingSpinner.classList.add('hidden');
-                    generateContentBtn.disabled = false; // Re-enable button
-                    generateContentBtn.classList.remove('opacity-70', 'cursor-not-allowed');
+                    generateSeoKeywordsBtn.disabled = false; // Re-enable button
+                    generateSeoKeywordsBtn.classList.remove('opacity-70', 'cursor-not-allowed');
                 }
             });
         });
