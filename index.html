@@ -3,386 +3,335 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code + Canvas - Custom Websites for Small Businesses</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Code Plus Canvas - Your Vision, Crafted in Code</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0f172a; /* Slate 900 */
+            color: #e2e8f0; /* Slate 200 */
+            overflow-x: hidden;
+        }
+        .playfair-display {
+            font-family: 'Playfair Display', serif;
+        }
+        .section-divider {
+            background: linear-gradient(to right, #6d28d9, #c026d3); /* Purple 700 to Fuchsia 600 */
+            height: 4px;
+            width: 100px;
+            margin: 0 auto 2rem auto;
+        }
+        /* Snow Effect for Santa's Secret Showcase */
+        .snow-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .snowflake {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            animation: snowfall linear infinite;
+        }
+        @keyframes snowfall {
+            0% {
+                transform: translateY(-10vh);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <i class="fas fa-palette"></i>
-                <span>Code + Canvas</span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#how-it-works">How It Works</a></li>
-                <li><a href="#benefits">Benefits</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#clients">Clients</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+<body class="antialiased">
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1>Your Business, Online. Beautifully Crafted.</h1>
-                <p>We build stunning, fast, and effective websites for small businesses. Get online with no upfront cost, just a simple monthly subscription.</p>
-                <div class="hero-buttons">
-                    <button class="btn btn-primary">Start Your Masterpiece Today!</button>
-                    <button class="btn btn-secondary">Learn More</button>
+    <header class="relative bg-cover bg-center bg-no-repeat h-screen flex flex-col justify-center items-center text-center p-8" style="background-image: url('https://images.unsplash.com/photo-1542831371-29b0f74f9491?q=80&w=2070&auto=format&fit=crop');">
+        <div class="absolute inset-0 bg-black opacity-70"></div>
+        <div class="relative z-10 max-w-4xl mx-auto">
+            <h1 class="text-6xl md:text-8xl playfair-display font-extrabold text-white leading-tight drop-shadow-lg animate-fade-in">
+                Code <span class="text-fuchsia-400">&</span> Canvas
+            </h1>
+            <p class="mt-6 text-xl md:text-2xl font-light text-slate-300 animate-slide-up">
+                Crafting bespoke websites in pure HTML, pixel by pixel.
+            </p>
+            <a href="#showcase" class="mt-12 inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 px-10 rounded-full transition duration-300 transform hover:scale-105 shadow-lg animate-bounce-in">
+                See Our Creations
+            </a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-20">
+
+        <section id="services" class="text-center mb-24">
+            <h2 class="text-5xl playfair-display font-bold mb-4">Our Core Services</h2>
+            <div class="section-divider"></div>
+            <p class="max-w-3xl mx-auto text-lg text-slate-400">
+                At **Code Plus Canvas**, we specialize in building tailor-made websites using pure HTML, CSS, and JavaScript. We focus on clean, efficient code and unique interactive elements to bring your vision to life.
+            </p>
+            <div class="grid md:grid-cols-3 gap-12 mt-16">
+                <div class="bg-slate-800 p-10 rounded-2xl shadow-xl border border-slate-700 hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                    <svg class="h-16 w-16 mx-auto text-fuchsia-400 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                    </svg>
+                    <h3 class="text-2xl font-semibold mb-3 text-white">Bespoke HTML Websites</h3>
+                    <p class="text-slate-400">
+                        Crafted with precision and care, each website is a unique reflection of your brand and goals. No templates, just pure, optimized code.
+                    </p>
+                </div>
+                <div class="bg-slate-800 p-10 rounded-2xl shadow-xl border border-slate-700 hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                    <svg class="h-16 w-16 mx-auto text-fuchsia-400 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.085 15.117a3 3 0 01-3.664-4.253L13.75 5.5l2.25 2.25-5.5 5.5zM12 20a8 8 0 100-16 8 8 0 000 16zM15 15l2-2"></path>
+                    </svg>
+                    <h3 class="text-2xl font-semibold mb-3 text-white">Interactive Elements & Widgets</h3>
+                    <p class="text-slate-400">
+                        From subtle animations to complex currency converters and unique effects like falling snow, we add engaging elements to enhance user experience.
+                    </p>
+                </div>
+                <div class="bg-slate-800 p-10 rounded-2xl shadow-xl border border-slate-700 hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                    <svg class="h-16 w-16 mx-auto text-fuchsia-400 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9 4h9M3 6h18"></path>
+                    </svg>
+                    <h3 class="text-2xl font-semibold mb-3 text-white">Client-Focused Approach</h3>
+                    <p class="text-slate-400">
+                        Your goals are at the heart of our process. We collaborate closely to ensure the final product not only looks stunning but also achieves your business objectives.
+                    </p>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Digital Art Creation">
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Video Section -->
-    <section id="video" class="video-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Witness the Craft: Websites as Art</h2>
-                <p>Inspired by the timeless craft of creation, we treat every website as a unique masterpiece.</p>
+        <section class="text-center mb-24">
+            <h2 class="text-5xl playfair-display font-bold mb-4">Our Creative Process</h2>
+            <div class="section-divider"></div>
+            <p class="max-w-3xl mx-auto text-lg text-slate-400 mb-12">
+                Just as a master artist works with a canvas, we work with code. See our philosophy in action:
+            </p>
+            <div class="relative aspect-video max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-700">
+                <iframe
+                    class="absolute top-0 left-0 w-full h-full"
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    title="Leonardo da Vinci painting a website"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
             </div>
-            <div class="video-container">
-                <video controls autoplay loop muted>
-                    <source src="https://codepluscanvas.netlify.app/Video.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- How It Works Section -->
-    <section id="how-it-works" class="how-it-works">
-        <div class="container">
-            <div class="section-header">
-                <h2>The Canvas of Your Digital Presence</h2>
-                <p>Just like a painter creates a masterpiece stroke by stroke, we build your website from the ground up, with care and precision. We don't use templates. We hand-code every site in pure HTML, ensuring it's not just beautiful, but also lightning-fast, secure, and compatible with every device and browser.</p>
-                <div class="cta-button">
-                    <button class="btn btn-primary">Start Your Masterpiece Today!</button>
+        <section id="showcase" class="text-center mb-24">
+            <h2 class="text-5xl playfair-display font-bold mb-4">Client Showcase</h2>
+            <div class="section-divider"></div>
+            <p class="max-w-3xl mx-auto text-lg text-slate-400 mb-12">
+                See some examples of our crafted websites and the unique features we've implemented.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-12 mt-16">
+                <div class="bg-slate-800 p-8 rounded-2xl shadow-xl border border-slate-700 hover:shadow-2xl transition duration-300">
+                    <h3 class="text-3xl font-semibold mb-3 text-white">Santa's Secret - Bungendore</h3>
+                    <p class="text-slate-400 mb-4">
+                        We had the pleasure of creating a festive online presence for Santa's Secret, a charming boutique Christmas store in Bungendore. To enhance the holiday spirit, we implemented a delightful **snow effect** across their website, creating an immersive and magical experience for visitors.
+                    </p>
+                    <div class="relative w-full h-64 rounded-md overflow-hidden border-4 border-fuchsia-400">
+                        <div class="absolute inset-0 bg-black opacity-30"></div>
+                        <div id="santas-secret-snow" class="snow-container"></div>
+                        <img src="https://via.placeholder.com/600x400/282828/cccccc?Text=Santa's+Secret+Website+Preview" alt="Santa's Secret Website Preview" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <a href="#" target="_blank" class="text-purple-400 hover:text-purple-500 font-semibold">Visit Santa's Secret (Placeholder Link)</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Benefits Section -->
-    <section id="benefits" class="benefits">
-        <div class="container">
-            <div class="section-header">
-                <h2>Paint Your Digital Future</h2>
-                <p>Built specifically for small businesses with affordability and quality at the core</p>
-            </div>
-            
-            <!-- Business Benefits -->
-            <div class="benefits-section">
-                <h3>Benefits for Your Business</h3>
-                <div class="benefits-grid">
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-dollar-sign"></i>
-                        </div>
-                        <h4>No Upfront Cost</h4>
-                        <p>Say goodbye to crippling upfront fees of thousands of dollars. We believe every small business deserves a professional online presence without the financial risk.</p>
-                    </div>
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <h4>Affordable Simplicity</h4>
-                        <p>For just $45 a month, or a mere $1.50 a day, you get a premium, custom-built website that works for you 24/7.</p>
-                    </div>
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-rocket"></i>
-                        </div>
-                        <h4>Hand-Crafted for Speed</h4>
-                        <p>We build your website with clean, lightweight HTML, which means it loads in a flash. Fast websites lead to happier customers and better search engine rankings.</p>
-                    </div>
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h4>Universal Compatibility</h4>
-                        <p>Your website will look and function flawlessly on desktops, tablets, and smartphones. We ensure your digital presence is accessible to everyone, everywhere.</p>
-                    </div>
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-paint-brush"></i>
-                        </div>
-                        <h4>Custom-Made, Just for You</h4>
-                        <p>We don't use cookie-cutter templates. Your website is a unique work of art, reflecting the individuality of your brand.</p>
-                    </div>
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-headset"></i>
-                        </div>
-                        <h4>Ongoing Support & Maintenance</h4>
-                        <p>Our subscription model isn't just about the build. We're here to keep your website running smoothly and handle updates.</p>
-                    </div>
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-comments"></i>
-                        </div>
-                        <h4>Direct-to-Developer Communication</h4>
-                        <p>You'll work directly with the creators of your website. No middlemen, no confusion. Just clear, efficient communication.</p>
+                <div class="bg-slate-800 p-8 rounded-2xl shadow-xl border border-slate-700 hover:shadow-2xl transition duration-300">
+                    <h3 class="text-3xl font-semibold mb-3 text-white">More Projects Coming Soon...</h3>
+                    <p class="text-slate-400 mb-4">
+                        We are constantly working on new and exciting projects. Stay tuned for more examples of our web design and development capabilities!
+                    </p>
+                    <div class="relative w-full h-64 rounded-md overflow-hidden bg-slate-700 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-slate-500 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Customer Benefits -->
-            <div class="benefits-section">
-                <h3>A Seamless Experience for Your Clients</h3>
-                <p class="section-subtitle">A well-built website isn't just a win for you; it's a win for your customers.</p>
-                <div class="customer-benefits-grid">
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-bolt"></i>
-                        </div>
-                        <h4>Blazing-Fast Loading Times</h4>
-                        <p>No more waiting. Your customers can access the information they need instantly, leading to a frustration-free experience.</p>
+        <section class="text-center mb-24">
+            <h2 class="text-5xl playfair-display font-bold mb-4">The Power of Pure HTML</h2>
+            <div class="section-divider"></div>
+            <p class="max-w-3xl mx-auto text-lg text-slate-400 mb-12">
+                Anything is possible. Our bespoke approach with HTML, CSS, and JavaScript allows us to create dynamic and engaging experiences from scratch.
+            </p>
+            <div class="bg-slate-800 p-12 rounded-3xl shadow-2xl max-w-lg mx-auto border-2 border-purple-400">
+                <p class="text-3xl font-semibold text-white mb-6">A Glimpse into the Future</p>
+                <p class="text-lg text-slate-400 mb-8">
+                    Imagine a website that can provide real-time, AI-powered information, or generate content on the fly. We are always exploring the boundaries of what's possible.
+                </p>
+                <div class="relative w-full max-w-md mx-auto p-6 bg-slate-900 rounded-2xl shadow-inner border border-slate-700">
+                    <p class="text-slate-400 italic mb-4">
+                        <span class="text-fuchsia-400 font-bold">"Hello, Gemini!"</span>
+                        <br>
+                        "Tell me about the latest trends in pure HTML web design."
+                    </p>
+                    <div class="w-full bg-slate-700 h-24 rounded-lg flex items-center justify-center animate-pulse">
+                        <span class="text-slate-500 font-light text-sm">
+                            [AI Widget placeholder - Coming Soon!]
+                        </span>
                     </div>
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-compass"></i>
-                        </div>
-                        <h4>Effortless Navigation</h4>
-                        <p>We design with the user in mind. Your customers will find what they're looking for easily, whether they are on a phone, tablet, or computer.</p>
-                    </div>
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>A Professional First Impression</h4>
-                        <p>Your website is a reflection of your business's professionalism and credibility. A custom, well-designed site instills trust in your brand from the first click.</p>
-                    </div>
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h4>Secure and Reliable</h4>
-                        <p>Our code is built to be secure and stable, giving your customers peace of mind.</p>
-                    </div>
+                    <p class="mt-6 text-sm text-slate-500">
+                        *This space is reserved for a dynamic, AI-powered feature to showcase what's possible with modern web development.*
+                    </p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing">
-        <div class="container">
-            <div class="section-header">
-                <h2>Simple, Transparent Pricing</h2>
-                <p>We believe in a straightforward model. Get a premium, custom-built website without the hidden fees or upfront burdens.</p>
-            </div>
-            <div class="pricing-container">
-                <div class="pricing-card featured">
-                    <div class="pricing-header">
-                        <div class="price">
-                            <span class="currency" id="displayCurrencySymbol">$</span>
-                            <span class="amount" id="displayPrice">45</span>
-                            <span class="period" id="displayCurrencyCode">AUD / month</span>
+        <section id="pricing" class="text-center mb-24">
+            <h2 class="text-5xl playfair-display font-bold mb-4">Transparent Pricing</h2>
+            <div class="section-divider"></div>
+            <p class="max-w-3xl mx-auto text-lg text-slate-400 mb-12">
+                Simple, predictable, and value-driven.
+            </p>
+            <div class="bg-slate-800 p-12 rounded-3xl shadow-2xl max-w-2xl mx-auto border-2 border-fuchsia-400">
+                <div class="text-center">
+                    <p class="text-2xl text-slate-300 font-semibold mb-2">Our Monthly Retainer</p>
+                    <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8">
+                        <div class="flex items-center">
+                            <span class="text-6xl font-bold text-white" id="price-display">$45</span>
+                            <span class="text-4xl text-slate-400 ml-2">/month</span>
                         </div>
-                        <div class="upfront-cost">
-                            <span class="highlight">$0</span> Upfront Cost
-                        </div>
-                        <div class="daily-cost">
-                            (That's just <span id="displayDailyPrice">$1.50 AUD</span> / day!)
-                        </div>
+                        <p class="text-xl text-slate-400">
+                            (That's <span class="font-bold text-white">$1.50</span> a day!)
+                        </p>
                     </div>
-                    
-                    <div class="currency-selector">
-                        <label for="currency-select">View price in your currency:</label>
-                        <select id="currency-select">
-                            <option value="AUD" selected>AUD - Australian Dollar</option>
+                    <p class="mt-6 text-slate-400 max-w-xl mx-auto">
+                        This fee covers all your ongoing needs, from small updates to maintenance, ensuring your site is always running perfectly.
+                    </p>
+                </div>
+                <div class="mt-12">
+                    <label for="currency-select" class="block text-slate-300 font-semibold mb-4 text-xl">
+                        Convert to your currency:
+                    </label>
+                    <div class="relative w-full md:w-3/4 mx-auto">
+                        <select id="currency-select" class="block w-full p-4 pr-10 text-white bg-slate-900 border-2 border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-fuchsia-400 appearance-none transition duration-300">
                             <option value="USD">USD - US Dollar</option>
-                            <option value="GBP">GBP - British Pound</option>
+                            <option value="GBP">GBP - UK Pound Sterling</option>
                             <option value="EUR">EUR - Euro</option>
                             <option value="NZD">NZD - New Zealand Dollar</option>
+                            <option value="HKD">HKD - Hong Kong Dollar</option>
+                            <option value="CNY">CNY - Chinese Yuan</option>
                         </select>
-                        <p class="conversion-note">*Conversions are approximate and use fixed rates.</p>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-fuchsia-400">
+                            <svg class="fill-current h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+                            </svg>
+                        </div>
                     </div>
-
-                    <button class="btn btn-primary">Get Started Today!</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Comparison Section -->
-    <section id="comparison" class="comparison">
-        <div class="container">
-            <div class="section-header">
-                <h2>The Code + Canvas Difference</h2>
-                <p>Why pay thousands of dollars upfront when you can get a custom-built website for a simple, predictable monthly fee? See how we compare:</p>
-            </div>
-            <div class="comparison-table">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Feature</th>
-                            <th>Code + Canvas</th>
-                            <th>Other Solo Entrepreneurs</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Upfront Cost</td>
-                            <td class="positive">$0</td>
-                            <td class="negative">$3,000 - $5,000+</td>
-                        </tr>
-                        <tr>
-                            <td>Monthly Fee</td>
-                            <td>$45 AUD</td>
-                            <td>Often None (but no support)</td>
-                        </tr>
-                        <tr>
-                            <td>Ongoing Support</td>
-                            <td class="positive">Included</td>
-                            <td class="negative">Often a separate fee</td>
-                        </tr>
-                        <tr>
-                            <td>Custom Design</td>
-                            <td class="positive">Yes, 100% Unique</td>
-                            <td>Varies, often templates</td>
-                        </tr>
-                        <tr>
-                            <td>Build Method</td>
-                            <td>Hand-coded HTML (Fast & SEO-friendly)</td>
-                            <td>Varies (often CMS like WordPress)</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-header">
-                <h2>From Code to Canvas, We Build Your Vision</h2>
-                <p>At Code + Canvas, we're not just developers; we're digital artisans. Inspired by the meticulous craft of masters like Leonardo da Vinci, we believe that every digital presence should be a masterpiece. We combine the precision of code with the artistry of design to create websites that are not just functional but truly beautiful.</p>
-                <p>We are a team of dedicated professionals committed to helping small businesses thrive online by providing exceptional, cost-effective web solutions.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Clients Section -->
-    <section id="clients" class="clients">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our Canvas: Client Work & Development</h2>
-                <p>Take a look at some of the digital masterpieces we've crafted and projects currently in development.</p>
-            </div>
-            <div class="clients-grid">
-                <div class="client-card">
-                    <img src="https://images.pexels.com/photos/6214476/pexels-photo-6214476.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Santas Secret Website Preview">
-                    <div class="client-content">
-                        <h3>Santas Secret</h3>
-                        <p>A delightful online experience for a unique holiday service, designed to bring joy and seamless gift management.</p>
-                        <a href="https://santasecret.com.au/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Visit Website</a>
-                    </div>
-                </div>
-                <div class="client-card in-development">
-                    <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Coming Soon Project Preview">
-                    <div class="client-content">
-                        <h3>Project X: E-commerce Refresh</h3>
-                        <p>Revitalizing an existing e-commerce platform with a modern design and enhanced performance. Coming soon!</p>
-                        <span class="status-badge">In Development</span>
-                    </div>
-                </div>
-                <div class="client-card in-development">
-                    <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=600" alt="New Business Website Preview">
-                    <div class="client-content">
-                        <h3>New Local Business Site</h3>
-                        <p>Crafting a brand new online presence for a burgeoning local service business. Stay tuned!</p>
-                        <span class="status-badge">In Development</span>
+                    <div id="converted-price" class="mt-6 text-3xl font-bold text-white">
+                        <span class="text-fuchsia-400"></span>
                     </div>
                 </div>
             </div>
-            <div class="clients-cta">
-                <p>Have a project in mind? <a href="#contact">Let's talk!</a></p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2>Ready to Begin?</h2>
-                <p>Let's discuss how Code + Canvas can bring your business online with a stunning, high-performance website.</p>
-            </div>
-            <div class="contact-form-container">
-                <form class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" name="name" placeholder="John Doe" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Your Email</label>
-                        <input type="email" id="email" name="email" placeholder="john.doe@example.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number (Optional)</label>
-                        <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890">
-                    </div>
-                    <div class="form-group">
-                        <label for="business-description">Describe Your Business Briefly</label>
-                        <textarea id="business-description" name="business-description" rows="3" placeholder="e.g., We sell handmade candles and offer candle-making workshops."></textarea>
-                    </div>
+        <section id="contact" class="text-center">
+            <h2 class="text-5xl playfair-display font-bold mb-4">Let's Bring Your Vision to Life</h2>
+            <div class="section-divider"></div>
+            <p class="max-w-3xl mx-auto text-lg text-slate-400 mb-12">
+                Ready to discuss your project and discover how our bespoke web design services can help your business thrive? Get in touch for a free consultation.
+            </p>
+            <a href="mailto:your_email@example.com" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 px-12 rounded-full transition duration-300 transform hover:scale-105 shadow-xl text-lg">
+                Request a Free Consultation
+            </a>
+        </section>
 
-                    <button type="button" id="generate-seo-keywords-btn" class="btn btn-secondary">
-                        Generate SEO Keywords 📈
-                        <div id="loading-spinner" class="spinner hidden"></div>
-                    </button>
+    </main>
 
-                    <div id="seo-keywords-output" class="seo-output hidden">
-                        <h3>Suggested SEO Keywords:</h3>
-                        <div id="keywords-text"></div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Your Message</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Tell us about your business and website needs..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Your Inquiry</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <i class="fas fa-palette"></i>
-                        <span>Code + Canvas</span>
-                    </div>
-                    <p>Crafting digital masterpieces, one line of code at a time.</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Code + Canvas. All rights reserved.</p>
-            </div>
-        </div>
+    <footer class="bg-slate-900 text-center p-10 mt-20">
+        <p class="text-slate-500">© 2025 Code Plus Canvas. All rights reserved.</p>
+        <p class="text-slate-500 mt-2">
+            Crafted with <span class="text-fuchsia-400">❤️</span> and pure code.
+        </p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Currency Converter Logic ---
+            const currencySelect = document.getElementById('currency-select');
+            const convertedPriceEl = document.getElementById('converted-price');
+            const monthlyPriceAUD = 45; // Your base price in AUD
+
+            const exchangeRates = {
+                'USD': 0.66,  // Example rate
+                'GBP': 0.52,  // Example rate
+                'EUR': 0.62,  // Example rate
+                'NZD': 1.08,  // Example rate
+                'HKD': 5.15,  // Example rate
+                'CNY': 4.79   // Example rate
+            };
+
+            const currencySymbols = {
+                'USD': '$',
+                'GBP': '£',
+                'EUR': '€',
+                'NZD': 'NZ$',
+                'HKD': 'HK$',
+                'CNY': '¥'
+            };
+
+            function updatePrice() {
+                const selectedCurrency = currencySelect.value;
+                const rate = exchangeRates[selectedCurrency];
+                const convertedPrice = (monthlyPriceAUD * rate).toFixed(2);
+                const symbol = currencySymbols[selectedCurrency];
+                convertedPriceEl.innerHTML = `<span class="text-fuchsia-400">${symbol}${convertedPrice}</span> / month`;
+            }
+
+            // Initial price update on page load
+            updatePrice();
+
+            // Update price when currency changes
+            currencySelect.addEventListener('change', updatePrice);
+
+            // --- Snow Effect Logic for Santa's Secret Showcase ---
+            function createSnowflake(container) {
+                const snowflake = document.createElement('div');
+                snowflake.className = 'snowflake';
+                snowflake.style.width = `${Math.random() * 5 + 2}px`;
+                snowflake.style.height = snowflake.style.width;
+                snowflake.style.left = `${Math.random() * 100}%`;
+                snowflake.style.animationDuration = `${Math.random() * 15 + 5}s`;
+                snowflake.style.animationDelay = `-${Math.random() * 10}s`;
+                container.appendChild(snowflake);
+
+                // Remove snowflake after it falls to prevent clutter
+                snowflake.addEventListener('animationend', () => {
+                    snowflake.remove();
+                    createSnowflake(container); // Create a new one to replace it
+                });
+            }
+
+            // Target the specific container for the snow effect
+            const santasSecretSnowContainer = document.getElementById('santas-secret-snow');
+            const numSnowflakes = 50;
+
+            if (santasSecretSnowContainer) {
+                for (let i = 0; i < numSnowflakes; i++) {
+                    createSnowflake(santasSecretSnowContainer);
+                }
+            }
+        });
+    </script>
 </body>
 </html>
