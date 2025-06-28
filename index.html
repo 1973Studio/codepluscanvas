@@ -3,421 +3,323 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>code+canvas</title>
+    <title>Code + Canvas - Custom Websites for Small Businesses</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/2237b2871c.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts - Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif; /* Updated font-family */
+            background-color: #f8fafc; /* Tailwind's slate-50 */
+            color: #334155; /* Tailwind's slate-700 */
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e2e8f0; /* Tailwind's slate-200 */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #94a3b8; /* Tailwind's slate-400 */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #64748b; /* Tailwind's slate-500 */
+        }
+    </style>
 </head>
-<body class="font-jakarta antialiased">
+<body class="antialiased">
 
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex-shrink-0">
-                <a href="https://www.codepluscanvas.com" class="block">
-                    <img src="https://i.imgur.com/gB3H9n7.png" alt="code+canvas logo" class="h-12 w-auto">
-                </a>
-            </div>
-            <nav class="hidden md:flex space-x-6 items-center">
-                <a href="#" class="text-gray-700 hover:text-cyan-600 font-medium">Why Choose Us</a>
-                <a href="#" class="text-gray-700 hover:text-cyan-600 font-medium">Pricing</a>
-                <a href="#" class="text-gray-700 hover:text-cyan-600 font-medium">Portfolio</a>
-                <a href="#" class="text-gray-700 hover:text-cyan-600 font-medium">Domains</a>
-                <a href="#" class="text-gray-700 hover:text-cyan-600 font-medium">SEO</a>
-                <a href="#" class="text-gray-700 hover:text-cyan-600 font-medium">Reviews</a>
-                <a href="#" class="text-gray-700 hover:text-cyan-600 font-medium">Help & Tips</a>
-                <a href="#" class="text-gray-700 hover:text-cyan-600 font-medium">Contact</a>
+    <!-- Header -->
+    <header class="bg-white shadow-sm py-4 sticky top-0 z-50">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-indigo-600 rounded-lg p-2 hover:bg-indigo-50 transition-colors duration-300">Code + Canvas</a>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#home" class="text-slate-600 hover:text-indigo-600 transition-colors duration-350 font-medium py-2 px-3 rounded-lg hover:bg-indigo-50">Home</a></li>
+                    <li><a href="#how-it-works" class="text-slate-600 hover:text-indigo-600 transition-colors duration-350 font-medium py-2 px-3 rounded-lg hover:bg-indigo-50">How It Works</a></li>
+                    <li><a href="#benefits" class="text-slate-600 hover:text-indigo-600 transition-colors duration-350 font-medium py-2 px-3 rounded-lg hover:bg-indigo-50">Benefits</a></li>
+                    <li><a href="#pricing" class="text-slate-600 hover:text-indigo-600 transition-colors duration-350 font-medium py-2 px-3 rounded-lg hover:bg-indigo-50">Pricing</a></li>
+                    <li><a href="#contact" class="text-slate-600 hover:text-indigo-600 transition-colors duration-350 font-medium py-2 px-3 rounded-lg hover:bg-indigo-50">Contact</a></li>
+                </ul>
             </nav>
-            <button class="md:hidden text-gray-700 focus:outline-none">
-                <i class="fas fa-bars text-xl"></i>
-            </button>
         </div>
     </header>
 
     <main>
+        <!-- Hero Section -->
+        <section id="home" class="relative bg-gradient-to-r from-indigo-500 to-blue-600 text-white py-20 md:py-32 flex items-center justify-center min-h-[500px] overflow-hidden">
+            <div class="container mx-auto px-4 text-center z-10">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-up">
+                    Your Business, Online. Beautifully Crafted.
+                </h1>
+                <p class="text-lg md:text-xl mb-10 max-w-2xl mx-auto opacity-90 animate-fade-in-up delay-150">
+                    We build stunning, fast, and effective websites for small businesses. Get online with no upfront cost, just a simple monthly subscription.
+                </p>
+                <a href="#contact" class="inline-block bg-white text-indigo-700 hover:bg-indigo-100 font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out text-lg animate-fade-in-up delay-300">
+                    Start Your Masterpiece Today!
+                </a>
+            </div>
+            <!-- Background overlay for aesthetic effect -->
+            <div class="absolute inset-0 bg-black opacity-20 z-0"></div>
+        </section>
 
-        <section class="bg-beige-100 py-20 px-4 md:px-8 overflow-hidden relative">
-            <div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
-                <div class="md:w-1/2 text-center md:text-left space-y-6">
-                    <h1 class="text-5xl md:text-7xl font-bold text-gray-900 leading-tight">
-                        Websites for complementary therapists
-                    </h1>
-                    <p class="text-xl md:text-2xl text-gray-700 leading-relaxed">
-                        We design, host and manage your website. Helping you to turn your therapy business into a success.
-                    </p>
-                    <a href="#" class="inline-block bg-cyan-600 text-white font-semibold py-4 px-8 rounded-full text-lg hover:bg-cyan-700 transition-colors">
-                        View Our Packages
+        <!-- Video Section - Leonardo Painting -->
+        <section id="video" class="py-16 md:py-24 bg-slate-100">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-slate-800 mb-12">
+                    Witness the Craft: Websites as Art
+                </h2>
+                <div class="relative w-full max-w-4xl mx-auto aspect-video rounded-xl shadow-2xl overflow-hidden transform hover:scale-[1.005] transition-transform duration-500">
+                    <!-- Embed your video here. Replace 'your-video-id' with the actual video ID or source URL -->
+                    <!-- For a local video file named 'your-video.mp4' in the same directory as this HTML file: -->
+                    <!-- <video controls class="w-full h-full object-cover">
+                        <source src="path/to/your/video/3bf129ee-c85f-486d-9088-654a09963122.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video> -->
+                    <!-- As the video was uploaded, I'll put a placeholder for now.
+                         In a real deployment, you'd host this video and link directly.
+                         For demonstration purposes, I will use a generic placeholder video.
+                         Please replace src with your actual video file once hosted.
+                    -->
+                    <video controls autoplay loop muted class="w-full h-full object-cover">
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-paint-splash-background-1262-large.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <!-- Alternatively, if it's a YouTube video: -->
+                    <!-- <iframe class="w-full h-full" src="https://www.youtube.com/embed/your-video-id" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                </div>
+                <p class="text-center text-slate-600 mt-8 max-w-2xl mx-auto">
+                    Inspired by the timeless craft of creation, we treat every website as a unique masterpiece.
+                </p>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-4 max-w-4xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-slate-800 mb-12">
+                    The Canvas of Your Digital Presence
+                </h2>
+                <p class="text-lg text-center text-slate-700 mb-10 leading-relaxed">
+                    Just like a painter creates a masterpiece stroke by stroke, we build your website from the ground up, with care and precision. We don't use templates. We hand-code every site in pure HTML, ensuring it's not just beautiful, but also lightning-fast, secure, and compatible with every device and browser.
+                </p>
+                <div class="text-center">
+                    <a href="#contact" class="inline-block bg-indigo-600 text-white hover:bg-indigo-700 font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out text-lg">
+                        Start Your Masterpiece Today!
                     </a>
                 </div>
-                <div class="relative w-full md:w-1/2 flex justify-center md:justify-end">
-                    <img src="https://i.imgur.com/uFk1E1h.png" alt="Woman on a laptop" class="max-w-full h-auto z-10">
-                    <div class="absolute -bottom-10 right-0 md:right-10 bg-white p-6 rounded-2xl shadow-xl z-20 w-64 text-center transform translate-y-1/2 md:translate-y-0 translate-x-1/4 md:translate-x-0">
-                        <h3 class="text-lg font-semibold text-gray-800">Rated Excellent</h3>
-                        <img src="https://i.imgur.com/8QG8j4C.png" alt="Trustpilot logo" class="mx-auto mt-2 h-8">
-                    </div>
-                </div>
             </div>
         </section>
 
-        <section class="bg-gray-100 py-24 px-4 md:px-8">
-            <div class="container mx-auto flex flex-col md:flex-row items-center gap-12">
-                <div class="md:w-1/2">
-                    <img src="https://i.imgur.com/eP407a1.jpeg" alt="Group of people working" class="rounded-3xl shadow-2xl">
-                </div>
-                <div class="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-8 p-6 md:p-0">
-                    <div class="bg-white p-8 rounded-2xl shadow-lg flex items-start space-x-6 transition-transform transform hover:scale-105">
-                        <i class="far fa-star text-4xl text-emerald-600 mt-2"></i>
-                        <div>
-                            <h3 class="text-3xl font-bold text-gray-900">20+ Years</h3>
-                            <p class="text-gray-600 mt-2">We've Been in Business since 2001</p>
-                        </div>
-                    </div>
-                    <div class="bg-white p-8 rounded-2xl shadow-lg flex items-start space-x-6 transition-transform transform hover:scale-105">
-                        <i class="far fa-pen-to-square text-4xl text-emerald-600 mt-2"></i>
-                        <div>
-                            <h3 class="text-3xl font-bold text-gray-900">Over 5000</h3>
-                            <p class="text-gray-600 mt-2">Beautifully Designed Websites Created</p>
-                        </div>
-                    </div>
-                    <div class="bg-white p-8 rounded-2xl shadow-lg flex items-start space-x-6 transition-transform transform hover:scale-105">
-                        <i class="fas fa-leaf text-4xl text-emerald-600 mt-2"></i>
-                        <div>
-                            <h3 class="text-3xl font-bold text-gray-900">Green Hosting</h3>
-                            <p class="text-gray-600 mt-2">Powered by 100% Renewable Energy</p>
-                        </div>
-                    </div>
-                    <div class="bg-white p-8 rounded-2xl shadow-lg flex items-start space-x-6 transition-transform transform hover:scale-105">
-                        <i class="fas fa-arrow-up-short-wide text-4xl text-emerald-600 mt-2"></i>
-                        <div>
-                            <h3 class="text-3xl font-bold text-gray-900">99.99% Uptime</h3>
-                            <p class="text-gray-600 mt-2">Websites Reliability Over Last 12 Months - Stats</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- Benefits Sections -->
+        <section id="benefits" class="py-16 md:py-24 bg-slate-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-slate-800 mb-16">
+                    Paint Your Digital Future
+                </h2>
 
-        <section class="bg-white py-24 px-4 md:px-8">
-            <div class="container mx-auto flex flex-col md:flex-row items-center gap-12">
-                <div class="md:w-1/2 text-center md:text-left space-y-6">
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900">What we do</h2>
-                    <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
-                        From the start HealthHosts mission was to provide affordable, beautiful websites for therapists and yoga studios across the UK and in recent years many international clients have joined us too.
+                <!-- Benefits for Your Business -->
+                <div class="mb-20">
+                    <h3 class="text-2xl md:text-3xl font-semibold text-center text-slate-700 mb-10">
+                        Benefits for Your Business
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-slate-200">
+                            <h4 class="text-xl font-semibold text-slate-800 mb-4 flex items-center"><span class="mr-2 text-indigo-500">&#10003;</span> No Upfront Cost</h4>
+                            <p class="text-slate-600">Say goodbye to crippling upfront fees of thousands of dollars. We believe every small business deserves a professional online presence without the financial risk.</p>
+                        </div>
+                        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-slate-200">
+                            <h4 class="text-xl font-semibold text-slate-800 mb-4 flex items-center"><span class="mr-2 text-indigo-500">&#10003;</span> Affordable Simplicity</h4>
+                            <p class="text-slate-600">For just $45 a month, or a mere $1.50 a day, you get a premium, custom-built website that works for you 24/7.</p>
+                        </div>
+                        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-slate-200">
+                            <h4 class="text-xl font-semibold text-slate-800 mb-4 flex items-center"><span class="mr-2 text-indigo-500">&#10003;</span> Hand-Crafted for Speed</h4>
+                            <p class="text-slate-600">We build your website with clean, lightweight HTML, which means it loads in a flash. Fast websites lead to happier customers and better search engine rankings.</p>
+                        </div>
+                        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-slate-200">
+                            <h4 class="text-xl font-semibold text-slate-800 mb-4 flex items-center"><span class="mr-2 text-indigo-500">&#10003;</span> Universal Compatibility</h4>
+                            <p class="text-slate-600">Your website will look and function flawlessly on desktops, tablets, and smartphones. We ensure your digital presence is accessible to everyone, everywhere.</p>
+                        </div>
+                        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-slate-200">
+                            <h4 class="text-xl font-semibold text-slate-800 mb-4 flex items-center"><span class="mr-2 text-indigo-500">&#10003;</span> Custom-Made, Just for You</h4>
+                            <p class="text-slate-600">We don't use cookie-cutter templates. Your website is a unique work of art, reflecting the individuality of your brand.</p>
+                        </div>
+                        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-slate-200">
+                            <h4 class="text-xl font-semibold text-slate-800 mb-4 flex items-center"><span class="mr-2 text-indigo-500">&#10003;</span> Ongoing Support & Maintenance</h4>
+                            <p class="text-slate-600">Our subscription model isn't just about the build. We're here to keep your website running smoothly and handle updates.</p>
+                        </div>
+                        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-slate-200 md:col-span-2 lg:col-span-1 mx-auto">
+                            <h4 class="text-xl font-semibold text-slate-800 mb-4 flex items-center"><span class="mr-2 text-indigo-500">&#10003;</span> Direct-to-Developer Communication</h4>
+                            <p class="text-slate-600">You'll work directly with the creators of your website. No middlemen, no confusion. Just clear, efficient communication.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Benefits for Your Customers -->
+                <div>
+                    <h3 class="text-2xl md:text-3xl font-semibold text-center text-slate-700 mb-10">
+                        A Seamless Experience for Your Clients
+                    </h3>
+                    <p class="text-lg text-center text-slate-700 mb-10 leading-relaxed max-w-3xl mx-auto">
+                        A well-built website isn't just a win for you; it's a win for your customers.
                     </p>
-                    <a href="#" class="inline-block bg-cyan-600 text-white font-semibold py-4 px-8 rounded-full text-lg hover:bg-cyan-700 transition-colors">
-                        More About Us
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-slate-200">
+                            <h4 class="text-xl font-semibold text-slate-800 mb-4 flex items-center"><span class="mr-2 text-indigo-500">&#9733;</span> Blazing-Fast Loading Times</h4>
+                            <p class="text-slate-600">No more waiting. Your customers can access the information they need instantly, leading to a frustration-free experience.</p>
+                        </div>
+                        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-slate-200">
+                            <h4 class="text-xl font-semibold text-slate-800 mb-4 flex items-center"><span class="mr-2 text-indigo-500">&#9733;</span> Effortless Navigation</h4>
+                            <p class="text-slate-600">We design with the user in mind. Your customers will find what they're looking for easily, whether they are on a phone, tablet, or computer.</p>
+                        </div>
+                        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-slate-200">
+                            <h4 class="text-xl font-semibold text-slate-800 mb-4 flex items-center"><span class="mr-2 text-indigo-500">&#9733;</span> A Professional First Impression</h4>
+                            <p class="text-slate-600">Your website is a reflection of your business's professionalism and credibility. A custom, well-designed site instills trust in your brand from the first click.</p>
+                        </div>
+                        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-slate-200">
+                            <h4 class="text-xl font-semibold text-slate-800 mb-4 flex items-center"><span class="mr-2 text-indigo-500">&#9733;</span> Secure and Reliable</h4>
+                            <p class="text-slate-600">Our code is built to be secure and stable, giving your customers peace of mind.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="py-16 md:py-24 bg-gradient-to-br from-indigo-500 to-blue-600 text-white text-center">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8">
+                    Simple, Transparent Pricing
+                </h2>
+                <p class="text-lg opacity-90 mb-12 max-w-2xl mx-auto">
+                    We believe in a straightforward model. Get a premium, custom-built website without the hidden fees or upfront burdens.
+                </p>
+                <div class="bg-white text-slate-800 p-10 rounded-2xl shadow-xl max-w-md mx-auto transform hover:scale-105 transition-transform duration-300 ease-in-out border-4 border-white-400">
+                    <p class="text-5xl md:text-6xl font-extrabold mb-4 flex items-baseline justify-center">
+                        <span class="text-3xl mr-2">$</span>45
+                        <span class="text-xl ml-2 text-slate-600">/ month</span>
+                    </p>
+                    <p class="text-lg font-semibold text-indigo-600 mb-2">
+                        <span class="font-bold text-2xl">$0</span> Upfront Cost
+                    </p>
+                    <p class="text-md text-slate-500 mb-8">
+                        (That's just $1.50 / day!)
+                    </p>
+                    <a href="#contact" class="inline-block bg-indigo-600 text-white hover:bg-indigo-700 font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out text-lg">
+                        Get Started Today!
                     </a>
                 </div>
-                <div class="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
-                    <div class="flex items-center space-x-4">
-                        <i class="fas fa-check-circle text-2xl text-emerald-600"></i>
-                        <p class="text-lg font-medium text-gray-700">WordPress Managed Website</p>
-                    </div>
-                    <div class="flex items-center space-x-4">
-                        <i class="fas fa-check-circle text-2xl text-emerald-600"></i>
-                        <p class="text-lg font-medium text-gray-700">Optmised & Search Engine Ready</p>
-                    </div>
-                    <div class="flex items-center space-x-4">
-                        <i class="fas fa-check-circle text-2xl text-emerald-600"></i>
-                        <p class="text-lg font-medium text-gray-700">Google Integration</p>
-                    </div>
-                    <div class="flex items-center space-x-4">
-                        <i class="fas fa-check-circle text-2xl text-emerald-600"></i>
-                        <p class="text-lg font-medium text-gray-700">Website Statistics</p>
-                    </div>
-                    <div class="flex items-center space-x-4">
-                        <i class="fas fa-check-circle text-2xl text-emerald-600"></i>
-                        <p class="text-lg font-medium text-gray-700">Online Payments</p>
-                    </div>
-                    <div class="flex items-center space-x-4">
-                        <i class="fas fa-check-circle text-2xl text-emerald-600"></i>
-                        <p class="text-lg font-medium text-gray-700">Unlimited Pages</p>
-                    </div>
-                    <div class="flex items-center space-x-4">
-                        <i class="fas fa-check-circle text-2xl text-emerald-600"></i>
-                        <p class="text-lg font-medium text-gray-700">Easily Edit & Add Content</p>
-                    </div>
-                    <div class="flex items-center space-x-4">
-                        <i class="fas fa-check-circle text-2xl text-emerald-600"></i>
-                        <p class="text-lg font-medium text-gray-700">Fully Managed by Us</p>
-                    </div>
-                    <div class="flex items-center space-x-4">
-                        <i class="fas fa-check-circle text-2xl text-emerald-600"></i>
-                        <p class="text-lg font-medium text-gray-700">Social Media Integration</p>
-                    </div>
-                    <div class="flex items-center space-x-4">
-                        <i class="fas fa-check-circle text-2xl text-emerald-600"></i>
-                        <p class="text-lg font-medium text-gray-700">Capture Leads & Turn Them into Clients</p>
-                    </div>
-                </div>
             </div>
         </section>
 
-        <section class="bg-cyan-600 text-white py-24 px-4 md:px-8 relative overflow-hidden">
-            <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('https://i.imgur.com/eP407a1.jpeg');"></div>
-            <div class="container mx-auto relative z-10">
-                <div class="text-center mb-16">
-                    <h2 class="text-5xl md:text-6xl font-bold">How we help you to thrive</h2>
-                    <p class="text-xl mt-4 max-w-2xl mx-auto opacity-90">
-                        Our all-in-one service provides everything you need for your business online
-                    </p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-                    <div class="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg p-10 rounded-3xl shadow-2xl transition-transform transform hover:scale-105">
-                        <img src="https://www.healthhosts.com/wp-content/uploads/2024/10/cloud-1.gif" alt="Cloud icon" class="h-24 w-24 mx-auto mb-6">
-                        <h3 class="text-3xl font-bold mb-4">All-in-one service</h3>
-                        <p class="text-gray-100 opacity-90">
-                            We provide a one-stop shop for all your website requirements, from website design to domain registration and email hosting.
-                        </p>
-                    </div>
-                    <div class="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg p-10 rounded-3xl shadow-2xl transition-transform transform hover:scale-105">
-                        <img src="https://www.healthhosts.com/wp-content/uploads/2024/10/Service.gif" alt="Service icon" class="h-24 w-24 mx-auto mb-6">
-                        <h3 class="text-3xl font-bold mb-4">Support</h3>
-                        <p class="text-gray-100 opacity-90">
-                            Our philosophy is to make working with us easy and a pleasure, not only through the process of setting up but also running your website.
-                        </p>
-                    </div>
-                    <div class="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg p-10 rounded-3xl shadow-2xl transition-transform transform hover:scale-105">
-                        <img src="https://www.healthhosts.com/wp-content/uploads/2024/10/Project.gif" alt="Project icon" class="h-24 w-24 mx-auto mb-6">
-                        <h3 class="text-3xl font-bold mb-4">Management</h3>
-                        <p class="text-gray-100 opacity-90">
-                            With our website service you have as much or as little control as you like. If you want to take the reins and login to your site and edit/add new content every day then that's great!
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="bg-gray-100 py-24 px-4 md:px-8">
-            <div class="container mx-auto text-center">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900">Recently completed client websites</h2>
-                <p class="text-lg md:text-xl text-gray-700 mt-4 max-w-2xl mx-auto">
-                    Discover our unique websites for wellness professionals. Check our portfolio.
+        <!-- Comparison Section -->
+        <section id="comparison" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-slate-800 mb-12">
+                    The Code + Canvas Difference
+                </h2>
+                <p class="text-lg text-center text-slate-700 mb-12 max-w-3xl mx-auto">
+                    Why pay thousands of dollars upfront when you can get a custom-built website for a simple, predictable monthly fee? See how we compare:
                 </p>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
-                    <a href="https://www.lunarrosearomatherapy.co.uk" target="_blank" rel="noopener noreferrer" class="group block">
-                        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                            <img src="https://www.healthhosts.com/wp-content/uploads/2025/06/lunarrosearomatherapy-1024x1024.jpg" alt="Lunar Rose Aromatherapy" class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105">
-                            <div class="p-6">
-                                <h3 class="text-lg font-semibold text-gray-900 group-hover:text-cyan-600">Lunar Rose Aromatherapy</h3>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="https://www.yvonneowen.co.uk/" target="_blank" rel="noopener noreferrer" class="group block">
-                        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                            <img src="https://www.healthhosts.com/wp-content/uploads/2025/06/yvonneowen-1024x1024.jpg" alt="Yvonne Owen Counselling and Reflexology" class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105">
-                            <div class="p-6">
-                                <h3 class="text-lg font-semibold text-gray-900 group-hover:text-cyan-600">Yvonne Owen Counselling and Reflexology</h3>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="https://www.thevillageyoga.co.uk/" target="_blank" rel="noopener noreferrer" class="group block">
-                        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                            <img src="https://www.healthhosts.com/wp-content/uploads/2025/06/thevillageyoga-1024x1024.jpg" alt="Village Yoga" class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105">
-                            <div class="p-6">
-                                <h3 class="text-lg font-semibold text-gray-900 group-hover:text-cyan-600">Village Yoga</h3>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="https://www.veritypaz.com/" target="_blank" rel="noopener noreferrer" class="group block">
-                        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                            <img src="https://www.healthhosts.com/wp-content/uploads/2018/01/veritypaz-1-1024x1024.jpg" alt="Verity Paz" class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105">
-                            <div class="p-6">
-                                <h3 class="text-lg font-semibold text-gray-900 group-hover:text-cyan-600">Verity Paz</h3>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="mt-12">
-                    <a href="#" class="inline-block bg-cyan-600 text-white font-semibold py-4 px-10 rounded-full text-lg hover:bg-cyan-700 transition-colors">
-                        View the Portfolio
-                    </a>
+                <div class="overflow-x-auto">
+                    <table class="w-full max-w-4xl mx-auto bg-white border border-slate-200 rounded-xl shadow-lg overflow-hidden">
+                        <thead>
+                            <tr class="bg-slate-100 text-slate-700 uppercase text-sm leading-normal">
+                                <th class="py-4 px-6 text-left border-b border-slate-200">Feature</th>
+                                <th class="py-4 px-6 text-center border-b border-slate-200">Code + Canvas</th>
+                                <th class="py-4 px-6 text-center border-b border-slate-200">Other Solo Entrepreneurs</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-slate-600 text-sm font-light">
+                            <tr class="border-b border-slate-200 hover:bg-slate-50">
+                                <td class="py-4 px-6 text-left font-medium">Upfront Cost</td>
+                                <td class="py-4 px-6 text-center text-green-600 font-bold">$0</td>
+                                <td class="py-4 px-6 text-center text-red-600 font-bold">$3,000 - $5,000+</td>
+                            </tr>
+                            <tr class="border-b border-slate-200 hover:bg-slate-50">
+                                <td class="py-4 px-6 text-center">$45</td>
+                                <td class="py-4 px-6 text-center">Often None (but no support)</td>
+                            </tr>
+                            <tr class="border-b border-slate-200 hover:bg-slate-50">
+                                <td class="py-4 px-6 text-left font-medium">Ongoing Support</td>
+                                <td class="py-4 px-6 text-center text-green-600">Included</td>
+                                <td class="py-4 px-6 text-center text-red-600">Often a separate fee</td>
+                            </tr>
+                            <tr class="border-b border-slate-200 hover:bg-slate-50">
+                                <td class="py-4 px-6 text-left font-medium">Custom Design</td>
+                                <td class="py-4 px-6 text-center text-green-600">Yes, 100% Unique</td>
+                                <td class="py-4 px-6 text-center">Varies, often templates</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="py-4 px-6 text-left font-medium">Build Method</td>
+                                <td class="py-4 px-6 text-center">Hand-coded HTML (Fast & SEO-friendly)</td>
+                                <td class="py-4 px-6 text-center">Varies (often CMS like WordPress)</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </section>
 
-        <section class="bg-white py-24 px-4 md:px-8">
-            <div class="container mx-auto text-center">
-                <div class="max-w-4xl mx-auto p-12 bg-gray-100 rounded-3xl shadow-inner space-y-6">
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900">Schedule a Consultation</h2>
-                    <p class="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto">
-                        If you would like to schedule a phone call to have a chat about your new website project please book a consultation call.
-                    </p>
-                    <a href="#" class="inline-block bg-cyan-600 text-white font-semibold py-4 px-10 rounded-full text-lg hover:bg-cyan-700 transition-colors">
-                        Book a Consultation Call
-                    </a>
-                </div>
+        <!-- About Us Section -->
+        <section id="about" class="py-16 md:py-24 bg-slate-100">
+            <div class="container mx-auto px-4 max-w-4xl text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-12">
+                    From Code to Canvas, We Build Your Vision
+                </h2>
+                <p class="text-lg text-slate-700 leading-relaxed mb-8">
+                    At Code + Canvas, we're not just developers; we're digital artisans. Inspired by the meticulous craft of masters like Leonardo da Vinci, we believe that every digital presence should be a masterpiece. We combine the precision of code with the artistry of design to create websites that are not just functional but truly beautiful.
+                </p>
+                <p class="text-lg text-slate-700 leading-relaxed">
+                    We are a team of dedicated professionals committed to helping small businesses thrive online by providing exceptional, cost-effective web solutions.
+                </p>
             </div>
         </section>
 
-        <section class="bg-white py-24 px-4 md:px-8">
-            <div class="container mx-auto text-center md:text-left">
-                <div class="flex flex-col md:flex-row justify-between items-center mb-16">
-                    <div>
-                        <h2 class="text-4xl md:text-5xl font-bold text-gray-900">Latest Help & Tips</h2>
-                        <p class="text-lg md:text-xl text-gray-700 mt-2">
-                            Explore our latest blog posts for insights and updates!
-                        </p>
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 md:py-24 bg-gradient-to-tl from-indigo-500 to-blue-600 text-white">
+            <div class="container mx-auto px-4 max-w-xl text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8">
+                    Ready to Begin?
+                </h2>
+                <p class="text-lg opacity-90 mb-10">
+                    Let's discuss how Code + Canvas can bring your business online with a stunning, high-performance website.
+                </p>
+                <form class="bg-white p-8 rounded-xl shadow-xl text-slate-800">
+                    <div class="mb-6">
+                        <label for="name" class="block text-left text-lg font-medium text-slate-700 mb-2">Your Name</label>
+                        <input type="text" id="name" name="name" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all duration-200" placeholder="John Doe" required>
                     </div>
-                    <a href="#" class="hidden md:inline-block bg-cyan-600 text-white font-semibold py-3 px-8 rounded-full text-lg hover:bg-cyan-700 transition-colors">
-                        View the Blog
-                    </a>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <a href="#" class="group block">
-                        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                            <img src="https://www.healthhosts.com/wp-content/uploads/2025/05/Google-Business-scaled.jpeg" alt="Google Business Profile" class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105">
-                            <div class="p-8">
-                                <h3 class="text-xl font-bold text-gray-900 group-hover:text-cyan-600">
-                                    How Therapists Can Boost Local Visibility with Google Business
-                                </h3>
-                                <p class="text-gray-600 mt-4 line-clamp-3">
-                                    If you're a complementary therapist offering services online or locally, one of the simplest (and free!) ways to boost your...
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="#" class="group block">
-                        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                            <img src="https://www.healthhosts.com/wp-content/uploads/2025/04/Therapist-Website-FAQ-Section-scaled.jpeg" alt="Therapist Website FAQ Section" class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105">
-                            <div class="p-8">
-                                <h3 class="text-xl font-bold text-gray-900 group-hover:text-cyan-600">
-                                    Why Every Therapist’s Website Should Include an FAQ Section
-                                </h3>
-                                <p class="text-gray-600 mt-4 line-clamp-3">
-                                    One powerful (and often overlooked) way to make your website more helpful, more professional, and more visible in search results...
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="#" class="group block">
-                        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                            <img src="https://www.healthhosts.com/wp-content/uploads/2023/11/Therapist-Thinking-about-blog-post-scaled.jpeg" alt="Therapist Thinking about blog post" class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105">
-                            <div class="p-8">
-                                <h3 class="text-xl font-bold text-gray-900 group-hover:text-cyan-600">
-                                    The Complementary Therapist’s Guide to Blogging for Connection and Growth
-                                </h3>
-                                <p class="text-gray-600 mt-4 line-clamp-3">
-                                    In the realm of complementary therapy, where holistic healing and personal connections hold paramount importance, a blog can serve as...
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="md:hidden mt-12 text-center">
-                    <a href="#" class="inline-block bg-cyan-600 text-white font-semibold py-4 px-10 rounded-full text-lg hover:bg-cyan-700 transition-colors">
-                        View the Blog
-                    </a>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="bg-gray-800 text-white py-20 px-4 md:px-8">
-        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
-            <div class="col-span-1 md:col-span-2 space-y-6">
-                <img src="https://www.healthhosts.com/wp-content/uploads/2024/10/healthhosts-logo-white.png" alt="code+canvas logo white" class="h-12 w-auto mb-4 filter brightness-0 invert">
-                <div class="flex items-start space-x-4">
-                    <i class="far fa-envelope text-2xl text-cyan-500 mt-1"></i>
-                    <div>
-                        <p>hello@codepluscanvas.com</p>
+                    <div class="mb-6">
+                        <label for="email" class="block text-left text-lg font-medium text-slate-700 mb-2">Your Email</label>
+                        <input type="email" id="email" name="email" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all duration-200" placeholder="john.doe@example.com" required>
                     </div>
-                </div>
-                <div class="flex items-start space-x-4">
-                    <i class="fas fa-phone-alt text-2xl text-cyan-500 mt-1"></i>
-                    <div>
-                        <p><strong>UK:</strong> 01206 625440</p>
-                        <p><strong>International:</strong> +44 1206 625440</p>
+                    <div class="mb-6">
+                        <label for="phone" class="block text-left text-lg font-medium text-slate-700 mb-2">Phone Number (Optional)</label>
+                        <input type="tel" id="phone" name="phone" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all duration-200" placeholder="(123) 456-7890">
                     </div>
-                </div>
-                <div class="flex items-start space-x-4">
-                    <i class="fas fa-map-pin text-2xl text-cyan-500 mt-1"></i>
-                    <div>
-                        <p>7 Peartree Centre, Peartree Road, Colchester Essex CO3 0JN</p>
+                    <div class="mb-8">
+                        <label for="message" class="block text-left text-lg font-medium text-slate-700 mb-2">Your Message</label>
+                        <textarea id="message" name="message" rows="5" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all duration-200" placeholder="Tell us about your business and website needs..." required></textarea>
                     </div>
-                </div>
-            </div>
-            <div>
-                <h3 class="text-xl font-bold mb-6">Other Links</h3>
-                <ul class="space-y-3">
-                    <li><a href="#" class="hover:text-cyan-600 flex items-center"><i class="fas fa-check text-cyan-500 mr-3"></i> My Account</a></li>
-                    <li><a href="#" class="hover:text-cyan-600 flex items-center"><i class="fas fa-check text-cyan-500 mr-3"></i> About</a></li>
-                    <li><a href="#" class="hover:text-cyan-600 flex items-center"><i class="fas fa-check text-cyan-500 mr-3"></i> Blog</a></li>
-                    <li><a href="#" class="hover:text-cyan-600 flex items-center"><i class="fas fa-check text-cyan-500 mr-3"></i> Help & Support</a></li>
-                    <li><a href="#" class="hover:text-cyan-600 flex items-center"><i class="fas fa-check text-cyan-500 mr-3"></i> Switch to Us</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="text-xl font-bold mb-6">Join our Newsletter</h3>
-                <form class="space-y-4">
-                    <input type="text" placeholder="Your Name" class="w-full p-4 rounded-lg bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500">
-                    <input type="email" placeholder="Your Email" class="w-full p-4 rounded-lg bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500">
-                    <button type="submit" class="w-full bg-cyan-600 text-white font-semibold py-4 rounded-lg hover:bg-cyan-700 transition-colors">
-                        Subscribe
+                    <button type="submit" class="w-full bg-indigo-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out text-lg">
+                        Let's Talk!
                     </button>
                 </form>
             </div>
-        </div>
+        </section>
+    </main>
 
-        <div class="container mx-auto mt-16 pt-8 border-t border-gray-700 text-center md:text-left">
-            <h3 class="text-2xl font-bold mb-6">We Build Websites For:</h3>
-            <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-400">
-                <a href="#" class="hover:text-cyan-600">Acupuncture</a>
-                <a href="#" class="hover:text-cyan-600">Animal Healing</a>
-                <a href="#" class="hover:text-cyan-600">Aromatherapy</a>
-                <a href="#" class="hover:text-cyan-600">Beauty Therapy</a>
-                <a href="#" class="hover:text-cyan-600">Bowen Technique</a>
-                <a href="#" class="hover:text-cyan-600">Chiropractic</a>
-                <a href="#" class="hover:text-cyan-600">Cognitive Behavioural Therapy (CBT)</a>
-                <a href="#" class="hover:text-cyan-600">Colonic Hydrotherapy</a>
-                <a href="#" class="hover:text-cyan-600">Counselling</a>
-                <a href="#" class="hover:text-cyan-600">EFT (Emotional Freedom Techniques)</a>
-                <a href="#" class="hover:text-cyan-600">Homeopathy</a>
-                <a href="#" class="hover:text-cyan-600">Hypnobirthing</a>
-                <a href="#" class="hover:text-cyan-600">Hypnotherapy</a>
-                <a href="#" class="hover:text-cyan-600">Kinesiology</a>
-                <a href="#" class="hover:text-cyan-600">Life Coaching</a>
-                <a href="#" class="hover:text-cyan-600">Massage</a>
-                <a href="#" class="hover:text-cyan-600">Meditation</a>
-                <a href="#" class="hover:text-cyan-600">Medium / Psychic</a>
-                <a href="#" class="hover:text-cyan-600">Naturopathy</a>
-                <a href="#" class="hover:text-cyan-600">Nutrition</a>
-                <a href="#" class="hover:text-cyan-600">Occupational Therapy</a>
-                <a href="#" class="hover:text-cyan-600">Osteopathy</a>
-                <a href="#" class="hover:text-cyan-600">Personal Trainers</a>
-                <a href="#" class="hover:text-cyan-600">Physiotherapy</a>
-                <a href="#" class="hover:text-cyan-600">Pilates</a>
-                <a href="#" class="hover:text-cyan-600">Pregnancy</a>
-                <a href="#" class="hover:text-cyan-600">Psychotherapy</a>
-                <a href="#" class="hover:text-cyan-600">Reflexology</a>
-                <a href="#" class="hover:text-cyan-600">Reiki</a>
-                <a href="#" class="hover:text-cyan-600">Shiatsu</a>
-                <a href="#" class="hover:text-cyan-600">Sports Therapy</a>
-                <a href="#" class="hover:text-cyan-600">Therapy Training Centres</a>
-                <a href="#" class="hover:text-cyan-600">Yoga</a>
-            </div>
-        </div>
-
-        <div class="container mx-auto mt-12 pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
-            <p class="text-center md:text-left mb-4 md:mb-0">
-                Copyright © 2024 | code+canvas | 
-                <a href="#" class="hover:text-cyan-600">Cookie Policy</a> | 
-                <a href="#" class="hover:text-cyan-600">Privacy Statement</a> | 
-                <a href="#" class="hover:text-cyan-600">Terms & Conditions</a>
-            </p>
-            <div class="flex space-x-6">
-                <a href="https://www.facebook.com/healthhosts" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="hover:text-cyan-600 text-2xl">
-                    <i class="fab fa-facebook"></i>
-                </a>
-                <a href="https://x.com/healthhosts" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" class="hover:text-cyan-600 text-2xl">
-                    <i class="fab fa-x-twitter"></i>
-                </a>
-            </div>
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm">&copy; 2025 Code + Canvas. All rights reserved.</p>
+            <p class="text-xs mt-2 text-slate-400">Crafting digital masterpieces, one line of code at a time.</p>
         </div>
     </footer>
 
