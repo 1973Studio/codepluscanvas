@@ -165,27 +165,42 @@
                     </div>
                 </div>
         
-                <!-- Other Projects Grid -->
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="group relative overflow-hidden rounded-lg">
-                        <img src="https://codepluscanvas.netlify.app/montoon.webp" alt="Mon Perry Bakery Website" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
-                        <div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center opacity-0 group-hover:opacity-100 transition duration-500 p-4">
-                            <h3 class="text-white text-2xl font-serif">Mon Perry</h3>
-                            <p class="text-white/80 text-sm mt-2">Authentic French bakery in Chapman. <br><span class="font-semibold text-rose-300">In Development</span></p>
+                <!-- Other Projects -->
+                <div class="space-y-12">
+                    <!-- Project Card: Mon Perry -->
+                    <div class="bg-stone-50 rounded-lg shadow-lg p-8 grid md:grid-cols-3 gap-8 items-center">
+                        <div class="md:col-span-1">
+                            <img src="https://codepluscanvas.netlify.app/montoon.webp" alt="Mon Perry Bakery Website" class="rounded-lg shadow-md w-full h-auto">
+                        </div>
+                        <div class="md:col-span-2 text-left">
+                            <h4 class="text-2xl font-bold font-serif mb-2">Mon Perry</h4>
+                            <p class="text-gray-600 mb-4">Authentic French bakery in Chapman, Weston Creek featuring artisanal breads, pastries and coffee. Mobile-optimized with Google reviews integration, full menu display, and interactive location map.</p>
+                            <span class="inline-block bg-rose-200 text-rose-800 text-sm font-semibold mr-3 px-2.5 py-0.5 rounded-full">In Development</span>
+                            <a href="#" class="mt-4 inline-block text-rose-500 font-semibold hover:text-rose-600 transition duration-300">View Project &rarr;</a>
                         </div>
                     </div>
-                    <div class="group relative overflow-hidden rounded-lg">
-                        <img src="https://codepluscanvas.netlify.app/osteotoon.webp" alt="Hawker Osteopathy Website" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
-                        <div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center opacity-0 group-hover:opacity-100 transition duration-500 p-4">
-                            <h3 class="text-white text-2xl font-serif">Hawker Osteopathy</h3>
-                            <p class="text-white/80 text-sm mt-2 px-2">Professional osteopathy practice with booking, service info, and practitioner profiles.</p>
+
+                    <!-- Project Card: Hawker Osteopathy -->
+                    <div class="bg-stone-50 rounded-lg shadow-lg p-8 grid md:grid-cols-3 gap-8 items-center">
+                        <div class="md:col-span-1">
+                            <img src="https://codepluscanvas.netlify.app/osteotoon.webp" alt="Hawker Osteopathy Website" class="rounded-lg shadow-md w-full h-auto">
+                        </div>
+                        <div class="md:col-span-2 text-left">
+                            <h4 class="text-2xl font-bold font-serif mb-2">Hawker Osteopathy</h4>
+                            <p class="text-gray-600 mb-4">Professional osteopathy practice website with appointment booking system, service information, and practitioner profiles. Clean, medical-grade design with accessibility focus.</p>
+                            <a href="#" class="mt-4 inline-block text-rose-500 font-semibold hover:text-rose-600 transition duration-300">View Project &rarr;</a>
                         </div>
                     </div>
-                    <div class="group relative overflow-hidden rounded-lg">
-                        <img src="https://codepluscanvas.netlify.app/shottoon.webp" alt="Shot Clock Espresso Website" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
-                        <div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center opacity-0 group-hover:opacity-100 transition duration-500 p-4">
-                            <h3 class="text-white text-2xl font-serif">Shot Clock Espresso</h3>
-                            <p class="text-white/80 text-sm mt-2 px-2">Modern coffee shop site with online ordering and a sports-themed design.</p>
+
+                    <!-- Project Card: Shot Clock Espresso -->
+                    <div class="bg-stone-50 rounded-lg shadow-lg p-8 grid md:grid-cols-3 gap-8 items-center">
+                         <div class="md:col-span-1">
+                           <img src="https://codepluscanvas.netlify.app/shottoon.webp" alt="Shot Clock Espresso Website" class="rounded-lg shadow-md w-full h-auto">
+                        </div>
+                        <div class="md:col-span-2 text-left">
+                            <h4 class="text-2xl font-bold font-serif mb-2">Shot Clock Espresso</h4>
+                            <p class="text-gray-600 mb-4">Modern coffee shop website with menu showcase, location details, and online ordering integration. Sports-themed design with dynamic elements and loyalty program features.</p>
+                            <a href="#" class="mt-4 inline-block text-rose-500 font-semibold hover:text-rose-600 transition duration-300">View Project &rarr;</a>
                         </div>
                     </div>
                 </div>
@@ -412,7 +427,7 @@
                 // Recalculate on window resize
                 window.addEventListener('resize', () => {
                     resizeCanvas();
-                    createSnowflies(); // Re-create flakes for the new size
+                    createSnowflakes(); // Re-create flakes for the new size
                 });
             }
         });
