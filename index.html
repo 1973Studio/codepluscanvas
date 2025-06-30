@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>code+canvas - Boutique Creative Studio</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%23fb7185%22>+</text></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -86,7 +87,7 @@
         <section id="about" class="py-20 bg-white">
             <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                    <img src="https://placehold.co/600x750/f2e8e4/7d5a50?text=Our+Studio" alt="Boutique Studio Interior" class="rounded-lg shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1623506418388-c0dbe42f7d24" alt="Boutique Studio Interior" class="rounded-lg shadow-xl object-cover w-full h-full max-h-[750px]">
                 </div>
                 <div class="text-left">
                     <h2 class="text-4xl font-bold font-serif mb-6">About code+canvas</h2>
@@ -284,12 +285,18 @@
     <!-- Footer -->
     <footer class="bg-stone-100">
         <div class="container mx-auto px-6 py-8 text-center text-gray-600">
-            <div class="flex justify-center space-x-6 mb-4">
-                <a href="#" class="hover:text-rose-500">Facebook</a>
-                <a href="#" class="hover:text-rose-500">Instagram</a>
-                <a href="#" class="hover:text-rose-500">Pinterest</a>
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 mb-6">
+                <a href="mailto:hello@codepluscanvas.com" class="hover:text-rose-500 transition-colors duration-300">hello@codepluscanvas.com</a>
+                <span class="hidden sm:inline">|</span>
+                <a href="tel:0424288007" class="hover:text-rose-500 transition-colors duration-300">0424 288 007</a>
+                 <span class="hidden sm:inline">|</span>
+                <a href="#" class="hover:text-rose-500 transition-colors duration-300">Privacy Policy</a>
             </div>
-            <p>&copy; 2025 code+canvas. All Rights Reserved.</p>
+             <p class="mb-6">&copy; 2025 code+canvas. All Rights Reserved.</p>
+             <div class="max-w-3xl mx-auto text-xs text-gray-500">
+                <h4 class="font-semibold font-serif mb-2">Acknowledgement of Country</h4>
+                <p>code+canvas acknowledges the Ngunnawal people as the Traditional Custodians of the land on which we work. We pay our respects to their Elders past, present and emerging, and recognise their continuing connection to land, waters and community.</p>
+             </div>
         </div>
     </footer>
     
@@ -427,7 +434,7 @@
                 // Recalculate on window resize
                 window.addEventListener('resize', () => {
                     resizeCanvas();
-                    createSnowflakes(); // Re-create flakes for the new size
+                    createSnowflakes();
                 });
             }
         });
