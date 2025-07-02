@@ -1,1 +1,292 @@
-..
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Mobile Coffee Co. - Freshly Brewed Coffee, Anywhere</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-bg {
+            /* New stable image URL */
+            background-image: url('https://codepluscanvas.com/mobilecoffee/509441601_1283484223785134_1420641919281036923_n.jpg');
+        }
+        /* Style for the modal navigation buttons */
+        .modal-nav {
+            transition: background-color 0.2s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-900 font-display">The Mobile Coffee Co.</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#about" class="text-gray-600 hover:text-amber-800 transition duration-300">About</a>
+                <a href="#services" class="text-gray-600 hover:text-amber-800 transition duration-300">Services</a>
+                <a href="#gallery" class="text-gray-600 hover:text-amber-800 transition duration-300">Gallery</a>
+                <a href="#video" class="text-gray-600 hover:text-amber-800 transition duration-300">Video</a>
+                <a href="#contact" class="text-gray-600 hover:text-amber-800 transition duration-300">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden flex items-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4">
+            <a href="#about" class="block py-2 text-gray-600 hover:text-amber-800">About</a>
+            <a href="#services" class="block py-2 text-gray-600 hover:text-amber-800">Services</a>
+            <a href="#gallery" class="block py-2 text-gray-600 hover:text-amber-800">Gallery</a>
+            <a href="#video" class="block py-2 text-gray-600 hover:text-amber-800">Video</a>
+            <a href="#contact" class="block py-2 text-gray-600 hover:text-amber-800">Contact</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-bg bg-cover bg-center h-[60vh] md:h-[80vh] flex items-center">
+            <div class="container mx-auto px-6 text-center bg-black bg-opacity-50 rounded-lg p-8">
+                <h1 class="text-4xl md:text-6xl text-white font-bold font-display mb-4">Freshly Brewed Coffee, Anywhere.</h1>
+                <p class="text-lg md:text-xl text-gray-200 mb-8">Bringing the café experience to your events, markets, and private functions.</p>
+                <a href="#contact" class="bg-amber-700 hover:bg-amber-800 text-white font-bold py-3 px-8 rounded-full transition duration-300 text-lg">Book Us Now</a>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="md:flex md:items-center">
+                    <div class="md:w-1/2">
+                         <img src="https://codepluscanvas.com/mobilecoffee/492527106_1234979375302286_1387345263353733001_n.jpg" alt="The Mobile Coffee Co. van at an event" class="rounded-lg shadow-lg w-full">
+                    </div>
+                    <div class="md:w-1/2 md:pl-12 mt-8 md:mt-0">
+                        <h2 class="text-3xl font-bold text-gray-900 font-display mb-4">Our Story</h2>
+                        <p class="text-gray-600 mb-4 leading-relaxed">The Mobile Coffee Co. was born from a simple passion: sharing great coffee with great people. We believe that you shouldn't have to compromise on quality, even when you're on the go. Our custom-fitted mobile van is a café on wheels, ready to serve our community at any location.</p>
+                        <p class="text-gray-600 leading-relaxed">We pride ourselves on using locally roasted beans and high-quality ingredients to craft the perfect cup, every time. Whether it's a flat white to start your morning or an iced latte on a sunny afternoon, we're here to make your day a little better.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-gray-900 font-display mb-12">What We Offer</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Event Hire</h3>
+                        <p class="text-gray-600">Add a unique touch to your wedding, corporate event, or private party. We bring the coffee, you bring the guests!</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Markets & Festivals</h3>
+                        <p class="text-gray-600">Find us at local markets and festivals around the region. Follow our social media to see where we'll be next.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Full Café Menu</h3>
+                        <p class="text-gray-600">From classic espressos to delicious hot chocolates and specialty teas, plus a selection of tasty treats.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-gray-900 font-display mb-2">Gallery</h2>
+                    <p class="text-gray-600 mb-10">Visit us on <a href="https://www.instagram.com/mobilecoffeecompany_au/" target="_blank" rel="noopener noreferrer" class="text-amber-700 hover:underline font-semibold">Instagram</a> for more photos!</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <!-- Gallery Images: Corrected URLs and 3x2 grid -->
+                    <div class="gallery-item relative group cursor-pointer" data-index="0"><img class="h-auto w-full rounded-lg shadow-md aspect-square object-cover" src="https://codepluscanvas.com/mobilecoffee/492511378_1234979531968937_7434333877931815638_n.jpg" alt="The Mobile Coffee Co. van with barista"><div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"><svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163m0-1.625C8.74 0 8.333.01 7.053.062 2.695.272.273 2.69.063 7.053.01 8.333 0 8.74 0 12s.01 3.667.063 4.947c.21 4.358 2.631 6.78 6.99 6.99 1.276.053 1.69.062 4.947.062s3.67-.009 4.947-.062c4.358-.21 6.78-2.631 6.99-6.99.053-1.276.062-1.69.062-4.947s-.009-3.67-.062-4.947C21.728 2.69 19.306.273 14.947.063 13.667.01 13.26 0 12 0zm0 4.865A7.135 7.135 0 1012 19.135 7.135 7.135 0 0012 4.865zm0 11.808A4.673 4.673 0 1112 7.327a4.673 4.673 0 010 9.346zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg></div></div>
+                    <div class="gallery-item relative group cursor-pointer" data-index="1"><img class="h-auto w-full rounded-lg shadow-md aspect-square object-cover" src="https://codepluscanvas.com/mobilecoffee/492044580_1226884322778458_4323558535677341457_n.jpg" alt="Happy customer with a coffee"><div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"><svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163m0-1.625C8.74 0 8.333.01 7.053.062 2.695.272.273 2.69.063 7.053.01 8.333 0 8.74 0 12s.01 3.667.063 4.947c.21 4.358 2.631 6.78 6.99 6.99 1.276.053 1.69.062 4.947.062s3.67-.009 4.947-.062c4.358-.21 6.78-2.631 6.99-6.99.053-1.276.062-1.69.062-4.947s-.009-3.67-.062-4.947C21.728 2.69 19.306.273 14.947.063 13.667.01 13.26 0 12 0zm0 4.865A7.135 7.135 0 1012 19.135 7.135 7.135 0 0012 4.865zm0 11.808A4.673 4.673 0 1112 7.327a4.673 4.673 0 010 9.346zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg></div></div>
+                    <div class="gallery-item relative group cursor-pointer" data-index="2"><img class="h-auto w-full rounded-lg shadow-md aspect-square object-cover" src="https://codepluscanvas.com/mobilecoffee/491249930_1226423932824497_4119161702549618757_n.jpg" alt="Coffee van front view"><div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"><svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163m0-1.625C8.74 0 8.333.01 7.053.062 2.695.272.273 2.69.063 7.053.01 8.333 0 8.74 0 12s.01 3.667.063 4.947c.21 4.358 2.631 6.78 6.99 6.99 1.276.053 1.69.062 4.947.062s3.67-.009 4.947-.062c4.358-.21 6.78-2.631 6.99-6.99.053-1.276.062-1.69.062-4.947s-.009-3.67-.062-4.947C21.728 2.69 19.306.273 14.947.063 13.667.01 13.26 0 12 0zm0 4.865A7.135 7.135 0 1012 19.135 7.135 7.135 0 0012 4.865zm0 11.808A4.673 4.673 0 1112 7.327a4.673 4.673 0 010 9.346zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg></div></div>
+                    <div class="gallery-item relative group cursor-pointer" data-index="3"><img class="h-auto w-full rounded-lg shadow-md aspect-square object-cover" src="https://codepluscanvas.com/mobilecoffee/488448676_1213114510822106_7077182494817630096_n.jpg" alt="Close up of coffee machine"><div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"><svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163m0-1.625C8.74 0 8.333.01 7.053.062 2.695.272.273 2.69.063 7.053.01 8.333 0 8.74 0 12s.01 3.667.063 4.947c.21 4.358 2.631 6.78 6.99 6.99 1.276.053 1.69.062 4.947.062s3.67-.009 4.947-.062c4.358-.21 6.78-2.631 6.99-6.99.053-1.276.062-1.69.062-4.947s-.009-3.67-.062-4.947C21.728 2.69 19.306.273 14.947.063 13.667.01 13.26 0 12 0zm0 4.865A7.135 7.135 0 1012 19.135 7.135 7.135 0 0012 4.865zm0 11.808A4.673 4.673 0 1112 7.327a4.673 4.673 0 010 9.346zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg></div></div>
+                    <div class="gallery-item relative group cursor-pointer" data-index="4"><img class="h-auto w-full rounded-lg shadow-md aspect-square object-cover" src="https://codepluscanvas.com/mobilecoffee/480671875_1176696807797210_8322182376947768087_n.jpg" alt="Coffee art in a cup"><div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"><svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163m0-1.625C8.74 0 8.333.01 7.053.062 2.695.272.273 2.69.063 7.053.01 8.333 0 8.74 0 12s.01 3.667.063 4.947c.21 4.358 2.631 6.78 6.99 6.99 1.276.053 1.69.062 4.947.062s3.67-.009 4.947-.062c4.358-.21 6.78-2.631 6.99-6.99.053-1.276.062-1.69.062-4.947s-.009-3.67-.062-4.947C21.728 2.69 19.306.273 14.947.063 13.667.01 13.26 0 12 0zm0 4.865A7.135 7.135 0 1012 19.135 7.135 7.135 0 0012 4.865zm0 11.808A4.673 4.673 0 1112 7.327a4.673 4.673 0 010 9.346zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg></div></div>
+                    <div class="gallery-item relative group cursor-pointer" data-index="5"><img class="h-auto w-full rounded-lg shadow-md aspect-square object-cover" src="https://codepluscanvas.com/mobilecoffee/494065813_1234979321968958_5906472107959049912_n.jpg" alt="Iced coffee drinks"><div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"><svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163m0-1.625C8.74 0 8.333.01 7.053.062 2.695.272.273 2.69.063 7.053.01 8.333 0 8.74 0 12s.01 3.667.063 4.947c.21 4.358 2.631 6.78 6.99 6.99 1.276.053 1.69.062 4.947.062s3.67-.009 4.947-.062c4.358-.21 6.78-2.631 6.99-6.99.053-1.276.062-1.69.062-4.947s-.009-3.67-.062-4.947C21.728 2.69 19.306.273 14.947.063 13.667.01 13.26 0 12 0zm0 4.865A7.135 7.135 0 1012 19.135 7.135 7.135 0 0012 4.865zm0 11.808A4.673 4.673 0 1112 7.327a4.673 4.673 0 010 9.346zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Section -->
+        <section id="video" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-gray-900 font-display mb-12">See Us In Action</h2>
+                <div class="max-w-4xl mx-auto rounded-lg overflow-hidden shadow-2xl">
+                    <video class="w-full h-full" autoplay loop muted playsinline>
+                        <source src="https://codepluscanvas.com/mobilecoffee/cofee.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-gray-800 text-white">
+            <div class="container mx-auto px-6">
+                 <div class="text-center">
+                    <h2 class="text-3xl font-bold font-display mb-4">Get In Touch</h2>
+                    <p class="text-gray-300 mb-8">Have an event coming up? Send us a message or give us a call!</p>
+                </div>
+                <div class="max-w-xl mx-auto">
+                    <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-12 mb-12 text-center">
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-6 h-6 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            <a href="tel:0499118366" class="text-gray-300 hover:text-white">0499 118 366</a>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-6 h-6 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            <a href="mailto:info@themobilecoffeecompany.com.au" class="text-gray-300 hover:text-white">info@themobilecoffeecompany.com.au</a>
+                        </div>
+                    </div>
+                    <form action="#" method="POST">
+                        <div class="mb-4"><label for="name" class="block text-gray-300 mb-2">Name</label><input type="text" id="name" name="name" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-amber-600" required></div>
+                        <div class="mb-4"><label for="email" class="block text-gray-300 mb-2">Email</label><input type="email" id="email" name="email" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-amber-600" required></div>
+                        <div class="mb-4"><label for="message" class="block text-gray-300 mb-2">Message</label><textarea id="message" name="message" rows="4" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-amber-600" required></textarea></div>
+                        <div class="text-center"><button type="submit" class="bg-amber-700 hover:bg-amber-800 text-white font-bold py-3 px-8 rounded-full transition duration-300">Send Message</button></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="font-display text-xl mb-2">The Mobile Coffee Co.</p>
+            <div class="text-gray-400 text-sm space-y-2 mb-4">
+                <p>Sydney, NSW, Australia</p>
+                <p><a href="tel:0499118366" class="hover:text-white">0499 118 366</a></p>
+                <p><a href="mailto:info@themobilecoffeecompany.com.au" class="hover:text-white">info@themobilecoffeecompany.com.au</a></p>
+            </div>
+            <div class="flex justify-center space-x-4 mb-4">
+                <a href="https://www.facebook.com/mobilecoffeeco" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg></a>
+                 <a href="https://www.instagram.com/mobilecoffeecompany_au/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163m0-1.625C8.74 0 8.333.01 7.053.062 2.695.272.273 2.69.063 7.053.01 8.333 0 8.74 0 12s.01 3.667.063 4.947c.21 4.358 2.631 6.78 6.99 6.99 1.276.053 1.69.062 4.947.062s3.67-.009 4.947-.062c4.358-.21 6.78-2.631 6.99-6.99.053-1.276.062-1.69.062-4.947s-.009-3.67-.062-4.947C21.728 2.69 19.306.273 14.947.063 13.667.01 13.26 0 12 0zm0 4.865A7.135 7.135 0 1012 19.135 7.135 7.135 0 0012 4.865zm0 11.808A4.673 4.673 0 1112 7.327a4.673 4.673 0 010 9.346zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg></a>
+            </div>
+            <p class="text-gray-500 text-sm">&copy; 2024 The Mobile Coffee Co. All Rights Reserved.</p>
+            <div class="mt-4">
+                 <a href="https://codepluscanvas.com" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-white text-2xl font-light" title="Created with Code+Canvas">+</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Image Modal -->
+    <div id="image-modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-[100] hidden transition-opacity duration-300">
+        <div class="relative bg-white p-2 rounded-lg max-w-5xl w-full max-h-full flex items-center justify-center">
+            <!-- Previous Button -->
+            <button id="modal-prev" class="modal-nav absolute left-0 top-1/2 -translate-y-1/2 bg-white/50 hover:bg-white/80 rounded-full p-2 ml-4 z-10">
+                <svg class="w-8 h-8 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            </button>
+            
+            <img id="modal-img" src="" alt="Enlarged gallery image" class="max-w-full max-h-[90vh] object-contain mx-auto">
+            
+            <!-- Next Button -->
+            <button id="modal-next" class="modal-nav absolute right-0 top-1/2 -translate-y-1/2 bg-white/50 hover:bg-white/80 rounded-full p-2 mr-4 z-10">
+                 <svg class="w-8 h-8 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+
+            <!-- Close Button -->
+            <button id="modal-close" class="modal-nav absolute top-0 right-0 bg-white/50 hover:bg-white/80 rounded-full p-2 m-4 z-10">
+                <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // --- Mobile menu toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // --- Enhanced Image Modal Logic ---
+        const imageModal = document.getElementById('image-modal');
+        const modalImg = document.getElementById('modal-img');
+        const modalClose = document.getElementById('modal-close');
+        const modalPrev = document.getElementById('modal-prev');
+        const modalNext = document.getElementById('modal-next');
+        
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        // We get the src from the child img tag of each gallery item
+        const galleryImageSrcs = Array.from(galleryItems).map(item => item.querySelector('img').src);
+        let currentIndex = 0;
+
+        // Function to show a specific image in the modal
+        const showImage = (index) => {
+            if (index < 0 || index >= galleryImageSrcs.length) {
+                console.error("Image index out of bounds");
+                return;
+            }
+            modalImg.setAttribute('src', galleryImageSrcs[index]);
+            currentIndex = index;
+            // Show/hide prev/next buttons
+            modalPrev.classList.toggle('hidden', index === 0);
+            modalNext.classList.toggle('hidden', index === galleryImageSrcs.length - 1);
+        };
+
+        // Function to open the modal
+        const openModal = (index) => {
+            showImage(index);
+            imageModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        };
+
+        // Function to close the modal
+        const closeModal = () => {
+            imageModal.classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Restore background scrolling
+        };
+
+        // Add click listener to each gallery item
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const index = parseInt(item.getAttribute('data-index'), 10);
+                openModal(index);
+            });
+        });
+
+        // Navigation listeners
+        modalPrev.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent modal from closing
+            if (currentIndex > 0) showImage(currentIndex - 1);
+        });
+
+        modalNext.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent modal from closing
+            if (currentIndex < galleryImageSrcs.length - 1) showImage(currentIndex + 1);
+        });
+
+        // Close listeners
+        modalClose.addEventListener('click', closeModal);
+        imageModal.addEventListener('click', (e) => {
+            if (e.target === imageModal) closeModal();
+        });
+
+        // Keyboard navigation
+        window.addEventListener('keydown', (e) => {
+            if (imageModal.classList.contains('hidden')) return; // Do nothing if modal is hidden
+
+            if (e.key === 'Escape') {
+                closeModal();
+            } else if (e.key === 'ArrowLeft') {
+                if (currentIndex > 0) showImage(currentIndex - 1);
+            } else if (e.key === 'ArrowRight') {
+                if (currentIndex < galleryImageSrcs.length - 1) showImage(currentIndex + 1);
+            }
+        });
+    </script>
+
+</body>
+</html>
