@@ -1,1 +1,888 @@
-..
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hawker Osteopathic Clinic | Professional Osteopathy in Canberra ACT</title>
+    <meta name="description" content="Expert osteopathic care in Hawker, Canberra. University-qualified osteopath Tom Eastman offers manual therapy, pain relief & rehabilitation. AHPRA registered. Book online.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="https://hawkerosteo.netlify.app/hawker_favicon_32x32.ico" type="image/x-icon">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0d47a1',
+                        secondary: '#1976d2',
+                        accent: '#91afa1',
+                        light: '#f0f7ff',
+                        dark: '#0a2e5a'
+                    },
+                    fontFamily: {
+                        heading: ['Playfair Display', 'serif'],
+                        body: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(rgba(10, 46, 90, 0.8), rgba(10, 46, 90, 0.8));
+        }
+        
+        .section-divider {
+            height: 60px;
+        }
+        
+        .testimonial-card {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-item {
+            transition: all 0.3s ease;
+        }
+        
+        .service-item:hover {
+            background-color: #fff;
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+        }
+        
+        .appointment-bg {
+            background: linear-gradient(rgba(145, 175, 161, 0.9), rgba(109, 146, 129, 0.9)), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop') center/cover;
+        }
+        
+        .map-container {
+            filter: grayscale(20%) brightness(95%);
+            border-radius: 12px;
+        }
+
+        .trust-badge {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        .price-highlight {
+            background: linear-gradient(45deg, #91afa1, #7ba88a);
+        }
+    </style>
+</head>
+<body class="font-body text-gray-700">
+    <!-- Header -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://hawkerosteo.netlify.app/logo.webp" alt="Hawker Osteopathic Clinic Logo" class="w-20 h-20 object-contain">
+                <div class="ml-3">
+                    <h1 class="font-heading text-xl md:text-2xl font-bold text-primary">Hawker Osteopathic Clinic</h1>
+                    <p class="text-xs text-secondary font-medium">AHPRA Registered · University Qualified</p>
+                </div>
+            </div>
+            
+            <nav class="hidden lg:block">
+                <ul class="flex space-x-6 font-medium text-sm">
+                    <li><a href="#home" class="text-primary hover:text-accent transition">Home</a></li>
+                    <li><a href="#about-osteopathy" class="hover:text-accent transition">What is Osteopathy</a></li>
+                    <li><a href="#services" class="hover:text-accent transition">Services</a></li>
+                    <li><a href="#first-visit" class="hover:text-accent transition">First Visit</a></li>
+                    <li><a href="#fees" class="hover:text-accent transition">Fees & Rebates</a></li>
+                    <li><a href="#meet-tom" class="hover:text-accent transition">Meet Tom</a></li>
+                    <li><a href="#contact" class="hover:text-accent transition">Contact</a></li>
+                    <li><a href="https://hawker-osteopathic-clinic.au2.cliniko.com/bookings#service" class="bg-accent hover:bg-green-600 text-white px-4 py-2 rounded-full transition">Book Online</a></li>
+                </ul>
+            </nav>
+            
+            <button id="mobile-menu-btn" class="lg:hidden text-primary text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white shadow-lg absolute top-20 left-0 w-full py-4">
+            <ul class="space-y-4 px-6">
+                <li><a href="#home" class="block hover:text-accent">Home</a></li>
+                <li><a href="#about-osteopathy" class="block hover:text-accent">What is Osteopathy</a></li>
+                <li><a href="#services" class="block hover:text-accent">Services</a></li>
+                <li><a href="#first-visit" class="block hover:text-accent">First Visit</a></li>
+                <li><a href="#fees" class="block hover:text-accent">Fees & Rebates</a></li>
+                <li><a href="#meet-tom" class="block hover:text-accent">Meet Tom</a></li>
+                <li><a href="#contact" class="block hover:text-accent">Contact</a></li>
+                <li><a href="https://hawker-osteopathic-clinic.au2.cliniko.com/bookings#service" class="block bg-accent text-white px-4 py-2 rounded-full text-center mt-3">Book Online</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-24 hero-bg text-white">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-12 md:mb-0">
+                <div class="flex items-center mb-6">
+                    <div class="trust-badge bg-white bg-opacity-20 rounded-full px-4 py-2 mr-4">
+                        <span class="text-sm font-medium">✓ AHPRA Registered</span>
+                    </div>
+                    <div class="trust-badge bg-white bg-opacity-20 rounded-full px-4 py-2">
+                        <span class="text-sm font-medium">✓ University Qualified</span>
+                    </div>
+                </div>
+                <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl leading-tight font-bold mb-6">
+                    Expert Osteopathic Care<br>in <span class="text-accent">Hawker, Canberra</span>
+                </h1>
+                <p class="text-xl mb-8 max-w-2xl">
+                    Manual therapy using massage, mobilisation, and manipulation techniques. Treating musculoskeletal conditions with 1200+ hours of supervised clinical practice.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://hawker-osteopathic-clinic.au2.cliniko.com/bookings#service" class="bg-accent hover:bg-green-600 text-white font-medium py-3 px-8 rounded-full transition text-center">
+                        Book Online Now
+                    </a>
+                    <a href="tel:0261696765" class="border-2 border-white hover:bg-white hover:bg-opacity-10 font-medium py-3 px-8 rounded-full transition text-center">
+                        Call (02) 6169 6765
+                    </a>
+                </div>
+                <p class="text-sm mt-4 opacity-90">No GP referral required • Health fund rebates available</p>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-grey ] rounded-2xl transform rotate-6"></div>
+                    <img src="https://hawkerosteo.netlify.app/banner2-min.png" alt="Tom Eastman providing osteopathic treatment" class="relative rounded-2xl w-full max-w-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- What is Osteopathy Section -->
+    <section id="about-osteopathy" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-dark mb-4">What is Osteopathy?</h2>
+                <div class="w-24 h-1 bg-accent mx-auto rounded"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-light rounded-2xl p-8 mb-12">
+                    <div class="flex items-start mb-6">
+                        <div class="w-16 h-16 rounded-full bg-primary bg-opacity-10 flex items-center justify-center mr-6 flex-shrink-0">
+                            <i class="fas fa-hands text-primary text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-heading text-2xl font-bold text-primary mb-4">Manual Therapy Approach</h3>
+                            <p class="text-lg leading-relaxed">
+                                Osteopathy is a form of manual therapy that uses a range of hands-on techniques such as massage, mobilisation, manipulation as well as prescribing exercises to help treat the musculoskeletal system.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-graduation-cap text-secondary text-2xl mr-4"></i>
+                            <h4 class="font-bold text-lg text-primary">University Education</h4>
+                        </div>
+                        <p>Osteopathy is a University degree encompassing Anatomy, Physiology, musculoskeletal diagnosis and Osteopathic treatment.</p>
+                    </div>
+
+                    <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-clipboard-check text-secondary text-2xl mr-4"></i>
+                            <h4 class="font-bold text-lg text-primary">AHPRA Registered</h4>
+                        </div>
+                        <p>Osteopaths in Australia are registered with the Allied Health Practitioner Regulation Agency (AHPRA).</p>
+                    </div>
+
+                    <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-clock text-secondary text-2xl mr-4"></i>
+                            <h4 class="font-bold text-lg text-primary">Clinical Experience</h4>
+                        </div>
+                        <p>Completing 1200 hours of supervised clinic practice before graduating (UK degree standard).</p>
+                    </div>
+
+                    <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-stethoscope text-secondary text-2xl mr-4"></i>
+                            <h4 class="font-bold text-lg text-primary">No Referral Needed</h4>
+                        </div>
+                        <p>You do not need a GP referral to see an Osteopath for general treatment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- First Visit Section -->
+    <section id="first-visit" class="py-20 bg-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-dark mb-4">What to Expect on Your First Visit</h2>
+                <div class="w-24 h-1 bg-accent mx-auto rounded"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-12">
+                    <div>
+                        <img src="https://hawkerosteo.netlify.app/first.png" alt="Tom Eastman providing osteopathic treatment" class="rounded-2xl shadow-lg">
+                    </div>
+                    <div>
+                        <h3 class="font-heading text-2xl font-bold text-primary mb-6">Initial Assessment Process</h3>
+                        <p class="mb-6 text-lg">
+                            On your first visit we will take a thorough medical history discussing your current complaint as well as any previous relevant medical history to start to establish a working diagnosis.
+                        </p>
+                        <p class="mb-6">
+                            Various physical testing (both orthopaedic and neurological) will be done to establish your range of motion and determine what movements may be limited. Once we have a working diagnosis we will discuss with you the best treatment plan for you.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-2xl p-6 text-center shadow-sm">
+                        <div class="w-16 h-16 rounded-full bg-accent bg-opacity-20 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-tshirt text-accent text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-primary mb-3">What to Wear</h4>
+                        <p class="text-sm">Please wear or bring loose clothing that you feel comfortable to move in or gym clothing such as shorts, t-shirt or leggings. Some disrobing may be required for examination.</p>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-6 text-center shadow-sm">
+                        <div class="w-16 h-16 rounded-full bg-accent bg-opacity-20 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-x-ray text-accent text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-primary mb-3">Bring Reports</h4>
+                        <p class="text-sm">Please bring any imaging reports or X-rays that you may have related to your area of concern to your appointment.</p>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-6 text-center shadow-sm">
+                        <div class="w-16 h-16 rounded-full bg-accent bg-opacity-20 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-credit-card text-accent text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-primary mb-3">Health Fund Card</h4>
+                        <p class="text-sm">Bring your health fund card as we can claim through HICAPS at the time of your appointment for eligible rebates.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fees & Rebates Section -->
+    <section id="fees" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-dark mb-4">Fees & Rebates</h2>
+                <div class="w-24 h-1 bg-accent mx-auto rounded"></div>
+            </div>
+            
+            <div class="max-w-5xl mx-auto">
+                <!-- Pricing Table -->
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <!-- Adult Prices -->
+                    <div class="price-highlight rounded-2xl p-8 text-white">
+                        <h3 class="font-heading text-2xl font-bold mb-6 text-center">Adult Consultations</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center border-b border-white border-opacity-30 pb-3">
+                                <div>
+                                    <h4 class="font-bold">Initial Consultation</h4>
+                                    <p class="text-sm opacity-90">60 minutes</p>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-2xl font-bold">$160</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <h4 class="font-bold">Follow-up Consultation</h4>
+                                    <p class="text-sm opacity-90">30 minutes</p>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-2xl font-bold">$130</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Children Prices -->
+                    <div class="bg-light rounded-2xl p-8 border-2 border-accent">
+                        <h3 class="font-heading text-2xl font-bold mb-6 text-center text-primary">Children Under 13 Years</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center border-b border-gray-300 pb-3">
+                                <div>
+                                    <h4 class="font-bold text-primary">Initial Consultation</h4>
+                                    <p class="text-sm text-gray-600">45 minutes</p>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-2xl font-bold text-primary">$120</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <h4 class="font-bold text-primary">Follow-up Consultation</h4>
+                                    <p class="text-sm text-gray-600">30 minutes</p>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-2xl font-bold text-primary">$100</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 p-3 bg-yellow-100 rounded-lg">
+                            <p class="text-xs text-yellow-800"><strong>Note:</strong> We do not treat children under 3 years old.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cancellation Policy -->
+                <div class="bg-red-50 border border-red-200 rounded-2xl p-6 mb-12">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-exclamation-triangle text-red-500 text-xl mr-3"></i>
+                        <h4 class="font-bold text-red-700">Cancellation Policy</h4>
+                    </div>
+                    <p class="text-red-700">Cancellation with less than 24 hours notice: 50% of consultation fee</p>
+                </div>
+
+                <!-- Rebates Information -->
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-light rounded-2xl p-8">
+                        <h3 class="font-heading text-xl font-bold text-primary mb-4">Health Insurance Rebates</h3>
+                        <p class="mb-4">Your health insurance may cover Osteopathy. We can process your claim through HICAPS at the time of your appointment.</p>
+                        <div class="flex items-center text-green-600">
+                            <i class="fas fa-check-circle mr-2"></i>
+                            <span class="font-medium">Bring your health fund card</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-light rounded-2xl p-8">
+                        <h3 class="font-heading text-xl font-bold text-primary mb-4">Government Rebates</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <i class="fas fa-medal text-yellow-500 mt-1 mr-3"></i>
+                                <div>
+                                    <p class="font-medium">DVA (Department of Veteran Affairs)</p>
+                                    <p class="text-sm text-gray-600">White or gold card holders - GP referral required</p>
+                                    <p class="text-xs text-red-600 mt-1"><strong>Currently not taking new DVA patients</strong></p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-briefcase text-blue-500 mt-1 mr-3"></i>
+                                <div>
+                                    <p class="font-medium">Workcover, Comcare, Medicare AHMR</p>
+                                    <p class="text-sm text-gray-600">GP or case manager referral required</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-dark mb-4">Our Services</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Comprehensive osteopathic care using manual therapy techniques</p>
+                <div class="w-24 h-1 bg-accent mx-auto rounded mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-item bg-white p-8 rounded-2xl border border-gray-100">
+                    <div class="w-16 h-16 rounded-full bg-secondary bg-opacity-10 flex items-center justify-center mb-6">
+                        <i class="fas fa-procedures text-secondary text-2xl"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-primary mb-4">Back & Neck Pain</h3>
+                    <p class="mb-6">Specialised manual techniques including mobilisation and manipulation to relieve chronic and acute back and neck pain.</p>
+                    <a href="https://hawker-osteopathic-clinic.au2.cliniko.com/bookings#service" class="text-secondary font-medium flex items-center">
+                        Book a session
+                        <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-item bg-white p-8 rounded-2xl border border-gray-100">
+                    <div class="w-16 h-16 rounded-full bg-secondary bg-opacity-10 flex items-center justify-center mb-6">
+                        <i class="fas fa-running text-secondary text-2xl"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-primary mb-4">Sports Injuries</h3>
+                    <p class="mb-6">Treatment and rehabilitation using massage, mobilisation techniques and prescribed exercises for optimal recovery.</p>
+                    <a href="https://hawker-osteopathic-clinic.au2.cliniko.com/bookings#service" class="text-secondary font-medium flex items-center">
+                        Book a session
+                        <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-item bg-white p-8 rounded-2xl border border-gray-100">
+                    <div class="w-16 h-16 rounded-full bg-secondary bg-opacity-10 flex items-center justify-center mb-6">
+                        <i class="fas fa-head-side-virus text-secondary text-2xl"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-primary mb-4">Headache Relief</h3>
+                    <p class="mb-6">Addressing tension headaches and migraines through cervical manipulation and massage techniques.</p>
+                    <a href="https://hawker-osteopathic-clinic.au2.cliniko.com/bookings#service" class="text-secondary font-medium flex items-center">
+                        Book a session
+                        <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-item bg-white p-8 rounded-2xl border border-gray-100">
+                    <div class="w-16 h-16 rounded-full bg-secondary bg-opacity-10 flex items-center justify-center mb-6">
+                        <i class="fas fa-user-injured text-secondary text-2xl"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-primary mb-4">Musculoskeletal Disorders</h3>
+                    <p class="mb-6">Comprehensive treatment of the musculoskeletal system using hands-on manual therapy techniques.</p>
+                    <a href="https://hawker-osteopathic-clinic.au2.cliniko.com/bookings#service" class="text-secondary font-medium flex items-center">
+                        Book a session
+                        <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-item bg-white p-8 rounded-2xl border border-gray-100">
+                    <div class="w-16 h-16 rounded-full bg-secondary bg-opacity-10 flex items-center justify-center mb-6">
+                        <i class="fas fa-dumbbell text-secondary text-2xl"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-primary mb-4">Exercise Prescription</h3>
+                    <p class="mb-6">Customized exercise programs designed to complement manual therapy and support long-term recovery.</p>
+                    <a href="https://hawker-osteopathic-clinic.au2.cliniko.com/bookings#service" class="text-secondary font-medium flex items-center">
+                        Book a session
+                        <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-item bg-white p-8 rounded-2xl border border-gray-100">
+                    <div class="w-16 h-16 rounded-full bg-secondary bg-opacity-10 flex items-center justify-center mb-6">
+                        <i class="fas fa-baby text-secondary text-2xl"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-primary mb-4">Pediatric Care</h3>
+                    <p class="mb-6">Gentle osteopathic treatment for children aged 3-13 years with specialized consultation times.</p>
+                    <a href="https://hawker-osteopathic-clinic.au2.cliniko.com/bookings#service" class="text-secondary font-medium flex items-center">
+                        Book a session
+                        <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Tom Section -->
+    <section id="meet-tom" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-dark mb-4">Meet Dr Tom Eastman</h2>
+                <p class="text-lg text-gray-600">Your AHPRA Registered Osteopath</p>
+                <div class="w-24 h-1 bg-accent mx-auto rounded mt-4"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-12 items-center max-w-5xl mx-auto">
+                <div class="md:w-1/2">
+                    <img src="https://hawkerosteo.netlify.app/tom.png" alt="Tom Eastman - Osteopath" class="rounded-2xl shadow-lg w-full h-auto object-cover max-w-md mx-auto">
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-primary text-white rounded-2xl p-6 mb-6">
+                        <h3 class="font-heading text-2xl font-bold mb-2">BSc (Hons) Ost, Dip Ost</h3>
+                        <p class="text-accent font-medium">AHPRA Registered Osteopath</p>
+                    </div>
+                    
+                    <div class="space-y-4 text-lg">
+                        <p>
+                            Tom graduated from the British College of Osteopathic Medicine in 2009. He ran a successful clinic in the UK for seven years before moving to Canberra in 2017.
+                        </p>
+                        <p>
+                            Tom has worked in Osteopathic clinics in both North and South Canberra before establishing Hawker Osteopathic Clinic.
+                        </p>
+                        <p>
+                            Over his career, Tom has worked in multiple gyms and coached CrossFit for five years, treating people of all ages and varied levels of fitness.
+                        </p>
+                        <p>
+                            In his free time, Tom loves spending time with his family and dog Olive. He enjoys Powerlifting, CrossFit, Golf and Mountain biking.
+                        </p>
+                    </div>
+
+                    <!-- Credentials -->
+                    <div class="mt-8 grid grid-cols-2 gap-4">
+                        <div class="bg-light rounded-lg p-4 text-center">
+                            <div class="text-2xl font-bold text-primary">15+</div>
+                            <div class="text-sm text-gray-600">Years Experience</div>
+                        </div>
+                        <div class="bg-light rounded-lg p-4 text-center">
+                            <div class="text-2xl font-bold text-primary">1200+</div>
+                            <div class="text-sm text-gray-600">Clinical Hours</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-dark mb-4">Patient Stories</h2>
+                <p class="text-lg text-gray-600">Hear what our patients have to say about their experiences</p>
+                <div class="w-24 h-1 bg-accent mx-auto rounded mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white p-8 rounded-2xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden mr-4">
+                            <img src="https://hawkerosteo.netlify.app/SB_Google.png" alt="Sheldon Bøger" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-700">Sheldon B.</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="italic text-gray-600 mb-4">"I really can't say enough good things about Hawker Osteopathic Clinic. Tom helped me a while ago with my recovery from a severe back injury and I've come to him for a few other issues, most recently my shoulder. He is extremely knowledgeable and makes it easy to understand the condition and the process of rehabilitation. His pricing is very reasonable, and he accepts private health insurance. His treatment room is well equipped and pleasant, he provides exercises to assist you in your recovery and he's a super nice guy. I highly recommend Tom and Hawker Osteopathic Clinic."</p>
+                    <div class="text-xs text-gray-600">Treated for: Back & Shoulder Injuries</div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-white p-8 rounded-2xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden mr-4">
+                            <img src="https://hawkerosteo.netlify.app/RD_FB.jpg" alt="Rhiannon D." class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-700">Rhiannon D.</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="italic text-gray-600 mb-4">"Tom is a fantastic osteopath with sound knowledge and skill. Your skeleton is in good hands! He's helped with flexibility, joint and muscle pain, and recovery from injury."</p>
+                    <div class="text-xs text-gray-600">Treated for: Various musculoskeletal issues</div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-white p-8 rounded-2xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden mr-4">
+                            <img src="https://hawkerosteo.netlify.app/ST_Google.png" alt="Charan T." class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-700">Charan T.</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="italic text-gray-600 mb-4">"I went to Tom, after not having much luck with others and my issue was heading towards stopping me from going to work. Tom was awesome, he was spot on diagnosing the issue first time. He explained the process, follow up plan, exercises to do at home. He fixed 80% of issue in the first two sessions. He was also sensitive to cost of follow ups which I am grateful for. He accepts private health insurance on the spot. I was able to work with Tom to address the issue quickly, he is a very intuitive Osteopath and would highly recommend him."</p>
+                    <div class="text-xs text-gray-600">Treated for: Work-related injury</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-dark mb-4">Frequently Asked Questions</h2>
+                <div class="w-24 h-1 bg-accent mx-auto rounded"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-6">
+                        <div class="bg-light rounded-xl p-6">
+                            <h3 class="font-bold text-lg mb-3 text-primary">What should I expect during my first visit?</h3>
+                            <p class="text-gray-600">Your first appointment takes 60 minutes and includes a comprehensive health history, physical examination, diagnosis, and initial treatment. Please arrive 10 minutes early.</p>
+                        </div>
+                        
+                        <div class="bg-light rounded-xl p-6">
+                            <h3 class="font-bold text-lg mb-3 text-primary">How many sessions will I need?</h3>
+                            <p class="text-gray-600">This varies based on your condition. Acute issues may resolve in 2-4 sessions, while chronic conditions may require a longer treatment plan. We'll discuss this during your initial assessment.</p>
+                        </div>
+                        
+                        <div class="bg-light rounded-xl p-6">
+                            <h3 class="font-bold text-lg mb-3 text-primary">Do you accept health insurance?</h3>
+                            <p class="text-gray-600">Yes, we work with most major health insurance providers and can process claims through HICAPS. Please bring your health fund card to your appointment.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="bg-light rounded-xl p-6">
+                            <h3 class="font-bold text-lg mb-3 text-primary">Do I need a referral from my GP?</h3>
+                            <p class="text-gray-600">No, you don't need a GP referral for general osteopathic treatment. However, referrals are required for some government schemes like DVA, Workcover, and Medicare AHMR.</p>
+                        </div>
+                        
+                        <div class="bg-light rounded-xl p-6">
+                            <h3 class="font-bold text-lg mb-3 text-primary">Do you treat children?</h3>
+                            <p class="text-gray-600">Yes, we treat children aged 3-13 years with specialized consultation times and gentle techniques. We do not treat children under 3 years old.</p>
+                        </div>
+                        
+                        <div class="bg-light rounded-xl p-6">
+                            <h3 class="font-bold text-lg mb-3 text-primary">What is your cancellation policy?</h3>
+                            <p class="text-gray-600">Cancellations with less than 24 hours notice incur a charge of 50% of the consultation fee. We appreciate as much notice as possible.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-dark mb-4">Contact Us</h2>
+                <p class="text-lg text-gray-600">Get in touch with our friendly team</p>
+                <div class="w-24 h-1 bg-accent mx-auto rounded mt-4"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-12 max-w-6xl mx-auto">
+                <div class="md:w-1/2">
+                    <div class="bg-white rounded-2xl p-8 shadow-sm">
+                        <h3 class="font-bold text-2xl text-primary mb-6">Visit Our Clinic</h3>
+                        
+                        <div class="space-y-6 mb-8">
+                            <div class="flex">
+                                <div class="w-12 h-12 rounded-full bg-primary bg-opacity-10 flex items-center justify-center mr-4">
+                                    <i class="fas fa-map-marker-alt text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg text-gray-800">Location</h4>
+                                    <p>23 Moroak Street<br>Hawker, ACT 2614<br>Australia</p>
+                                    <p class="text-sm text-gray-600 mt-1">Free off-street parking available</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <div class="w-12 h-12 rounded-full bg-primary bg-opacity-10 flex items-center justify-center mr-4">
+                                    <i class="fas fa-clock text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg text-gray-800">Opening Hours</h4>
+                                    <p>Mon-Thu: 8:00 AM - 7:00 PM<br>Fri: 8:00 AM - 7:00 PM<br>Sat: 8:00 AM - 1:00 PM<br>Sun: Closed</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <div class="w-12 h-12 rounded-full bg-primary bg-opacity-10 flex items-center justify-center mr-4">
+                                    <i class="fas fa-phone-alt text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg text-gray-800">Phone & Email</h4>
+                                    <p>Phone: <a href="tel:0261696765" class="text-primary hover:text-accent">(02) 6169 6765</a><br>Email: <a href="mailto:info@hawkerosteopathicclinic.com.au" class="text-primary hover:text-accent">info@hawkerosteopathicclinic.com.au</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1304.7984283154398!2d149.0381332768543!3d-35.25067191595574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b1655a2457b7a33%3A0x98b3a2cd8efe8ebc!2s23%20Moroak%20St%2C%20Hawker%20ACT%202614%2C%20Australia!5e0!3m2!1sen!2sus!4v1710317373427!5m2!1sen!2sus" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="bg-primary rounded-2xl p-8 text-white">
+                        <h3 class="font-bold text-2xl mb-6">Book Your Appointment</h3>
+                        <p class="mb-6">Ready to start your journey to better health? Book online or call us directly.</p>
+                        
+                        <div class="space-y-4 mb-8">
+                            <a href="https://hawker-osteopathic-clinic.au2.cliniko.com/bookings#service" class="block w-full bg-accent hover:bg-green-600 text-white font-medium py-4 px-6 rounded-xl text-center transition">
+                                <i class="fas fa-calendar-plus mr-2"></i>
+                                Book Online Now
+                            </a>
+                            <a href="tel:0261696765" class="block w-full bg-white text-primary hover:bg-gray-100 font-medium py-4 px-6 rounded-xl text-center transition">
+                                <i class="fas fa-phone mr-2"></i>
+                                Call (02) 6169 6765
+                            </a>
+                        </div>
+                        
+                        <div class="border-t border-white border-opacity-20 pt-6">
+                            <h4 class="font-bold mb-4">Quick Contact</h4>
+                            <div class="space-y-3">
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-accent mr-3"></i>
+                                    <span>No GP referral required</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-accent mr-3"></i>
+                                    <span>Health fund rebates available</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-accent mr-3"></i>
+                                    <span>HICAPS on-site claiming</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-accent mr-3"></i>
+                                    <span>Free parking available</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <img src="https://hawkerosteo.netlify.app/logo.webp" alt="Hawker Osteopathic Clinic Logo" class="w-20 h-20 object-contain">
+                        <h3 class="font-heading text-xl font-bold ml-3">Hawker Osteopathic Clinic</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4">AHPRA registered osteopath providing manual therapy for the musculoskeletal system in Hawker, Canberra.</p>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-phone text-accent mr-2"></i>
+                        <span>(02) 6169 6765</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/HawkerOsteopathicClinic" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-primary flex items-center justify-center hover:bg-accent transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.google.com/maps/place/23+Moroak+St,+Hawker+ACT+2614,+Australia" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-primary flex items-center justify-center hover:bg-accent transition">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </a>
+                        <a href="mailto:info@hawkerosteopathicclinic.com.au" class="w-10 h-10 rounded-full bg-primary flex items-center justify-center hover:bg-accent transition">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-xl mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-300 hover:text-white transition">Home</a></li>
+                        <li><a href="#about-osteopathy" class="text-gray-300 hover:text-white transition">What is Osteopathy</a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-white transition">Our Services</a></li>
+                        <li><a href="#first-visit" class="text-gray-300 hover:text-white transition">First Visit</a></li>
+                        <li><a href="#fees" class="text-gray-300 hover:text-white transition">Fees & Rebates</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-white transition">Contact Us</a></li>
+                        <li><a href="https://hawkerosteo.netlify.app/privacy-policy.html" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="https://hawkerosteo.netlify.app/terms.html" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-xl mb-6">Our Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#services" class="text-gray-300 hover:text-white transition">Back & Neck Pain</a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-white transition">Sports Injuries</a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-white transition">Headache Relief</a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-white transition">Exercise Prescription</a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-white transition">Pediatric Care (3-13 yrs)</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-xl mb-6">Contact Info</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-primary mt-1 mr-3"></i>
+                            <span class="text-gray-300">23 Moroak Street<br>Hawker, ACT 2614</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-primary mr-3"></i>
+                            <span class="text-gray-300">(02) 6169 6765</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-primary mr-3"></i>
+                            <span class="text-gray-300 text-sm">info@hawkerosteopathicclinic.com.au</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-clock text-primary mt-1 mr-3"></i>
+                            <span class="text-gray-300">Mon-Fri: 8AM-7PM<br>Sat: 8AM-1PM<br>Sun: Closed</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-700 text-center text-gray-400">
+                <p class="mb-2">ABN: 13556216095 | AHPRA Registered Osteopath</p>
+                <p>&copy; 2025 Hawker Osteopathic Clinic. All rights reserved.</p>
+                <p class="mt-2"><a href="https://1973.studio/" target="_blank" class="text-yellow-400 hover:text-yellow-300 transition">Website Made in 1973</a></p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('#mobile-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add some interactive elements for better UX
+        document.addEventListener('DOMContentLoaded', function() {
+            // Highlight active navigation
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('nav a[href^="#"]');
+            
+            window.addEventListener('scroll', function() {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (pageYOffset >= (sectionTop - 200)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('text-accent');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('text-accent');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
