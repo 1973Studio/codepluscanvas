@@ -331,86 +331,87 @@
     </footer>
     
     <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+        // Use window.onload to ensure all content (including images) is loaded before running scripts
+        window.onload = function() {
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
 
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                // Close mobile menu on click
-                if (!mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
-                }
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
             });
-        });
 
-        // --- Currency Converter Logic ---
-        const priceValueEl = document.getElementById('price-value');
-        const currencySymbolEl = document.getElementById('currency-symbol');
-        const currencyButtons = document.querySelectorAll('.currency-btn');
-
-        const rates = {
-            AUD: { rate: 1, symbol: '$' },
-            USD: { rate: 0.65, symbol: '$' },
-            EUR: { rate: 0.61, symbol: '€' },
-            NZD: { rate: 1.09, symbol: 'NZ$' },
-            CNY: { rate: 4.75, symbol: '¥' },
-            GBP: { rate: 0.52, symbol: '£' },
-        };
-        const basePriceAUD = 45;
-
-        currencyButtons.forEach(button => {
-            button.addEventListener('click', (e) => {
-                const clickedButton = e.currentTarget;
-                const targetCurrency = clickedButton.dataset.currency;
-
-                // If the clicked button is already the 'AUD' reset button
-                if (targetCurrency === 'AUD') {
-                    // Reset price to AUD
-                    priceValueEl.textContent = basePriceAUD;
-                    currencySymbolEl.textContent = rates.AUD.symbol;
-                    
-                    // Restore the button to its original state
-                    const originalCurrency = clickedButton.dataset.originalCurrency;
-                    clickedButton.textContent = originalCurrency;
-                    clickedButton.dataset.currency = originalCurrency;
-                    clickedButton.classList.remove('active');
-                    return;
-                }
-
-                // Reset any other button that might be acting as the 'AUD' button
-                currencyButtons.forEach(btn => {
-                    if (btn.dataset.currency === 'AUD') {
-                        const original = btn.dataset.originalCurrency;
-                        btn.textContent = original;
-                        btn.dataset.currency = original;
-                        btn.classList.remove('active');
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    // Close mobile menu on click
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
                     }
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
                 });
-
-                // Calculate and display new price
-                const { rate, symbol } = rates[targetCurrency];
-                const newPrice = (basePriceAUD * rate).toFixed(0);
-                priceValueEl.textContent = newPrice;
-                currencySymbolEl.textContent = symbol;
-
-                // Turn the clicked button into the new 'AUD' reset button
-                clickedButton.textContent = 'AUD';
-                clickedButton.dataset.currency = 'AUD';
-                clickedButton.classList.add('active');
             });
-        });
-        
-        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- Currency Converter Logic ---
+            const priceValueEl = document.getElementById('price-value');
+            const currencySymbolEl = document.getElementById('currency-symbol');
+            const currencyButtons = document.querySelectorAll('.currency-btn');
+
+            const rates = {
+                AUD: { rate: 1, symbol: '$' },
+                USD: { rate: 0.65, symbol: '$' },
+                EUR: { rate: 0.61, symbol: '€' },
+                NZD: { rate: 1.09, symbol: 'NZ$' },
+                CNY: { rate: 4.75, symbol: '¥' },
+                GBP: { rate: 0.52, symbol: '£' },
+            };
+            const basePriceAUD = 45;
+
+            currencyButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const clickedButton = e.currentTarget;
+                    const targetCurrency = clickedButton.dataset.currency;
+
+                    // If the clicked button is already the 'AUD' reset button
+                    if (targetCurrency === 'AUD') {
+                        // Reset price to AUD
+                        priceValueEl.textContent = basePriceAUD;
+                        currencySymbolEl.textContent = rates.AUD.symbol;
+                        
+                        // Restore the button to its original state
+                        const originalCurrency = clickedButton.dataset.originalCurrency;
+                        clickedButton.textContent = originalCurrency;
+                        clickedButton.dataset.currency = originalCurrency;
+                        clickedButton.classList.remove('active');
+                        return;
+                    }
+
+                    // Reset any other button that might be acting as the 'AUD' button
+                    currencyButtons.forEach(btn => {
+                        if (btn.dataset.currency === 'AUD') {
+                            const original = btn.dataset.originalCurrency;
+                            btn.textContent = original;
+                            btn.dataset.currency = original;
+                            btn.classList.remove('active');
+                        }
+                    });
+
+                    // Calculate and display new price
+                    const { rate, symbol } = rates[targetCurrency];
+                    const newPrice = (basePriceAUD * rate).toFixed(0);
+                    priceValueEl.textContent = newPrice;
+                    currencySymbolEl.textContent = symbol;
+
+                    // Turn the clicked button into the new 'AUD' reset button
+                    clickedButton.textContent = 'AUD';
+                    clickedButton.dataset.currency = 'AUD';
+                    clickedButton.classList.add('active');
+                });
+            });
+            
             // Set video playback speed
             const heroVideo = document.getElementById('hero-video');
             if (heroVideo) {
@@ -487,7 +488,7 @@
                     createSnowflakes();
                 });
             }
-        });
+        };
 
     </script>
 
