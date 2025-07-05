@@ -46,21 +46,6 @@
             }
         }
     </script>
-    <style>
-        /* Style for menu tabs */
-        .menu-tab-btn {
-             background-color: #e3e8e3; /* sage-100 */
-             color: #334233; /* sage-800 */
-             transition: background-color 0.3s, color 0.3s;
-        }
-        .menu-tab-btn:hover {
-            background-color: #c7d2c7; /* sage-200 */
-        }
-        .menu-tab-btn.active {
-            background-color: #4a614a; /* sage-600 */
-            color: white;
-        }
-    </style>
 </head>
 <body class="font-sans text-gray-800 bg-cream-50">
     <!-- Navigation -->
@@ -173,7 +158,7 @@
                 </div>
                 <div class="relative">
                     <div class="rounded-2xl overflow-hidden shadow-2xl h-[600px]">
-                        <img src="https://codepluscanvas.com/NateEm.jpg" alt="Owners Nathan and Emma" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x750/c7d2c7/3d4f3d?text=Image+Not+Found';">
+                        <img src="https://codepluscanvas.com/rodneys/NateEm.jpg" alt="Owners Nathan and Emma" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x750/c7d2c7/3d4f3d?text=Image+Not+Found';">
                     </div>
                     <!-- Decorative element -->
                     <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-cream-300 rounded-full opacity-50 z-[-1]"></div>
@@ -185,336 +170,103 @@
     <!-- Menu Section -->
     <section id="menu" class="py-20 bg-sage-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-serif font-bold text-sage-800 mb-6">Our Menus</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    From casual cafe dining to elegant high tea experiences, all featuring locally sourced seasonal ingredients
-                </p>
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-sage-800 mb-6">Our Menu</h2>
+                <div class="max-w-3xl mx-auto text-gray-600 space-y-4">
+                    <p>We love local growers and suppliers and buy local as much as possible. Our eggs are from Majura Valley Egg Farm. We also grow our own herbs and edible flowers.</p>
+                    <p class="text-sm">Please order and pay at the counter & check the number on your table prior to ordering. Let us know of any allergies when you are ordering. 15% surcharge on public holidays. Corkage $12 Per Bottle & Cakeage $2 PP.</p>
+                </div>
             </div>
 
-            <!-- Menu Navigation Tabs -->
-            <div class="flex justify-center mb-12">
-                <div class="bg-white rounded-full p-1 shadow-lg flex flex-wrap justify-center">
-                    <button class="menu-tab-btn active px-6 py-3 rounded-full text-sm font-medium" data-menu="cafe">Cafe Menu</button>
-                    <button class="menu-tab-btn px-6 py-3 rounded-full text-sm font-medium" data-menu="morning-tea">Morning/Afternoon Tea</button>
-                    <button class="menu-tab-btn px-6 py-3 rounded-full text-sm font-medium" data-menu="high-tea">High Tea</button>
-                    <button class="menu-tab-btn px-6 py-3 rounded-full text-sm font-medium" data-menu="garden-table">Garden Table</button>
-                    <button class="menu-tab-btn px-6 py-3 rounded-full text-sm font-medium" data-menu="functions">Functions</button>
+            <!-- Curated Menu -->
+            <div class="bg-white rounded-2xl p-8 shadow-lg max-w-5xl mx-auto">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
+                    <!-- Breakfast -->
+                    <div>
+                        <h3 class="text-2xl font-serif font-bold text-sage-800 mb-4 border-b-2 border-sage-200 pb-2">Breakfast Favourites</h3>
+                        <ul class="space-y-4 text-gray-700">
+                            <li>
+                                <div class="flex justify-between font-medium"><span>GARDENERS BREAKFAST</span><span>$30</span></div>
+                                <p class="text-sm text-gray-500">Toasted Sourdough, Two Poached Eggs, Bacon, Chipolata Sausage, Hash brown, Mushrooms, Roasted Tomato (GFO)</p>
+                            </li>
+                            <li>
+                                <div class="flex justify-between font-medium"><span>EGGS BENNY</span><span>$22-$24</span></div>
+                                <p class="text-sm text-gray-500">Choice of Ham, Bacon, or Smoked Salmon ($24)</p>
+                            </li>
+                             <li>
+                                <div class="flex justify-between font-medium"><span>SAUTÉED MUSHROOMS</span><span>$22</span></div>
+                                <p class="text-sm text-gray-500">Toasted Sourdough, Goat’s Cheese, Rocket, Poached Egg (V, GFO, VGO)</p>
+                            </li>
+                        </ul>
+                    </div>
+                     <!-- Lunch -->
+                    <div>
+                        <h3 class="text-2xl font-serif font-bold text-sage-800 mb-4 border-b-2 border-sage-200 pb-2">Lunch Highlights</h3>
+                        <ul class="space-y-4 text-gray-700">
+                            <li>
+                                <div class="flex justify-between font-medium"><span>GOURMET BEEF BURGER</span><span>$25</span></div>
+                                <p class="text-sm text-gray-500">Lettuce, Tomato, Onion, Beetroot, Pickle Aioli, Swiss Cheese, Chips (GFO)</p>
+                            </li>
+                            <li>
+                                <div class="flex justify-between font-medium"><span>YOGHURT BATTERED FISH + CHIPS</span><span>$28</span></div>
+                                <p class="text-sm text-gray-500">Fresh Fish, Chips, Fresh Salad, Homemade Tartare</p>
+                            </li>
+                            <li>
+                                <div class="flex justify-between font-medium"><span>SALMON + COUS COUS SALAD</span><span>$33</span></div>
+                                <p class="text-sm text-gray-500">Pan Fried Salmon, Cous Cous, Currants, Pine Nuts, Fresh Herbs, Lemony Yoghurt</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Drinks & Sweets -->
+                    <div>
+                        <h3 class="text-2xl font-serif font-bold text-sage-800 mb-4 border-b-2 border-sage-200 pb-2">Sweets & Coffee</h3>
+                        <ul class="space-y-4 text-gray-700">
+                            <li>
+                                <div class="flex justify-between font-medium"><span>DEVONSHIRE TEA</span><span>$14</span></div>
+                                <p class="text-sm text-gray-500">Two Scones with Jam & Cream with Tea or Small Coffee</p>
+                            </li>
+                            <li>
+                                <div class="flex justify-between font-medium"><span>CAKES, SLICES & MUFFINS</span><span>$6-$9</span></div>
+                                <p class="text-sm text-gray-500">Large selection available in the fridge next to the till.</p>
+                            </li>
+                            <li>
+                                <div class="flex justify-between font-medium"><span>SEVEN MILES COFFEE</span><span>$5-$6</span></div>
+                                <p class="text-sm text-gray-500">Organic & Fair Trade Leaf & Berry Beans. All your favourites available.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Full Menu Button -->
+                <div class="text-center mt-12 pt-8 border-t border-sage-100">
+                     <a href="https://codepluscanvas.com/rodneys/cafe-menu-0924.pdf" target="_blank" class="bg-sage-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-sage-700 transition-all inline-flex items-center">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                        View Full Cafe Menu (PDF)
+                    </a>
+                </div>
+            </div>
+
+            <!-- High Tea Section -->
+            <div class="bg-white rounded-2xl p-8 shadow-lg max-w-5xl mx-auto mt-12">
+                <div class="text-center">
+                    <h3 class="text-3xl font-serif font-bold text-sage-800 mb-4">High Tea at Rodney's</h3>
+                    <p class="text-gray-600 mb-6 max-w-2xl mx-auto">Indulge in a unique high tea experience, combining classic elegance with a modern twist, featuring sweet and savoury treats made from locally sourced ingredients.</p>
+                    <a href="https://codepluscanvas.com/rodneys/High_Tea_2023.pdf" target="_blank" class="bg-sage-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-sage-700 transition-all inline-flex items-center">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                        View High Tea Menu (PDF)
+                    </a>
                 </div>
             </div>
             
-            <!-- Cafe Menu -->
-            <div id="cafe-menu" class="menu-content">
-                <div class="grid lg:grid-cols-3 gap-8 mb-12">
-                    <div class="bg-white rounded-2xl p-8 shadow-lg">
-                        <h3 class="text-2xl font-serif font-bold text-sage-800 mb-6">Breakfast</h3>
-                        <p class="text-gray-600 mb-6">Available 9am - 11:30am</p>
-                        <ul class="space-y-3 text-gray-700">
-                            <li class="flex justify-between border-b border-gray-100 pb-2">
-                                <div>
-                                    <span class="font-medium">Gardeners Breakfast</span>
-                                    <p class="text-sm text-gray-500">Eggs, bacon, sausage, mushrooms, tomato, toast</p>
-                                </div>
-                                <span class="font-semibold">$22</span>
-                            </li>
-                            <li class="flex justify-between border-b border-gray-100 pb-2">
-                                <div>
-                                    <span class="font-medium">Eggs Benedict</span>
-                                    <p class="text-sm text-gray-500">Choice of bacon or smoked salmon</p>
-                                </div>
-                                <span class="font-semibold">$20-24</span>
-                            </li>
-                            <li class="flex justify-between border-b border-gray-100 pb-2">
-                                <div>
-                                    <span class="font-medium">Avocado Toast</span>
-                                    <p class="text-sm text-gray-500">Multigrain toast, poached egg</p>
-                                </div>
-                                <span class="font-semibold">$16</span>
-                            </li>
-                            <li class="flex justify-between border-b border-gray-100 pb-2">
-                                <div>
-                                    <span class="font-medium">Pancakes</span>
-                                    <p class="text-sm text-gray-500">Berry compote, maple syrup</p>
-                                </div>
-                                <span class="font-semibold">$18</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="bg-white rounded-2xl p-8 shadow-lg">
-                        <h3 class="text-2xl font-serif font-bold text-sage-800 mb-6">Lunch</h3>
-                        <p class="text-gray-600 mb-6">Available 11:30am - 4pm</p>
-                        <ul class="space-y-3 text-gray-700">
-                            <li class="flex justify-between border-b border-gray-100 pb-2">
-                                <div>
-                                    <span class="font-medium">Brisket Roll</span>
-                                    <p class="text-sm text-gray-500">Slow-cooked brisket, fresh salad</p>
-                                </div>
-                                <span class="font-semibold">$24</span>
-                            </li>
-                            <li class="flex justify-between border-b border-gray-100 pb-2">
-                                <div>
-                                    <span class="font-medium">Garden Salad Bowl</span>
-                                    <p class="text-sm text-gray-500">Seasonal vegetables, house dressing</p>
-                                </div>
-                                <span class="font-semibold">$19</span>
-                            </li>
-                            <li class="flex justify-between border-b border-gray-100 pb-2">
-                                <div>
-                                    <span class="font-medium">Seasonal Soup</span>
-                                    <p class="text-sm text-gray-500">Made fresh daily, crusty bread</p>
-                                </div>
-                                <span class="font-semibold">$16</span>
-                            </li>
-                            <li class="flex justify-between border-b border-gray-100 pb-2">
-                                <div>
-                                    <span class="font-medium">Fish of the Day</span>
-                                    <p class="text-sm text-gray-500">Fresh local catch, seasonal sides</p>
-                                </div>
-                                <span class="font-semibold">MP</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="bg-white rounded-2xl p-8 shadow-lg">
-                        <h3 class="text-2xl font-serif font-bold text-sage-800 mb-6">Drinks & Treats</h3>
-                        <p class="text-gray-600 mb-6">All day menu</p>
-                        <ul class="space-y-3 text-gray-700">
-                            <li class="flex justify-between border-b border-gray-100 pb-2">
-                                <div>
-                                    <span class="font-medium">Coffee</span>
-                                    <p class="text-sm text-gray-500">Seven Mile roast</p>
-                                </div>
-                                <span class="font-semibold">$5</span>
-                            </li>
-                            <li class="flex justify-between border-b border-gray-100 pb-2">
-                                <div>
-                                    <span class="font-medium">Homemade Cakes</span>
-                                    <p class="text-sm text-gray-500">Daily selection</p>
-                                </div>
-                                <span class="font-semibold">$8</span>
-                            </li>
-                            <li class="flex justify-between border-b border-gray-100 pb-2">
-                                <div>
-                                    <span class="font-medium">Fresh Scones</span>
-                                    <p class="text-sm text-gray-500">Jam and cream</p>
-                                </div>
-                                <span class="font-semibold">$6</span>
-                            </li>
-                            <li class="flex justify-between border-b border-gray-100 pb-2">
-                                <div>
-                                    <span class="font-medium">Fresh Juices</span>
-                                    <p class="text-sm text-gray-500">Orange, apple, seasonal</p>
-                                </div>
-                                <span class="font-semibold">$7</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Morning/Afternoon Tea Menu -->
-            <div id="morning-tea-menu" class="menu-content hidden">
-                <div class="grid lg:grid-cols-2 gap-8 mb-12">
-                    <div class="bg-white rounded-2xl p-8 shadow-lg">
-                        <h3 class="text-2xl font-serif font-bold text-sage-800 mb-6">Devonshire Tea</h3>
-                        <p class="text-gray-600 mb-6">Traditional afternoon tea experience</p>
-                        <ul class="space-y-4 text-gray-700">
-                            <li class="border-b border-gray-100 pb-4">
-                                <div class="flex justify-between items-start">
-                                    <div>
-                                        <span class="font-medium block">Classic Devonshire Tea</span>
-                                        <p class="text-sm text-gray-500">Fresh scones, jam, cream, tea or coffee</p>
-                                    </div>
-                                    <span class="font-semibold">$14</span>
-                                </div>
-                            </li>
-                            <li class="border-b border-gray-100 pb-4">
-                                <div class="flex justify-between items-start">
-                                    <div>
-                                        <span class="font-medium block">Deluxe Tea Service</span>
-                                        <p class="text-sm text-gray-500">Scones, cake slice, tea selection</p>
-                                    </div>
-                                    <span class="font-semibold">$18</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="bg-white rounded-2xl p-8 shadow-lg">
-                        <h3 class="text-2xl font-serif font-bold text-sage-800 mb-6">Sweet Treats</h3>
-                        <p class="text-gray-600 mb-6">Made fresh daily</p>
-                        <ul class="space-y-4 text-gray-700">
-                            <li class="flex justify-between">
-                                <span>Homemade Biscuits</span>
-                                <span class="font-semibold">$4</span>
-                            </li>
-                            <li class="flex justify-between">
-                                <span>Seasonal Slices</span>
-                                <span class="font-semibold">$6</span>
-                            </li>
-                            <li class="flex justify-between">
-                                <span>Muffins</span>
-                                <span class="font-semibold">$5</span>
-                            </li>
-                            <li class="flex justify-between">
-                                <span>Seasonal Tart</span>
-                                <span class="font-semibold">$8</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- High Tea Menu -->
-            <div id="high-tea-menu" class="menu-content hidden">
-                <div class="bg-white rounded-2xl p-8 shadow-lg max-w-4xl mx-auto">
-                    <h3 class="text-3xl font-serif font-bold text-sage-800 mb-6 text-center">High Tea at Rodney's</h3>
-                    <p class="text-gray-600 mb-8 text-center leading-relaxed">
-                        Indulge in a unique high tea experience in Canberra's scenic surroundings. Located within the tranquil gardens of Pialligo, our high tea combines classic elegance with a modern twist, featuring sweet and savoury treats made from locally sourced ingredients.
-                    </p>
-                    
-                    <div class="grid md:grid-cols-3 gap-8 mb-8">
-                        <div class="text-center">
-                            <div class="w-16 h-16 bg-sage-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span class="text-2xl font-serif font-bold text-sage-600">1</span>
-                            </div>
-                            <h4 class="font-semibold text-sage-800 mb-2">Savoury Tier</h4>
-                            <p class="text-sm text-gray-600">Delicate finger sandwiches and seasonal savouries</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="w-16 h-16 bg-sage-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span class="text-2xl font-serif font-bold text-sage-600">2</span>
-                            </div>
-                            <h4 class="font-semibold text-sage-800 mb-2">Sweet Tier</h4>
-                            <p class="text-sm text-gray-600">Handmade cakes, petite fours, and seasonal desserts</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="w-16 h-16 bg-sage-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span class="text-2xl font-serif font-bold text-sage-600">3</span>
-                            </div>
-                            <h4 class="font-semibold text-sage-800 mb-2">Fresh Scones</h4>
-                            <p class="text-sm text-gray-600">Warm scones with jam and cream</p>
-                        </div>
-                    </div>
-
-                    <div class="text-center border-t pt-6">
-                        <p class="text-2xl font-bold text-sage-800 mb-2">$35 per person</p>
-                        <p class="text-gray-600">Includes premium tea selection or coffee</p>
-                        <p class="text-sm text-gray-500 mt-4">Perfect for celebrations, gatherings, or a special day out</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Garden Table Menu -->
-            <div id="garden-table-menu" class="menu-content hidden">
-                <div class="bg-white rounded-2xl p-8 shadow-lg max-w-4xl mx-auto">
-                    <h3 class="text-3xl font-serif font-bold text-sage-800 mb-6 text-center">Garden Table Experience</h3>
-                    <p class="text-gray-600 mb-8 text-center">
-                        Enjoy a relaxed dining experience in our beautiful outdoor garden setting with specially curated sharing plates and seasonal selections.
-                    </p>
-                    
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div>
-                            <h4 class="text-xl font-serif font-bold text-sage-800 mb-4">Sharing Plates</h4>
-                            <ul class="space-y-3 text-gray-700">
-                                <li class="flex justify-between border-b border-gray-100 pb-2">
-                                    <span>Seasonal Antipasto Board</span>
-                                    <span class="font-semibold">$32</span>
-                                </li>
-                                <li class="flex justify-between border-b border-gray-100 pb-2">
-                                    <span>Local Cheese Selection</span>
-                                    <span class="font-semibold">$28</span>
-                                </li>
-                                <li class="flex justify-between border-b border-gray-100 pb-2">
-                                    <span>Garden Fresh Salad Platters</span>
-                                    <span class="font-semibold">$24</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="text-xl font-serif font-bold text-sage-800 mb-4">Garden Beverages</h4>
-                            <ul class="space-y-3 text-gray-700">
-                                <li class="flex justify-between border-b border-gray-100 pb-2">
-                                    <span>Fresh Iced Tea</span>
-                                    <span class="font-semibold">$6</span>
-                                </li>
-                                <li class="flex justify-between border-b border-gray-100 pb-2">
-                                    <span>Seasonal Fruit Punch</span>
-                                    <span class="font-semibold">$8</span>
-                                </li>
-                                <li class="flex justify-between border-b border-gray-100 pb-2">
-                                    <span>House Wine Selection</span>
-                                    <span class="font-semibold">$9</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Functions Menu -->
-            <div id="functions-menu" class="menu-content hidden">
-                <div class="bg-white rounded-2xl p-8 shadow-lg max-w-4xl mx-auto">
-                    <h3 class="text-3xl font-serif font-bold text-sage-800 mb-6 text-center">Function Catering</h3>
-                    <p class="text-gray-600 mb-8 text-center">
-                        From intimate gatherings to large celebrations, our function menu offers flexible options for groups of 15-100 guests.
-                    </p>
-                    
-                    <div class="grid md:grid-cols-3 gap-8">
-                        <div>
-                            <h4 class="text-xl font-serif font-bold text-sage-800 mb-4">Canapés</h4>
-                            <ul class="space-y-2 text-gray-700 text-sm">
-                                <li>• Seasonal vegetarian options</li>
-                                <li>• Local seafood selections</li>
-                                <li>• Gourmet meat platters</li>
-                                <li>• Sweet petit fours</li>
-                            </ul>
-                            <p class="text-sage-600 font-semibold mt-4">From $8 per piece</p>
-                        </div>
-                        <div>
-                            <h4 class="text-xl font-serif font-bold text-sage-800 mb-4">Buffet Options</h4>
-                            <ul class="space-y-2 text-gray-700 text-sm">
-                                <li>• Seasonal salad selections</li>
-                                <li>• Hot mains rotation</li>
-                                <li>• Fresh bread & accompaniments</li>
-                                <li>• Dessert station</li>
-                            </ul>
-                            <p class="text-sage-600 font-semibold mt-4">From $35 per person</p>
-                        </div>
-                        <div>
-                            <h4 class="text-xl font-serif font-bold text-sage-800 mb-4">Children's Menu</h4>
-                            <ul class="space-y-2 text-gray-700 text-sm">
-                                <li>• Mini sandwiches</li>
-                                <li>• Fresh fruit platters</li>
-                                <li>• Kid-friendly treats</li>
-                                <li>• Juice boxes included</li>
-                            </ul>
-                            <p class="text-sage-600 font-semibold mt-4">$15 per child</p>
-                        </div>
-                    </div>
-                    
-                    <div class="text-center mt-8 pt-6 border-t">
-                        <p class="text-gray-600 mb-4">All function menus can be customized to dietary requirements</p>
-                        <a href="#contact" class="bg-sage-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-sage-700 transition-all inline-block">
-                            Discuss Your Event
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Dietary Info -->
-            <div class="text-center mt-12">
-                <div class="bg-white rounded-2xl p-8 max-w-4xl mx-auto shadow-lg">
-                    <h3 class="text-2xl font-serif font-bold text-sage-800 mb-4">Dietary Requirements</h3>
-                    <p class="text-gray-600 mb-6">
-                        We cater to various dietary needs with options available across all menus. Please inform our staff of any allergies or special requirements.
-                    </p>
-                    <div class="flex justify-center flex-wrap gap-4">
-                        <span class="bg-sage-100 text-sage-700 px-4 py-2 rounded-full text-sm font-medium">Gluten Free Available</span>
-                        <span class="bg-sage-100 text-sage-700 px-4 py-2 rounded-full text-sm font-medium">Vegetarian Options</span>
-                        <span class="bg-sage-100 text-sage-700 px-4 py-2 rounded-full text-sm font-medium">Vegan Friendly</span>
-                        <span class="bg-sage-100 text-sage-700 px-4 py-2 rounded-full text-sm font-medium">Locally Sourced</span>
-                    </div>
+            <!-- Garden Table Menu Section -->
+            <div class="bg-white rounded-2xl p-8 shadow-lg max-w-5xl mx-auto mt-12">
+                <div class="text-center">
+                    <h3 class="text-3xl font-serif font-bold text-sage-800 mb-4">The Garden Table</h3>
+                    <p class="text-gray-600 mb-6 max-w-2xl mx-auto">This menu is designed as a beautiful way to share lunch with friends, family or colleagues. We serve this down the middle of the table and it is set up as a beautiful feast to share with people helping themselves. $59 per head, minimum of 14 people.</p>
+                    <a href="https://codepluscanvas.com/rodneys/The_Garden_Table_Menu_2023.pdf" target="_blank" class="bg-sage-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-sage-700 transition-all inline-flex items-center">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                        View Garden Table Menu (PDF)
+                    </a>
                 </div>
             </div>
         </div>
@@ -1120,36 +872,6 @@
                 mobileMenu.classList.add('hidden');
             });
         });
-
-        // Menu tab functionality
-        const menuTabs = document.querySelectorAll('.menu-tab-btn');
-        const menuContents = document.querySelectorAll('.menu-content');
-
-        menuTabs.forEach(tab => {
-            tab.addEventListener('click', function() {
-                const targetMenu = this.getAttribute('data-menu');
-                
-                // Remove active class from all tabs
-                menuTabs.forEach(t => {
-                    t.classList.remove('active');
-                });
-                
-                // Add active class to clicked tab
-                this.classList.add('active');
-                
-                // Hide all menu contents
-                menuContents.forEach(content => {
-                    content.classList.add('hidden');
-                });
-                
-                // Show target menu content
-                const targetContent = document.getElementById(targetMenu + '-menu');
-                if(targetContent) {
-                   targetContent.classList.remove('hidden');
-                }
-            });
-        });
-
     </script>
 </body>
 </html>
