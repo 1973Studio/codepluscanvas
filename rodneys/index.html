@@ -6,15 +6,14 @@
     <title>Kitchen Garden at Rodney's - Pialligo Cafe Canberra</title>
     <link rel="icon" type="image/gif" href="https://codepluscanvas.com/rodneys/logo.gif">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Georgia&display=swap" rel="stylesheet">
     <script>
+        // Tailwind CSS Configuration
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        'serif': ['Lora', 'Georgia', 'serif'],
+                        'serif': ['Georgia', 'serif'],
                         'sans': ['Inter', 'system-ui', 'sans-serif']
                     },
                     colors: {
@@ -48,47 +47,54 @@
         }
     </script>
     <style>
-        /* A little extra CSS for the active tab underline */
+        /* Style for active menu tab */
         .menu-tab-btn.active {
-            border-bottom-color: #5f7a5f; /* sage-500 */
-            color: #3d4f3d; /* sage-700 */
+            background-color: #4a614a; /* sage-600 */
+            color: white;
+        }
+        .menu-tab-btn {
+             color: #3d4f3d; /* sage-700 */
+        }
+        .menu-tab-btn:hover {
+            background-color: #f6f8f6; /* sage-50 */
         }
     </style>
 </head>
-<body class="font-sans text-sage-800 bg-cream-50">
-
+<body class="font-sans text-gray-800 bg-cream-50">
     <!-- Navigation -->
-    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-sage-100">
+    <nav class="bg-white/80 backdrop-blur-sm shadow-sm fixed w-full z-50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
-                <a href="#home">
-                    <img src="https://codepluscanvas.com/rodneys/logo.gif" alt="Kitchen Garden at Rodney's Logo" class="h-16 w-auto">
-                </a>
-
-                <!-- Desktop Navigation -->
-                <nav class="hidden md:flex items-center space-x-8">
-                    <a href="#about" class="text-sage-600 hover:text-sage-800 transition-colors">About</a>
-                    <a href="#menu" class="text-sage-600 hover:text-sage-800 transition-colors">Menu</a>
-                    <a href="#functions" class="text-sage-600 hover:text-sage-800 transition-colors">Functions</a>
-                    <a href="#playground" class="text-sage-600 hover:text-sage-800 transition-colors">Playground</a>
-                </nav>
-
-                <!-- CTA & Mobile Menu Button -->
+                <div class="flex-shrink-0">
+                    <a href="#home" class="flex flex-col items-center group">
+                        <img src="https://codepluscanvas.com/rodneys/logo.gif" alt="Kitchen Garden at Rodney's Logo" class="h-16 w-auto">
+                    </a>
+                </div>
+                <!-- Desktop Menu Links (Hidden on small screens) -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#about" class="text-sage-700 hover:text-sage-900 transition-colors">About</a>
+                    <a href="#menu" class="text-sage-700 hover:text-sage-900 transition-colors">Menu</a>
+                    <a href="#functions" class="text-sage-700 hover:text-sage-900 transition-colors">Functions</a>
+                    <a href="#playground" class="text-sage-700 hover:text-sage-900 transition-colors">Playground</a>
+                    <a href="#contact" class="text-sage-700 hover:text-sage-900 transition-colors">Contact</a>
+                </div>
+                <!-- Action Buttons -->
                 <div class="flex items-center space-x-4">
-                    <a href="https://bookings.nowbookit.com/?accountid=765ab0de-a1ee-48c7-b0b4-e10de766ba73&colors=hex%2C8bc34a%2C000000&font=Arimo&theme=light&venueid=3948" target="_blank" class="hidden sm:inline-block bg-sage-500 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-sage-600 transition-colors">Book a Table</a>
-                    <button id="menu-toggle" class="md:hidden text-sage-600 hover:text-sage-800 p-2">
+                    <a href="https://bookings.nowbookit.com/?accountid=765ab0de-a1ee-48c7-b0b4-e10de766ba73&colors=hex%2C8bc34a%2C000000&font=Arimo&theme=light&venueid=3948" target="_blank" class="hidden sm:block bg-sage-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-sage-700 transition-colors">Book Now</a>
+                    <button id="menu-toggle" class="md:hidden text-sage-700 hover:text-sage-900 p-2">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
                     </button>
                 </div>
             </div>
         </div>
-
+        
         <!-- Mobile/Hamburger Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-sage-100">
             <div class="px-4 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-base font-medium text-sage-700 hover:text-sage-900 hover:bg-sage-50 rounded-md">Home</a>
                 <a href="#about" class="block px-3 py-2 text-base font-medium text-sage-700 hover:text-sage-900 hover:bg-sage-50 rounded-md">About</a>
                 <a href="#menu" class="block px-3 py-2 text-base font-medium text-sage-700 hover:text-sage-900 hover:bg-sage-50 rounded-md">Menu</a>
                 <a href="#functions" class="block px-3 py-2 text-base font-medium text-sage-700 hover:text-sage-900 hover:bg-sage-50 rounded-md">Functions</a>
@@ -97,32 +103,33 @@
                 <a href="#music" class="block px-3 py-2 text-base font-medium text-sage-700 hover:text-sage-900 hover:bg-sage-50 rounded-md">Live Music</a>
                 <a href="#emporium" class="block px-3 py-2 text-base font-medium text-sage-700 hover:text-sage-900 hover:bg-sage-50 rounded-md">Food Emporium</a>
                 <div class="pt-4 pb-2">
-                    <a href="https://bookings.nowbookit.com/?accountid=765ab0de-a1ee-48c7-b0b4-e10de766ba73&colors=hex%2C8bc34a%2C000000&font=Arimo&theme=light&venueid=3948" target="_blank" class="block w-full text-center bg-sage-500 text-white px-4 py-3 rounded-full font-medium hover:bg-sage-600 transition-colors">Book Now</a>
+                    <a href="https://bookings.nowbookit.com/?accountid=765ab0de-a1ee-48c7-b0b4-e10de766ba73&colors=hex%2C8bc34a%2C000000&font=Arimo&theme=light&venueid=3948" target="_blank" class="block w-full text-center bg-sage-600 text-white px-4 py-3 rounded-md font-medium hover:bg-sage-700 transition-colors">Book Now</a>
                 </div>
             </div>
         </div>
-    </header>
+    </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="relative min-h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1516253593875-bd7ba04221a3?q=80&w=2940&auto=format&fit=crop');">
-        <div class="absolute inset-0 bg-sage-900/20"></div>
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-cover bg-center" style="background-image: url('https://placehold.co/1920x1080/5f7a5f/fefcf8?text=');">
+        <div class="absolute inset-0 bg-black/40"></div>
         <div class="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 class="text-5xl md:text-7xl font-serif font-bold text-white mb-6 leading-tight">
                 Kitchen Garden<br>
                 <span class="text-cream-200">at Rodney's</span>
             </h1>
             <p class="text-xl md:text-2xl text-cream-100 mb-8 max-w-2xl mx-auto leading-relaxed">
-                A beloved Pialligo cafe serving seasonal homemade meals in our beautiful indoor and outdoor spaces since 1996.
+                A beloved Pialligo cafe serving seasonal homemade meals in our beautiful indoor and outdoor spaces since 1996
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="https://bookings.nowbookit.com/?accountid=765ab0de-a1ee-48c7-b0b4-e10de766ba73&colors=hex%2C8bc34a%2C000000&font=Arimo&theme=light&venueid=3948" target="_blank" class="bg-sage-500 text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-sage-600 transition-all transform hover:scale-105 shadow-lg">
+                <a href="https://bookings.nowbookit.com/?accountid=765ab0de-a1ee-48c7-b0b4-e10de766ba73&colors=hex%2C8bc34a%2C000000&font=Arimo&theme=light&venueid=3948" target="_blank" class="bg-sage-600 text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-sage-700 transition-all transform hover:scale-105 shadow-lg">
                     Reserve Your Table
                 </a>
-                <a href="#about" class="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-white hover:text-sage-700 transition-all">
+                <a href="#about" class="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-white hover:text-sage-800 transition-all">
                     Learn More
                 </a>
             </div>
         </div>
+        <!-- Decorative elements -->
         <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
@@ -131,7 +138,7 @@
     </section>
 
     <!-- Hours & Info Banner -->
-    <section class="bg-sage-600 text-white py-4">
+    <section class="bg-sage-700 text-white py-4">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
                 <div class="mb-2 md:mb-0">
@@ -148,7 +155,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 lg:py-32 bg-white">
+    <section id="about" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div>
@@ -160,279 +167,1294 @@
                         <p>
                             Our executive chef, Nathan Kleinig, brings exceptional expertise from his time as executive chef at Parliament House, along with experience from many renowned restaurants throughout Canberra.
                         </p>
+                        <p>
+                            We serve breakfast, lunch, and all-day dining with seasonal homemade meals, complemented by a delightful range of cakes, biscuits, slices, and traditional Devonshire teas.
+                        </p>
                     </div>
                     <div class="mt-8 flex flex-wrap gap-4">
                         <div class="flex items-center bg-sage-50 px-4 py-2 rounded-full">
-                            <span class="w-2 h-2 bg-sage-400 rounded-full mr-2"></span>
+                            <span class="w-2 h-2 bg-sage-500 rounded-full mr-2"></span>
+                            <span class="text-sage-700 font-medium">Pet Friendly</span>
+                        </div>
+                        <div class="flex items-center bg-sage-50 px-4 py-2 rounded-full">
+                            <span class="w-2 h-2 bg-sage-500 rounded-full mr-2"></span>
                             <span class="text-sage-700 font-medium">Gluten Free Options</span>
                         </div>
                         <div class="flex items-center bg-sage-50 px-4 py-2 rounded-full">
-                            <span class="w-2 h-2 bg-sage-400 rounded-full mr-2"></span>
+                            <span class="w-2 h-2 bg-sage-500 rounded-full mr-2"></span>
                             <span class="text-sage-700 font-medium">Vegetarian & Vegan</span>
+                        </div>
+                        <div class="flex items-center bg-sage-50 px-4 py-2 rounded-full">
+                            <span class="w-2 h-2 bg-sage-500 rounded-full mr-2"></span>
+                            <span class="text-sage-700 font-medium">Seasonal Ingredients</span>
                         </div>
                     </div>
                 </div>
                 <div class="relative">
-                    <div class="rounded-2xl overflow-hidden shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=2864&auto=format&fit=crop" alt="Cafe Interior" class="w-full h-auto object-cover">
+                    <div class="rounded-2xl overflow-hidden shadow-2xl h-[600px]">
+                        <img src="https://placehold.co/600x750/c7d2c7/3d4f3d?text=Cosy+Cafe+Interior" alt="Cosy interior of the Kitchen Garden cafe" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x750/c7d2c7/3d4f3d?text=Image+Not+Found';">
                     </div>
+                    <!-- Decorative element -->
+                    <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-cream-300 rounded-full opacity-50 z-[-1]"></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Menu Section -->
-    <section id="menu" class="py-20 lg:py-32 bg-cream-50">
+    <section id="menu" class="py-20 bg-sage-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-serif font-bold text-sage-800 mb-6">Our Menus</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    From casual cafe dining to elegant high tea, all featuring locally sourced seasonal ingredients.
+                    From casual cafe dining to elegant high tea experiences, all featuring locally sourced seasonal ingredients
                 </p>
             </div>
 
             <!-- Menu Navigation Tabs -->
-            <div class="flex justify-center mb-12 overflow-x-auto">
-                <div class="flex space-x-4 sm:space-x-8 border-b border-sage-200">
-                    <button class="menu-tab-btn active text-sage-500 hover:text-sage-700 py-3 px-2 sm:px-4 font-medium transition-colors border-b-2 border-transparent" data-menu="cafe">Cafe Menu</button>
-                    <button class="menu-tab-btn text-sage-500 hover:text-sage-700 py-3 px-2 sm:px-4 font-medium transition-colors border-b-2 border-transparent" data-menu="high-tea">High Tea</button>
-                    <button class="menu-tab-btn text-sage-500 hover:text-sage-700 py-3 px-2 sm:px-4 font-medium transition-colors border-b-2 border-transparent" data-menu="functions">Functions</button>
+            <div class="flex justify-center mb-12">
+                <div class="bg-white rounded-full p-1 shadow-lg flex flex-wrap justify-center">
+                    <button class="menu-tab-btn active px-6 py-3 rounded-full text-sm font-medium transition-all" data-menu="cafe">Cafe Menu</button>
+                    <button class="menu-tab-btn px-6 py-3 rounded-full text-sm font-medium transition-all" data-menu="morning-tea">Morning/Afternoon Tea</button>
+                    <button class="menu-tab-btn px-6 py-3 rounded-full text-sm font-medium transition-all" data-menu="high-tea">High Tea</button>
+                    <button class="menu-tab-btn px-6 py-3 rounded-full text-sm font-medium transition-all" data-menu="garden-table">Garden Table</button>
+                    <button class="menu-tab-btn px-6 py-3 rounded-full text-sm font-medium transition-all" data-menu="functions">Functions</button>
                 </div>
             </div>
             
-            <!-- Cafe Menu Content -->
+            <!-- Cafe Menu -->
             <div id="cafe-menu" class="menu-content">
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Breakfast -->
+                <div class="grid lg:grid-cols-3 gap-8 mb-12">
                     <div class="bg-white rounded-2xl p-8 shadow-lg">
-                        <h3 class="text-2xl font-serif font-bold text-sage-700 mb-6">Breakfast</h3>
-                        <p class="text-gray-500 mb-6 text-sm">Available 9am - 11:30am</p>
-                        <ul class="space-y-4 text-gray-700">
-                            <li class="border-b border-gray-100 pb-3">
-                                <p class="font-medium">Gardeners Breakfast</p>
-                                <p class="text-sm text-gray-500">Eggs, bacon, sausage, mushrooms, tomato, toast</p>
+                        <h3 class="text-2xl font-serif font-bold text-sage-800 mb-6">Breakfast</h3>
+                        <p class="text-gray-600 mb-6">Available 9am - 11:30am</p>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex justify-between border-b border-gray-100 pb-2">
+                                <div>
+                                    <span class="font-medium">Gardeners Breakfast</span>
+                                    <p class="text-sm text-gray-500">Eggs, bacon, sausage, mushrooms, tomato, toast</p>
+                                </div>
+                                <span class="font-semibold">$22</span>
                             </li>
-                            <li class="border-b border-gray-100 pb-3">
-                                <p class="font-medium">Eggs Benedict</p>
-                                <p class="text-sm text-gray-500">Choice of bacon or smoked salmon</p>
+                            <li class="flex justify-between border-b border-gray-100 pb-2">
+                                <div>
+                                    <span class="font-medium">Eggs Benedict</span>
+                                    <p class="text-sm text-gray-500">Choice of bacon or smoked salmon</p>
+                                </div>
+                                <span class="font-semibold">$20-24</span>
                             </li>
-                            <li>
-                                <p class="font-medium">Pancakes</p>
-                                <p class="text-sm text-gray-500">Berry compote, maple syrup</p>
+                            <li class="flex justify-between border-b border-gray-100 pb-2">
+                                <div>
+                                    <span class="font-medium">Avocado Toast</span>
+                                    <p class="text-sm text-gray-500">Multigrain toast, poached egg</p>
+                                </div>
+                                <span class="font-semibold">$16</span>
+                            </li>
+                            <li class="flex justify-between border-b border-gray-100 pb-2">
+                                <div>
+                                    <span class="font-medium">Pancakes</span>
+                                    <p class="text-sm text-gray-500">Berry compote, maple syrup</p>
+                                </div>
+                                <span class="font-semibold">$18</span>
                             </li>
                         </ul>
                     </div>
-                    <!-- Lunch -->
+
                     <div class="bg-white rounded-2xl p-8 shadow-lg">
-                        <h3 class="text-2xl font-serif font-bold text-sage-700 mb-6">Lunch</h3>
-                        <p class="text-gray-500 mb-6 text-sm">Available 11:30am - 4pm</p>
-                        <ul class="space-y-4 text-gray-700">
-                           <li class="border-b border-gray-100 pb-3">
-                                <p class="font-medium">Brisket Roll</p>
-                                <p class="text-sm text-gray-500">Slow-cooked brisket, fresh salad</p>
+                        <h3 class="text-2xl font-serif font-bold text-sage-800 mb-6">Lunch</h3>
+                        <p class="text-gray-600 mb-6">Available 11:30am - 4pm</p>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex justify-between border-b border-gray-100 pb-2">
+                                <div>
+                                    <span class="font-medium">Brisket Roll</span>
+                                    <p class="text-sm text-gray-500">Slow-cooked brisket, fresh salad</p>
+                                </div>
+                                <span class="font-semibold">$24</span>
                             </li>
-                            <li class="border-b border-gray-100 pb-3">
-                                <p class="font-medium">Garden Salad Bowl</p>
-                                <p class="text-sm text-gray-500">Seasonal vegetables, house dressing</p>
+                            <li class="flex justify-between border-b border-gray-100 pb-2">
+                                <div>
+                                    <span class="font-medium">Garden Salad Bowl</span>
+                                    <p class="text-sm text-gray-500">Seasonal vegetables, house dressing</p>
+                                </div>
+                                <span class="font-semibold">$19</span>
                             </li>
-                            <li>
-                                <p class="font-medium">Fish of the Day</p>
-                                <p class="text-sm text-gray-500">Fresh local catch, seasonal sides</p>
+                            <li class="flex justify-between border-b border-gray-100 pb-2">
+                                <div>
+                                    <span class="font-medium">Seasonal Soup</span>
+                                    <p class="text-sm text-gray-500">Made fresh daily, crusty bread</p>
+                                </div>
+                                <span class="font-semibold">$16</span>
+                            </li>
+                            <li class="flex justify-between border-b border-gray-100 pb-2">
+                                <div>
+                                    <span class="font-medium">Fish of the Day</span>
+                                    <p class="text-sm text-gray-500">Fresh local catch, seasonal sides</p>
+                                </div>
+                                <span class="font-semibold">MP</span>
                             </li>
                         </ul>
                     </div>
-                    <!-- Drinks -->
+
                     <div class="bg-white rounded-2xl p-8 shadow-lg">
-                        <h3 class="text-2xl font-serif font-bold text-sage-700 mb-6">Drinks & Treats</h3>
-                        <p class="text-gray-500 mb-6 text-sm">All day menu</p>
-                        <ul class="space-y-4 text-gray-700">
-                            <li class="border-b border-gray-100 pb-3">
-                                <p class="font-medium">Barista Coffee</p>
-                                <p class="text-sm text-gray-500">Seven Mile specialty roast</p>
+                        <h3 class="text-2xl font-serif font-bold text-sage-800 mb-6">Drinks & Treats</h3>
+                        <p class="text-gray-600 mb-6">All day menu</p>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex justify-between border-b border-gray-100 pb-2">
+                                <div>
+                                    <span class="font-medium">Coffee</span>
+                                    <p class="text-sm text-gray-500">Seven Mile roast</p>
+                                </div>
+                                <span class="font-semibold">$5</span>
                             </li>
-                            <li class="border-b border-gray-100 pb-3">
-                                <p class="font-medium">Homemade Cakes</p>
-                                <p class="text-sm text-gray-500">See our daily selection</p>
+                            <li class="flex justify-between border-b border-gray-100 pb-2">
+                                <div>
+                                    <span class="font-medium">Homemade Cakes</span>
+                                    <p class="text-sm text-gray-500">Daily selection</p>
+                                </div>
+                                <span class="font-semibold">$8</span>
                             </li>
-                            <li>
-                                <p class="font-medium">Fresh Scones</p>
-                                <p class="text-sm text-gray-500">With jam and fresh cream</p>
+                            <li class="flex justify-between border-b border-gray-100 pb-2">
+                                <div>
+                                    <span class="font-medium">Fresh Scones</span>
+                                    <p class="text-sm text-gray-500">Jam and cream</p>
+                                </div>
+                                <span class="font-semibold">$6</span>
+                            </li>
+                            <li class="flex justify-between border-b border-gray-100 pb-2">
+                                <div>
+                                    <span class="font-medium">Fresh Juices</span>
+                                    <p class="text-sm text-gray-500">Orange, apple, seasonal</p>
+                                </div>
+                                <span class="font-semibold">$7</span>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <!-- High Tea Menu Content -->
+            <!-- Morning/Afternoon Tea Menu -->
+            <div id="morning-tea-menu" class="menu-content hidden">
+                <div class="grid lg:grid-cols-2 gap-8 mb-12">
+                    <div class="bg-white rounded-2xl p-8 shadow-lg">
+                        <h3 class="text-2xl font-serif font-bold text-sage-800 mb-6">Devonshire Tea</h3>
+                        <p class="text-gray-600 mb-6">Traditional afternoon tea experience</p>
+                        <ul class="space-y-4 text-gray-700">
+                            <li class="border-b border-gray-100 pb-4">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <span class="font-medium block">Classic Devonshire Tea</span>
+                                        <p class="text-sm text-gray-500">Fresh scones, jam, cream, tea or coffee</p>
+                                    </div>
+                                    <span class="font-semibold">$14</span>
+                                </div>
+                            </li>
+                            <li class="border-b border-gray-100 pb-4">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <span class="font-medium block">Deluxe Tea Service</span>
+                                        <p class="text-sm text-gray-500">Scones, cake slice, tea selection</p>
+                                    </div>
+                                    <span class="font-semibold">$18</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded-2xl p-8 shadow-lg">
+                        <h3 class="text-2xl font-serif font-bold text-sage-800 mb-6">Sweet Treats</h3>
+                        <p class="text-gray-600 mb-6">Made fresh daily</p>
+                        <ul class="space-y-4 text-gray-700">
+                            <li class="flex justify-between">
+                                <span>Homemade Biscuits</span>
+                                <span class="font-semibold">$4</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Seasonal Slices</span>
+                                <span class="font-semibold">$6</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Muffins</span>
+                                <span class="font-semibold">$5</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Seasonal Tart</span>
+                                <span class="font-semibold">$8</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- High Tea Menu -->
             <div id="high-tea-menu" class="menu-content hidden">
-                 <div class="bg-white rounded-2xl p-8 lg:p-12 shadow-lg max-w-4xl mx-auto">
-                    <h3 class="text-3xl font-serif font-bold text-sage-700 mb-6 text-center">High Tea at Rodney's</h3>
-                    <p class="text-gray-600 mb-8 text-center leading-relaxed">Indulge in a unique high tea experience, combining classic elegance with a modern twist, featuring sweet and savoury treats made from locally sourced ingredients.</p>
-                    <div class="text-center border-t border-sage-100 pt-6">
-                        <p class="text-2xl font-bold text-sage-700 mb-2">$35 per person</p>
-                        <p class="text-gray-500">Includes premium tea selection or coffee. Bookings essential.</p>
+                <div class="bg-white rounded-2xl p-8 shadow-lg max-w-4xl mx-auto">
+                    <h3 class="text-3xl font-serif font-bold text-sage-800 mb-6 text-center">High Tea at Rodney's</h3>
+                    <p class="text-gray-600 mb-8 text-center leading-relaxed">
+                        Indulge in a unique high tea experience in Canberra's scenic surroundings. Located within the tranquil gardens of Pialligo, our high tea combines classic elegance with a modern twist, featuring sweet and savoury treats made from locally sourced ingredients.
+                    </p>
+                    
+                    <div class="grid md:grid-cols-3 gap-8 mb-8">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-sage-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-2xl font-serif font-bold text-sage-600">1</span>
+                            </div>
+                            <h4 class="font-semibold text-sage-800 mb-2">Savoury Tier</h4>
+                            <p class="text-sm text-gray-600">Delicate finger sandwiches and seasonal savouries</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-sage-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-2xl font-serif font-bold text-sage-600">2</span>
+                            </div>
+                            <h4 class="font-semibold text-sage-800 mb-2">Sweet Tier</h4>
+                            <p class="text-sm text-gray-600">Handmade cakes, petite fours, and seasonal desserts</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-sage-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-2xl font-serif font-bold text-sage-600">3</span>
+                            </div>
+                            <h4 class="font-semibold text-sage-800 mb-2">Fresh Scones</h4>
+                            <p class="text-sm text-gray-600">Warm scones with jam and cream</p>
+                        </div>
+                    </div>
+
+                    <div class="text-center border-t pt-6">
+                        <p class="text-2xl font-bold text-sage-800 mb-2">$35 per person</p>
+                        <p class="text-gray-600">Includes premium tea selection or coffee</p>
+                        <p class="text-sm text-gray-500 mt-4">Perfect for celebrations, gatherings, or a special day out</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Functions Menu Content -->
+            <!-- Garden Table Menu -->
+            <div id="garden-table-menu" class="menu-content hidden">
+                <div class="bg-white rounded-2xl p-8 shadow-lg max-w-4xl mx-auto">
+                    <h3 class="text-3xl font-serif font-bold text-sage-800 mb-6 text-center">Garden Table Experience</h3>
+                    <p class="text-gray-600 mb-8 text-center">
+                        Enjoy a relaxed dining experience in our beautiful outdoor garden setting with specially curated sharing plates and seasonal selections.
+                    </p>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-xl font-serif font-bold text-sage-800 mb-4">Sharing Plates</h4>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex justify-between border-b border-gray-100 pb-2">
+                                    <span>Seasonal Antipasto Board</span>
+                                    <span class="font-semibold">$32</span>
+                                </li>
+                                <li class="flex justify-between border-b border-gray-100 pb-2">
+                                    <span>Local Cheese Selection</span>
+                                    <span class="font-semibold">$28</span>
+                                </li>
+                                <li class="flex justify-between border-b border-gray-100 pb-2">
+                                    <span>Garden Fresh Salad Platters</span>
+                                    <span class="font-semibold">$24</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-serif font-bold text-sage-800 mb-4">Garden Beverages</h4>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex justify-between border-b border-gray-100 pb-2">
+                                    <span>Fresh Iced Tea</span>
+                                    <span class="font-semibold">$6</span>
+                                </li>
+                                <li class="flex justify-between border-b border-gray-100 pb-2">
+                                    <span>Seasonal Fruit Punch</span>
+                                    <span class="font-semibold">$8</span>
+                                </li>
+                                <li class="flex justify-between border-b border-gray-100 pb-2">
+                                    <span>House Wine Selection</span>
+                                    <span class="font-semibold">$9</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Functions Menu -->
             <div id="functions-menu" class="menu-content hidden">
-                 <div class="bg-white rounded-2xl p-8 lg:p-12 shadow-lg max-w-4xl mx-auto">
-                    <h3 class="text-3xl font-serif font-bold text-sage-700 mb-6 text-center">Function Catering</h3>
-                    <p class="text-gray-600 mb-8 text-center leading-relaxed">From intimate gatherings to large celebrations, our function menu offers flexible options for groups of 15-100 guests, including canapés, buffets, and children's menus.</p>
-                    <div class="text-center mt-8 pt-6 border-t border-sage-100">
-                        <a href="#contact" class="bg-sage-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-sage-600 transition-all inline-block">Discuss Your Event</a>
+                <div class="bg-white rounded-2xl p-8 shadow-lg max-w-4xl mx-auto">
+                    <h3 class="text-3xl font-serif font-bold text-sage-800 mb-6 text-center">Function Catering</h3>
+                    <p class="text-gray-600 mb-8 text-center">
+                        From intimate gatherings to large celebrations, our function menu offers flexible options for groups of 15-100 guests.
+                    </p>
+                    
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div>
+                            <h4 class="text-xl font-serif font-bold text-sage-800 mb-4">Canapés</h4>
+                            <ul class="space-y-2 text-gray-700 text-sm">
+                                <li>• Seasonal vegetarian options</li>
+                                <li>• Local seafood selections</li>
+                                <li>• Gourmet meat platters</li>
+                                <li>• Sweet petit fours</li>
+                            </ul>
+                            <p class="text-sage-600 font-semibold mt-4">From $8 per piece</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-serif font-bold text-sage-800 mb-4">Buffet Options</h4>
+                            <ul class="space-y-2 text-gray-700 text-sm">
+                                <li>• Seasonal salad selections</li>
+                                <li>• Hot mains rotation</li>
+                                <li>• Fresh bread & accompaniments</li>
+                                <li>• Dessert station</li>
+                            </ul>
+                            <p class="text-sage-600 font-semibold mt-4">From $35 per person</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-serif font-bold text-sage-800 mb-4">Children's Menu</h4>
+                            <ul class="space-y-2 text-gray-700 text-sm">
+                                <li>• Mini sandwiches</li>
+                                <li>• Fresh fruit platters</li>
+                                <li>• Kid-friendly treats</li>
+                                <li>• Juice boxes included</li>
+                            </ul>
+                            <p class="text-sage-600 font-semibold mt-4">$15 per child</p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-8 pt-6 border-t">
+                        <p class="text-gray-600 mb-4">All function menus can be customized to dietary requirements</p>
+                        <a href="#contact" class="bg-sage-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-sage-700 transition-all inline-block">
+                            Discuss Your Event
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dietary Info -->
+            <div class="text-center mt-12">
+                <div class="bg-white rounded-2xl p-8 max-w-4xl mx-auto shadow-lg">
+                    <h3 class="text-2xl font-serif font-bold text-sage-800 mb-4">Dietary Requirements</h3>
+                    <p class="text-gray-600 mb-6">
+                        We cater to various dietary needs with options available across all menus. Please inform our staff of any allergies or special requirements.
+                    </p>
+                    <div class="flex justify-center flex-wrap gap-4">
+                        <span class="bg-sage-100 text-sage-700 px-4 py-2 rounded-full text-sm font-medium">Gluten Free Available</span>
+                        <span class="bg-sage-100 text-sage-700 px-4 py-2 rounded-full text-sm font-medium">Vegetarian Options</span>
+                        <span class="bg-sage-100 text-sage-700 px-4 py-2 rounded-full text-sm font-medium">Vegan Friendly</span>
+                        <span class="bg-sage-100 text-sage-700 px-4 py-2 rounded-full text-sm font-medium">Locally Sourced</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Triple Feature Section -->
-    <section class="py-20 lg:py-32 bg-white">
+    <!-- Dining Options -->
+    <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-3 gap-10">
-                <!-- Playground -->
-                <div id="playground" class="text-center">
-                    <div class="w-full h-48 bg-sage-100 rounded-lg mb-6 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-sage-400" viewBox="0 0 20 20" fill="currentColor"><path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-sage-800 mb-6">Dining Experience</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Choose from our beautiful indoor dining room or enjoy the fresh air in our amazing outdoor seating area
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-sage-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-sage-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 4l2 2 4-4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold text-sage-800">Indoor Dining</h3>
                     </div>
-                    <h3 class="text-2xl font-serif font-bold text-sage-700 mb-3">Kids Playground</h3>
-                    <p class="text-gray-600">A family-friendly oasis where kids play safely while parents relax.</p>
+                    <p class="text-gray-600 mb-6">
+                        Cozy interior perfect for intimate meals, business meetings, and special occasions with comfortable seating and warm ambiance.
+                    </p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <span class="w-1.5 h-1.5 bg-sage-500 rounded-full mr-3"></span>
+                            Climate controlled comfort
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-1.5 h-1.5 bg-sage-500 rounded-full mr-3"></span>
+                            Perfect for business meetings
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-1.5 h-1.5 bg-sage-500 rounded-full mr-3"></span>
+                            Intimate dining atmosphere
+                        </li>
+                    </ul>
                 </div>
-                <!-- Weekend BBQ -->
-                <div id="bbq" class="text-center">
-                    <div class="w-full h-48 bg-cream-100 rounded-lg mb-6 flex items-center justify-center">
-                         <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-cream-700" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm14 0H4v2h12V5zM2 13a2 2 0 012-2h6a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zm10 0v2h2a2 2 0 002-2v-2a2 2 0 00-2-2h-2v2z" clip-rule="evenodd" /></svg>
+
+                <div class="bg-sage-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-sage-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold text-sage-800">Outdoor Garden</h3>
                     </div>
-                    <h3 class="text-2xl font-serif font-bold text-sage-700 mb-3">Weekend BBQ</h3>
-                    <p class="text-gray-600">Fire up your weekends with our outdoor BBQ comfort food.</p>
+                    <p class="text-gray-600 mb-6">
+                        Our amazing outdoor area surrounded by beautiful gardens, perfect for enjoying Canberra's lovely weather while dining.
+                    </p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <span class="w-1.5 h-1.5 bg-sage-500 rounded-full mr-3"></span>
+                            Beautiful garden setting
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-1.5 h-1.5 bg-sage-500 rounded-full mr-3"></span>
+                            Fresh air dining
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-1.5 h-1.5 bg-sage-500 rounded-full mr-3"></span>
+                            Family-friendly space
+                        </li>
+                    </ul>
                 </div>
-                <!-- Live Music -->
-                <div id="music" class="text-center">
-                    <div class="w-full h-48 bg-sage-100 rounded-lg mb-6 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-sage-400" viewBox="0 0 20 20" fill="currentColor"><path d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.37 4.37 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z" /></svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Function Rooms Section -->
+    <section id="functions" class="py-20 bg-sage-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-sage-800 mb-6">Function Rooms</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    A blend of indoor elegance and outdoor freshness unique to Canberra - perfect for any occasion
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16 items-center mb-16">
+                <div>
+                    <h3 class="text-3xl font-serif font-bold text-sage-800 mb-6">Tailored to Your Needs</h3>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Whether it's a corporate conference or a garden party, our flexible spaces provide the perfect setting to make your event a success. From intimate gatherings of 15 to celebrations of up to 100 guests.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="bg-white rounded-lg p-4 text-center shadow-sm">
+                            <div class="text-2xl font-bold text-sage-600 mb-1">15-100</div>
+                            <div class="text-sm text-gray-600">Guest Capacity</div>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 text-center shadow-sm">
+                            <div class="text-2xl font-bold text-sage-600 mb-1">Multiple</div>
+                            <div class="text-sm text-gray-600">Room Options</div>
+                        </div>
                     </div>
-                    <h3 class="text-2xl font-serif font-bold text-sage-700 mb-3">Live Music</h3>
-                    <p class="text-gray-600">Enjoy intimate acoustic performances every weekend.</p>
+
+                    <div class="bg-white rounded-xl p-6 shadow-lg">
+                        <h4 class="text-xl font-semibold text-sage-800 mb-4">Event Specialties</h4>
+                        <div class="grid grid-cols-2 gap-3 text-sm">
+                            <div class="flex items-center">
+                                <span class="w-1.5 h-1.5 bg-sage-500 rounded-full mr-2"></span>
+                                Birthdays
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-1.5 h-1.5 bg-sage-500 rounded-full mr-2"></span>
+                                Corporate Lunches
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-1.5 h-1.5 bg-sage-500 rounded-full mr-2"></span>
+                                Children's Parties
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-1.5 h-1.5 bg-sage-500 rounded-full mr-2"></span>
+                                Bridal Showers
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-1.5 h-1.5 bg-sage-500 rounded-full mr-2"></span>
+                                Christenings
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-1.5 h-1.5 bg-sage-500 rounded-full mr-2"></span>
+                                Product Launches
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="rounded-2xl overflow-hidden shadow-2xl h-[500px]">
+                         <img src="https://placehold.co/600x750/c7d2c7/3d4f3d?text=Function+Setup" alt="Elegant function room setup" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x750/c7d2c7/3d4f3d?text=Image+Not+Found';">
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <h4 class="text-2xl font-serif font-bold text-sage-800 mb-4">Private Dining Rooms</h4>
+                    <p class="text-gray-600 mb-4">
+                        Elegantly furnished spaces equipped with top-notch facilities. Each room is uniquely designed to cater to your specific function needs with comfort, privacy, and luxury.
+                    </p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <span class="w-1.5 h-1.5 bg-sage-500 rounded-full mr-3"></span>
+                            Climate controlled environment
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-1.5 h-1.5 bg-sage-500 rounded-full mr-3"></span>
+                            Professional presentation facilities
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-1.5 h-1.5 bg-sage-500 rounded-full mr-3"></span>
+                            Flexible seating arrangements
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <h4 class="text-2xl font-serif font-bold text-sage-800 mb-4">Outdoor Green Spaces</h4>
+                    <p class="text-gray-600 mb-4">
+                        Undercover outdoor areas surrounded by blooming flowers and lush greenery. Perfect for garden parties and events that want fresh air with weather protection.
+                    </p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <span class="w-1.5 h-1.5 bg-sage-500 rounded-full mr-3"></span>
+                            Beautiful garden setting
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-1.5 h-1.5 bg-sage-500 rounded-full mr-3"></span>
+                            Weather protected
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-1.5 h-1.5 bg-sage-500 rounded-full mr-3"></span>
+                            Natural photo opportunities
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <div class="bg-sage-700 text-white rounded-2xl p-8 max-w-4xl mx-auto">
+                    <h3 class="text-2xl font-serif font-bold mb-4">Book Your Function</h3>
+                    <p class="text-sage-100 mb-6">
+                        Our culinary team provides everything from simple refreshments to gourmet feasts. Ample parking and easy accessibility ensure all guests can celebrate comfortably.
+                    </p>
+                    <a href="#contact" class="bg-cream-400 text-sage-800 px-8 py-3 rounded-full font-semibold hover:bg-cream-300 transition-all transform hover:scale-105 inline-block">
+                        Schedule a Tour
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Children's Playground Section -->
+    <section id="playground" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-sage-800 mb-6">Children's Playground</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    A family-friendly oasis where kids play safely while parents relax and enjoy quality time together
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16 items-center mb-16">
+                <div class="relative">
+                    <div class="rounded-2xl overflow-hidden shadow-2xl h-[400px]">
+                        <img src="https://placehold.co/800x600/a7f3d0/166534?text=Playground" alt="Children's playground area with slides and cubby houses" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/800x600/a7f3d0/166534?text=Image+Not+Found';">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-blue-300 rounded-full opacity-50 z-[-1]"></div>
+                </div>
+                <div>
+                    <h3 class="text-3xl font-serif font-bold text-sage-800 mb-6">Safe Play, Relaxed Parents</h3>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Our spacious playground is designed with families in mind, featuring shaded seating with clear views so parents can unwind over coffee while kids play safely nearby. Perfect for mothers' groups, family catch-ups, and casual gatherings.
+                    </p>
+
+                    <div class="bg-sage-50 rounded-xl p-6 mb-6">
+                        <h4 class="text-xl font-semibold text-sage-800 mb-4">Playground Features</h4>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                                <span class="text-gray-700">Cubby Houses</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                                <span class="text-gray-700">Sandpits</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                                <span class="text-gray-700">Slides</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                                <span class="text-gray-700">Rocking Horses</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                                <span class="text-gray-700">Helicopter</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                                <span class="text-gray-700">Shaded Areas</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="bg-white rounded-lg p-4 text-center shadow-sm">
+                            <div class="text-xl font-bold text-blue-600 mb-1">Safe</div>
+                            <div class="text-xs text-gray-600">Secure Environment</div>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 text-center shadow-sm">
+                            <div class="text-xl font-bold text-blue-600 mb-1">Shaded</div>
+                            <div class="text-xs text-gray-600">Tree Coverage</div>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 text-center shadow-sm">
+                            <div class="text-xl font-bold text-blue-600 mb-1">Visible</div>
+                            <div class="text-xs text-gray-600">Clear Sightlines</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-blue-50 rounded-xl p-6 text-center">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-lg font-semibold text-sage-800 mb-2">Mothers' Groups</h4>
+                    <p class="text-gray-600">Large tables perfect for group catch-ups while kids play together</p>
+                </div>
+
+                <div class="bg-green-50 rounded-xl p-6 text-center">
+                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-lg font-semibold text-sage-800 mb-2">Birthday Parties</h4>
+                    <p class="text-gray-600">Ideal setting for children's celebrations with built-in entertainment</p>
+                </div>
+
+                <div class="bg-purple-50 rounded-xl p-6 text-center">
+                    <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-lg font-semibold text-sage-800 mb-2">Family Time</h4>
+                    <p class="text-gray-600">Quality time for all ages in our beautiful garden setting</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-16">
+                <div class="bg-gradient-to-r from-blue-100 to-green-100 rounded-2xl p-8 max-w-4xl mx-auto">
+                    <h3 class="text-2xl font-serif font-bold text-sage-800 mb-4">Perfect for Family Outings</h3>
+                    <p class="text-gray-700 mb-6">
+                        Whether planning a playdate, birthday celebration, or relaxed family outing, our playground offers the perfect combination of fun for kids and relaxation for adults. Book your family-friendly dining experience today!
+                    </p>
+                    <a href="#contact" class="bg-sage-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-sage-700 transition-all transform hover:scale-105 inline-block">
+                        Plan Your Visit
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weekend BBQ Section -->
+    <section id="bbq" class="py-20 bg-cream-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-sage-800 mb-6">Weekend BBQ</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Fire up your weekends with our outdoor BBQ featuring gourmet comfort food favorites
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-16 items-center mb-16">
+                <div class="relative">
+                    <div class="rounded-2xl overflow-hidden shadow-2xl h-[400px]">
+                        <img src="https://placehold.co/800x600/fde68a/854d0e?text=Weekend+BBQ" alt="Outdoor BBQ station with grilling food" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/800x600/fde68a/854d0e?text=Image+Not+Found';">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-amber-300 rounded-full opacity-50 z-[-1]"></div>
+                </div>
+                <div>
+                    <h3 class="text-3xl font-serif font-bold text-sage-800 mb-6">Outdoor Grilling Experience</h3>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Every weekend, our outdoor BBQ station comes alive with the sizzle of fresh ingredients and the aroma of perfectly grilled favorites. Enjoy your meal al fresco in our beautiful garden setting.
+                    </p>
+                    <div class="bg-white rounded-xl p-6 shadow-lg">
+                        <h4 class="text-xl font-semibold text-sage-800 mb-4">BBQ Menu Highlights</h4>
+                        <div class="grid grid-cols-1 gap-4">
+                            <div class="flex items-start">
+                                <span class="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                <div>
+                                    <span class="font-medium text-sage-700">Egg & Bacon Rolls</span>
+                                    <p class="text-sm text-gray-600">Fresh rolls with perfectly cooked eggs and crispy bacon</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                <div>
+                                    <span class="font-medium text-sage-700">Gourmet Hotdogs</span>
+                                    <p class="text-sm text-gray-600">Premium sausages with artisanal toppings</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                <div>
+                                    <span class="font-medium text-sage-700">Korean Fried Chicken</span>
+                                    <p class="text-sm text-gray-600">Crispy chicken with fresh Asian slaw</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                <div>
+                                    <span class="font-medium text-sage-700">Hot Chips</span>
+                                    <p class="text-sm text-gray-600">Golden, crispy chips cooked to perfection</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-sage-700 to-sage-600 text-white rounded-2xl p-8 text-center">
+                <h3 class="text-2xl font-serif font-bold mb-4">Weekend BBQ Hours</h3>
+                <div class="flex justify-center items-center space-x-8 mb-6">
+                    <div>
+                        <span class="text-lg font-semibold">Saturday & Sunday</span>
+                        <p class="text-sage-100">10:00am - 3:00pm</p>
+                    </div>
+                </div>
+                <p class="text-sage-100 mb-6">
+                    Perfect for lazy weekend brunches, family outings, or a quick bite while exploring our garden centre
+                </p>
+                <a href="#contact" class="bg-cream-400 text-sage-800 px-8 py-3 rounded-full font-semibold hover:bg-cream-300 transition-all transform hover:scale-105 inline-block">
+                    Join Us This Weekend
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coffee Cart Section -->
+    <section id="coffee-cart" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-sage-800 mb-6">Outdoor Coffee Cart</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Premium coffee and fresh treats in the heart of our garden centre
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h3 class="text-3xl font-serif font-bold text-sage-800 mb-6">Coffee on the Go</h3>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Open weekends from September through May, our charming outdoor coffee cart is perfectly positioned in the centre of Rodney's. It's the ideal spot to fuel up while browsing our garden centre or exploring the grounds.
+                    </p>
+                    
+                    <div class="bg-cream-50 rounded-xl p-6 shadow-lg mb-6">
+                        <h4 class="text-xl font-semibold text-sage-800 mb-4">Featured Coffee</h4>
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-amber-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="font-semibold text-sage-700">Leaf & Berry by Seven Mile</span>
+                                <p class="text-sm text-gray-600">Premium local coffee roasted to perfection</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600">Featuring expertly crafted lattes, cappuccinos, and espresso drinks that you can enjoy on the go or while exploring our beautiful outdoor spaces.</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-sage-50 rounded-lg p-4 text-center">
+                            <h5 class="font-semibold text-sage-800 mb-2">Fresh Daily</h5>
+                            <p class="text-sm text-gray-600">Muffins & sweet treats baked fresh every morning</p>
+                        </div>
+                        <div class="bg-sage-50 rounded-lg p-4 text-center">
+                            <h5 class="font-semibold text-sage-800 mb-2">Seasonal</h5>
+                            <p class="text-sm text-gray-600">Open Sep-May weekends only</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="rounded-2xl overflow-hidden shadow-2xl h-[500px]">
+                        <img src="https://placehold.co/600x750/fde68a/854d0e?text=Coffee+Cart" alt="Outdoor coffee cart serving customers" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x750/fde68a/854d0e?text=Image+Not+Found';">
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-amber-300 rounded-full opacity-30 z-[-1]"></div>
+                </div>
+            </div>
+
+            <div class="text-center mt-16">
+                <div class="bg-amber-100 rounded-2xl p-8 max-w-4xl mx-auto">
+                    <h3 class="text-2xl font-serif font-bold text-sage-800 mb-4">Perfect for Garden Centre Visits</h3>
+                    <p class="text-gray-700 mb-6">
+                        Grab a perfectly crafted latte to go and keep exploring! Our coffee cart is strategically located to serve visitors browsing plants, families enjoying the playground, or anyone wanting to enjoy premium coffee in our beautiful outdoor setting.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                        <div class="flex items-center bg-white px-4 py-2 rounded-full">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-sage-700 font-medium">Weekend Operation</span>
+                        </div>
+                        <div class="flex items-center bg-white px-4 py-2 rounded-full">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-sage-700 font-medium">Premium Coffee</span>
+                        </div>
+                        <div class="flex items-center bg-white px-4 py-2 rounded-full">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-sage-700 font-medium">Fresh Treats Daily</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Music Section -->
+    <section id="music" class="py-20 bg-gradient-to-br from-cream-50 to-sage-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-sage-800 mb-6">Live Music</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Enjoy intimate acoustic performances that perfectly complement your dining experience
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-16 items-center mb-16">
+                <div>
+                    <h3 class="text-3xl font-serif font-bold text-sage-800 mb-6">Weekend Performances</h3>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Every weekend, we host talented local musicians who create the perfect ambiance for your meal. From acoustic guitar sets to gentle jazz vocals, our music enhances rather than overwhelms conversation.
+                    </p>
+                    <div class="bg-white rounded-xl p-6 shadow-lg">
+                        <h4 class="text-xl font-semibold text-sage-800 mb-4">Performance Schedule</h4>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+                                <span class="font-medium text-sage-700">Saturday</span>
+                                <span class="text-gray-600">12:00pm - 3:00pm</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+                                <span class="font-medium text-sage-700">Sunday</span>
+                                <span class="text-gray-600">11:00am - 2:00pm</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-500 mt-4">
+                            *Occasionally musicians may change weekends or cancel due to unforeseen circumstances
+                        </p>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="rounded-2xl overflow-hidden shadow-2xl h-[500px]">
+                        <img src="https://placehold.co/600x750/e3e8e3/3d4f3d?text=Live+Music" alt="Musician playing acoustic guitar in the cafe" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x750/e3e8e3/3d4f3d?text=Image+Not+Found';">
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-cream-300 rounded-full opacity-30 z-[-1]"></div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl p-6 shadow-lg text-center">
+                    <div class="w-12 h-12 bg-sage-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-sage-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-lg font-semibold text-sage-800 mb-2">Local Talent</h4>
+                    <p class="text-gray-600">Showcasing Canberra's finest acoustic artists and singer-songwriters</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 shadow-lg text-center">
+                    <div class="w-12 h-12 bg-sage-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-sage-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-lg font-semibold text-sage-800 mb-2">Perfect Atmosphere</h4>
+                    <p class="text-gray-600">Gentle, ambient music that enhances your dining without overwhelming conversation</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 shadow-lg text-center">
+                    <div class="w-12 h-12 bg-sage-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-sage-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-lg font-semibold text-sage-800 mb-2">Special Events</h4>
+                    <p class="text-gray-600">Call us for private performances and special musical arrangements</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <div class="bg-sage-700 text-white rounded-2xl p-8 max-w-3xl mx-auto">
+                    <h3 class="text-2xl font-serif font-bold mb-4">Book Your Musical Dining Experience</h3>
+                    <p class="text-sage-100 mb-6">
+                        Reserve your table for the weekend and enjoy live music with your meal. Perfect for romantic dinners, family celebrations, or catching up with friends.
+                    </p>
+                    <a href="#contact" class="bg-cream-400 text-sage-800 px-8 py-3 rounded-full font-semibold hover:bg-cream-300 transition-all transform hover:scale-105 inline-block">
+                        Book Your Table
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Food Emporium Section -->
-    <section id="emporium" class="py-20 lg:py-32 bg-cream-50">
+    <section id="emporium" class="py-20 bg-amber-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="relative">
-                     <div class="rounded-2xl overflow-hidden shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1594034893943-76479743c683?q=80&w=2940&auto=format&fit=crop" alt="Food Emporium" class="w-full h-auto object-cover">
-                    </div>
-                </div>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-sage-800 mb-6">Pialligo Food Emporium</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Thoughtfully crafted local produce and hard-to-find international delicacies
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16 items-center mb-16">
                 <div>
-                    <h2 class="text-4xl md:text-5xl font-serif font-bold text-sage-800 mb-8">Pialligo Food Emporium</h2>
-                    <p class="text-lg text-gray-700 mb-6">
+                    <h3 class="text-3xl font-serif font-bold text-sage-800 mb-6">Gourmet Selection</h3>
+                    <p class="text-lg text-gray-600 mb-6">
                         Located right outside our cafe, our food emporium stocks a curated selection of thoughtfully crafted, locally owned, and hard-to-find international food products.
                     </p>
-                    <p class="text-gray-600">
-                        As foodies ourselves, we love showcasing the products that we use personally at home. Come browse and discover something new today.
+                    <p class="text-gray-600 mb-8">
+                        As passionate foodies ourselves, we love showcasing the products that we use personally at home. From artisanal local produce to unique international delicacies, every item tells a story of quality and exceptional taste.
                     </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center bg-amber-100 px-4 py-2 rounded-full">
+                            <span class="w-2 h-2 bg-amber-500 rounded-full mr-2"></span>
+                            <span class="text-sage-700 font-medium">Local Artisans</span>
+                        </div>
+                        <div class="flex items-center bg-amber-100 px-4 py-2 rounded-full">
+                            <span class="w-2 h-2 bg-amber-500 rounded-full mr-2"></span>
+                            <span class="text-sage-700 font-medium">International Finds</span>
+                        </div>
+                        <div class="flex items-center bg-amber-100 px-4 py-2 rounded-full">
+                            <span class="w-2 h-2 bg-amber-500 rounded-full mr-2"></span>
+                            <span class="text-sage-700 font-medium">Gourmet Selection</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="rounded-2xl overflow-hidden shadow-2xl h-[500px]">
+                        <img src="https://placehold.co/600x750/f59e0b/78350f?text=Food+Emporium" alt="Shelves stocked with gourmet products in the food emporium" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x750/f59e0b/78350f?text=Image+Not+Found';">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-amber-300 rounded-full opacity-50 z-[-1]"></div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-serif font-bold text-sage-800">Catering Platters</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Fresh, made-to-order platters perfect for corporate events and special occasions.
+                    </p>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li class="flex items-center">
+                            <span class="w-1.5 h-1.5 bg-amber-500 rounded-full mr-3"></span>
+                            Made fresh to order
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-1.5 h-1.5 bg-amber-500 rounded-full mr-3"></span>
+                            Delivery or pickup
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-1.5 h-1.5 bg-amber-500 rounded-full mr-3"></span>
+                            Custom sizing
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-serif font-bold text-sage-800">Gourmet Hampers</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Carefully curated hampers packed with gourmet food and wine selections.
+                    </p>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li class="flex items-center">
+                            <span class="w-1.5 h-1.5 bg-amber-500 rounded-full mr-3"></span>
+                            Premium food & wine
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-1.5 h-1.5 bg-amber-500 rounded-full mr-3"></span>
+                            Beautiful presentation
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-1.5 h-1.5 bg-amber-500 rounded-full mr-3"></span>
+                            Perfect for gifting
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-amber-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-serif font-bold text-sage-800">Take Home & Picnic</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Ready-made meals and picnic boxes available Wednesday to Sunday.
+                    </p>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li class="flex items-center">
+                            <span class="w-1.5 h-1.5 bg-amber-500 rounded-full mr-3"></span>
+                            24hr notice required
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-1.5 h-1.5 bg-amber-500 rounded-full mr-3"></span>
+                            Perfect for outdoors
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-1.5 h-1.5 bg-amber-500 rounded-full mr-3"></span>
+                            Fresh local ingredients
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <div class="bg-sage-700 text-white rounded-2xl p-8 max-w-4xl mx-auto">
+                    <h3 class="text-2xl font-serif font-bold mb-4">Visit Our Food Emporium</h3>
+                    <p class="text-sage-100 mb-6">
+                        Open Wednesday to Sunday, 9am-4:30pm. Browse our beautiful selection while you're here for the cafe, nursery, or playground.
+                    </p>
+                    <a href="#contact" class="bg-amber-400 text-sage-800 px-8 py-3 rounded-full font-semibold hover:bg-amber-300 transition-all transform hover:scale-105 inline-block">
+                        Plan Your Visit
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Customer Reviews Section -->
-    <section class="py-20 lg:py-32 bg-white">
+    <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-serif font-bold text-sage-800 mb-6">What Our Customers Say</h2>
-                <div class="flex items-center justify-center text-yellow-400 mb-4">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <div class="flex items-center justify-center mb-4">
+                    <div class="flex text-yellow-400 text-2xl mr-4">
+                        <span>★★★★★</span>
+                    </div>
+                    <div>
+                        <span class="text-3xl font-bold text-sage-800">4.3</span>
+                        <span class="text-gray-600 ml-2">from 1,031 Google reviews</span>
+                    </div>
                 </div>
-                <p class="text-gray-600">Based on 1,000+ Google Reviews</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-sage-50 rounded-2xl p-6">
-                    <p class="text-gray-700 mb-4">"We had a lovely experience! The staff was friendly and welcoming, and the food was great. We ordered the Eggs Benny with bacon and the Brisket Roll both were delicious!"</p>
-                    <p class="font-semibold text-sage-700">– Alma J.</p>
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <!-- Review 1 -->
+                <div class="bg-sage-50 rounded-2xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-sage-200 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-sage-700 font-semibold text-lg">A</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-sage-800">Alma</h4>
+                            <p class="text-sm text-gray-600">Local Guide • 2 weeks ago</p>
+                        </div>
+                    </div>
+                    <div class="flex text-yellow-400 mb-3">★★★★★</div>
+                    <p class="text-gray-700 mb-4">
+                        "We had a lovely experience! The staff was friendly and welcoming, and the food was great. We ordered the Eggs Benny with bacon (8/10) and the Brisket Roll (10/10) both were delicious!"
+                    </p>
+                    <div class="grid grid-cols-3 gap-2 text-xs">
+                        <div class="text-center bg-white rounded p-2">
+                            <div class="font-semibold text-sage-700">Food</div>
+                            <div class="text-yellow-500">★★★★★</div>
+                        </div>
+                        <div class="text-center bg-white rounded p-2">
+                            <div class="font-semibold text-sage-700">Service</div>
+                            <div class="text-yellow-500">★★★★★</div>
+                        </div>
+                        <div class="text-center bg-white rounded p-2">
+                            <div class="font-semibold text-sage-700">Atmosphere</div>
+                            <div class="text-yellow-500">★★★★★</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-sage-50 rounded-2xl p-6">
-                    <p class="text-gray-700 mb-4">"Was here for mother's day lunch and had a great experience, food was delicious. All staff were welcoming, especially Sam who was extremely attentive and handled the busy day well."</p>
-                    <p class="font-semibold text-sage-700">– Chloe W.</p>
+
+                <!-- Review 2 -->
+                <div class="bg-sage-50 rounded-2xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-sage-200 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-sage-700 font-semibold text-lg">C</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-sage-800">Chloe Wittmann</h4>
+                            <p class="text-sm text-gray-600">1 month ago</p>
+                        </div>
+                    </div>
+                    <div class="flex text-yellow-400 mb-3">★★★★★</div>
+                    <p class="text-gray-700 mb-4">
+                        "Was here for mother's day lunch and had a great experience, food was delicious. All staff were welcoming, especially Sam who was extremely attentive and handled the busy day well. Would absolutely come again."
+                    </p>
+                    <div class="bg-white rounded p-3">
+                        <p class="text-sm text-sage-700"><span class="font-semibold">Occasion:</span> Mother's Day lunch</p>
+                        <p class="text-sm text-sage-700"><span class="font-semibold">Highlight:</span> Exceptional service from Sam</p>
+                    </div>
                 </div>
-                <div class="bg-sage-50 rounded-2xl p-6">
-                    <p class="text-gray-700 mb-4">"We love Rodney's at Pialligo. It's always busy on the weekends. Food is delicious. Nice to walk in the nursery and shop afterwards."</p>
-                    <p class="font-semibold text-sage-700">– Krystel C.</p>
+
+                <!-- Review 3 -->
+                <div class="bg-sage-50 rounded-2xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-sage-200 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-sage-700 font-semibold text-lg">K</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-sage-800">Krystel Chin</h4>
+                            <p class="text-sm text-gray-600">Local Guide • 5 months ago</p>
+                        </div>
+                    </div>
+                    <div class="flex text-yellow-400 mb-3">★★★★☆</div>
+                    <p class="text-gray-700 mb-4">
+                        "We love Rodney's at Pialligo. It's always busy on the weekends. Food is delicious. Nice to walk in the nursery and shop afterwards."
+                    </p>
+                    <div class="grid grid-cols-3 gap-2 text-xs mb-3">
+                        <div class="text-center bg-white rounded p-2">
+                            <div class="font-semibold text-sage-700">Food</div>
+                            <div class="text-yellow-500">★★★★★</div>
+                        </div>
+                        <div class="text-center bg-white rounded p-2">
+                            <div class="font-semibold text-sage-700">Service</div>
+                            <div class="text-yellow-500">★★★★☆</div>
+                        </div>
+                        <div class="text-center bg-white rounded p-2">
+                            <div class="font-semibold text-sage-700">Atmosphere</div>
+                            <div class="text-yellow-500">★★★★☆</div>
+                        </div>
+                    </div>
+                    <p class="text-sm text-sage-600"><span class="font-semibold">Recommended:</span> Gardeners Breakfast, Eggs Benny with Smoked Salmon</p>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <div class="bg-sage-700 text-white rounded-2xl p-8 max-w-2xl mx-auto">
+                    <h3 class="text-2xl font-serif font-bold mb-4">Share Your Experience</h3>
+                    <p class="text-sage-100 mb-6">
+                        Loved your visit? Help others discover Kitchen Garden at Rodney's by sharing your experience on Google.
+                    </p>
+                    <a href="https://g.page/r/[CORRECT-GOOGLE-BUSINESS-ID]/review" target="_blank" class="bg-cream-400 text-sage-800 px-8 py-3 rounded-full font-semibold hover:bg-cream-300 transition-all transform hover:scale-105 inline-block">
+                        Leave a Google Review
+                    </a>
+                    <p class="text-sage-200 text-sm mt-3">Takes less than 2 minutes</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact & Booking Section -->
-    <section id="contact" class="py-20 lg:py-32 bg-sage-700 text-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl md:text-5xl font-serif font-bold mb-6">Visit Us Today</h2>
-            <p class="text-xl text-sage-100 max-w-2xl mx-auto mb-10">
-                Book online to guarantee your table, or drop by as we always keep tables available for walk-ins.
-            </p>
-            <a href="https://bookings.nowbookit.com/?accountid=765ab0de-a1ee-48c7-b0b4-e10de766ba73&colors=hex%2C8bc34a%2C000000&font=Arimo&theme=light&venueid=3948" target="_blank" class="bg-white text-sage-700 px-8 py-4 rounded-full text-lg font-semibold hover:bg-cream-100 transition-all transform hover:scale-105 shadow-lg inline-block">
-                Book Your Table Online
-            </a>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-sage-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold mb-6">Visit Us Today</h2>
+                <p class="text-xl text-sage-100 max-w-3xl mx-auto">
+                    Book online to guarantee your table, or drop by as we always keep tables available for walk-ins
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-sage-700 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Phone</h3>
+                    <p class="text-sage-100">(02) 6257 5822</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-sage-700 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Hours</h3>
+                    <p class="text-sage-100">Open 7 days<br>9am - 4pm</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-sage-700 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Location</h3>
+                    <p class="text-sage-100">Pialligo<br>Canberra, ACT</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="tel:0262575822" class="bg-cream-400 text-sage-800 px-8 py-4 rounded-full text-lg font-semibold hover:bg-cream-300 transition-all transform hover:scale-105 shadow-lg inline-block">
+                    Call to Book Now
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-cream-100 text-sage-600">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
-                <div class="md:col-span-1">
-                    <h3 class="text-lg font-serif font-bold text-sage-800 mb-2">Kitchen Garden</h3>
-                    <p class="text-sm">24a Beltana Rd, Pialligo ACT</p>
-                    <p class="text-sm">(02) 6257 5822</p>
+    <footer class="bg-sage-900 text-sage-100 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h3 class="text-2xl font-serif font-bold text-white mb-4">Kitchen Garden at Rodney's</h3>
+                <p class="text-sage-300 mb-4">Serving Canberra with love since 1996</p>
+                <div class="flex justify-center space-x-6 mb-6">
+                    <a href="https://www.facebook.com/KitchenGardenAtRodneys" target="_blank" class="text-sage-300 hover:text-white transition-colors" aria-label="Facebook">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/kitchengardenatrodneys/" target="_blank" class="text-sage-300 hover:text-white transition-colors" aria-label="Instagram">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.google.com/maps/place/Rodney's+Garden+Caf%C3%A9,+24a+Beltana+Rd,+Pialligo+ACT+2609" target="_blank" class="text-sage-300 hover:text-white transition-colors" aria-label="Directions">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.google.com/search?q=Rodney%E2%80%99s+Garden+Caf%C3%A9+Reviews" target="_blank" class="text-sage-300 hover:text-white transition-colors" aria-label="Reviews">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                        </svg>
+                    </a>
                 </div>
-                <div class="md:col-span-1">
-                     <h3 class="text-lg font-serif font-bold text-sage-800 mb-2">Hours</h3>
-                     <p class="text-sm">Open 7 Days</p>
-                     <p class="text-sm">9:00am – 4:00pm</p>
+                <div class="border-t border-sage-700 pt-6">
+                    <p class="text-sage-400 text-sm">
+                        © 2025 Kitchen Garden at Rodney's. All rights reserved. | 
+                        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a> | 
+                        <a href="#" class="hover:text-white transition-colors">Terms of Service</a> |
+                        <a href="https://www.codepluscanvas.com" target="_blank" class="hover:text-white transition-colors">+ Design</a>
+                    </p>
                 </div>
-                <div class="md:col-span-1">
-                    <h3 class="text-lg font-serif font-bold text-sage-800 mb-2">Follow Us</h3>
-                    <div class="flex justify-center md:justify-start space-x-4">
-                        <a href="https://www.facebook.com/KitchenGardenAtRodneys" target="_blank" class="hover:text-sage-800 transition-colors" aria-label="Facebook">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                        </a>
-                        <a href="https://www.instagram.com/kitchengardenatrodneys/" target="_blank" class="hover:text-sage-800 transition-colors" aria-label="Instagram">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="border-t border-sage-200 mt-8 pt-8 text-center text-sm">
-                <p>
-                    © <span id="year"></span> Kitchen Garden at Rodney's. All Rights Reserved.
-                    <a href="https://www.codepluscanvas.com" target="_blank" class="hover:text-sage-800 transition-colors"> | + Design</a>
-                </p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Set current year in footer
-        document.getElementById('year').textContent = new Date().getFullYear();
-
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    const headerOffset = 80; // height of the sticky header
+                    // Calculate offset for fixed header
+                    const headerOffset = 80; // Height of the nav bar
                     const elementPosition = target.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -444,16 +1466,56 @@
             });
         });
 
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg');
+                nav.classList.remove('bg-white/80');
+                nav.classList.add('bg-white/95');
+            } else {
+                nav.classList.remove('shadow-lg');
+                nav.classList.add('bg-white/80');
+                nav.classList.remove('bg-white/95');
+            }
+        });
+
+        // Add entrance animations for sections
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target); // Stop observing after animation
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('section > div').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(el);
+        });
+
         // Mobile menu toggle
         const menuToggle = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
+        
         menuToggle.addEventListener('click', function() {
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Close mobile menu when a link is clicked
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
+        // Close mobile menu when clicking on links
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', function() {
                 mobileMenu.classList.add('hidden');
             });
         });
@@ -461,17 +1523,32 @@
         // Menu tab functionality
         const menuTabs = document.querySelectorAll('.menu-tab-btn');
         const menuContents = document.querySelectorAll('.menu-content');
+
         menuTabs.forEach(tab => {
             tab.addEventListener('click', function() {
                 const targetMenu = this.getAttribute('data-menu');
                 
-                menuTabs.forEach(t => t.classList.remove('active'));
+                // Remove active class from all tabs
+                menuTabs.forEach(t => {
+                    t.classList.remove('active');
+                });
+                
+                // Add active class to clicked tab
                 this.classList.add('active');
                 
-                menuContents.forEach(content => content.classList.add('hidden'));
-                document.getElementById(targetMenu + '-menu').classList.remove('hidden');
+                // Hide all menu contents
+                menuContents.forEach(content => {
+                    content.classList.add('hidden');
+                });
+                
+                // Show target menu content
+                const targetContent = document.getElementById(targetMenu + '-menu');
+                if(targetContent) {
+                   targetContent.classList.remove('hidden');
+                }
             });
         });
+
     </script>
 </body>
 </html>
