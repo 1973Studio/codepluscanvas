@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kitchen Garden at Rodney's - Pialligo Cafe Canberra</title>
+    <link rel="icon" type="image/gif" href="https://codepluscanvas.com/rodneys/logo.gif">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -50,19 +51,34 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
+                    <img src="https://codepluscanvas.com/rodneys/logo.gif" alt="Kitchen Garden at Rodney's Logo" class="h-12 w-auto mr-3">
                     <h1 class="text-xl font-serif font-bold text-sage-800">Kitchen Garden at Rodney's</h1>
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
                         <a href="#home" class="text-sage-700 hover:text-sage-900 px-3 py-2 text-sm font-medium transition-colors">Home</a>
                         <a href="#about" class="text-sage-700 hover:text-sage-900 px-3 py-2 text-sm font-medium transition-colors">About</a>
-                        <a href="#menu" class="text-sage-700 hover:text-sage-900 px-3 py-2 text-sm font-medium transition-colors">Menu</a>
+                        <div class="relative group">
+                            <button class="text-sage-700 hover:text-sage-900 px-3 py-2 text-sm font-medium transition-colors flex items-center">
+                                Menu
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div class="absolute top-full left-0 mt-1 w-48 bg-white rounded-lg shadow-lg border border-sage-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                <a href="#menu" class="menu-link block px-4 py-3 text-sm text-sage-700 hover:bg-sage-50 rounded-t-lg" data-menu="cafe">Cafe Menu</a>
+                                <a href="#menu" class="menu-link block px-4 py-3 text-sm text-sage-700 hover:bg-sage-50" data-menu="morning-tea">Morning/Afternoon Tea</a>
+                                <a href="#menu" class="menu-link block px-4 py-3 text-sm text-sage-700 hover:bg-sage-50" data-menu="high-tea">High Tea</a>
+                                <a href="#menu" class="menu-link block px-4 py-3 text-sm text-sage-700 hover:bg-sage-50" data-menu="garden-table">Garden Table</a>
+                                <a href="#menu" class="menu-link block px-4 py-3 text-sm text-sage-700 hover:bg-sage-50 rounded-b-lg" data-menu="functions">Functions</a>
+                            </div>
+                        </div>
                         <a href="#functions" class="text-sage-700 hover:text-sage-900 px-3 py-2 text-sm font-medium transition-colors">Functions</a>
                         <a href="#playground" class="text-sage-700 hover:text-sage-900 px-3 py-2 text-sm font-medium transition-colors">Playground</a>
                         <a href="#bbq" class="text-sage-700 hover:text-sage-900 px-3 py-2 text-sm font-medium transition-colors">Weekend BBQ</a>
                         <a href="#music" class="text-sage-700 hover:text-sage-900 px-3 py-2 text-sm font-medium transition-colors">Live Music</a>
                         <a href="#emporium" class="text-sage-700 hover:text-sage-900 px-3 py-2 text-sm font-medium transition-colors">Food Emporium</a>
-                        <a href="https://bookings.nowbookit.com/?accountid=765ab0de-a1ee-48c7-b0b4-e10de766ba73&colors=hex%2C8bc34a%2C000000&font=Arimo&theme=light&venueid=3948" target="_blank" class="bg-sage-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-sage-700 transition-colors">Book Now</a>
+                        <a href="https://bookings.nowbookit.com/?accountid=765ab0de-a1ee-48c7-b0b4-e10de766ba73&colors=hex%2C8bc34a%2C000000&font=Arimo&theme=light&venueid=3948" target="_blank" class="bg-sage-600 text-white px-4 py-2 text-sm font-medium hover:bg-sage-700 transition-colors">Book Now</a>
                     </div>
                 </div>
                 <div class="md:hidden">
@@ -1584,14 +1600,81 @@
             observer.observe(el);
         });
 
-        // Mobile menu toggle (basic implementation)
-        const mobileMenuButton = document.querySelector('.md\\:hidden button');
-        if (mobileMenuButton) {
-            mobileMenuButton.addEventListener('click', function() {
-                // Add mobile menu functionality here
-                console.log('Mobile menu clicked');
+        // Menu dropdown functionality
+        const menuLinks = document.querySelectorAll('.menu-link');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetMenu = this.getAttribute('data-menu');
+                
+                // Navigate to menu section
+                document.getElementById('menu').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                
+                // After scrolling, activate the correct tab
+                setTimeout(() => {
+                    // Remove active class from all tabs
+                    menuTabs.forEach(t => {
+                        t.classList.remove('active', 'bg-sage-600', 'text-white');
+                        t.classList.add('text-sage-700', 'hover:bg-sage-50');
+                    });
+                    
+                    // Add active class to target tab
+                    const targetTab = document.querySelector(`[data-menu="${targetMenu}"]`);
+                    if (targetTab) {
+                        targetTab.classList.add('active', 'bg-sage-600', 'text-white');
+                        targetTab.classList.remove('text-sage-700', 'hover:bg-sage-50');
+                    }
+                    
+                    // Hide all menu contents
+                    menuContents.forEach(content => {
+                        content.classList.add('hidden');
+                    });
+                    
+                    // Show target menu content
+                    document.getElementById(targetMenu + '-menu').classList.remove('hidden');
+                }, 500);
             });
-        }
+        });
+
+        // Menu tab functionality
+        const menuTabs = document.querySelectorAll('.menu-tab-btn');
+        const menuContents = document.querySelectorAll('.menu-content');
+
+        menuTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const targetMenu = this.getAttribute('data-menu');
+                
+                // Remove active class from all tabs
+                menuTabs.forEach(t => {
+                    t.classList.remove('active', 'bg-sage-600', 'text-white');
+                    t.classList.add('text-sage-700', 'hover:bg-sage-50');
+                });
+                
+                // Add active class to clicked tab
+                this.classList.add('active', 'bg-sage-600', 'text-white');
+                this.classList.remove('text-sage-700', 'hover:bg-sage-50');
+                
+                // Hide all menu contents
+                menuContents.forEach(content => {
+                    content.classList.add('hidden');
+                });
+                
+                // Show target menu content
+                document.getElementById(targetMenu + '-menu').classList.remove('hidden');
+            });
+        });
+
+        // Set initial active state
+        document.querySelector('.menu-tab-btn[data-menu="cafe"]').classList.add('bg-sage-600', 'text-white');
+        document.querySelector('.menu-tab-btn[data-menu="cafe"]').classList.remove('text-sage-700');
+        menuTabs.forEach(tab => {
+            if (!tab.classList.contains('active')) {
+                tab.classList.add('text-sage-700', 'hover:bg-sage-50');
+            }
+        });
     </script>
 </body>
 </html>
