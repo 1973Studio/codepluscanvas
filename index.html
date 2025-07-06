@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,6 +34,14 @@
             pointer-events: none; /* Allows clicks to go through to the image link */
             border-radius: 0.5rem; /* Match image rounding */
         }
+        /* Additional style for the active service tab */
+        .service-tab.active {
+            background-color: #fb7185;
+            color: white;
+        }
+        .service-tab.active svg {
+            color: white;
+        }
     </style>
 </head>
 <body class="bg-stone-50 text-gray-800">
@@ -43,11 +51,11 @@
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-gray-900 font-brand">code+canvas</a>
             <nav class="hidden md:flex space-x-8">
-                <a href="#about" class="text-gray-600 hover:text-gray-900 transition duration-300">About</a>
-                <a href="#services" class="text-gray-600 hover:text-gray-900 transition duration-300">Services</a>
-                <a href="#pricing" class="text-gray-600 hover:text-gray-900 transition duration-300">Pricing</a>
-                <a href="#portfolio" class="text-gray-600 hover:text-gray-900 transition duration-300">Portfolio</a>
-                <a href="#contact" class="text-gray-600 hover:text-gray-900 transition duration-300">Contact</a>
+                <a href="#about" class="text-gray-600 hover:text-rose-500 transition duration-300">About</a>
+                <a href="#services" class="text-gray-600 hover:text-rose-500 transition duration-300">Services</a>
+                <a href="#pricing" class="text-gray-600 hover:text-rose-500 transition duration-300">Pricing</a>
+                <a href="#portfolio" class="text-gray-600 hover:text-rose-500 transition duration-300">Portfolio</a>
+                <a href="#contact" class="text-gray-600 hover:text-rose-500 transition duration-300">Contact</a>
             </nav>
             <button id="mobile-menu-button" class="md:hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -57,11 +65,11 @@
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-            <a href="#about" class="block py-2 text-gray-600 hover:text-gray-900">About</a>
-            <a href="#services" class="block py-2 text-gray-600 hover:text-gray-900">Services</a>
-            <a href="#pricing" class="block py-2 text-gray-600 hover:text-gray-900">Pricing</a>
-            <a href="#portfolio" class="block py-2 text-gray-600 hover:text-gray-900">Portfolio</a>
-            <a href="#contact" class="block py-2 text-gray-600 hover:text-gray-900">Contact</a>
+            <a href="#about" class="block py-2 text-gray-600 hover:text-rose-500">About</a>
+            <a href="#services" class="block py-2 text-gray-600 hover:text-rose-500">Services</a>
+            <a href="#pricing" class="block py-2 text-gray-600 hover:text-rose-500">Pricing</a>
+            <a href="#portfolio" class="block py-2 text-gray-600 hover:text-rose-500">Portfolio</a>
+            <a href="#contact" class="block py-2 text-gray-600 hover:text-rose-500">Contact</a>
         </div>
     </header>
 
@@ -90,43 +98,54 @@
                     <img src="https://codepluscanvas.com/+.webp" alt="code+canvas logo" class="rounded-lg shadow-xl object-cover w-full h-full max-h-[750px]">
                 </div>
                 <div class="text-left">
-                    <h2 class="text-4xl font-bold font-serif mb-6">A Different Approach to Web Design</h2>
-                    <p class="text-gray-600 mb-4">As a solo entrepreneur who's been building websites since 2009, I've seen how the industry often fails small businesses. I was frankly disgusted with agencies charging thousands of dollars upfront for a website, only to lock clients into expensive, long-term maintenance contracts. That’s not how I work.</p>
-                    <p class="text-gray-600 mb-4">I started code+canvas to do things differently. I believe every business deserves a beautiful, high-performance website without the crippling financial burden. That's why I offer a simple, transparent monthly plan with no lock-in contracts. You get a stunning, custom-built website for a fair price, and you can cancel anytime.</p>
-                    <p class="text-gray-600 mb-6">Every site I build is crafted with a mobile-first philosophy, because that’s where most of your customers will find you. The result is a clean, lightning-fast, single-page website that looks incredible on any device and perfectly tells your unique story.</p>
+                    <h2 class="text-4xl font-bold font-serif mb-6">Web Design That Puts You First</h2>
+                    <p class="text-gray-600 mb-4">My mission is simple: to empower small businesses with incredible websites, free from the traditional industry barriers. Since starting in 2009, I've seen the web design world from the inside, and I knew there had to be a better way than asking for thousands of dollars upfront and locking clients into contracts they couldn't leave.</p>
+                    <p class="text-gray-600 mb-4"><strong class="font-semibold">code+canvas</strong> was born from that belief. I’ve built my entire process around your success and peace of mind. With a straightforward monthly plan, you get a custom-designed, hand-coded website without the crippling financial burden. There are no lock-in contracts, ever. It’s a foundation of trust from day one.</p>
+                    <p class="text-gray-600 mb-6">I focus on what truly matters: a mobile-first design that captures your unique story, loads with incredible speed, and provides a seamless experience for your customers. It's your vision, brought to life with integrity.</p>
                     <a href="#portfolio" class="text-rose-500 font-semibold hover:text-rose-600 transition duration-300">View My Work &rarr;</a>
                 </div>
             </div>
         </section>
 
-        <!-- Services Section -->
+        <!-- Services Section (Redesigned) -->
         <section id="services" class="py-20">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-4xl font-bold font-serif mb-12">My Services</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                    <!-- Service Card 1 -->
-                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
-                        <div class="text-rose-400 mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.52 4.674c.3.921-.755 1.688-1.539 1.118l-3.975-2.888a1 1 0 00-1.175 0l-3.976 2.888c-.783.57-1.838-.197-1.539-1.118l1.52-4.674a1 1 0 00-.363-1.118L2.98 9.11c-.783-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" /></svg></div>
-                        <h3 class="text-2xl font-semibold font-serif mb-3">Branding & Identity</h3>
-                        <p class="text-gray-600">Creating memorable brands through logo design, colour theory, and comprehensive style guides.</p>
-                    </div>
-                    <!-- Service Card 2 -->
-                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
-                         <div class="text-rose-400 mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg></div>
-                        <h3 class="text-2xl font-semibold font-serif mb-3">Web Design</h3>
-                        <p class="text-gray-600">Designing intuitive, beautiful, and responsive websites that provide an exceptional user experience.</p>
-                    </div>
-                    <!-- Service Card 3 -->
-                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
-                         <div class="text-rose-400 mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg></div>
-                        <h3 class="text-2xl font-semibold font-serif mb-3">Digital Content</h3>
-                        <p class="text-gray-600">Producing engaging content, from social media graphics to email marketing campaigns.</p>
-                    </div>
-                     <!-- Service Card 4 -->
-                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
-                         <div class="text-rose-400 mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"> <path stroke-linecap="round" stroke-linejoin="round" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" /> </svg></div>
-                        <h3 class="text-2xl font-semibold font-serif mb-3">Custom Games</h3>
-                        <p class="text-gray-600">Exploring new creative frontiers, including developing immersive experiences. Currently crafting a custom game on the Roblox platform to showcase interactive design possibilities.</p>
+                <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-xl overflow-hidden">
+                    <div class="flex flex-col md:flex-row">
+                        <!-- Service Tabs -->
+                        <div id="service-tabs" class="md:w-1/3 bg-stone-50 p-4">
+                            <button data-service="branding" class="service-tab active w-full text-left p-4 rounded-lg flex items-center gap-4 transition-colors duration-300">
+                                <svg class="h-8 w-8 text-rose-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.43 2.43a3 3 0 001.128 5.78 2.25 2.25 0 012.43 2.43a3 3 0 005.78 1.128 2.25 2.25 0 012.43-2.43a3 3 0 00-1.128-5.78 2.25 2.25 0 01-2.43-2.43zM9.53 16.122L12 12m0 0l2.47-2.47m-2.47 2.47L9.53 16.122m2.47-2.47L12 12m0 0l2.47 2.47M12 12l-2.47 2.47" /></svg>
+                                <div>
+                                    <h3 class="font-semibold font-serif text-lg">Branding & Identity</h3>
+                                </div>
+                            </button>
+                             <button data-service="webdesign" class="service-tab w-full text-left p-4 rounded-lg flex items-center gap-4 transition-colors duration-300">
+                                <svg class="h-8 w-8 text-rose-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                                <div>
+                                    <h3 class="font-semibold font-serif text-lg">Web Design</h3>
+                                </div>
+                            </button>
+                             <button data-service="content" class="service-tab w-full text-left p-4 rounded-lg flex items-center gap-4 transition-colors duration-300">
+                                <svg class="h-8 w-8 text-rose-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" /></svg>
+                                <div>
+                                    <h3 class="font-semibold font-serif text-lg">Digital Content</h3>
+                                </div>
+                            </button>
+                             <button data-service="games" class="service-tab w-full text-left p-4 rounded-lg flex items-center gap-4 transition-colors duration-300">
+                               <svg class="h-8 w-8 text-rose-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" /></svg>
+                                <div>
+                                    <h3 class="font-semibold font-serif text-lg">Custom Games</h3>
+                                </div>
+                            </button>
+                        </div>
+                        <!-- Service Content -->
+                        <div class="md:w-2/3 p-8 md:p-12 text-left">
+                            <div id="service-content">
+                                <!-- Content will be injected by JS -->
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -144,7 +163,7 @@
                             <span id="currency-symbol">$</span><span id="price-value">45</span>
                             <span class="text-lg font-normal text-gray-600">/month</span>
                         </div>
-                        <p class="text-gray-500 mt-2">AUD • Hosting included • Cancel anytime</p>
+                        <p id="currency-info" class="text-gray-500 mt-2">AUD • Hosting included • Cancel anytime</p>
                         <p class="text-gray-600 font-semibold mt-1">$0 upfront • 7-day launch guarantee</p>
                     </div>
 
@@ -162,11 +181,11 @@
                     <div class="mb-8">
                         <span class="text-sm font-semibold text-gray-500 mb-3 block text-center">See equivalent price in:</span>
                         <div id="currency-converter" class="flex flex-wrap justify-center items-center gap-2 border border-gray-200 rounded-full p-1 max-w-sm mx-auto">
-                            <button data-currency="USD" data-original-currency="USD" class="currency-btn w-auto text-sm font-semibold py-2 px-4 rounded-full transition-colors duration-300">USD</button>
-                            <button data-currency="EUR" data-original-currency="EUR" class="currency-btn w-auto text-sm font-semibold py-2 px-4 rounded-full transition-colors duration-300">EURO</button>
-                            <button data-currency="NZD" data-original-currency="NZD" class="currency-btn w-auto text-sm font-semibold py-2 px-4 rounded-full transition-colors duration-300">NZ</button>
-                            <button data-currency="CNY" data-original-currency="CNY" class="currency-btn w-auto text-sm font-semibold py-2 px-4 rounded-full transition-colors duration-300">CHINA</button>
-                            <button data-currency="GBP" data-original-currency="GBP" class="currency-btn w-auto text-sm font-semibold py-2 px-4 rounded-full transition-colors duration-300">UK</button>
+                           <button data-currency="AUD" class="currency-btn w-auto text-sm font-semibold py-2 px-4 rounded-full transition-colors duration-300 active">AUD</button>
+                            <button data-currency="USD" class="currency-btn w-auto text-sm font-semibold py-2 px-4 rounded-full transition-colors duration-300">USD</button>
+                            <button data-currency="EUR" class="currency-btn w-auto text-sm font-semibold py-2 px-4 rounded-full transition-colors duration-300">EUR</button>
+                            <button data-currency="NZD" class="currency-btn w-auto text-sm font-semibold py-2 px-4 rounded-full transition-colors duration-300">NZD</button>
+                            <button data-currency="GBP" class="currency-btn w-auto text-sm font-semibold py-2 px-4 rounded-full transition-colors duration-300">GBP</button>
                         </div>
                     </div>
 
@@ -201,29 +220,29 @@
                     </div>
                 </div>
         
-                <!-- Other Projects -->
-                <div class="space-y-12">
-                    <!-- Project Card: Mon Perry -->
-                    <div class="bg-stone-50 rounded-lg shadow-lg p-8 grid md:grid-cols-3 gap-8 items-center">
-                        <div class="md:col-span-1">
+                <!-- Other Projects (Alternating Layout) -->
+                <div class="space-y-16">
+                    <!-- Project Card: Mon Perry (Image Left) -->
+                    <div class="bg-stone-50 rounded-lg shadow-lg p-8 grid md:grid-cols-2 gap-12 items-center">
+                        <div>
                             <img src="https://codepluscanvas.netlify.app/montoon.webp" alt="Mon Perry Bakery Website" class="rounded-lg shadow-md w-full h-auto">
                         </div>
-                        <div class="md:col-span-2 text-left">
+                        <div class="text-left">
                             <h4 class="text-2xl font-bold font-serif mb-2">Mon Perry</h4>
                             <p class="text-gray-600 mb-4">For this authentic French bakery, I'm building a complete digital storefront. Key features include a dynamic menu that's easy to update, a live Google Reviews feed to build trust, and an interactive map to guide customers to their door. The entire site is being crafted with a mobile-first approach to serve their on-the-go clientele.</p>
                             <span class="inline-block bg-rose-200 text-rose-800 text-sm font-semibold mr-3 px-2.5 py-0.5 rounded-full">In Development</span>
                         </div>
                     </div>
 
-                    <!-- Project Card: The Friendly Groomer -->
-                    <div class="bg-stone-50 rounded-lg shadow-lg p-8 grid md:grid-cols-3 gap-8 items-center">
-                        <div class="md:col-span-1">
-                           <img src="https://codepluscanvas.com/TheFriendlyGroomer.png" alt="The Friendly Groomer Website" class="rounded-lg shadow-md w-full h-auto">
-                        </div>
-                        <div class="md:col-span-2 text-left">
+                    <!-- Project Card: The Friendly Groomer (Image Right) -->
+                    <div class="bg-stone-50 rounded-lg shadow-lg p-8 grid md:grid-cols-2 gap-12 items-center">
+                         <div class="text-left md:order-last">
                             <h4 class="text-2xl font-bold font-serif mb-2">The Friendly Groomer</h4>
                             <p class="text-gray-600 mb-4">A warm and welcoming website for a local dog grooming studio. The design focuses on being approachable and friendly, with a clean layout, cute icons, and an easy-to-use online booking system.</p>
                             <span class="inline-block bg-rose-200 text-rose-800 text-sm font-semibold mr-3 px-2.5 py-0.5 rounded-full">In Development</span>
+                        </div>
+                        <div>
+                           <img src="https://codepluscanvas.com/TheFriendlyGroomer.png" alt="The Friendly Groomer Website" class="rounded-lg shadow-md w-full h-auto">
                         </div>
                     </div>
                     
@@ -314,30 +333,29 @@
                 <span class="hidden sm:inline">|</span>
                 <a href="#" class="hover:text-rose-500 transition-colors duration-300">Privacy Policy</a>
             </div>
-             <p class="mb-6">&copy; 2025 code+canvas. All Rights Reserved.</p>
+             <p class="mb-6">&copy; <span id="copyright-year"></span> code+canvas. All Rights Reserved.</p>
              <div class="max-w-3xl mx-auto text-xs text-gray-500">
-                <h4 class="font-semibold font-serif mb-2">Acknowledgement of Country</h4>
-                <p>code+canvas acknowledges Traditional Owners of Country throughout Australia and recognises the continuing connection to lands, waters and communities. We pay our respect to Aboriginal and Torres Strait Islander cultures; and to Elders past and present.</p>
+                 <h4 class="font-semibold font-serif mb-2">Acknowledgement of Country</h4>
+                 <p>code+canvas acknowledges Traditional Owners of Country throughout Australia and recognises the continuing connection to lands, waters and communities. We pay our respect to Aboriginal and Torres Strait Islander cultures; and to Elders past and present.</p>
              </div>
         </div>
     </footer>
     
     <script>
-        // Use window.onload to ensure all content (including images) is loaded before running scripts
-        window.onload = function() {
-            // Mobile menu toggle
+        // Defer script execution until the DOM is fully parsed
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // --- Mobile Menu Toggle ---
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
-
             mobileMenuButton.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
             });
 
-            // Smooth scrolling for anchor links
+            // --- Smooth Scrolling & Mobile Menu Hide ---
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
-                    // Close mobile menu on click
                     if (!mobileMenu.classList.contains('hidden')) {
                         mobileMenu.classList.add('hidden');
                     }
@@ -347,68 +365,88 @@
                 });
             });
 
-            // --- Currency Converter Logic ---
+            // --- Service Tabs Logic ---
+            const serviceTabs = document.querySelectorAll('.service-tab');
+            const serviceContentEl = document.getElementById('service-content');
+            const services = {
+                branding: {
+                    title: 'Branding & Identity',
+                    description: 'Your brand is more than just a logo; it\'s the entire experience your customers have with your business. I craft memorable brand identities through thoughtful logo design, strategic color theory, and comprehensive style guides that ensure consistency across all your platforms.'
+                },
+                webdesign: {
+                    title: 'Web Design & Development',
+                    description: 'I design and build intuitive, beautiful, and responsive websites that provide an exceptional user experience. Every site is hand-coded for lightning-fast performance and meticulously optimized for mobile devices, ensuring you make a great impression, wherever your customers find you.'
+                },
+                content: {
+                    title: 'Digital Content Creation',
+                    description: 'Engaging content is key to connecting with your audience. I produce a range of digital assets, from eye-catching social media graphics and animations to professional email marketing campaigns, helping you tell your story and grow your business.'
+                },
+                games: {
+                    title: 'Custom Games & Experiences',
+                    description: 'Exploring new creative frontiers, I develop immersive interactive experiences. I\'m currently crafting a custom sci-fi farming game on the Roblox platform to showcase innovative design possibilities and engaging gameplay loops for brands and creators.'
+                }
+            };
+
+            function updateServiceContent(serviceKey) {
+                const service = services[serviceKey];
+                serviceContentEl.innerHTML = `
+                    <h4 class="text-3xl font-bold font-serif mb-4">${service.title}</h4>
+                    <p class="text-gray-600">${service.description}</p>
+                `;
+            }
+
+            serviceTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    serviceTabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    updateServiceContent(tab.dataset.service);
+                });
+            });
+            // Initialize with the first service
+            updateServiceContent('branding');
+
+
+            // --- Currency Converter Logic (Simplified) ---
             const priceValueEl = document.getElementById('price-value');
             const currencySymbolEl = document.getElementById('currency-symbol');
+            const currencyInfoEl = document.getElementById('currency-info');
             const currencyButtons = document.querySelectorAll('.currency-btn');
-
             const rates = {
-                AUD: { rate: 1, symbol: '$' },
-                USD: { rate: 0.65, symbol: '$' },
-                EUR: { rate: 0.61, symbol: '€' },
-                NZD: { rate: 1.09, symbol: 'NZ$' },
-                CNY: { rate: 4.75, symbol: '¥' },
-                GBP: { rate: 0.52, symbol: '£' },
+                AUD: { rate: 1, symbol: '$', name: 'AUD' },
+                USD: { rate: 0.65, symbol: '$', name: 'USD' },
+                EUR: { rate: 0.61, symbol: '€', name: 'EUR' },
+                NZD: { rate: 1.09, symbol: '$', name: 'NZD' },
+                GBP: { rate: 0.52, symbol: '£', name: 'GBP' },
             };
             const basePriceAUD = 45;
 
             currencyButtons.forEach(button => {
                 button.addEventListener('click', (e) => {
-                    const clickedButton = e.currentTarget;
-                    const targetCurrency = clickedButton.dataset.currency;
-
-                    // If the clicked button is already the 'AUD' reset button
-                    if (targetCurrency === 'AUD') {
-                        // Reset price to AUD
-                        priceValueEl.textContent = basePriceAUD;
-                        currencySymbolEl.textContent = rates.AUD.symbol;
-                        
-                        // Restore the button to its original state
-                        const originalCurrency = clickedButton.dataset.originalCurrency;
-                        clickedButton.textContent = originalCurrency;
-                        clickedButton.dataset.currency = originalCurrency;
-                        clickedButton.classList.remove('active');
-                        return;
-                    }
-
-                    // Reset any other button that might be acting as the 'AUD' button
+                    const targetCurrency = e.currentTarget.dataset.currency;
+                    
+                    // Update visuals for all buttons
                     currencyButtons.forEach(btn => {
-                        if (btn.dataset.currency === 'AUD') {
-                            const original = btn.dataset.originalCurrency;
-                            btn.textContent = original;
-                            btn.dataset.currency = original;
-                            btn.classList.remove('active');
-                        }
+                        btn.classList.remove('active');
                     });
+                    e.currentTarget.classList.add('active');
 
                     // Calculate and display new price
-                    const { rate, symbol } = rates[targetCurrency];
+                    const { rate, symbol, name } = rates[targetCurrency];
                     const newPrice = (basePriceAUD * rate).toFixed(0);
                     priceValueEl.textContent = newPrice;
                     currencySymbolEl.textContent = symbol;
-
-                    // Turn the clicked button into the new 'AUD' reset button
-                    clickedButton.textContent = 'AUD';
-                    clickedButton.dataset.currency = 'AUD';
-                    clickedButton.classList.add('active');
+                    currencyInfoEl.textContent = `${name} • Hosting included • Cancel anytime`;
                 });
             });
-            
-            // Set video playback speed
+
+            // --- Video Playback Speed ---
             const heroVideo = document.getElementById('hero-video');
             if (heroVideo) {
                 heroVideo.playbackRate = 0.75;
             }
+            
+            // --- Dynamic Copyright Year ---
+            document.getElementById('copyright-year').textContent = new Date().getFullYear();
 
             // --- Snow Effect Logic ---
             const canvas = document.getElementById('snow-canvas');
@@ -428,7 +466,7 @@
                         snowflakes.push({
                             x: Math.random() * canvas.width,
                             y: Math.random() * canvas.height,
-                            radius: Math.random() * 3 + 1, // radius between 1 and 4
+                            radius: Math.random() * 3 + 1,
                             density: Math.random() * snowflakeCount
                         });
                     }
@@ -452,12 +490,9 @@
                     angle += 0.01;
                     for (let i = 0; i < snowflakes.length; i++) {
                         const s = snowflakes[i];
-                        // Update y position to fall down
-                        s.y += Math.pow(s.radius, 0.5); 
-                        // Add some side-to-side motion
+                        s.y += Math.pow(s.radius, 0.5);
                         s.x += Math.sin(angle) * 2;
 
-                        // If snowflake reaches the bottom, reset to the top
                         if (s.y > canvas.height) {
                             snowflakes[i] = { x: Math.random() * canvas.width, y: 0, radius: s.radius, density: s.density };
                         }
@@ -480,8 +515,7 @@
                     createSnowflakes();
                 });
             }
-        };
-
+        });
     </script>
 
 </body>
