@@ -58,6 +58,7 @@
             <a href="#" class="text-2xl font-bold text-gray-900 font-brand">code+canvas</a>
             <nav class="hidden md:flex space-x-8">
                 <a href="#about" class="text-gray-600 hover:text-rose-500 transition duration-300">About</a>
+                <a href="#process" class="text-gray-600 hover:text-rose-500 transition duration-300">Process</a>
                 <a href="#services" class="text-gray-600 hover:text-rose-500 transition duration-300">Services</a>
                 <a href="#pricing" class="text-gray-600 hover:text-rose-500 transition duration-300">Pricing</a>
                 <a href="#portfolio" class="text-gray-600 hover:text-rose-500 transition duration-300">Portfolio</a>
@@ -73,6 +74,7 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
             <a href="#about" class="block py-2 text-gray-600 hover:text-rose-500">About</a>
+            <a href="#process" class="block py-2 text-gray-600 hover:text-rose-500">Process</a>
             <a href="#services" class="block py-2 text-gray-600 hover:text-rose-500">Services</a>
             <a href="#pricing" class="block py-2 text-gray-600 hover:text-rose-500">Pricing</a>
             <a href="#portfolio" class="block py-2 text-gray-600 hover:text-rose-500">Portfolio</a>
@@ -86,7 +88,7 @@
         <!-- Hero Section -->
         <section class="container mx-auto px-6 pt-24 pb-16 text-center">
             <h1 class="text-5xl md:text-7xl font-bold font-serif mb-4">Crafting Beauty, One Detail at a Time.</h1>
-            <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-12">A boutique creative studio specialising in branding, web design, and digital experiences that captivate and inspire.</p>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-12">A boutique creative studio where I partner with my AI to build digital experiences that captivate and inspire.</p>
 
             <!-- Video Player -->
             <div class="max-w-4xl mx-auto mb-12 shadow-2xl rounded-lg overflow-hidden">
@@ -114,9 +116,43 @@
                 </div>
             </div>
         </section>
+        
+        <!-- My Process Section -->
+        <section id="process" class="py-20 bg-stone-50">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold font-serif mb-4">My Collaborative Process</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-16">From our first conversation to launch day and beyond, I’ve designed a simple, transparent process to bring your vision to life seamlessly.</p>
+                <div class="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+                    <!-- Step 1 -->
+                    <div class="text-center">
+                        <div class="flex items-center justify-center h-16 w-16 bg-rose-400 text-white rounded-full mx-auto mb-4">
+                           <span class="text-2xl font-bold">1</span>
+                        </div>
+                        <h3 class="text-2xl font-semibold font-serif mb-2">Discovery & Design</h3>
+                        <p class="text-gray-600">We'll start with a deep dive into your business, goals, and vision. I'll then create a custom design concept that perfectly captures your brand's unique story and personality.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="text-center">
+                         <div class="flex items-center justify-center h-16 w-16 bg-rose-400 text-white rounded-full mx-auto mb-4">
+                           <span class="text-2xl font-bold">2</span>
+                        </div>
+                        <h3 class="text-2xl font-semibold font-serif mb-2">Craft & Refine</h3>
+                        <p class="text-gray-600">This is where the magic happens. I'll personally hand-code your website with meticulous attention to detail. We'll review it together in a true partnership to ensure every element is perfect.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="text-center">
+                         <div class="flex items-center justify-center h-16 w-16 bg-rose-400 text-white rounded-full mx-auto mb-4">
+                           <span class="text-2xl font-bold">3</span>
+                        </div>
+                        <h3 class="text-2xl font-semibold font-serif mb-2">Launch & Support</h3>
+                        <p class="text-gray-600">I handle the entire technical launch process to get your new website live. After launch, your plan includes ongoing support, so I'm always here to help your website evolve as your business grows.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Services Section (Redesigned) -->
-        <section id="services" class="py-20">
+        <section id="services" class="py-20 bg-white">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-4xl font-bold font-serif mb-12">My Services</h2>
                 <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-xl overflow-hidden">
@@ -445,29 +481,61 @@
             const serviceTabs = document.querySelectorAll('.service-tab');
             const serviceContentEl = document.getElementById('service-content');
             const services = {
-                branding: {
+                 branding: {
                     title: 'Branding & Identity',
-                    description: 'Your brand is more than just a logo; it\'s the entire experience your customers have with your business. I craft memorable brand identities through thoughtful logo design, strategic color theory, and comprehensive style guides that ensure consistency across all your platforms.'
+                    description: 'Your brand is more than just a logo; it\'s the entire experience your customers have with your business. I craft memorable brand identities through thoughtful logo design, strategic color theory, and comprehensive style guides that ensure consistency across all your platforms.',
+                    features: [
+                        'Logo Design & Variations',
+                        'Colour Palette Curation',
+                        'Typography Selection',
+                        'Comprehensive Brand Style Guide'
+                    ]
                 },
                 webdesign: {
                     title: 'Web Design & Development',
-                    description: 'I design and build intuitive, beautiful, and responsive websites that provide an exceptional user experience. Every site is hand-coded for lightning-fast performance and meticulously optimized for mobile devices, ensuring you make a great impression, wherever your customers find you.'
+                    description: 'I design and build intuitive, beautiful, and responsive websites that provide an exceptional user experience. Every site is hand-coded for lightning-fast performance and meticulously optimized for mobile devices, ensuring you make a great impression, wherever your customers find you.',
+                     features: [
+                        'Custom Hand-Coded Design',
+                        'Mobile-First & Responsive',
+                        'User Experience (UX) Design',
+                        'SEO Fundamentals',
+                        'Performance Optimization'
+                    ]
                 },
                 content: {
                     title: 'Digital Content Creation',
-                    description: 'Engaging content is key to connecting with your audience. I produce a range of digital assets, from eye-catching social media graphics and animations to professional email marketing campaigns, helping you tell your story and grow your business.'
+                    description: 'Engaging content is key to connecting with your audience. I produce a range of digital assets, from eye-catching social media graphics and animations to professional email marketing campaigns, helping you tell your story and grow your business.',
+                     features: [
+                        'Social Media Graphics',
+                        'Custom Illustrations & Icons',
+                        'Email Campaign Design',
+                        'Engaging Animations'
+                    ]
                 },
                 games: {
                     title: 'Custom Games & Experiences',
-                    description: 'Exploring new creative frontiers, I develop immersive interactive experiences. I\'m currently crafting a custom sci-fi farming game on the Roblox platform to showcase innovative design possibilities and engaging gameplay loops for brands and creators.'
+                    description: 'Exploring new creative frontiers, I develop immersive interactive experiences. I\'m currently crafting a custom sci-fi farming game on the Roblox platform to showcase innovative design possibilities and engaging gameplay loops for brands and creators.',
+                     features: [
+                        'Roblox Game Development',
+                        'Interactive Web Experiences',
+                        'Gamified Marketing Content',
+                        'IP & Creative Prototyping'
+                    ]
                 }
             };
 
             function updateServiceContent(serviceKey) {
                 const service = services[serviceKey];
+                let featuresHTML = '<ul class="mt-6 space-y-2">';
+                service.features.forEach(feature => {
+                    featuresHTML += `<li class="flex items-center"><svg class="h-5 w-5 text-green-500 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg><span class="text-gray-700">${feature}</span></li>`;
+                });
+                featuresHTML += '</ul>';
+
                 serviceContentEl.innerHTML = `
                     <h4 class="text-3xl font-bold font-serif mb-4">${service.title}</h4>
                     <p class="text-gray-600">${service.description}</p>
+                    ${featuresHTML}
                 `;
             }
 
