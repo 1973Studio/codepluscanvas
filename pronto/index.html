@@ -57,8 +57,6 @@
                     <div class="container mx-auto flex justify-between items-center p-6 text-white">
                         <img src="https://codepluscanvas.com/pronto/prontologo.png" alt="Pronto Logo" class="h-10 md:h-12 cursor-pointer" onclick="navigateTo('landing')">
                         <nav class="hidden md:flex space-x-6 items-center">
-                            <a href="#" onclick="navigateTo('queanbeyan')" class="text-lg font-medium hover:text-primary transition-colors">Queanbeyan</a>
-                            <a href="#" onclick="navigateTo('weston')" class="text-lg font-medium hover:text-primary transition-colors">Weston</a>
                             <a href="#" onclick="navigateTo('contact')" class="text-lg font-medium hover:text-primary transition-colors">Contact Us</a>
                             <a href="#" onclick="navigateTo('booking')" class="bg-primary hover:bg-red-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300">Book Now</a>
                         </nav>
@@ -68,8 +66,6 @@
                     </div>
                      <!-- Mobile Menu -->
                     <div id="mobile-menu-landing" class="hidden md:hidden bg-black bg-opacity-90 text-white">
-                        <a href="#" onclick="navigateTo('queanbeyan')" class="block py-3 px-6 text-center hover:bg-primary">Queanbeyan</a>
-                        <a href="#" onclick="navigateTo('weston')" class="block py-3 px-6 text-center hover:bg-primary">Weston</a>
                         <a href="#" onclick="navigateTo('contact')" class="block py-3 px-6 text-center hover:bg-primary">Contact Us</a>
                         <a href="#" onclick="navigateTo('booking')" class="block py-3 px-6 text-center bg-primary font-bold">Book Now</a>
                     </div>
@@ -77,8 +73,12 @@
 
                 <!-- Centered Content -->
                 <div class="relative h-full flex flex-col items-center justify-center text-center text-white p-4">
-                     <h1 class="font-serif text-5xl md:text-7xl font-bold max-w-3xl leading-tight">Authentic Italian, Shared with Family & Friends.</h1>
+                     <h1 class="font-sans text-4xl md:text-5xl font-bold max-w-3xl leading-tight tracking-wide">Authentic Italian, Shared with Family & Friends.</h1>
                      <p class="text-xl md:text-2xl mt-8">Select a location to begin your experience.</p>
+                     <div class="flex flex-col md:flex-row gap-4 mt-6">
+                         <button onclick="navigateTo('queanbeyan')" class="bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">Queanbeyan</button>
+                         <button onclick="navigateTo('weston')" class="bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">Weston</button>
+                     </div>
                 </div>
             </div>
         </div>
