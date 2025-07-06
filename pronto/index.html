@@ -38,12 +38,6 @@
         .menu-category {
             margin-bottom: 2.5rem;
         }
-        .split-screen-bg {
-            transition: transform 0.5s ease-in-out;
-        }
-        .group:hover .split-screen-bg {
-            transform: scale(1.05);
-        }
     </style>
 </head>
 <body>
@@ -53,33 +47,39 @@
 
         <!-- ===== Landing Page ===== -->
         <div id="page-landing" class="page active">
-            <div class="relative flex flex-col md:flex-row h-screen">
-                <!-- Centered Logo - Positioned at the top -->
-                <div class="absolute top-0 left-0 right-0 pt-12 md:pt-16 z-20 pointer-events-none">
-                    <div class="flex flex-col items-center justify-center">
-                        <img src="https://codepluscanvas.com/pronto/prontologo.png" alt="Pronto Logo" class="h-20 md:h-24">
-                        <p class="text-white text-xl md:text-2xl mt-4">Authentic Italian, Shared with Family & Friends.</p>
-                    </div>
-                </div>
+            <div class="relative h-screen w-full">
+                <!-- Background Image -->
+                <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://codepluscanvas.com/pronto/mainheader.jpg');"></div>
+                <div class="absolute inset-0 bg-black bg-opacity-50"></div>
 
-                <!-- Weston Side -->
-                <a href="#" onclick="navigateTo('weston')" class="group relative w-full md:w-1/2 h-1/2 md:h-full flex items-center justify-center overflow-hidden">
-                    <div class="split-screen-bg absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1551183053-bf91a1d8154b?q=80&w=1974&auto=format&fit=crop');"></div>
-                    <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-60 transition-all duration-500"></div>
-                    <div class="relative text-center text-white p-8 z-10">
-                        <h2 class="font-serif text-5xl md:text-7xl font-black">Weston</h2>
-                        <p class="mt-2 text-lg">Enter Site</p>
+                <!-- Navigation -->
+                <header class="absolute top-0 left-0 right-0 z-30">
+                    <div class="container mx-auto flex justify-between items-center p-6 text-white">
+                        <img src="https://codepluscanvas.com/pronto/prontologo.png" alt="Pronto Logo" class="h-10 md:h-12 cursor-pointer" onclick="navigateTo('landing')">
+                        <nav class="hidden md:flex space-x-6 items-center">
+                            <a href="#" onclick="navigateTo('queanbeyan')" class="text-lg font-medium hover:text-primary transition-colors">Queanbeyan</a>
+                            <a href="#" onclick="navigateTo('weston')" class="text-lg font-medium hover:text-primary transition-colors">Weston</a>
+                            <a href="#" onclick="navigateTo('contact')" class="text-lg font-medium hover:text-primary transition-colors">Contact Us</a>
+                            <a href="#" onclick="navigateTo('booking')" class="bg-primary hover:bg-red-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300">Book Now</a>
+                        </nav>
+                        <button id="mobile-menu-button-landing" class="md:hidden text-white">
+                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                        </button>
                     </div>
-                </a>
-                <!-- Queanbeyan Side -->
-                <a href="#" onclick="navigateTo('queanbeyan')" class="group relative w-full md:w-1/2 h-1/2 md:h-full flex items-center justify-center overflow-hidden">
-                    <div class="split-screen-bg absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1594007654729-4072c43ca0af?q=80&w=1974&auto=format&fit=crop');"></div>
-                     <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-60 transition-all duration-500"></div>
-                    <div class="relative text-center text-white p-8 z-10">
-                        <h2 class="font-serif text-5xl md:text-7xl font-black">Queanbeyan</h2>
-                        <p class="mt-2 text-lg">Enter Site</p>
+                     <!-- Mobile Menu -->
+                    <div id="mobile-menu-landing" class="hidden md:hidden bg-black bg-opacity-90 text-white">
+                        <a href="#" onclick="navigateTo('queanbeyan')" class="block py-3 px-6 text-center hover:bg-primary">Queanbeyan</a>
+                        <a href="#" onclick="navigateTo('weston')" class="block py-3 px-6 text-center hover:bg-primary">Weston</a>
+                        <a href="#" onclick="navigateTo('contact')" class="block py-3 px-6 text-center hover:bg-primary">Contact Us</a>
+                        <a href="#" onclick="navigateTo('booking')" class="block py-3 px-6 text-center bg-primary font-bold">Book Now</a>
                     </div>
-                </a>
+                </header>
+
+                <!-- Centered Content -->
+                <div class="relative h-full flex flex-col items-center justify-center text-center text-white p-4">
+                     <h1 class="font-serif text-5xl md:text-7xl font-bold max-w-3xl leading-tight">Authentic Italian, Shared with Family & Friends.</h1>
+                     <p class="text-xl md:text-2xl mt-8">Select a location to begin your experience.</p>
+                </div>
             </div>
         </div>
 
@@ -87,20 +87,29 @@
         <div id="page-weston" class="page">
             <header class="bg-primary text-white p-4 sticky top-0 z-50 shadow-md">
                 <nav class="container mx-auto flex justify-between items-center">
-                    <img src="https://codepluscanvas.com/pronto/prontologo.png" alt="Pronto Logo" class="h-10">
-                    <a href="#" onclick="navigateTo('landing')" class="hover:underline text-sm md:text-base">Change Location</a>
+                    <img src="https://codepluscanvas.com/pronto/prontologo.png" alt="Pronto Logo" class="h-10 cursor-pointer" onclick="navigateTo('landing')">
+                    <div class="hidden md:flex space-x-6 items-center">
+                        <a href="#" onclick="navigateTo('queanbeyan')" class="font-medium hover:text-accent transition-colors">Queanbeyan</a>
+                        <a href="#" onclick="navigateTo('contact')" class="font-medium hover:text-accent transition-colors">Contact Us</a>
+                        <a href="#" onclick="navigateTo('booking')" class="bg-white text-primary font-bold py-2 px-6 rounded-lg transition duration-300">Book Now</a>
+                    </div>
+                     <button id="mobile-menu-button-weston" class="md:hidden text-white">
+                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
                 </nav>
+                 <!-- Mobile Menu -->
+                <div id="mobile-menu-weston" class="hidden md:hidden bg-primary text-white">
+                    <a href="#" onclick="navigateTo('queanbeyan')" class="block py-3 px-6 text-center hover:bg-red-700">Queanbeyan</a>
+                    <a href="#" onclick="navigateTo('contact')" class="block py-3 px-6 text-center hover:bg-red-700">Contact Us</a>
+                    <a href="#" onclick="navigateTo('booking')" class="block py-3 px-6 text-center bg-white text-primary font-bold">Book Now</a>
+                </div>
             </header>
             <main>
                 <!-- Hero -->
-                <section class="relative h-96 bg-black">
-                    <video autoplay loop muted class="absolute z-0 w-full h-full object-cover opacity-80">
-                        <source src="https://codepluscanvas.com/pronto/prontopizza.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+                <section class="relative h-96 bg-cover bg-center" style="background-image: url('https://codepluscanvas.com/pronto/westonheader.jpg');">
                     <div class="absolute inset-0 bg-black bg-opacity-40"></div>
                     <div class="relative h-full flex flex-col justify-center items-center text-white text-center p-4">
-                        <h1 class="font-serif text-5xl md:text-7xl font-bold">Welcome to Pronto Weston</h1>
+                        <h1 class="font-serif text-5xl md:text-7xl font-bold">Pronto Weston</h1>
                         <p class="mt-4 text-lg">Your local destination for authentic Italian dining.</p>
                     </div>
                 </section>
@@ -153,8 +162,21 @@
                     </div>
                 </section>
 
-                <!-- Gallery Section -->
+                 <!-- Video Section -->
                 <section class="py-16 bg-accent">
+                    <div class="container mx-auto px-6 text-center">
+                        <h3 class="font-serif text-4xl text-center text-secondary mb-8">The Art of Pizza</h3>
+                         <div class="max-w-3xl mx-auto shadow-2xl rounded-lg overflow-hidden">
+                            <video controls class="w-full h-full">
+                                <source src="https://codepluscanvas.com/pronto/prontopizza.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Gallery Section -->
+                <section class="py-16 bg-white">
                      <div class="container mx-auto px-6">
                         <h3 class="font-serif text-4xl text-center text-secondary mb-12">A Taste of Pronto</h3>
                         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -167,12 +189,12 @@
                 </section>
                 
                 <!-- Reviews Section -->
-                <section class="py-16 bg-white">
+                <section class="py-16 bg-stone-50">
                     <div class="container mx-auto px-6 max-w-5xl">
                         <h3 class="font-serif text-4xl text-center text-secondary mb-12">What Our Customers Are Saying</h3>
                         <div class="grid md:grid-cols-3 gap-8">
                             <!-- Review 1 -->
-                            <div class="bg-stone-50 p-6 rounded-lg shadow-md">
+                            <div class="bg-white p-6 rounded-lg shadow-md">
                                 <div class="flex items-center mb-4">
                                     <div class="font-bold text-lg text-primary">Iraia Hunia</div>
                                 </div>
@@ -186,7 +208,7 @@
                                 <p class="text-gray-600 italic">"My wife and I came here on a Tuesday night, the food was amazing!! I really enjoyed the carbonara and the pizza. We decided on the Chef's Meal, which is well worth the money... Couldn't recommend this place any higher."</p>
                             </div>
                             <!-- Review 2 -->
-                            <div class="bg-stone-50 p-6 rounded-lg shadow-md">
+                            <div class="bg-white p-6 rounded-lg shadow-md">
                                 <div class="flex items-center mb-4">
                                     <div class="font-bold text-lg text-primary">Drew Reeve</div>
                                 </div>
@@ -200,7 +222,7 @@
                                 <p class="text-gray-600 italic">"The pasta was absolutely delicious, fresh and hit the spot... The pizza was good, but didn't compare to how good the pasta was. I will be dining in next time to order every pasta on the menu."</p>
                             </div>
                             <!-- Review 3 -->
-                            <div class="bg-stone-50 p-6 rounded-lg shadow-md">
+                            <div class="bg-white p-6 rounded-lg shadow-md">
                                 <div class="flex items-center mb-4">
                                     <div class="font-bold text-lg text-primary">Lee's Lens</div>
                                 </div>
@@ -223,17 +245,26 @@
         <div id="page-queanbeyan" class="page">
              <header class="bg-secondary text-white p-4 sticky top-0 z-50 shadow-md">
                 <nav class="container mx-auto flex justify-between items-center">
-                     <img src="https://codepluscanvas.com/pronto/prontologo.png" alt="Pronto Logo" class="h-10">
-                    <a href="#" onclick="navigateTo('landing')" class="hover:underline text-sm md:text-base">Change Location</a>
+                     <img src="https://codepluscanvas.com/pronto/prontologo.png" alt="Pronto Logo" class="h-10 cursor-pointer" onclick="navigateTo('landing')">
+                     <div class="hidden md:flex space-x-6 items-center">
+                        <a href="#" onclick="navigateTo('weston')" class="font-medium hover:text-accent transition-colors">Weston</a>
+                        <a href="#" onclick="navigateTo('contact')" class="font-medium hover:text-accent transition-colors">Contact Us</a>
+                        <a href="#" onclick="navigateTo('booking')" class="bg-white text-secondary font-bold py-2 px-6 rounded-lg transition duration-300">Book Now</a>
+                    </div>
+                     <button id="mobile-menu-button-queanbeyan" class="md:hidden text-white">
+                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
                 </nav>
+                 <!-- Mobile Menu -->
+                <div id="mobile-menu-queanbeyan" class="hidden md:hidden bg-secondary text-white">
+                    <a href="#" onclick="navigateTo('weston')" class="block py-3 px-6 text-center hover:bg-green-800">Weston</a>
+                    <a href="#" onclick="navigateTo('contact')" class="block py-3 px-6 text-center hover:bg-green-800">Contact Us</a>
+                    <a href="#" onclick="navigateTo('booking')" class="block py-3 px-6 text-center bg-white text-secondary font-bold">Book Now</a>
+                </div>
             </header>
              <main>
                 <!-- Hero -->
-                <section class="relative h-96 bg-black">
-                     <video autoplay loop muted class="absolute z-0 w-full h-full object-cover opacity-80">
-                        <source src="https://codepluscanvas.com/pronto/prontolas.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+                <section class="relative h-96 bg-cover bg-center" style="background-image: url('https://codepluscanvas.com/pronto/queanbeyanheader.jpg');">
                     <div class="absolute inset-0 bg-black bg-opacity-40"></div>
                     <div class="relative h-full flex flex-col justify-center items-center text-white text-center p-4">
                         <h1 class="font-serif text-5xl md:text-7xl font-bold">Welcome to Pronto Queanbeyan</h1>
@@ -305,8 +336,21 @@
                     </div>
                 </section>
                 
-                 <!-- Gallery Section -->
+                 <!-- Video Section -->
                 <section class="py-16 bg-accent">
+                    <div class="container mx-auto px-6 text-center">
+                        <h3 class="font-serif text-4xl text-center text-primary mb-8">The Art of Pasta</h3>
+                         <div class="max-w-3xl mx-auto shadow-2xl rounded-lg overflow-hidden">
+                            <video controls class="w-full h-full">
+                                <source src="https://codepluscanvas.com/pronto/prontolas.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </section>
+
+                 <!-- Gallery Section -->
+                <section class="py-16 bg-white">
                      <div class="container mx-auto px-6">
                         <h3 class="font-serif text-4xl text-center text-primary mb-12">A Taste of Pronto</h3>
                         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -317,6 +361,93 @@
                         </div>
                     </div>
                 </section>
+            </main>
+        </div>
+        
+        <!-- ===== Contact Page ===== -->
+        <div id="page-contact" class="page">
+            <header class="bg-gray-800 text-white p-4 sticky top-0 z-50 shadow-md">
+                <nav class="container mx-auto flex justify-between items-center">
+                    <img src="https://codepluscanvas.com/pronto/prontologo.png" alt="Pronto Logo" class="h-10 cursor-pointer" onclick="navigateTo('landing')">
+                     <div class="hidden md:flex space-x-6 items-center">
+                        <a href="#" onclick="navigateTo('queanbeyan')" class="font-medium hover:text-primary transition-colors">Queanbeyan</a>
+                        <a href="#" onclick="navigateTo('weston')" class="font-medium hover:text-primary transition-colors">Weston</a>
+                        <a href="#" onclick="navigateTo('booking')" class="bg-primary hover:bg-red-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300">Book Now</a>
+                    </div>
+                     <button id="mobile-menu-button-contact" class="md:hidden text-white">
+                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </nav>
+                 <!-- Mobile Menu -->
+                <div id="mobile-menu-contact" class="hidden md:hidden bg-gray-800 text-white">
+                    <a href="#" onclick="navigateTo('queanbeyan')" class="block py-3 px-6 text-center hover:bg-gray-700">Queanbeyan</a>
+                    <a href="#" onclick="navigateTo('weston')" class="block py-3 px-6 text-center hover:bg-gray-700">Weston</a>
+                    <a href="#" onclick="navigateTo('booking')" class="block py-3 px-6 text-center bg-primary font-bold">Book Now</a>
+                </div>
+            </header>
+            <main class="py-16 md:py-24">
+                <div class="container mx-auto px-6 max-w-2xl text-center">
+                    <h1 class="font-serif text-4xl md:text-5xl text-secondary mb-4">Get In Touch</h1>
+                    <p class="text-gray-600 mb-8">We'd love to hear from you. For general inquiries, please use the form below.</p>
+                     <form action="#" method="POST" class="text-left space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                            <input type="text" name="name" id="name" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                            <input type="email" name="email" id="email" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary">
+                        </div>
+                         <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                            <textarea name="message" id="message" rows="4" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="bg-primary hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </main>
+        </div>
+        
+        <!-- ===== Booking Page ===== -->
+        <div id="page-booking" class="page">
+             <header class="bg-gray-800 text-white p-4 sticky top-0 z-50 shadow-md">
+                <nav class="container mx-auto flex justify-between items-center">
+                    <img src="https://codepluscanvas.com/pronto/prontologo.png" alt="Pronto Logo" class="h-10 cursor-pointer" onclick="navigateTo('landing')">
+                     <div class="hidden md:flex space-x-6 items-center">
+                        <a href="#" onclick="navigateTo('queanbeyan')" class="font-medium hover:text-primary transition-colors">Queanbeyan</a>
+                        <a href="#" onclick="navigateTo('weston')" class="font-medium hover:text-primary transition-colors">Weston</a>
+                        <a href="#" onclick="navigateTo('contact')" class="font-medium hover:text-primary transition-colors">Contact Us</a>
+                    </div>
+                     <button id="mobile-menu-button-booking" class="md:hidden text-white">
+                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </nav>
+                 <!-- Mobile Menu -->
+                <div id="mobile-menu-booking" class="hidden md:hidden bg-gray-800 text-white">
+                    <a href="#" onclick="navigateTo('queanbeyan')" class="block py-3 px-6 text-center hover:bg-gray-700">Queanbeyan</a>
+                    <a href="#" onclick="navigateTo('weston')" class="block py-3 px-6 text-center hover:bg-gray-700">Weston</a>
+                    <a href="#" onclick="navigateTo('contact')" class="block py-3 px-6 text-center hover:bg-gray-700">Contact Us</a>
+                </div>
+            </header>
+            <main class="py-16 md:py-24">
+                <div class="container mx-auto px-6 max-w-2xl text-center">
+                    <h1 class="font-serif text-4xl md:text-5xl text-secondary mb-4">Book a Table</h1>
+                    <p class="text-gray-600 mb-8">We'd love to host you. Please select your preferred location to make a reservation.</p>
+                     <div class="space-y-6">
+                        <div class="bg-white p-8 rounded-lg shadow-md">
+                            <h2 class="font-serif text-3xl text-primary mb-4">Pronto Weston</h2>
+                            <p class="text-gray-600 mb-6">Cooleman Court, Brierly St, Weston ACT</p>
+                            <a href="https://bookings.nowbookit.com/?accountid=fc7bf99a-adb4-4252-bdba-426b9ae31a3e&venueid=12028" target="_blank" rel="noopener noreferrer" class="bg-secondary text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105 inline-block">Book at Weston</a>
+                        </div>
+                         <div class="bg-white p-8 rounded-lg shadow-md">
+                            <h2 class="font-serif text-3xl text-secondary mb-4">Pronto Queanbeyan</h2>
+                            <p class="text-gray-600 mb-6">11 Monaro St, Queanbeyan NSW</p>
+                            <a href="https://bookings.nowbookit.com/?accountid=fc7bf99a-adb4-4252-bdba-426b9ae31a3e&venueid=11970&theme=light&colors=hex,212121" target="_blank" rel="noopener noreferrer" class="bg-primary text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105 inline-block">Book at Queanbeyan</a>
+                        </div>
+                    </div>
+                </div>
             </main>
         </div>
 
@@ -351,6 +482,23 @@
         
         // Dynamic Copyright Year
         document.getElementById('copyright-year').textContent = new Date().getFullYear();
+        
+        // Mobile Menu Toggles
+        document.getElementById('mobile-menu-button-landing').addEventListener('click', () => {
+            document.getElementById('mobile-menu-landing').classList.toggle('hidden');
+        });
+        document.getElementById('mobile-menu-button-weston').addEventListener('click', () => {
+            document.getElementById('mobile-menu-weston').classList.toggle('hidden');
+        });
+        document.getElementById('mobile-menu-button-queanbeyan').addEventListener('click', () => {
+            document.getElementById('mobile-menu-queanbeyan').classList.toggle('hidden');
+        });
+        document.getElementById('mobile-menu-button-contact').addEventListener('click', () => {
+            document.getElementById('mobile-menu-contact').classList.toggle('hidden');
+        });
+         document.getElementById('mobile-menu-button-booking').addEventListener('click', () => {
+            document.getElementById('mobile-menu-booking').classList.toggle('hidden');
+        });
     </script>
 
 </body>
