@@ -1,505 +1,428 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pronto Restaurant - Authentic Italian</title>
+    <title>PRONTO. | Italian Restaurant</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap');
+        
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #FDFBF8; /* A warm, off-white */
+            font-family: 'Raleway', sans-serif;
+            scroll-behavior: smooth;
         }
-        .font-serif {
+        
+        .playfair {
             font-family: 'Playfair Display', serif;
         }
-        .bg-primary { background-color: #D44C29; } /* Terracotta Red */
-        .text-primary { color: #D44C29; }
-        .bg-secondary { background-color: #4A5743; } /* Olive Green */
-        .text-secondary { color: #4A5743; }
-        .bg-accent { background-color: #E6DED5; } /* Warm Stone */
-        .text-accent { color: #E6DED5; }
-
-        /* Page transition styles */
-        .page {
-            display: none;
+        
+        .hero-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://codepluscanvas.com/pronto/westonheader.jpg');
+            background-size: cover;
+            background-position: center;
         }
-        .page.active {
+        
+        .menu-item:hover .menu-overlay {
+            opacity: 1;
+        }
+        
+        .menu-overlay {
+            transition: opacity 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
             display: block;
-            animation: fadeIn 0.5s ease-in-out;
+            width: 0;
+            height: 2px;
+            background: #c8a97e;
+            transition: width 0.3s;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        
+        .nav-link:hover::after {
+            width: 100%;
         }
-        .menu-category {
-            margin-bottom: 2.5rem;
+        
+        .mobile-menu {
+            transition: all 0.3s ease;
         }
     </style>
 </head>
-<body>
+<body class="bg-white text-gray-800">
+    <!-- Header -->
+    <header class="fixed w-full z-50 bg-gray-50 shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="#" class="flex items-center">
+                    <span class="playfair text-xl font-bold text-gray-800">PRONTO.</span>
+                </a>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link playfair text-gray-700 hover:text-gray-900">HOME</a>
+                <a href="#about" class="nav-link playfair text-gray-700 hover:text-gray-900">ABOUT</a>
+                <a href="#menu" class="nav-link playfair text-gray-700 hover:text-gray-900">MENU</a>
+                <a href="#gallery" class="nav-link playfair text-gray-700 hover:text-gray-900">GALLERY</a>
+                <a href="#contact" class="nav-link playfair text-gray-700 hover:text-gray-900">CONTACT</a>
+            </nav>
+            
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="mobile-menu hidden md:hidden bg-white w-full px-4 py-2 shadow-lg">
+            <div class="flex flex-col space-y-3">
+                <a href="#home" class="nav-link playfair text-gray-700 hover:text-gray-900 py-2">HOME</a>
+                <a href="#about" class="nav-link playfair text-gray-700 hover:text-gray-900 py-2">ABOUT</a>
+                <a href="#menu" class="nav-link playfair text-gray-700 hover:text-gray-900 py-2">MENU</a>
+                <a href="#gallery" class="nav-link playfair text-gray-700 hover:text-gray-900 py-2">GALLERY</a>
+                <a href="#contact" class="nav-link playfair text-gray-700 hover:text-gray-900 py-2">CONTACT</a>
+            </div>
+        </div>
+    </header>
 
-    <!-- Main Container -->
-    <div id="app-container" class="text-gray-800">
+    <!-- Hero Section -->
+    <section id="home" class="hero-image h-screen flex items-center justify-center text-white pt-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="playfair text-4xl md:text-6xl font-bold mb-4">PRONTO.</h1>
+            <p class="text-xl md:text-2xl mb-8">Authentic Italian Cuisine & Fine Wines</p>
+            <a href="#reservation" class="bg-transparent border-2 border-white text-white px-6 py-3 hover:bg-white hover:text-gray-800 transition duration-300 playfair">RESERVE A TABLE</a>
+        </div>
+    </section>
 
-        <!-- ===== Landing Page ===== -->
-        <div id="page-landing" class="page active">
-            <div class="relative h-screen w-full">
-                <!-- Background Image -->
-                <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://codepluscanvas.com/pronto/mainheader.jpg');"></div>
-                <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-
-                <!-- Navigation -->
-                <header class="absolute top-0 left-0 right-0 z-30">
-                    <div class="container mx-auto flex justify-between items-center p-6 text-white">
-                        <img src="https://codepluscanvas.com/pronto/prontologo.png" alt="Pronto Logo" class="h-10 md:h-12 cursor-pointer" onclick="navigateTo('landing')">
-                        <nav class="hidden md:flex space-x-6 items-center">
-                            <a href="#" onclick="navigateTo('contact')" class="text-lg font-medium hover:text-primary transition-colors">Contact Us</a>
-                            <a href="#" onclick="navigateTo('booking')" class="bg-primary hover:bg-red-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300">Book Now</a>
-                        </nav>
-                        <button id="mobile-menu-button-landing" class="md:hidden text-white">
-                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                        </button>
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <img src="https://codepluscanvas.com/pronto/brothers.jpg" alt="About Pronto" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="playfair text-3xl md:text-4xl font-bold mb-6 text-gray-800">Our Story</h2>
+                    <p class="mb-4 text-gray-600">Welcome to Pronto, where 300 years of Neapolitan pizza-making tradition comes alive in the heart of Canberra's communities. Brothers Josh and Jon Kosteski have created two authentic Italian dining destinations – Pronto Queanbeyan and our newest location, Pronto Weston in Cooleman Court – each serving as a family-friendly haven where every meal feels like a warm hug from an Italian Nonna.</p>
+                    <p class="mb-6 text-gray-600">What sets us apart is our unwavering commitment to authenticity: we're proud to be the only two restaurants in the Canberra region certified by the Associazione Verace Pizza Napoletana (AVPN) in Naples, ensuring that every pizza we serve meets the strictest standards for True Neapolitan Pizza.</p>
+                    <p class="mb-6 text-gray-600">At Pronto, we believe food is meant to be shared, and our menu is thoughtfully designed around classic Italian dishes that fill your table and bring family and friends together. From our hand-stretched pizzas fired in traditional ovens to our house-made pasta and carefully crafted shared plates, every dish tells a story of Italian tradition and family recipes passed down through generations.</p>
+                    <p class="mb-6 text-gray-600">Both our Queanbeyan and Weston communities have welcomed us with open arms, and we're honored to serve authentic Italian cuisine that encourages conversation, connection, and the generous spirit that defines true Italian hospitality. Whether you're joining us for a casual lunch, a family dinner, or a special celebration, every visit to Pronto is an invitation to become part of our extended family – Benvenuti alla famiglia.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-certificate text-2xl text-amber-700 mr-3"></i>
+                            <span class="playfair">AVPN Certified</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-home text-2xl text-amber-700 mr-3"></i>
+                            <span class="playfair">Family-Owned</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-pizza-slice text-2xl text-amber-700 mr-3"></i>
+                            <span class="playfair">Traditional Pizza</span>
+                        </div>
                     </div>
-                     <!-- Mobile Menu -->
-                    <div id="mobile-menu-landing" class="hidden md:hidden bg-black bg-opacity-90 text-white">
-                        <a href="#" onclick="navigateTo('contact')" class="block py-3 px-6 text-center hover:bg-primary">Contact Us</a>
-                        <a href="#" onclick="navigateTo('booking')" class="block py-3 px-6 text-center bg-primary font-bold">Book Now</a>
-                    </div>
-                </header>
-
-                <!-- Centered Content -->
-                <div class="relative h-full flex flex-col items-center justify-center text-center text-white p-4">
-                     <h1 class="font-sans text-4xl md:text-5xl font-bold max-w-3xl leading-tight tracking-wide">Authentic Italian, Shared with Family & Friends.</h1>
-                     <p class="text-xl md:text-2xl mt-8">Select a location to begin your experience.</p>
-                     <div class="flex flex-col md:flex-row gap-4 mt-6">
-                         <button onclick="navigateTo('queanbeyan')" class="bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">Queanbeyan</button>
-                         <button onclick="navigateTo('weston')" class="bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">Weston</button>
-                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- ===== Weston Page ===== -->
-        <div id="page-weston" class="page">
-            <header class="bg-primary text-white p-4 sticky top-0 z-50 shadow-md">
-                <nav class="container mx-auto flex justify-between items-center">
-                    <img src="https://codepluscanvas.com/pronto/prontologo.png" alt="Pronto Logo" class="h-10 cursor-pointer" onclick="navigateTo('landing')">
-                    <div class="hidden md:flex space-x-6 items-center">
-                        <a href="#" onclick="navigateTo('queanbeyan')" class="font-medium hover:text-accent transition-colors">Queanbeyan</a>
-                        <a href="#" onclick="navigateTo('contact')" class="font-medium hover:text-accent transition-colors">Contact Us</a>
-                        <a href="#" onclick="navigateTo('booking')" class="bg-white text-primary font-bold py-2 px-6 rounded-lg transition duration-300">Book Now</a>
+    <!-- Menu Section -->
+    <section id="menu" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="playfair text-3xl md:text-4xl font-bold mb-4 text-gray-800">Our Menu</h2>
+                <div class="w-24 h-1 bg-amber-700 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Starters -->
+                <div>
+                    <h3 class="playfair text-2xl font-bold mb-6 text-gray-800 border-b pb-2">Starters</h3>
+                    <div class="space-y-6">
+                        <div class="menu-item relative group">
+                            <div class="flex justify-between">
+                                <h4 class="playfair text-xl font-semibold">Bruschetta Classica</h4>
+                                <span class="playfair text-amber-700">$12</span>
+                            </div>
+                            <p class="text-gray-600">Toasted bread topped with tomatoes, garlic, and fresh basil</p>
+                        </div>
+                        
+                        <div class="menu-item relative group">
+                            <div class="flex justify-between">
+                                <h4 class="playfair text-xl font-semibold">Carpaccio di Manzo</h4>
+                                <span class="playfair text-amber-700">$18</span>
+                            </div>
+                            <p class="text-gray-600">Thinly sliced raw beef with arugula, parmesan, and truffle oil</p>
+                        </div>
+                        
+                        <div class="menu-item relative group">
+                            <div class="flex justify-between">
+                                <h4 class="playfair text-xl font-semibold">Fritto Misto</h4>
+                                <span class="playfair text-amber-700">$16</span>
+                            </div>
+                            <p class="text-gray-600">Mixed fried seafood with lemon aioli</p>
+                        </div>
                     </div>
-                     <button id="mobile-menu-button-weston" class="md:hidden text-white">
-                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                    </button>
-                </nav>
-                 <!-- Mobile Menu -->
-                <div id="mobile-menu-weston" class="hidden md:hidden bg-primary text-white">
-                    <a href="#" onclick="navigateTo('queanbeyan')" class="block py-3 px-6 text-center hover:bg-red-700">Queanbeyan</a>
-                    <a href="#" onclick="navigateTo('contact')" class="block py-3 px-6 text-center hover:bg-red-700">Contact Us</a>
-                    <a href="#" onclick="navigateTo('booking')" class="block py-3 px-6 text-center bg-white text-primary font-bold">Book Now</a>
                 </div>
-            </header>
-            <main>
-                <!-- Hero -->
-                <section class="relative h-96 bg-cover bg-center" style="background-image: url('https://codepluscanvas.com/pronto/westonheader.jpg');">
-                    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
-                    <div class="relative h-full flex flex-col justify-center items-center text-white text-center p-4">
-                        <h1 class="font-serif text-5xl md:text-7xl font-bold">Pronto Weston</h1>
-                        <p class="mt-4 text-lg">Your local destination for authentic Italian dining.</p>
-                    </div>
-                </section>
                 
-                <!-- About Section -->
-                <section class="py-16 bg-white">
-                    <div class="container mx-auto px-6 max-w-4xl text-center">
-                        <h3 class="font-serif text-3xl text-secondary mb-4">Welcome to Our Home</h3>
-                        <p class="text-gray-600 leading-relaxed">Our ethos is simple – classic Italian food designed to fill your table and be shared with family and friends. Coupled with our 300-year-old Neapolitan pizza recipe, regional Italian pasta, specialty delicatessen products, local and imported wines and a passion for what we do, we bring you PRONTO.</p>
-                        <div class="mt-8 bg-accent p-6 rounded-lg border-l-4 border-secondary">
-                            <h4 class="font-serif text-xl text-secondary mb-2">Authenticity, Certified.</h4>
-                            <p class="text-gray-700">Did you know that our restaurants are the only two in the Canberra region certified by the <strong class="font-semibold">Associazione Verace Pizza Napoletana (AVPN)</strong> in Napoli? This is our commitment to true, Neapolitan pizza.</p>
+                <!-- Pasta -->
+                <div>
+                    <h3 class="playfair text-2xl font-bold mb-6 text-gray-800 border-b pb-2">Pasta</h3>
+                    <div class="space-y-6">
+                        <div class="menu-item relative group">
+                            <div class="flex justify-between">
+                                <h4 class="playfair text-xl font-semibold">Spaghetti Carbonara</h4>
+                                <span class="playfair text-amber-700">$22</span>
+                            </div>
+                            <p class="text-gray-600">Classic Roman pasta with eggs, cheese, pancetta, and black pepper</p>
                         </div>
-                         <div class="mt-8 flex flex-wrap justify-center gap-4">
-                             <a href="tel:0262607111" class="bg-secondary text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">Call (02) 6260 7111</a>
-                             <a href="https://bookings.nowbookit.com/?accountid=fc7bf99a-adb4-4252-bdba-426b9ae31a3e&venueid=12028" target="_blank" rel="noopener noreferrer" class="bg-accent text-secondary font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">Book a Table</a>
-                             <a href="https://giftcards.nowbookit.com/cards/card-selection?accountid=fc7bf99a-adb4-4252-bdba-426b9ae31a3e&venueid=11970" target="_blank" rel="noopener noreferrer" class="bg-primary text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">Buy Gift Card</a>
+                        
+                        <div class="menu-item relative group">
+                            <div class="flex justify-between">
+                                <h4 class="playfair text-xl font-semibold">Pappardelle al Ragù</h4>
+                                <span class="playfair text-amber-700">$24</span>
+                            </div>
+                            <p class="text-gray-600">Wide pasta ribbons with slow-cooked beef ragù</p>
+                        </div>
+                        
+                        <div class="menu-item relative group">
+                            <div class="flex justify-between">
+                                <h4 class="playfair text-xl font-semibold">Gnocchi al Tartufo</h4>
+                                <span class="playfair text-amber-700">$26</span>
+                            </div>
+                            <p class="text-gray-600">Homemade potato dumplings with black truffle cream</p>
                         </div>
                     </div>
-                </section>
-                
-                <!-- Menu Section -->
-                <section class="py-16">
-                    <div class="container mx-auto px-6 max-w-5xl">
-                        <h3 class="font-serif text-4xl text-center text-secondary mb-12">Our Menu</h3>
-                        <div class="grid md:grid-cols-2 gap-x-12 gap-y-8">
-                            <!-- Left Column -->
-                            <div>
-                                <div class="menu-category">
-                                    <h4 class="font-serif text-2xl text-primary mb-4">Pizza Rossa</h4>
-                                    <div class="space-y-4">
-                                        <div><strong class="text-lg">Margherita</strong> <span class="text-primary float-right">$26</span><p class="text-gray-600 text-sm">San Marzano, parmesan, fior di latte, basil.</p></div>
-                                        <div><strong class="text-lg">Diavola</strong> <span class="text-primary float-right">$28</span><p class="text-gray-600 text-sm">San Marzano, fior di latte, salami, chilli, basil.</p></div>
-                                        <div><strong class="text-lg">Capricciosa</strong> <span class="text-primary float-right">$29</span><p class="text-gray-600 text-sm">San Marzano, fior di latte, ham, olive, artichoke, mushroom.</p></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Right Column -->
-                            <div>
-                                <div class="menu-category">
-                                    <h4 class="font-serif text-2xl text-primary mb-4">Pasta</h4>
-                                    <div class="space-y-4">
-                                        <div><strong class="text-lg">Trecento Carbonara</strong> <span class="text-primary float-right">$30</span><p class="text-gray-600 text-sm">Spaghetti, speck, garlic, Parmesan, creamy carbonara sauce.</p></div>
-                                        <div><strong class="text-lg">Mafaldine Ragu</strong> <span class="text-primary float-right">$30</span><p class="text-gray-600 text-sm">Slow-cooked lamb ragu, tomato, garlic, basil, lemon & parsley pangrattato.</p></div>
-                                        <div><strong class="text-lg">Casarecce Gamberi</strong> <span class="text-primary float-right">$34</span><p class="text-gray-600 text-sm">Prawns, salami, garlic, chilli, creamy tomato sauce.</p></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                 <!-- Video Section -->
-                <section class="py-16 bg-accent">
-                    <div class="container mx-auto px-6 text-center">
-                        <h3 class="font-serif text-4xl text-center text-secondary mb-8">The Art of Pizza</h3>
-                         <div class="max-w-3xl mx-auto shadow-2xl rounded-lg overflow-hidden">
-                            <video controls class="w-full h-full">
-                                <source src="https://codepluscanvas.com/pronto/prontopizza.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Gallery Section -->
-                <section class="py-16 bg-white">
-                     <div class="container mx-auto px-6">
-                        <h3 class="font-serif text-4xl text-center text-secondary mb-12">A Taste of Pronto</h3>
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                            <img src="https://images.unsplash.com/photo-1574126154517-d1e0d89ef734?q=80&w=1974&auto=format&fit=crop" alt="Pizza" class="rounded-lg shadow-lg aspect-square object-cover">
-                            <img src="https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?q=80&w=2070&auto=format&fit=crop" alt="Pasta" class="rounded-lg shadow-lg aspect-square object-cover">
-                            <img src="https://images.unsplash.com/photo-1598214886806-2c88b81894a3?q=80&w=2070&auto=format&fit=crop" alt="Restaurant interior" class="rounded-lg shadow-lg aspect-square object-cover">
-                            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop" alt="Dining table" class="rounded-lg shadow-lg aspect-square object-cover">
-                        </div>
-                    </div>
-                </section>
-                
-                <!-- Reviews Section -->
-                <section class="py-16 bg-stone-50">
-                    <div class="container mx-auto px-6 max-w-5xl">
-                        <h3 class="font-serif text-4xl text-center text-secondary mb-12">What Our Customers Are Saying</h3>
-                        <div class="grid md:grid-cols-3 gap-8">
-                            <!-- Review 1 -->
-                            <div class="bg-white p-6 rounded-lg shadow-md">
-                                <div class="flex items-center mb-4">
-                                    <div class="font-bold text-lg text-primary">Iraia Hunia</div>
-                                </div>
-                                <div class="flex items-center mb-4">
-                                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                                </div>
-                                <p class="text-gray-600 italic">"My wife and I came here on a Tuesday night, the food was amazing!! I really enjoyed the carbonara and the pizza. We decided on the Chef's Meal, which is well worth the money... Couldn't recommend this place any higher."</p>
-                            </div>
-                            <!-- Review 2 -->
-                            <div class="bg-white p-6 rounded-lg shadow-md">
-                                <div class="flex items-center mb-4">
-                                    <div class="font-bold text-lg text-primary">Drew Reeve</div>
-                                </div>
-                                <div class="flex items-center mb-4">
-                                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                                </div>
-                                <p class="text-gray-600 italic">"The pasta was absolutely delicious, fresh and hit the spot... The pizza was good, but didn't compare to how good the pasta was. I will be dining in next time to order every pasta on the menu."</p>
-                            </div>
-                            <!-- Review 3 -->
-                            <div class="bg-white p-6 rounded-lg shadow-md">
-                                <div class="flex items-center mb-4">
-                                    <div class="font-bold text-lg text-primary">Lee's Lens</div>
-                                </div>
-                                <div class="flex items-center mb-4">
-                                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                                    <svg class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                                </div>
-                                <p class="text-gray-600 italic">"The pizzas were absolutely delicious—perfectly cooked bases, fresh toppings, and impressively generous portions. The food really was the highlight."</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </main>
+                </div>
+            </div>
+            
+            <div class="text-center mt-16">
+                <a href="#" class="border-2 border-amber-700 text-amber-700 px-8 py-3 hover:bg-amber-700 hover:text-white transition duration-300 playfair">VIEW FULL MENU</a>
+            </div>
         </div>
+    </section>
 
-        <!-- ===== Queanbeyan Page ===== -->
-        <div id="page-queanbeyan" class="page">
-             <header class="bg-secondary text-white p-4 sticky top-0 z-50 shadow-md">
-                <nav class="container mx-auto flex justify-between items-center">
-                     <img src="https://codepluscanvas.com/pronto/prontologo.png" alt="Pronto Logo" class="h-10 cursor-pointer" onclick="navigateTo('landing')">
-                     <div class="hidden md:flex space-x-6 items-center">
-                        <a href="#" onclick="navigateTo('weston')" class="font-medium hover:text-accent transition-colors">Weston</a>
-                        <a href="#" onclick="navigateTo('contact')" class="font-medium hover:text-accent transition-colors">Contact Us</a>
-                        <a href="#" onclick="navigateTo('booking')" class="bg-white text-secondary font-bold py-2 px-6 rounded-lg transition duration-300">Book Now</a>
-                    </div>
-                     <button id="mobile-menu-button-queanbeyan" class="md:hidden text-white">
-                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                    </button>
-                </nav>
-                 <!-- Mobile Menu -->
-                <div id="mobile-menu-queanbeyan" class="hidden md:hidden bg-secondary text-white">
-                    <a href="#" onclick="navigateTo('weston')" class="block py-3 px-6 text-center hover:bg-green-800">Weston</a>
-                    <a href="#" onclick="navigateTo('contact')" class="block py-3 px-6 text-center hover:bg-green-800">Contact Us</a>
-                    <a href="#" onclick="navigateTo('booking')" class="block py-3 px-6 text-center bg-white text-secondary font-bold">Book Now</a>
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="playfair text-3xl md:text-4xl font-bold mb-4 text-gray-800">Gallery</h2>
+                <div class="w-24 h-1 bg-amber-700 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://codepluscanvas.com/pronto/image1.jpg" alt="Wood-fired pizza oven" class="w-full h-64 object-cover hover:scale-105 transition duration-500">
                 </div>
-            </header>
-             <main>
-                <!-- Hero -->
-                <section class="relative h-96 bg-cover bg-center" style="background-image: url('https://codepluscanvas.com/pronto/queanbeyanheader.jpg');">
-                    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
-                    <div class="relative h-full flex flex-col justify-center items-center text-white text-center p-4">
-                        <h1 class="font-serif text-5xl md:text-7xl font-bold">Welcome to Pronto Queanbeyan</h1>
-                        <p class="mt-4 text-lg">Your local destination for authentic Italian dining.</p>
-                    </div>
-                </section>
-
-                 <!-- About Section -->
-                <section class="py-16 bg-white">
-                    <div class="container mx-auto px-6 max-w-4xl text-center">
-                        <h3 class="font-serif text-3xl text-primary mb-4">Welcome to Our Home</h3>
-                        <p class="text-gray-600 leading-relaxed">Our ethos is simple – classic Italian food designed to fill your table and be shared with family and friends. Coupled with our 300-year-old Neapolitan pizza recipe, regional Italian pasta, specialty delicatessen products, local and imported wines and a passion for what we do, we bring you PRONTO.</p>
-                         <div class="mt-8 bg-accent p-6 rounded-lg border-l-4 border-primary">
-                            <h4 class="font-serif text-xl text-primary mb-2">Authenticity, Certified.</h4>
-                            <p class="text-gray-700">Did you know that our restaurants are the only two in the Canberra region certified by the <strong class="font-semibold">Associazione Verace Pizza Napoletana (AVPN)</strong> in Napoli? This is our commitment to true, Neapolitan pizza.</p>
-                        </div>
-                        <div class="mt-8 flex flex-wrap justify-center gap-4">
-                             <a href="tel:0262108489" class="bg-primary text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">Call (02) 6210 8489</a>
-                             <a href="https://bookings.nowbookit.com/?accountid=fc7bf99a-adb4-4252-bdba-426b9ae31a3e&venueid=11970&theme=light&colors=hex,212121" target="_blank" rel="noopener noreferrer" class="bg-accent text-primary font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">Book a Table</a>
-                             <a href="https://giftcards.nowbookit.com/cards/card-selection?accountid=fc7bf99a-adb4-4252-bdba-426b9ae31a3e&venueid=11970" target="_blank" rel="noopener noreferrer" class="bg-secondary text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">Buy Gift Card</a>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Menu Section -->
-                <section class="py-16">
-                    <div class="container mx-auto px-6 max-w-5xl">
-                        <h3 class="font-serif text-4xl text-center text-primary mb-12">Our Menu</h3>
-                        <div class="grid md:grid-cols-2 gap-x-12 gap-y-8">
-                            <!-- Left Column -->
-                            <div>
-                                <div class="menu-category">
-                                    <h4 class="font-serif text-2xl text-secondary mb-4">Pane & Small Plates</h4>
-                                    <div class="space-y-4">
-                                        <div><strong class="text-lg">Focaccia (V, DF)</strong> <span class="text-secondary float-right">$13</span><p class="text-gray-600 text-sm">With local olive oil and balsamic.</p></div>
-                                        <div><strong class="text-lg">Garlic Bread (V)</strong> <span class="text-secondary float-right">$13</span></div>
-                                        <div><strong class="text-lg">Arancini Primavera</strong> <span class="text-secondary float-right">$20</span><p class="text-gray-600 text-sm">Peas, Parmesan, mozzarella, red pepper aioli.</p></div>
-                                    </div>
-                                </div>
-                                <div class="menu-category">
-                                    <h4 class="font-serif text-2xl text-secondary mb-4">Pizza Rossa</h4>
-                                    <div class="space-y-4">
-                                        <div><strong class="text-lg">Marinara (DF)</strong> <span class="text-secondary float-right">$27</span><p class="text-gray-600 text-sm">San Marzano tomato, oregano, garlic and basil.</p></div>
-                                        <div><strong class="text-lg">Margherita</strong> <span class="text-secondary float-right">$30</span><p class="text-gray-600 text-sm">San Marzano, parmesan, fior di latte and basil.</p></div>
-                                        <div><strong class="text-lg">Diavola</strong> <span class="text-secondary float-right">$32</span><p class="text-gray-600 text-sm">San Marzano, fior di latte, salami, chilli and basil.</p></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Right Column -->
-                            <div>
-                                <div class="menu-category">
-                                    <h4 class="font-serif text-2xl text-secondary mb-4">Pizza Bianca</h4>
-                                    <div class="space-y-4">
-                                        <div><strong class="text-lg">Bufalina</strong> <span class="text-secondary float-right">$32</span><p class="text-gray-600 text-sm">Buffalo mozzarella, cherry tomato, parmesan and basil.</p></div>
-                                        <div><strong class="text-lg">Pistachio</strong> <span class="text-secondary float-right">$32</span><p class="text-gray-600 text-sm">Fior di latte, pistachio, Neapolitan sausage and basil.</p></div>
-                                        <div><strong class="text-lg">Porcinella</strong> <span class="text-secondary float-right">$33</span><p class="text-gray-600 text-sm">Buffalo mozzarella, porcini mushroom, Neapolitan sausage, chilli and basil.</p></div>
-                                    </div>
-                                </div>
-                                <div class="menu-category">
-                                    <h4 class="font-serif text-2xl text-secondary mb-4">Dolci</h4>
-                                    <div class="space-y-4">
-                                        <div><strong class="text-lg">Tiramisu</strong> <span class="text-secondary float-right">$15</span></div>
-                                        <div><strong class="text-lg">Zeppole</strong> <span class="text-secondary float-right">$14</span><p class="text-gray-600 text-sm">Fried dough with cinnamon sugar.</p></div>
-                                        <div><strong class="text-lg">Nutella Pizza</strong> <span class="text-secondary float-right">$18</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                
-                 <!-- Video Section -->
-                <section class="py-16 bg-accent">
-                    <div class="container mx-auto px-6 text-center">
-                        <h3 class="font-serif text-4xl text-center text-primary mb-8">The Art of Pasta</h3>
-                         <div class="max-w-3xl mx-auto shadow-2xl rounded-lg overflow-hidden">
-                            <video controls class="w-full h-full">
-                                <source src="https://codepluscanvas.com/pronto/prontolas.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                    </div>
-                </section>
-
-                 <!-- Gallery Section -->
-                <section class="py-16 bg-white">
-                     <div class="container mx-auto px-6">
-                        <h3 class="font-serif text-4xl text-center text-primary mb-12">A Taste of Pronto</h3>
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                            <img src="https://images.unsplash.com/photo-1604382354936-07c5d9983d34?q=80&w=2070&auto=format&fit=crop" alt="Pizza" class="rounded-lg shadow-lg aspect-square object-cover">
-                            <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?q=80&w=2070&auto=format&fit=crop" alt="Pasta" class="rounded-lg shadow-lg aspect-square object-cover">
-                            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1974&auto=format&fit=crop" alt="Restaurant interior" class="rounded-lg shadow-lg aspect-square object-cover">
-                            <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=2070&auto=format&fit=crop" alt="Dining table" class="rounded-lg shadow-lg aspect-square object-cover">
-                        </div>
-                    </div>
-                </section>
-            </main>
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://codepluscanvas.com/pronto/image2.jpg" alt="Freshly made pasta" class="w-full h-64 object-cover hover:scale-105 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://codepluscanvas.com/pronto/image3.jpg" alt="Italian wine collection" class="w-full h-64 object-cover hover:scale-105 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://codepluscanvas.com/pronto/image4.jpg" alt="Chef preparing authentic pizza" class="w-full h-64 object-cover hover:scale-105 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://codepluscanvas.com/pronto/image5.jpg" alt="Tiramisu dessert" class="w-full h-64 object-cover hover:scale-105 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://codepluscanvas.com/pronto/image6.jpg" alt="Cozy dining area" class="w-full h-64 object-cover hover:scale-105 transition duration-500">
+                </div>
+            </div>
         </div>
-        
-        <!-- ===== Contact Page ===== -->
-        <div id="page-contact" class="page">
-            <header class="bg-gray-800 text-white p-4 sticky top-0 z-50 shadow-md">
-                <nav class="container mx-auto flex justify-between items-center">
-                    <img src="https://codepluscanvas.com/pronto/prontologo.png" alt="Pronto Logo" class="h-10 cursor-pointer" onclick="navigateTo('landing')">
-                     <div class="hidden md:flex space-x-6 items-center">
-                        <a href="#" onclick="navigateTo('queanbeyan')" class="font-medium hover:text-primary transition-colors">Queanbeyan</a>
-                        <a href="#" onclick="navigateTo('weston')" class="font-medium hover:text-primary transition-colors">Weston</a>
-                        <a href="#" onclick="navigateTo('booking')" class="bg-primary hover:bg-red-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300">Book Now</a>
-                    </div>
-                     <button id="mobile-menu-button-contact" class="md:hidden text-white">
-                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                    </button>
-                </nav>
-                 <!-- Mobile Menu -->
-                <div id="mobile-menu-contact" class="hidden md:hidden bg-gray-800 text-white">
-                    <a href="#" onclick="navigateTo('queanbeyan')" class="block py-3 px-6 text-center hover:bg-gray-700">Queanbeyan</a>
-                    <a href="#" onclick="navigateTo('weston')" class="block py-3 px-6 text-center hover:bg-gray-700">Weston</a>
-                    <a href="#" onclick="navigateTo('booking')" class="block py-3 px-6 text-center bg-primary font-bold">Book Now</a>
-                </div>
-            </header>
-            <main class="py-16 md:py-24">
-                <div class="container mx-auto px-6 max-w-2xl text-center">
-                    <h1 class="font-serif text-4xl md:text-5xl text-secondary mb-4">Get In Touch</h1>
-                    <p class="text-gray-600 mb-8">We'd love to hear from you. For general inquiries, please use the form below.</p>
-                     <form action="#" method="POST" class="text-left space-y-6">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
-                            <input type="text" name="name" id="name" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                            <input type="email" name="email" id="email" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary">
-                        </div>
-                         <div>
-                            <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
-                            <textarea name="message" id="message" rows="4" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary"></textarea>
-                        </div>
-                        <div class="text-center">
-                            <button type="submit" class="bg-primary hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">Send Message</button>
-                        </div>
-                    </form>
-                </div>
-            </main>
-        </div>
-        
-        <!-- ===== Booking Page ===== -->
-        <div id="page-booking" class="page">
-             <header class="bg-gray-800 text-white p-4 sticky top-0 z-50 shadow-md">
-                <nav class="container mx-auto flex justify-between items-center">
-                    <img src="https://codepluscanvas.com/pronto/prontologo.png" alt="Pronto Logo" class="h-10 cursor-pointer" onclick="navigateTo('landing')">
-                     <div class="hidden md:flex space-x-6 items-center">
-                        <a href="#" onclick="navigateTo('queanbeyan')" class="font-medium hover:text-primary transition-colors">Queanbeyan</a>
-                        <a href="#" onclick="navigateTo('weston')" class="font-medium hover:text-primary transition-colors">Weston</a>
-                        <a href="#" onclick="navigateTo('contact')" class="font-medium hover:text-primary transition-colors">Contact Us</a>
-                    </div>
-                     <button id="mobile-menu-button-booking" class="md:hidden text-white">
-                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                    </button>
-                </nav>
-                 <!-- Mobile Menu -->
-                <div id="mobile-menu-booking" class="hidden md:hidden bg-gray-800 text-white">
-                    <a href="#" onclick="navigateTo('queanbeyan')" class="block py-3 px-6 text-center hover:bg-gray-700">Queanbeyan</a>
-                    <a href="#" onclick="navigateTo('weston')" class="block py-3 px-6 text-center hover:bg-gray-700">Weston</a>
-                    <a href="#" onclick="navigateTo('contact')" class="block py-3 px-6 text-center hover:bg-gray-700">Contact Us</a>
-                </div>
-            </header>
-            <main class="py-16 md:py-24">
-                <div class="container mx-auto px-6 max-w-2xl text-center">
-                    <h1 class="font-serif text-4xl md:text-5xl text-secondary mb-4">Book a Table</h1>
-                    <p class="text-gray-600 mb-8">We'd love to host you. Please select your preferred location to make a reservation.</p>
-                     <div class="space-y-6">
-                        <div class="bg-white p-8 rounded-lg shadow-md">
-                            <h2 class="font-serif text-3xl text-primary mb-4">Pronto Weston</h2>
-                            <p class="text-gray-600 mb-6">Cooleman Court, Brierly St, Weston ACT</p>
-                            <a href="https://bookings.nowbookit.com/?accountid=fc7bf99a-adb4-4252-bdba-426b9ae31a3e&venueid=12028" target="_blank" rel="noopener noreferrer" class="bg-secondary text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105 inline-block">Book at Weston</a>
-                        </div>
-                         <div class="bg-white p-8 rounded-lg shadow-md">
-                            <h2 class="font-serif text-3xl text-secondary mb-4">Pronto Queanbeyan</h2>
-                            <p class="text-gray-600 mb-6">11 Monaro St, Queanbeyan NSW</p>
-                            <a href="https://bookings.nowbookit.com/?accountid=fc7bf99a-adb4-4252-bdba-426b9ae31a3e&venueid=11970&theme=light&colors=hex,212121" target="_blank" rel="noopener noreferrer" class="bg-primary text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105 inline-block">Book at Queanbeyan</a>
-                        </div>
-                    </div>
-                </div>
-            </main>
-        </div>
+    </section>
 
-    </div>
-    
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto text-center px-6">
-            <p>&copy; <span id="copyright-year"></span> Pronto Restaurant. All Rights Reserved.</p>
-            <div class="mt-4 flex justify-center space-x-6">
-                <a href="#" class="hover:text-primary">Facebook</a>
-                <a href="#" class="hover:text-primary">Instagram</a>
+    <!-- Reservation Section -->
+    <section id="reservation" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="playfair text-3xl md:text-4xl font-bold mb-4 text-gray-800">Book a Table</h2>
+                <div class="w-24 h-1 bg-amber-700 mx-auto"></div>
+            </div>
+            
+            <div class="max-w-3xl mx-auto bg-gray-50 p-8 rounded-lg shadow-lg text-center">
+                <h3 class="playfair text-2xl font-bold mb-6">Choose Your Location</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="playfair text-xl font-semibold mb-4">Weston Creek</h4>
+                        <div class="flex flex-col space-y-4">
+                            <a href="https://bookings.nowbookit.com/?accountid=fc7bf99a-adb4-4252-bdba-426b9ae31a3e&venueid=11971&theme=light&colors=hex,000000" 
+                               target="_blank"
+                               class="bg-amber-700 text-white px-8 py-3 hover:bg-amber-800 transition duration-300 playfair inline-block">
+                                BOOK WESTON
+                            </a>
+                            <a href="https://www.meandu.app/pronto-weston" 
+                               target="_blank"
+                               class="bg-gray-800 text-white px-8 py-3 hover:bg-gray-900 transition duration-300 playfair inline-block">
+                                ORDER ONLINE
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="playfair text-xl font-semibold mb-4">Queanbeyan</h4>
+                        <div class="flex flex-col space-y-4">
+                            <a href="https://bookings.nowbookit.com/?accountid=fc7bf99a-adb4-4252-bdba-426b9ae31a3e&venueid=11970&theme=light&colors=hex,212121" 
+                               target="_blank"
+                               class="bg-amber-700 text-white px-8 py-3 hover:bg-amber-800 transition duration-300 playfair inline-block">
+                                BOOK QUEANBEYAN
+                            </a>
+                            <a href="https://www.meandu.app/pronto" 
+                               target="_blank"
+                               class="bg-gray-800 text-white px-8 py-3 hover:bg-gray-900 transition duration-300 playfair inline-block">
+                                ORDER ONLINE
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="playfair text-3xl md:text-4xl font-bold mb-4 text-gray-800">Contact Us</h2>
+                <div class="w-24 h-1 bg-amber-700 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+                <div class="text-center">
+                    <div class="bg-white p-8 rounded-lg shadow-lg h-full">
+                        <a href="https://maps.google.com/maps?q=Shop+5a+Cooleman+Court+Brierly+Street,+Weston+Creek+ACT" target="_blank">
+                            <i class="fas fa-map-marker-alt text-3xl text-amber-700 mb-4 hover:text-amber-600 transition"></i>
+                        </a>
+                        <h3 class="playfair text-xl font-bold mb-3">Weston Creek</h3>
+                        <p class="text-gray-600 mb-2">Shop 5a Cooleman Court<br>Brierly Street, Weston Creek ACT</p>
+                        <p class="text-gray-600"><i class="fas fa-phone-alt mr-2"></i>02 6260 7111</p>
+                        <p class="text-gray-600"><i class="fas fa-envelope mr-2"></i>ciao@prontoweston.com.au</p>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="bg-white p-8 rounded-lg shadow-lg h-full">
+                        <a href="https://maps.google.com/maps?q=11+Monaro+Street+Queanbeyan+NSW" target="_blank">
+                            <i class="fas fa-map-marker-alt text-3xl text-amber-700 mb-4 hover:text-amber-600 transition"></i>
+                        </a>
+                        <h3 class="playfair text-xl font-bold mb-3">Queanbeyan</h3>
+                        <p class="text-gray-600 mb-2">11 Monaro Street<br>Queanbeyan NSW</p>
+                        <p class="text-gray-600"><i class="fas fa-phone-alt mr-2"></i>02 6152 1503</p>
+                        <p class="text-gray-600"><i class="fas fa-envelope mr-2"></i>ciao@prontoqueanbeyan.com.au</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 max-w-3xl mx-auto">
+                <h3 class="playfair text-2xl font-bold mb-6 text-center">Opening Hours</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white p-8 rounded-lg shadow-lg">
+                    <div>
+                        <h4 class="playfair text-lg font-semibold mb-2">Lunch Service</h4>
+                        <p class="text-gray-600">Monday - Friday: 12:00 PM - 3:00 PM<br>Saturday - Sunday: 11:30 AM - 3:30 PM</p>
+                    </div>
+                    <div>
+                        <h4 class="playfair text-lg font-semibold mb-2">Dinner Service</h4>
+                        <p class="text-gray-600">Monday - Thursday: 6:00 PM - 10:30 PM<br>Friday - Sunday: 5:30 PM - 11:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+                <div>
+                    <h3 class="playfair text-xl font-bold mb-4">PRONTO.</h3>
+                    <p class="text-gray-400">Bringing authentic Neapolitan pizza and Italian flavors to Queanbeyan and Canberra since 2021. Our passion for authentic cuisine creates an unforgettable dining experience.</p>
+                </div>
+                <div>
+                    <h3 class="playfair text-xl font-bold mb-4">QUICK LINKS</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="#menu" class="text-gray-400 hover:text-white transition">Menu</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-white transition">Gallery</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="playfair text-xl font-bold mb-4">CONTACT INFO</h3>
+                    <address class="text-gray-400 not-italic">
+                        <strong>Weston Creek</strong><br>
+                        Shop 5a Cooleman Court<br>
+                        Brierly Street, Weston Creek ACT<br>
+                        Phone: 02 6260 7111<br>
+                        Email: ciao@prontoweston.com.au<br><br>
+                        <strong>Queanbeyan</strong><br>
+                        11 Monaro Street, Queanbeyan NSW<br>
+                        Phone: 02 6152 1503<br>
+                        Email: ciao@prontoqueanbeyan.com.au
+                    </address>
+                </div>
+                <div>
+                    <h3 class="playfair text-xl font-bold mb-4">FOLLOW US</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white text-xl transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl transition"><i class="fab fa-tripadvisor"></i></a>
+                    </div>
+                    <div class="mt-6">
+                        <h4 class="playfair text-lg font-semibold mb-2">Newsletter</h4>
+                        <form action="#" class="flex">
+                            <input type="email" placeholder="Your email" class="px-4 py-2 text-gray-800 rounded-l focus:outline-none w-full">
+                            <button type="submit" class="bg-amber-700 px-4 py-2 rounded-r hover:bg-amber-800 transition"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-10 pt-6 text-center text-gray-500">
+                <p>&copy; 2025 PRONTO. All Rights Reserved. Website by <a href="https://www.codepluscanvas.com" class="hover:text-amber-500 transition" target="_blank">Code+Canvas</a></p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Simple single-page app navigation
-        const pages = document.querySelectorAll('.page');
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
 
-        function navigateTo(pageId) {
-            const activePage = document.querySelector('.page.active');
-            const newPage = document.getElementById(`page-${pageId}`);
-            
-            if (activePage) {
-                activePage.classList.remove('active');
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    mobileMenu.classList.add('hidden');
+                    
+                    // Scroll to target
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Change header style on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('shadow-lg');
+            } else {
+                header.classList.remove('shadow-lg');
             }
-            if (newPage) {
-                newPage.classList.add('active');
-            }
-            window.scrollTo(0, 0);
-        }
-        
-        // Dynamic Copyright Year
-        document.getElementById('copyright-year').textContent = new Date().getFullYear();
-        
-        // Mobile Menu Toggles
-        document.getElementById('mobile-menu-button-landing').addEventListener('click', () => {
-            document.getElementById('mobile-menu-landing').classList.toggle('hidden');
-        });
-        document.getElementById('mobile-menu-button-weston').addEventListener('click', () => {
-            document.getElementById('mobile-menu-weston').classList.toggle('hidden');
-        });
-        document.getElementById('mobile-menu-button-queanbeyan').addEventListener('click', () => {
-            document.getElementById('mobile-menu-queanbeyan').classList.toggle('hidden');
-        });
-        document.getElementById('mobile-menu-button-contact').addEventListener('click', () => {
-            document.getElementById('mobile-menu-contact').classList.toggle('hidden');
-        });
-         document.getElementById('mobile-menu-button-booking').addEventListener('click', () => {
-            document.getElementById('mobile-menu-booking').classList.toggle('hidden');
         });
     </script>
-
 </body>
 </html>
