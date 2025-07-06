@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pronto Restaurant - Authentic Italian</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #FDFBF8; /* A warm, off-white */
+        }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .bg-primary { background-color: #D44C29; } /* Terracotta Red */
+        .text-primary { color: #D44C29; }
+        .bg-secondary { background-color: #4A5743; } /* Olive Green */
+        .text-secondary { color: #4A5743; }
+        .bg-accent { background-color: #E6DED5; } /* Warm Stone */
+        .text-accent { color: #E6DED5; }
+
+        /* Page transition styles */
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: block;
+        }
+        .menu-category {
+            border-bottom: 2px solid #E6DED5;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Container -->
+    <div id="app-container" class="text-gray-800">
+
+        <!-- ===== Landing Page ===== -->
+        <div id="page-landing" class="page active">
+            <div class="relative h-screen w-full flex items-center justify-center text-white">
+                <!-- Background Video -->
+                <video autoplay loop muted class="absolute z-0 w-auto min-w-full min-h-full max-w-none">
+                    <source src="https://codepluscanvas.netlify.app/pizza.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <!-- Overlay -->
+                <div class="absolute bg-black opacity-50 inset-0"></div>
+                
+                <div class="z-10 text-center p-4">
+                    <h1 class="font-serif text-6xl md:text-8xl font-bold mb-4">Pronto</h1>
+                    <p class="text-xl md:text-2xl mb-8">Authentic Italian, Shared with Family & Friends.</p>
+                    <div class="space-y-4">
+                        <p class="text-lg">Which Pronto are you visiting tonight?</p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <button onclick="navigateTo('weston')" class="bg-primary hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">Weston</button>
+                            <button onclick="navigateTo('queanbeyan')" class="bg-secondary hover:bg-green-800 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">Queanbeyan</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== Weston Page ===== -->
+        <div id="page-weston" class="page">
+            <header class="bg-primary text-white p-4 text-center">
+                <h2 class="font-serif text-4xl">Pronto Weston</h2>
+                <p>Cooleman Court, Brierly St, Weston ACT</p>
+                <nav class="mt-2">
+                    <a href="#" onclick="navigateTo('landing')" class="hover:underline">Change Location</a>
+                </nav>
+            </header>
+            <main class="container mx-auto p-6 md:p-12">
+                <div class="text-center mb-12 flex flex-wrap justify-center gap-4">
+                     <a href="tel:0262607111" class="bg-secondary text-white font-bold py-3 px-8 rounded-lg transition duration-300">Call (02) 6260 7111</a>
+                     <a href="https://bookings.nowbookit.com/?accountid=fc7bf99a-adb4-4252-bdba-426b9ae31a3e&venueid=12028" target="_blank" rel="noopener noreferrer" class="bg-accent text-secondary font-bold py-3 px-8 rounded-lg transition duration-300">Book a Table</a>
+                     <a href="https://giftcards.nowbookit.com/cards/card-selection?accountid=fc7bf99a-adb4-4252-bdba-426b9ae31a3e&venueid=11970" target="_blank" rel="noopener noreferrer" class="bg-primary text-white font-bold py-3 px-8 rounded-lg transition duration-300">Buy Gift Card</a>
+                </div>
+
+                <!-- Weston Menu -->
+                <div class="max-w-4xl mx-auto">
+                    <h3 class="font-serif text-3xl text-center text-secondary mb-8">Our Menu</h3>
+                    <!-- Pizza Rossa -->
+                    <div class="menu-category">
+                        <h4 class="font-serif text-2xl text-primary mb-4">Pizza Rossa (Tomato Base)</h4>
+                        <div class="space-y-4">
+                            <div><strong class="text-lg">Margherita</strong> <span class="text-primary float-right">$26</span><p class="text-gray-600">San Marzano, parmesan, fior di latte, basil.</p></div>
+                            <div><strong class="text-lg">Diavola</strong> <span class="text-primary float-right">$28</span><p class="text-gray-600">San Marzano, fior di latte, salami, chilli, basil.</p></div>
+                             <div><strong class="text-lg">Capricciosa</strong> <span class="text-primary float-right">$29</span><p class="text-gray-600">San Marzano, fior di latte, ham, olive, artichoke, mushroom.</p></div>
+                        </div>
+                    </div>
+                    <!-- Pasta -->
+                     <div class="menu-category">
+                        <h4 class="font-serif text-2xl text-primary mb-4">Pasta</h4>
+                        <div class="space-y-4">
+                            <div><strong class="text-lg">Trecento Carbonara</strong> <span class="text-primary float-right">$30</span><p class="text-gray-600">Spaghetti, speck, garlic, Parmesan, creamy carbonara sauce.</p></div>
+                            <div><strong class="text-lg">Mafaldine Ragu</strong> <span class="text-primary float-right">$30</span><p class="text-gray-600">Slow-cooked lamb ragu, tomato, garlic, basil, lemon & parsley pangrattato.</p></div>
+                             <div><strong class="text-lg">Casarecce Gamberi</strong> <span class="text-primary float-right">$34</span><p class="text-gray-600">Prawns, salami, garlic, chilli, creamy tomato sauce.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- ===== Queanbeyan Page ===== -->
+        <div id="page-queanbeyan" class="page">
+             <header class="bg-secondary text-white p-4 text-center">
+                <h2 class="font-serif text-4xl">Pronto Queanbeyan</h2>
+                <p>11 Monaro St, Queanbeyan NSW</p>
+                 <nav class="mt-2">
+                    <a href="#" onclick="navigateTo('landing')" class="hover:underline">Change Location</a>
+                </nav>
+            </header>
+             <main class="container mx-auto p-6 md:p-12">
+                <div class="text-center mb-12 flex flex-wrap justify-center gap-4">
+                     <a href="tel:0262108489" class="bg-primary text-white font-bold py-3 px-8 rounded-lg transition duration-300">Call (02) 6210 8489</a>
+                     <a href="https://bookings.nowbookit.com/?accountid=fc7bf99a-adb4-4252-bdba-426b9ae31a3e&venueid=11970&theme=light&colors=hex,212121" target="_blank" rel="noopener noreferrer" class="bg-accent text-secondary font-bold py-3 px-8 rounded-lg transition duration-300">Book a Table</a>
+                     <a href="https://giftcards.nowbookit.com/cards/card-selection?accountid=fc7bf99a-adb4-4252-bdba-426b9ae31a3e&venueid=11970" target="_blank" rel="noopener noreferrer" class="bg-secondary text-white font-bold py-3 px-8 rounded-lg transition duration-300">Buy Gift Card</a>
+                </div>
+
+                <!-- Queanbeyan Menu -->
+                <div class="max-w-4xl mx-auto">
+                    <h3 class="font-serif text-3xl text-center text-primary mb-8">Our Menu</h3>
+                    <!-- Pane -->
+                    <div class="menu-category">
+                        <h4 class="font-serif text-2xl text-secondary mb-4">Pane</h4>
+                        <div class="space-y-4">
+                            <div><strong class="text-lg">Focaccia (V, DF)</strong> <span class="text-secondary float-right">$13</span><p class="text-gray-600">With local olive oil and balsamic.</p></div>
+                            <div><strong class="text-lg">Garlic Bread (V)</strong> <span class="text-secondary float-right">$13</span></div>
+                        </div>
+                    </div>
+                    <!-- Pizza Rossa -->
+                    <div class="menu-category">
+                        <h4 class="font-serif text-2xl text-secondary mb-4">Pizza Rossa (Tomato Base)</h4>
+                        <div class="space-y-4">
+                            <div><strong class="text-lg">Marinara (DF)</strong> <span class="text-secondary float-right">$27</span><p class="text-gray-600">San Marzano tomato, oregano, garlic and basil.</p></div>
+                            <div><strong class="text-lg">Margherita</strong> <span class="text-secondary float-right">$30</span><p class="text-gray-600">San Marzano, parmesan, fior di latte and basil.</p></div>
+                            <div><strong class="text-lg">Diavola</strong> <span class="text-secondary float-right">$32</span><p class="text-gray-600">San Marzano, fior di latte, salami, chilli and basil.</p></div>
+                        </div>
+                    </div>
+                    <!-- Pizza Bianca -->
+                    <div class="menu-category">
+                        <h4 class="font-serif text-2xl text-secondary mb-4">Pizza Bianca (Fior Di Latte Base)</h4>
+                        <div class="space-y-4">
+                            <div><strong class="text-lg">Bufalina</strong> <span class="text-secondary float-right">$32</span><p class="text-gray-600">Buffalo mozzarella, cherry tomato, parmesan and basil.</p></div>
+                            <div><strong class="text-lg">Pistachio</strong> <span class="text-secondary float-right">$32</span><p class="text-gray-600">Fior di latte, pistachio, Neapolitan sausage and basil.</p></div>
+                            <div><strong class="text-lg">Porcinella</strong> <span class="text-secondary float-right">$33</span><p class="text-gray-600">Buffalo mozzarella, porcini mushroom, Neapolitan sausage, chilli and basil.</p></div>
+                        </div>
+                    </div>
+                     <!-- Dolci -->
+                    <div class="menu-category">
+                        <h4 class="font-serif text-2xl text-secondary mb-4">Dolci (Desserts)</h4>
+                        <div class="space-y-4">
+                            <div><strong class="text-lg">Tiramisu</strong> <span class="text-secondary float-right">$15</span></div>
+                            <div><strong class="text-lg">Zeppole</strong> <span class="text-secondary float-right">$14</span><p class="text-gray-600">Fried dough with cinnamon sugar.</p></div>
+                            <div><strong class="text-lg">Nutella Pizza</strong> <span class="text-secondary float-right">$18</span></div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+    </div>
+
+    <script>
+        // Simple single-page app navigation
+        const pages = document.querySelectorAll('.page');
+
+        function navigateTo(pageId) {
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(`page-${pageId}`).classList.add('active');
+            window.scrollTo(0, 0);
+        }
+    </script>
+
+</body>
+</html>
