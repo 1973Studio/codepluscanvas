@@ -48,6 +48,24 @@
             overflow: hidden;
             transition: max-height 0.3s ease-in-out;
         }
+        /* Comparison Table Styles */
+        .comparison-table th, .comparison-table td {
+            padding: 0.75rem;
+            text-align: center;
+        }
+        .comparison-table thead th {
+            background-color: #f9fafb; /* gray-50 */
+        }
+        .comparison-table tbody tr:nth-child(even) {
+            background-color: #f9fafb; /* gray-50 */
+        }
+        .comparison-table .feature-col {
+            text-align: left;
+            font-weight: 600;
+        }
+        .comparison-table .highlight-col {
+            background-color: #fecdd3; /* rose-200 */
+        }
     </style>
 </head>
 <body class="bg-stone-50 text-gray-800">
@@ -183,10 +201,10 @@
                                     <h3 class="font-semibold font-serif text-lg">Digital Content</h3>
                                 </div>
                             </button>
-                             <button data-service="games" class="service-tab w-full text-left p-4 rounded-lg flex items-center gap-4 transition-colors duration-300">
-                               <svg class="h-8 w-8 text-rose-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" /></svg>
+                             <button data-service="ai" class="service-tab w-full text-left p-4 rounded-lg flex items-center gap-4 transition-colors duration-300">
+                               <svg class="h-8 w-8 text-rose-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.898 20.543L16.5 21.75l-.398-1.207a3.375 3.375 0 00-2.455-2.456L12.75 18l1.207-.398a3.375 3.375 0 002.455-2.456L16.5 14.25l.398 1.207a3.375 3.375 0 002.456 2.456L20.25 18l-1.207.398a3.375 3.375 0 00-2.456 2.456z" /></svg>
                                 <div>
-                                    <h3 class="font-semibold font-serif text-lg">Custom Games</h3>
+                                    <h3 class="font-semibold font-serif text-lg">AI Creative Suite</h3>
                                 </div>
                             </button>
                         </div>
@@ -204,43 +222,78 @@
         <!-- Pricing Section -->
         <section id="pricing" class="py-20 bg-rose-50">
             <div class="container mx-auto px-6">
-                <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-xl p-8 md:p-12 text-left">
-                    <h3 class="text-3xl font-bold font-serif mb-2 text-center">All-Inclusive Website Plan</h3>
-                    <p class="text-gray-600 mb-6 text-center max-w-lg mx-auto">I craft seamless, flowing websites that are hand-coded, custom designed, and mobile-optimised to tell your complete story in one elegant experience — from who you are to why customers should choose you.</p>
+                <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-xl p-8 md:p-12 text-left">
+                    <h3 class="text-3xl font-bold font-serif mb-2 text-center">The Smart Choice for Your Business</h3>
+                    <p class="text-gray-600 mb-12 text-center max-w-2xl mx-auto">My all-inclusive plan provides everything you need for a professional online presence, without the high costs and complexity of traditional options.</p>
 
-                    <div class="text-center my-8 p-6 bg-stone-50 rounded-lg">
-                        <div class="text-5xl font-bold text-gray-800">
-                            <span id="currency-symbol">$</span><span id="price-value">45</span>
-                            <span class="text-lg font-normal text-gray-600">/month</span>
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div>
+                             <div class="text-center p-6 bg-stone-50 rounded-lg">
+                                <div class="text-5xl font-bold text-gray-800">
+                                    <span id="currency-symbol">$</span><span id="price-value">45</span>
+                                    <span class="text-lg font-normal text-gray-600">/month</span>
+                                </div>
+                                <p id="currency-info" class="text-gray-500 mt-2">AUD • Hosting included • Cancel anytime</p>
+                                <p class="text-gray-600 font-semibold mt-1">$0 upfront • 7-day launch guarantee</p>
+                            </div>
+                             <a href="#contact" class="bg-rose-400 text-white font-semibold py-3 px-8 rounded-full hover:bg-rose-500 transition duration-300 w-full block text-center mt-6">Start Building Your Website</a>
                         </div>
-                        <p id="currency-info" class="text-gray-500 mt-2">AUD • Hosting included • Cancel anytime</p>
-                        <p class="text-gray-600 font-semibold mt-1">$0 upfront • 7-day launch guarantee</p>
-                    </div>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 mb-8 text-gray-700">
-                        <div class="flex items-center"><svg class="h-5 w-5 text-green-500 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg><span>Bespoke design, tailored to your brand</span></div>
-                        <div class="flex items-center"><svg class="h-5 w-5 text-green-500 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg><span>Flawless experience on all devices</span></div>
-                        <div class="flex items-center"><svg class="h-5 w-5 text-green-500 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg><span>Optimised for speed & performance</span></div>
-                        <div class="flex items-center"><svg class="h-5 w-5 text-green-500 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg><span>Engaging animations & interactions</span></div>
-                        <div class="flex items-center"><svg class="h-5 w-5 text-green-500 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg><span>Unlimited small edits & updates</span></div>
-                        <div class="flex items-center"><svg class="h-5 w-5 text-green-500 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg><span>Secure, high-speed hosting included</span></div>
-                        <div class="flex items-center"><svg class="h-5 w-5 text-green-500 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg><span>Essential features like forms & maps</span></div>
-                        <div class="flex items-center"><svg class="h-5 w-5 text-green-500 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg><span>Direct, personal support from me</span></div>
+                        <div class="space-y-4">
+                            <div class="flex items-center"><svg class="h-5 w-5 text-green-500 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg><span>Bespoke design, tailored to your brand</span></div>
+                            <div class="flex items-center"><svg class="h-5 w-5 text-green-500 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg><span>Flawless experience on all devices</span></div>
+                            <div class="flex items-center"><svg class="h-5 w-5 text-green-500 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg><span>Optimised for speed & performance</span></div>
+                             <div class="flex items-center"><svg class="h-5 w-5 text-green-500 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg><span>Unlimited small edits & updates</span></div>
+                            <div class="flex items-center"><svg class="h-5 w-5 text-green-500 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg><span>Secure, high-speed hosting included</span></div>
+                             <div class="flex items-center"><svg class="h-5 w-5 text-green-500 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg><span>Direct, personal support from me</span></div>
+                        </div>
                     </div>
                     
-                    <div class="mb-8">
-                        <span class="text-sm font-semibold text-gray-500 mb-3 block text-center">See equivalent price in:</span>
-                        <div id="currency-converter" class="flex flex-wrap justify-center items-center gap-2 border border-gray-200 rounded-full p-1 max-w-sm mx-auto">
-                           <button data-currency="AUD" class="currency-btn w-auto text-sm font-semibold py-2 px-4 rounded-full transition-colors duration-300 active">AUD</button>
-                            <button data-currency="USD" class="currency-btn w-auto text-sm font-semibold py-2 px-4 rounded-full transition-colors duration-300">USD</button>
-                            <button data-currency="EUR" class="currency-btn w-auto text-sm font-semibold py-2 px-4 rounded-full transition-colors duration-300">EUR</button>
-                            <button data-currency="NZD" class="currency-btn w-auto text-sm font-semibold py-2 px-4 rounded-full transition-colors duration-300">NZD</button>
-                            <button data-currency="GBP" class="currency-btn w-auto text-sm font-semibold py-2 px-4 rounded-full transition-colors duration-300">GBP</button>
+                    <div class="mt-12">
+                         <div class="overflow-x-auto rounded-lg border border-gray-200">
+                            <table class="w-full text-sm comparison-table">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="feature-col">Feature</th>
+                                        <th class="highlight-col">code+canvas</th>
+                                        <th>Traditional Agency</th>
+                                        <th>DIY Builder</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="feature-col">Upfront Cost</td>
+                                        <td class="highlight-col"><strong>$0</strong></td>
+                                        <td>$5,000 - $15,000+</td>
+                                        <td>$0</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="feature-col">Monthly Cost</td>
+                                        <td class="highlight-col"><strong>$45</strong></td>
+                                        <td>$200+ (Hosting & Maintenance)</td>
+                                        <td>$20 - $50</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="feature-col">Build Time</td>
+                                        <td class="highlight-col"><strong>1 Week</strong></td>
+                                        <td>2-6 Months</td>
+                                        <td>Weeks of Your Time</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="feature-col">Support</td>
+                                        <td class="highlight-col"><strong>Direct & Personal</strong></td>
+                                        <td>Slow, Ticket-Based</td>
+                                        <td>Community Forums</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="feature-col">Quality</td>
+                                        <td class="highlight-col"><strong>Bespoke & Hand-Coded</strong></td>
+                                        <td>Often Outsourced</td>
+                                        <td>Generic Templates</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-
-                    <a href="#contact" class="bg-rose-400 text-white font-semibold py-3 px-8 rounded-full hover:bg-rose-500 transition duration-300 w-full block text-center">Start Building Your Website</a>
-                    <p class="text-center text-gray-500 text-sm mt-4">No contracts • Cancel anytime</p>
                 </div>
             </div>
         </section>
@@ -274,40 +327,6 @@
                         </div>
                         <div>
                            <img src="https://codepluscanvas.com/TheFriendlyGroomer.png" alt="The Friendly Groomer Website" class="rounded-lg shadow-md w-full h-auto">
-                        </div>
-                    </div>
-                    
-                    <!-- Project Card: Grow the Galaxy -->
-                    <div class="bg-stone-50 rounded-lg shadow-lg p-8">
-                        <div class="text-left mb-8">
-                            <h4 class="text-2xl font-bold font-serif mb-2">Grow the Galaxy</h4>
-                             <p class="text-gray-500 text-sm font-semibold uppercase tracking-wider">Game Development / Lua / Roblox Studio / Sci-Fi Idle Farming Game</p>
-                        </div>
-                        <div class="grid md:grid-cols-2 gap-8 mb-8">
-                            <video class="rounded-lg shadow-md w-full h-auto" autoplay loop muted playsinline>
-                                <source src="https://codepluscanvas.com/Roblox_Video_Creation_Complete_Optimized.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                             <video class="rounded-lg shadow-md w-full h-auto" autoplay loop muted playsinline>
-                                <source src="https://codepluscanvas.com/Roblox_Sci_Fi_Video_Request_Optimized.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                        <div class="text-left">
-                            <h5 class="font-bold text-lg mb-2">Project Summary</h5>
-                            <p class="text-gray-600 mb-6">A cinematic survival farming sim built entirely in Roblox Studio, Grow the Galaxy drops players on the Moon following a catastrophic solar storm. With only a single alien seed and a curious nanobot sprout, players must establish life inside a fragile lunar biodome — and ultimately begin transforming dead space into thriving life.</p>
-                            
-                            <h5 class="font-bold text-lg mb-2">Features</h5>
-                            <ul class="list-disc list-inside text-gray-600 mb-6 grid grid-cols-1 sm:grid-cols-2 gap-x-8">
-                                <li>Custom Moon environment</li>
-                                <li>Scripted transparent biodome</li>
-                                <li>Idle/offline growth logic</li>
-                                <li>Nanobot NPC interactions</li>
-                                <li>Cinematic cutscenes</li>
-                                <li>Core gameplay loop</li>
-                            </ul>
-
-                             <p class="text-sm text-gray-500 italic">This is an original property created by code+canvas as part of my creative prototyping and IP development slate.</p>
                         </div>
                     </div>
                 </div>
@@ -529,14 +548,14 @@
                         'Engaging Animations'
                     ]
                 },
-                games: {
-                    title: 'Custom Games & Experiences',
-                    description: 'Exploring new creative frontiers, I develop immersive interactive experiences. I\'m currently crafting a custom sci-fi farming game on the Roblox platform to showcase innovative design possibilities and engaging gameplay loops for brands and creators.',
-                     features: [
-                        'Roblox Game Development',
-                        'Interactive Web Experiences',
-                        'Gamified Marketing Content',
-                        'IP & Creative Prototyping'
+                ai: {
+                    title: 'AI Creative Suite',
+                    description: 'Unlock new creative possibilities with our AI-powered services. I can transform your ideas, images, and text into stunning, high-definition video content with lifelike voiceovers, perfect for marketing, social media, and bringing your unique stories to life in ways you never thought possible.',
+                    features: [
+                        'AI Video Generation from Text/Images',
+                        'High-Fidelity AI Voiceovers',
+                        'Dynamic Marketing & Social Content',
+                        'Creative Concept Development'
                     ]
                 }
             };
