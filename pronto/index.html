@@ -19,9 +19,10 @@
         }
         
         .hero-image {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1447279506476-3faec8071eee');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1447279506476-3faec8071eee');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
         }
         
         .menu-item:hover .menu-overlay {
@@ -32,312 +33,547 @@
             transition: opacity 0.3s ease;
         }
         
-        /* Specific styles for the new full-screen navigation overlay */
+        /* Enhanced navigation styles */
+        #main-nav-overlay {
+            backdrop-filter: blur(10px);
+            background: rgba(17, 24, 39, 0.95);
+        }
+        
+        #main-nav-overlay .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
         #main-nav-overlay .nav-link::after {
-            background: #c8a97e; /* Amber color for underline */
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -5px;
+            left: 50%;
+            background: linear-gradient(90deg, #c8a97e, #d4af37);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
         }
         
         #main-nav-overlay .nav-link:hover::after {
             width: 100%;
         }
 
-        /* Ensure the mobile menu button is always visible */
+        /* Enhanced button styles */
+        .btn-primary {
+            background: linear-gradient(135deg, #c8a97e 0%, #d4af37 100%);
+            box-shadow: 0 4px 15px rgba(200, 169, 126, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(200, 169, 126, 0.6);
+        }
+        
+        /* Card hover effects */
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Enhanced gallery hover effect */
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(200, 169, 126, 0.8), rgba(212, 175, 55, 0.8));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+        
+        .gallery-item:hover::before {
+            opacity: 1;
+        }
+        
+        .gallery-item img {
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Enhanced hero text animation */
+        .hero-text {
+            animation: fadeInUp 1.5s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Enhanced section dividers */
+        .section-divider {
+            background: linear-gradient(90deg, transparent, #c8a97e, transparent);
+            height: 2px;
+            width: 120px;
+        }
+        
+        /* Enhanced menu tabs */
+        .menu-tab {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .menu-tab::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .menu-tab:hover::before {
+            left: 100%;
+        }
+        
+        /* Enhanced review cards */
+        .review-card {
+            background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+            border: 1px solid rgba(200, 169, 126, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .review-card:hover {
+            border-color: rgba(200, 169, 126, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Enhanced opening hours status */
+        .status-badge {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        /* Enhanced footer gradient */
+        .footer-gradient {
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+        }
+        
+        /* Mobile menu button enhancement */
         #mobile-menu-button {
-            display: flex; /* Use flex to center the icon if needed, or block */
+            display: flex;
             align-items: center;
             justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        #mobile-menu-button:hover {
+            background: rgba(200, 169, 126, 0.1);
+            transform: rotate(90deg);
+        }
+        
+        /* Enhanced scroll indicator */
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #c8a97e, #d4af37);
+            transform-origin: left;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+            z-index: 1000;
         }
     </style>
 </head>
 <body class="bg-white text-gray-800">
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-indicator" id="scroll-indicator"></div>
+    
     <!-- Header -->
-    <header class="fixed w-full z-50 bg-gray-50 shadow-md">
+    <header class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-lg transition-all duration-300">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center">
                 <a href="#home" class="flex items-center" aria-label="BELISSIMO. Home">
-                    <span class="playfair text-xl font-bold text-gray-800">BELISSIMO.</span>
+                    <span class="playfair text-2xl font-bold bg-gradient-to-r from-amber-700 to-yellow-600 bg-clip-text text-transparent">BELISSIMO.</span>
                 </a>
             </div>
             
-            <!-- Mobile menu button (now serves as universal menu button) -->
-            <button id="mobile-menu-button" class="text-gray-700 focus:outline-none rounded-full p-2 hover:bg-gray-200" aria-label="Open main menu">
-                <i class="fas fa-bars text-2xl"></i>
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-button" class="text-gray-700 focus:outline-none rounded-full p-3 hover:bg-gray-100 transition-all duration-300" aria-label="Open main menu">
+                <i class="fas fa-bars text-xl"></i>
             </button>
         </div>
     </header>
 
-    <!-- Main Navigation Overlay (replaces old mobile menu and desktop nav) -->
-    <div id="main-nav-overlay" class="fixed inset-0 z-51 bg-gray-900 bg-opacity-95 text-white transform -translate-x-full transition-transform duration-300 ease-in-out flex flex-col items-center justify-center">
-        <button id="close-nav-button" class="absolute top-4 right-4 text-white text-3xl focus:outline-none" aria-label="Close navigation">
+    <!-- Main Navigation Overlay -->
+    <div id="main-nav-overlay" class="fixed inset-0 z-50 transform -translate-x-full transition-transform duration-500 ease-in-out flex flex-col items-center justify-center">
+        <button id="close-nav-button" class="absolute top-6 right-6 text-white text-3xl focus:outline-none hover:text-amber-400 transition-colors duration-300" aria-label="Close navigation">
             <i class="fas fa-times"></i>
         </button>
-        <nav class="flex flex-col space-y-6 text-center" role="navigation" aria-label="Full screen navigation">
-            <a href="#home" class="nav-link playfair text-white hover:text-amber-400 text-3xl py-2" role="menuitem" aria-label="Go to Home section">HOME</a>
-            <a href="#about" class="nav-link playfair text-white hover:text-amber-400 text-3xl py-2" role="menuitem" aria-label="Go to About section">ABOUT</a>
-            <a href="#menu" class="nav-link playfair text-white hover:text-amber-400 text-3xl py-2" role="menuitem" aria-label="Go to Menu section">MENU</a>
-            <a href="#gallery" class="nav-link playfair text-white hover:text-amber-400 text-3xl py-2" role="menuitem" aria-label="Go to Gallery section">GALLERY</a>
-            <a href="#reviews" class="nav-link playfair text-white hover:text-amber-400 text-3xl py-2" role="menuitem" aria-label="Go to Reviews section">REVIEWS</a>
-            <a href="#contact" class="nav-link playfair text-white hover:text-amber-400 text-3xl py-2" role="menuitem" aria-label="Go to Contact section">CONTACT</a>
-            <a href="#contact" class="nav-link playfair text-white hover:text-amber-400 text-3xl py-2" role="menuitem" aria-label="Go to Gift Cards section">GIFT CARDS</a>
+        <nav class="flex flex-col space-y-8 text-center" role="navigation" aria-label="Full screen navigation">
+            <a href="#home" class="nav-link playfair text-white hover:text-amber-400 text-4xl py-3 transition-all duration-300" role="menuitem">HOME</a>
+            <a href="#about" class="nav-link playfair text-white hover:text-amber-400 text-4xl py-3 transition-all duration-300" role="menuitem">ABOUT</a>
+            <a href="#menu" class="nav-link playfair text-white hover:text-amber-400 text-4xl py-3 transition-all duration-300" role="menuitem">MENU</a>
+            <a href="#gallery" class="nav-link playfair text-white hover:text-amber-400 text-4xl py-3 transition-all duration-300" role="menuitem">GALLERY</a>
+            <a href="#reviews" class="nav-link playfair text-white hover:text-amber-400 text-4xl py-3 transition-all duration-300" role="menuitem">REVIEWS</a>
+            <a href="#contact" class="nav-link playfair text-white hover:text-amber-400 text-4xl py-3 transition-all duration-300" role="menuitem">CONTACT</a>
+            <a href="#contact" class="nav-link playfair text-white hover:text-amber-400 text-4xl py-3 transition-all duration-300" role="menuitem">GIFT CARDS</a>
         </nav>
     </div>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-image h-screen flex items-center justify-center text-white pt-16">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="playfair text-4xl md:text-6xl font-bold mb-4">BELISSIMO.</h1>
-            <p class="text-xl md:text-2xl mb-4">Authentic Italian Cuisine & Fine Wines</p>
-            <p class="text-base italic mt-4 max-w-2xl mx-auto">Please note: This is a demonstration website created to showcase a modern, clean design for a local restaurant. All content is for example purposes only.</p>
+    <section id="home" class="hero-image h-screen flex items-center justify-center text-white pt-16 relative">
+        <div class="container mx-auto px-4 text-center hero-text">
+            <h1 class="playfair text-5xl md:text-7xl font-bold mb-6 drop-shadow-lg">BELISSIMO.</h1>
+            <p class="text-xl md:text-3xl mb-6 font-light tracking-wide">Authentic Italian Cuisine & Fine Wines</p>
+            <div class="section-divider mx-auto mb-6"></div>
+            <p class="text-base italic mt-6 max-w-2xl mx-auto opacity-90 leading-relaxed">Please note: This is a demonstration website created to showcase a modern, clean design for a local restaurant. All content is for example purposes only.</p>
+        </div>
+        
+        <!-- Floating scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-white text-2xl opacity-70"></i>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-gray-50">
+    <section id="about" class="py-24 bg-gradient-to-br from-gray-50 to-white">
         <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
-                    <img src="https://codepluscanvas.com/pronto/photo-1672039390733-14224eb7937d.avif" alt="Two chefs smiling in a professional kitchen" class="rounded-lg shadow-lg w-full">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2">
+                    <div class="relative">
+                        <img src="https://codepluscanvas.com/pronto/photo-1672039390733-14224eb7937d.avif" alt="Two chefs smiling in a professional kitchen" class="rounded-2xl shadow-2xl w-full transform hover:scale-105 transition duration-700">
+                        <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-br from-amber-400 to-amber-700 rounded-full flex items-center justify-center shadow-xl">
+                            <i class="fas fa-utensils text-white text-2xl"></i>
+                        </div>
+                    </div>
                 </div>
-                <div class="md:w-1/2">
-                    <h2 class="playfair text-3xl md:text-4xl font-bold mb-6 text-gray-800">Authentic Italian Dining in the Heart of Rome</h2>
-                    <p class="mb-4 text-gray-600">Welcome to Belissimo, where traditional Italian flavors meet modern dining excellence. Located in the vibrant Trastevere district of Rome, we bring you the authentic taste of Italy with every dish.</p>
-                    <h3 class="playfair text-2xl font-semibold mt-6 mb-4 text-gray-800">Our Story</h3>
-                    <p class="mb-6 text-gray-600">Founded with a passion for authentic Italian cuisine, Belissimo has been serving Rome's finest traditional dishes since 2015. Our skilled chefs use only the freshest local ingredients and time-honored recipes passed down through generations.</p>
-                     <h3 class="playfair text-2xl font-semibold mt-6 mb-4 text-gray-800">What We Offer</h3>
-                    <ul class="list-disc list-inside text-gray-600 space-y-2">
-                        <li>Handcrafted Pasta - Made fresh daily using traditional techniques</li>
-                        <li>Wood-Fired Pizza - Crispy, authentic pizzas from our traditional stone oven</li>
-                        <li>Seasonal Specialties - Featuring the best of Roman and Italian regional cuisine</li>
-                        <li>Fine Wine Selection - Carefully curated Italian wines to complement your meal</li>
-                        <li>Warm Atmosphere - Perfect for romantic dinners, family gatherings, or business meetings</li>
-                    </ul>
+                <div class="lg:w-1/2">
+                    <h2 class="playfair text-4xl md:text-5xl font-bold mb-8 text-gray-800 leading-tight">Authentic Italian Dining in the Heart of Rome</h2>
+                    <div class="section-divider mb-6"></div>
+                    <p class="mb-6 text-gray-600 text-lg leading-relaxed">Welcome to Belissimo, where traditional Italian flavors meet modern dining excellence. Located in the vibrant Trastevere district of Rome, we bring you the authentic taste of Italy with every dish.</p>
+                    
+                    <h3 class="playfair text-2xl font-semibold mt-8 mb-4 text-gray-800">Our Story</h3>
+                    <p class="mb-8 text-gray-600 leading-relaxed">Founded with a passion for authentic Italian cuisine, Belissimo has been serving Rome's finest traditional dishes since 2015. Our skilled chefs use only the freshest local ingredients and time-honored recipes passed down through generations.</p>
+                    
+                    <h3 class="playfair text-2xl font-semibold mb-6 text-gray-800">What We Offer</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-3 h-3 bg-amber-600 rounded-full mt-2 flex-shrink-0"></div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Handcrafted Pasta</h4>
+                                <p class="text-gray-600 text-sm">Made fresh daily using traditional techniques</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-3 h-3 bg-amber-600 rounded-full mt-2 flex-shrink-0"></div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Wood-Fired Pizza</h4>
+                                <p class="text-gray-600 text-sm">Crispy, authentic pizzas from our traditional stone oven</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-3 h-3 bg-amber-600 rounded-full mt-2 flex-shrink-0"></div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Seasonal Specialties</h4>
+                                <p class="text-gray-600 text-sm">Featuring the best of Roman and Italian regional cuisine</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-3 h-3 bg-amber-600 rounded-full mt-2 flex-shrink-0"></div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Fine Wine Selection</h4>
+                                <p class="text-gray-600 text-sm">Carefully curated Italian wines to complement your meal</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Menu Section -->
-    <section id="menu" class="py-20 bg-white">
+    <section id="menu" class="py-24 bg-white">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="playfair text-3xl md:text-4xl font-bold mb-4 text-gray-800">Our Menu</h2>
-                <div class="w-24 h-1 bg-amber-700 mx-auto"></div>
+            <div class="text-center mb-20">
+                <h2 class="playfair text-4xl md:text-5xl font-bold mb-6 text-gray-800">Our Menu</h2>
+                <div class="section-divider mx-auto mb-4"></div>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Experience the authentic flavors of Italy with our carefully crafted dishes, made from the finest ingredients.</p>
             </div>
             
-            <div class="flex flex-wrap justify-center gap-4 mb-10">
-                <button class="menu-tab active px-6 py-2 bg-amber-700 text-white playfair rounded-md" data-tab="main" aria-controls="main" aria-selected="true">Main</button>
-                <button class="menu-tab px-6 py-2 bg-gray-200 text-gray-800 playfair rounded-md" data-tab="drinks" aria-controls="drinks" aria-selected="false">Drinks</button>
-                <button class="menu-tab px-6 py-2 bg-gray-200 text-gray-800 playfair rounded-md" data-tab="lunch" aria-controls="lunch" aria-selected="false">Lunch Special</button>
-                <button class="menu-tab px-6 py-2 bg-gray-200 text-gray-800 playfair rounded-md" data-tab="group" aria-controls="group" aria-selected="false">Group 10+</button>
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="menu-tab active btn-primary text-white px-8 py-3 playfair rounded-full font-semibold" data-tab="main" aria-controls="main" aria-selected="true">Main</button>
+                <button class="menu-tab px-8 py-3 bg-gray-100 text-gray-800 playfair rounded-full font-semibold hover:bg-gray-200 transition-all duration-300" data-tab="drinks" aria-controls="drinks" aria-selected="false">Drinks</button>
+                <button class="menu-tab px-8 py-3 bg-gray-100 text-gray-800 playfair rounded-full font-semibold hover:bg-gray-200 transition-all duration-300" data-tab="lunch" aria-controls="lunch" aria-selected="false">Lunch Special</button>
+                <button class="menu-tab px-8 py-3 bg-gray-100 text-gray-800 playfair rounded-full font-semibold hover:bg-gray-200 transition-all duration-300" data-tab="group" aria-controls="group" aria-selected="false">Group 10+</button>
             </div>
 
             <div class="menu-content active" id="main" role="tabpanel">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
                     <!-- Left Column -->
-                    <div class="space-y-10">
+                    <div class="space-y-12">
                         <!-- Small Plates -->
-                        <div>
-                            <h3 class="playfair text-3xl font-semibold text-center mb-6 text-gray-800">Small Plates</h3>
-                            <div class="space-y-4">
-                                <div class="menu-item">
+                        <div class="bg-gray-50 p-8 rounded-2xl">
+                            <h3 class="playfair text-3xl font-semibold text-center mb-8 text-gray-800">Small Plates</h3>
+                            <div class="space-y-6">
+                                <div class="menu-item p-4 rounded-lg hover:bg-white transition-all duration-300">
                                     <div class="flex justify-between items-baseline">
-                                        <h4 class="playfair text-xl">Calamari Fritti</h4>
-                                        <span class="flex-grow mx-3 border-b border-dotted border-gray-400"></span>
-                                        <span class="playfair text-xl font-semibold text-amber-700">$19</span>
+                                        <h4 class="playfair text-xl font-semibold">Calamari Fritti</h4>
+                                        <span class="flex-grow mx-4 border-b border-dotted border-gray-300"></span>
+                                        <span class="playfair text-xl font-bold text-amber-700">$19</span>
                                     </div>
-                                    <p class="text-gray-600 mt-1">Saffron aioli, lemon</p>
+                                    <p class="text-gray-600 mt-2 italic">Saffron aioli, lemon</p>
                                 </div>
                             </div>
                         </div>
+                        
                         <!-- Pasta -->
-                        <div>
-                            <h3 class="playfair text-3xl font-semibold text-center mb-6 text-gray-800">Pasta</h3>
-                            <div class="space-y-4">
-                                <div class="menu-item">
+                        <div class="bg-gray-50 p-8 rounded-2xl">
+                            <h3 class="playfair text-3xl font-semibold text-center mb-8 text-gray-800">Pasta</h3>
+                            <div class="space-y-6">
+                                <div class="menu-item p-4 rounded-lg hover:bg-white transition-all duration-300">
                                     <div class="flex justify-between items-baseline">
-                                        <h4 class="playfair text-xl">Gnocchi Della Terra</h4>
-                                        <span class="flex-grow mx-3 border-b border-dotted border-gray-400"></span>
-                                        <span class="playfair text-xl font-semibold text-amber-700">$30</span>
+                                        <h4 class="playfair text-xl font-semibold">Gnocchi Della Terra</h4>
+                                        <span class="flex-grow mx-4 border-b border-dotted border-gray-300"></span>
+                                        <span class="playfair text-xl font-bold text-amber-700">$30</span>
                                     </div>
-                                    <p class="text-gray-600 mt-1">Mushrooms, pine nuts, rocket, garlic, chilli + burnt butter sauce</p>
+                                    <p class="text-gray-600 mt-2 italic">Mushrooms, pine nuts, rocket, garlic, chilli + burnt butter sauce</p>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    
                     <!-- Right Column -->
-                    <div class="space-y-10">
+                    <div class="space-y-12">
                         <!-- Carne -->
-                        <div>
-                            <h3 class="playfair text-3xl font-semibold text-center mb-6 text-gray-800">Carne</h3>
-                            <div class="space-y-4">
-                                <div class="menu-item">
+                        <div class="bg-gray-50 p-8 rounded-2xl">
+                            <h3 class="playfair text-3xl font-semibold text-center mb-8 text-gray-800">Carne</h3>
+                            <div class="space-y-6">
+                                <div class="menu-item p-4 rounded-lg hover:bg-white transition-all duration-300">
                                     <div class="flex justify-between items-baseline">
-                                        <h4 class="playfair text-xl">Chicken Cotoletta</h4>
-                                        <span class="flex-grow mx-3 border-b border-dotted border-gray-400"></span>
-                                        <span class="playfair text-xl font-semibold text-amber-700">$32</span>
+                                        <h4 class="playfair text-xl font-semibold">Chicken Cotoletta</h4>
+                                        <span class="flex-grow mx-4 border-b border-dotted border-gray-300"></span>
+                                        <span class="playfair text-xl font-bold text-amber-700">$32</span>
                                     </div>
-                                    <p class="text-gray-600 mt-1">Crumbed chicken breast, served with a cos lettuce salad</p>
+                                    <p class="text-gray-600 mt-2 italic">Crumbed chicken breast, served with a cos lettuce salad</p>
                                 </div>
                             </div>
                         </div>
+                        
                         <!-- Pizza -->
-                        <div>
-                            <h3 class="playfair text-3xl font-semibold text-center mb-6 text-gray-800">Pizza</h3>
-                            <div class="space-y-4">
-                                <div class="menu-item">
+                        <div class="bg-gray-50 p-8 rounded-2xl">
+                            <h3 class="playfair text-3xl font-semibold text-center mb-8 text-gray-800">Pizza</h3>
+                            <div class="space-y-6">
+                                <div class="menu-item p-4 rounded-lg hover:bg-white transition-all duration-300">
                                     <div class="flex justify-between items-baseline">
-                                        <h4 class="playfair text-xl">Diavola</h4>
-                                        <span class="flex-grow mx-3 border-b border-dotted border-gray-400"></span>
-                                        <span class="playfair text-xl font-semibold text-amber-700">$26</span>
+                                        <h4 class="playfair text-xl font-semibold">Diavola</h4>
+                                        <span class="flex-grow mx-4 border-b border-dotted border-gray-300"></span>
+                                        <span class="playfair text-xl font-bold text-amber-700">$26</span>
                                     </div>
-                                    <p class="text-gray-600 mt-1">San marzano, fior di latte, salami, chilli + basil</p>
+                                    <p class="text-gray-600 mt-2 italic">San marzano, fior di latte, salami, chilli + basil</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Dolci Section (centered below) -->
-                <div class="mt-10">
-                    <h3 class="playfair text-3xl font-semibold text-center mb-6 text-gray-800">Dolci</h3>
-                    <div class="max-w-md mx-auto space-y-4">
-                        <div class="menu-item">
+                
+                <!-- Dolci Section -->
+                <div class="mt-16 text-center">
+                    <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-8 rounded-2xl max-w-2xl mx-auto">
+                        <h3 class="playfair text-3xl font-semibold mb-8 text-gray-800">Dolci</h3>
+                        <div class="menu-item p-4 rounded-lg hover:bg-white transition-all duration-300">
                             <div class="flex justify-between items-baseline">
-                                <h4 class="playfair text-xl">House Made Tiramisu</h4>
-                                <span class="flex-grow mx-3 border-b border-dotted border-gray-400"></span>
-                                <span class="playfair text-xl font-semibold text-amber-700">$15</span>
+                                <h4 class="playfair text-xl font-semibold">House Made Tiramisu</h4>
+                                <span class="flex-grow mx-4 border-b border-dotted border-gray-300"></span>
+                                <span class="playfair text-xl font-bold text-amber-700">$15</span>
                             </div>
-                            <p class="text-gray-600 mt-1">The iconic Italian pick-me-up</p>
+                            <p class="text-gray-600 mt-2 italic">The iconic Italian pick-me-up</p>
                         </div>
                     </div>
                 </div>
+                
                 <div class="text-center mt-16">
-                    <a href="#" target="_blank" class="border-2 border-amber-700 text-amber-700 px-8 py-3 hover:bg-amber-700 hover:text-white transition duration-300 playfair rounded-md" aria-label="View full main menu (opens in new tab)">VIEW FULL MENU</a>
+                    <a href="#" target="_blank" class="btn-primary text-white px-10 py-4 playfair rounded-full font-semibold text-lg inline-block transition-all duration-300" aria-label="View full main menu (opens in new tab)">VIEW FULL MENU</a>
                 </div>
             </div>
 
             <div class="menu-content hidden" id="drinks" role="tabpanel">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                     <!-- Wines -->
-                    <div>
-                        <h3 class="playfair text-2xl font-bold mb-6 text-gray-800 border-b pb-2">Wines</h3>
-                        <div class="space-y-6">
-                            <div class="menu-item relative group">
-                                <div class="flex justify-between">
-                                    <h4 class="playfair text-xl font-semibold">Riporta Sangiovese</h4>
-                                    <span class="playfair text-amber-700">$10 / $48</span>
+                    <div class="bg-gray-50 p-8 rounded-2xl">
+                        <h3 class="playfair text-3xl font-bold mb-8 text-gray-800 text-center">Wines</h3>
+                        <div class="space-y-8">
+                            <div class="menu-item p-4 rounded-lg hover:bg-white transition-all duration-300">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h4 class="playfair text-xl font-semibold">Riporta Sangiovese</h4>
+                                        <p class="text-gray-600 italic">Abruzzo, Italy</p>
+                                    </div>
+                                    <span class="playfair text-amber-700 font-bold">$10 / $48</span>
                                 </div>
-                                <p class="text-gray-600">Abruzzo, Italy</p>
                             </div>
-                            <div class="menu-item relative group">
-                                <div class="flex justify-between">
-                                    <h4 class="playfair text-xl font-semibold">Monte Tondo 'Mito' Soave</h4>
-                                    <span class="playfair text-amber-700">$11 / $52</span>
+                            <div class="menu-item p-4 rounded-lg hover:bg-white transition-all duration-300">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h4 class="playfair text-xl font-semibold">Monte Tondo 'Mito' Soave</h4>
+                                        <p class="text-gray-600 italic">Veneto, Italy</p>
+                                    </div>
+                                    <span class="playfair text-amber-700 font-bold">$11 / $52</span>
                                 </div>
-                                <p class="text-gray-600">Veneto, Italy</p>
                             </div>
-                             <div class="menu-item relative group">
-                                <div class="flex justify-between">
-                                    <h4 class="playfair text-xl font-semibold">El Desperado Rose</h4>
-                                    <span class="playfair text-amber-700">$10 / $50</span>
+                            <div class="menu-item p-4 rounded-lg hover:bg-white transition-all duration-300">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h4 class="playfair text-xl font-semibold">El Desperado Rose</h4>
+                                        <p class="text-gray-600 italic">Adelaide Hills, South Australia</p>
+                                    </div>
+                                    <span class="playfair text-amber-700 font-bold">$10 / $50</span>
                                 </div>
-                                <p class="text-gray-600">Adelaide Hills, South Australia</p>
                             </div>
                         </div>
                     </div>
+                    
                     <!-- Cocktails -->
-                    <div>
-                        <h3 class="playfair text-2xl font-bold mb-6 text-gray-800 border-b pb-2">Cocktails</h3>
-                        <div class="space-y-6">
-                            <div class="menu-item relative group">
-                                <div class="flex justify-between">
-                                    <h4 class="playfair text-xl font-semibold">Negroni</h4>
-                                    <span class="playfair text-amber-700">$18</span>
+                    <div class="bg-gray-50 p-8 rounded-2xl">
+                        <h3 class="playfair text-3xl font-bold mb-8 text-gray-800 text-center">Cocktails</h3>
+                        <div class="space-y-8">
+                            <div class="menu-item p-4 rounded-lg hover:bg-white transition-all duration-300">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h4 class="playfair text-xl font-semibold">Negroni</h4>
+                                        <p class="text-gray-600 italic">The classic Italian aperitivo</p>
+                                    </div>
+                                    <span class="playfair text-amber-700 font-bold">$18</span>
                                 </div>
-                                <p class="text-gray-600">The classic Italian aperitivo</p>
                             </div>
-                            <div class="menu-item relative group">
-                                <div class="flex justify-between">
-                                    <h4 class="playfair text-xl font-semibold">Aperol Spritz</h4>
-                                    <span class="playfair text-amber-700">$17</span>
+                            <div class="menu-item p-4 rounded-lg hover:bg-white transition-all duration-300">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h4 class="playfair text-xl font-semibold">Aperol Spritz</h4>
+                                        <p class="text-gray-600 italic">A light way to start your experience</p>
+                                    </div>
+                                    <span class="playfair text-amber-700 font-bold">$17</span>
                                 </div>
-                                <p class="text-gray-600">A light way to start your experience</p>
                             </div>
-                             <div class="menu-item relative group">
-                                <div class="flex justify-between">
-                                    <h4 class="playfair text-xl font-semibold">Espresso Martini</h4>
-                                    <span class="playfair text-amber-700">$18</span>
+                            <div class="menu-item p-4 rounded-lg hover:bg-white transition-all duration-300">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h4 class="playfair text-xl font-semibold">Espresso Martini</h4>
+                                        <p class="text-gray-600 italic">The best way to get your night going</p>
+                                    </div>
+                                    <span class="playfair text-amber-700 font-bold">$18</span>
                                 </div>
-                                <p class="text-gray-600">The best way to get your night going</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="text-center mt-16">
-                    <a href="#" target="_blank" class="border-2 border-amber-700 text-amber-700 px-8 py-3 hover:bg-amber-700 hover:text-white transition duration-300 playfair rounded-md" aria-label="View full drinks menu (opens in new tab)">VIEW DRINKS MENU</a>
+                    <a href="#" target="_blank" class="btn-primary text-white px-10 py-4 playfair rounded-full font-semibold text-lg inline-block transition-all duration-300" aria-label="View full drinks menu (opens in new tab)">VIEW DRINKS MENU</a>
                 </div>
             </div>
 
             <div class="menu-content hidden" id="lunch" role="tabpanel">
-                <div class="max-w-3xl mx-auto">
-                    <h3 class="playfair text-2xl font-bold mb-6 text-gray-800 border-b pb-2 text-center">Lunch Special</h3>
-                    <div class="menu-item relative group text-center">
-                        <div class="flex justify-center items-baseline">
-                            <h4 class="playfair text-xl font-semibold">Your choice of classic</h4>
-                            <span class="playfair text-amber-700 ml-4 text-xl">$24.50</span>
+                <div class="max-w-4xl mx-auto bg-gradient-to-br from-amber-50 to-yellow-50 p-12 rounded-2xl">
+                    <h3 class="playfair text-3xl font-bold mb-8 text-gray-800 text-center">Lunch Special</h3>
+                    <div class="menu-item text-center bg-white p-8 rounded-xl shadow-sm">
+                        <div class="flex justify-center items-baseline mb-4">
+                            <h4 class="playfair text-2xl font-semibold">Your choice of classic</h4>
+                            <span class="playfair text-amber-700 ml-6 text-2xl font-bold">$24.50</span>
                         </div>
-                        <p class="text-gray-600 mt-2">Served with a glass of house red or white wine, or a soft drink.</p>
+                        <p class="text-gray-600 text-lg mb-6">Served with a glass of house red or white wine, or a soft drink.</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-utensils text-amber-600"></i>
+                                <span>Lamb Ragu Rigatoni</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-pizza-slice text-amber-600"></i>
+                                <span>Margherita Pizza</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-leaf text-amber-600"></i>
+                                <span>Grilled Chicken Salad</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-utensils text-amber-600"></i>
+                                <span>Puttanesca Linguine</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-pizza-slice text-amber-600"></i>
+                                <span>Pollo Pizza</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="mt-8">
-                        <p class="text-center text-gray-800 playfair mb-4">Some of our lunch classics include:</p>
-                        <ul class="list-disc list-inside text-center text-gray-600 space-y-2">
-                            <li>Lamb Ragu Rigatoni</li>
-                            <li>Margherita Pizza</li>
-                            <li>Grilled Chicken Salad</li>
-                            <li>Puttanesca Linguine</li>
-                            <li>Pollo Pizza</li>
-                        </ul>
-                    </div>
-                    <div class="text-center mt-16">
-                        <a href="#" target="_blank" class="border-2 border-amber-700 text-amber-700 px-8 py-3 hover:bg-amber-700 hover:text-white transition duration-300 playfair rounded-md" aria-label="View full lunch menu (opens in new tab)">VIEW LUNCH MENU</a>
+                    <div class="text-center mt-12">
+                        <a href="#" target="_blank" class="btn-primary text-white px-10 py-4 playfair rounded-full font-semibold text-lg inline-block transition-all duration-300" aria-label="View full lunch menu (opens in new tab)">VIEW LUNCH MENU</a>
                     </div>
                 </div>
             </div>
 
             <div class="menu-content hidden" id="group" role="tabpanel">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                    <div>
-                        <h3 class="playfair text-2xl font-bold mb-6 text-gray-800 border-b pb-2">Group Packages</h3>
-                        <div class="space-y-6">
-                            <div class="menu-item relative group">
-                                <div class="flex justify-between">
-                                    <h4 class="playfair text-xl font-semibold">Argento</h4>
-                                    <span class="playfair text-amber-700">$50/pp</span>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div class="bg-gray-50 p-8 rounded-2xl">
+                        <h3 class="playfair text-3xl font-bold mb-8 text-gray-800 text-center">Group Packages</h3>
+                        <div class="space-y-8">
+                            <div class="menu-item p-6 rounded-xl bg-white hover:shadow-lg transition-all duration-300">
+                                <div class="flex justify-between items-start mb-3">
+                                    <h4 class="playfair text-2xl font-semibold">Argento</h4>
+                                    <span class="playfair text-amber-700 font-bold text-xl">$50/pp</span>
                                 </div>
                                 <p class="text-gray-600">Served in a banquet style to share.</p>
                             </div>
-                            <div class="menu-item relative group">
-                                <div class="flex justify-between">
-                                    <h4 class="playfair text-xl font-semibold">Feed Me</h4>
-                                    <span class="playfair text-amber-700">$65/pp</span>
+                            <div class="menu-item p-6 rounded-xl bg-white hover:shadow-lg transition-all duration-300">
+                                <div class="flex justify-between items-start mb-3">
+                                    <h4 class="playfair text-2xl font-semibold">Feed Me</h4>
+                                    <span class="playfair text-amber-700 font-bold text-xl">$65/pp</span>
                                 </div>
                                 <p class="text-gray-600">Tell us your dietaries and let the chefs decide for you!</p>
                             </div>
                         </div>
                     </div>
-                     <div>
-                        <h3 class="playfair text-2xl font-bold mb-6 text-gray-800 border-b pb-2 text-transparent select-none">.</h3>
-                        <div class="space-y-6">
-                            <div class="menu-item relative group">
-                                <div class="flex justify-between">
-                                    <h4 class="playfair text-xl font-semibold">Oro</h4>
-                                    <span class="playfair text-amber-700">$75/pp</span>
+                    <div class="bg-gray-50 p-8 rounded-2xl">
+                        <h3 class="playfair text-3xl font-bold mb-8 text-gray-800 text-center opacity-0">Premium Options</h3>
+                        <div class="space-y-8">
+                            <div class="menu-item p-6 rounded-xl bg-white hover:shadow-lg transition-all duration-300">
+                                <div class="flex justify-between items-start mb-3">
+                                    <h4 class="playfair text-2xl font-semibold">Oro</h4>
+                                    <span class="playfair text-amber-700 font-bold text-xl">$75/pp</span>
                                 </div>
                                 <p class="text-gray-600">Served in a banquet style to share.</p>
                             </div>
-                            <div class="menu-item relative group">
-                                <div class="flex justify-between">
-                                    <h4 class="playfair text-xl font-semibold">Platino</h4>
-                                    <span class="playfair text-amber-700">$100/pp</span>
+                            <div class="menu-item p-6 rounded-xl bg-white hover:shadow-lg transition-all duration-300">
+                                <div class="flex justify-between items-start mb-3">
+                                    <h4 class="playfair text-2xl font-semibold">Platino</h4>
+                                    <span class="playfair text-amber-700 font-bold text-xl">$100/pp</span>
                                 </div>
                                 <p class="text-gray-600">Served in a banquet style to share.</p>
                             </div>
@@ -345,232 +581,309 @@
                     </div>
                 </div>
                 <div class="text-center mt-16">
-                    <a href="#" target="_blank" class="border-2 border-amber-700 text-amber-700 px-8 py-3 hover:bg-amber-700 hover:text-white transition duration-300 playfair rounded-md" aria-label="View group 10+ menu (opens in new tab)">VIEW GROUP 10+ MENU</a>
+                    <a href="#" target="_blank" class="btn-primary text-white px-10 py-4 playfair rounded-full font-semibold text-lg inline-block transition-all duration-300" aria-label="View group 10+ menu (opens in new tab)">VIEW GROUP 10+ MENU</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="py-20 bg-gray-50">
+    <section id="gallery" class="py-24 bg-gradient-to-br from-gray-50 to-white">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="playfair text-3xl md:text-4xl font-bold mb-4 text-gray-800">Gallery</h2>
-                <div class="w-24 h-1 bg-amber-700 mx-auto"></div>
+            <div class="text-center mb-20">
+                <h2 class="playfair text-4xl md:text-5xl font-bold mb-6 text-gray-800">Gallery</h2>
+                <div class="section-divider mx-auto mb-4"></div>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">A visual journey through our culinary artistry and warm atmosphere.</p>
             </div>
             
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                <div class="overflow-hidden rounded-lg shadow-lg">
-                    <img src="https://codepluscanvas.com/pronto/brooke-lark--F_5g8EEHYE-unsplash.jpg" alt="A delicious-looking pizza on a wooden board" class="w-full h-64 object-cover hover:scale-105 transition duration-500">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="gallery-item rounded-2xl shadow-lg overflow-hidden">
+                    <img src="https://codepluscanvas.com/pronto/brooke-lark--F_5g8EEHYE-unsplash.jpg" alt="A delicious-looking pizza on a wooden board" class="w-full h-80 object-cover">
                 </div>
-                <div class="overflow-hidden rounded-lg shadow-lg">
-                    <img src="https://codepluscanvas.com/pronto/chris-hahn-Q8R3fqlMFmU-unsplash.jpg" alt="A chef preparing a dish in a kitchen" class="w-full h-64 object-cover hover:scale-105 transition duration-500">
+                <div class="gallery-item rounded-2xl shadow-lg overflow-hidden">
+                    <img src="https://codepluscanvas.com/pronto/chris-hahn-Q8R3fqlMFmU-unsplash.jpg" alt="A chef preparing a dish in a kitchen" class="w-full h-80 object-cover">
                 </div>
-                <div class="overflow-hidden rounded-lg shadow-lg">
-                    <img src="https://codepluscanvas.com/pronto/cloris-ying-rmdo8r9iGfw-unsplash.jpg" alt="A glass of red wine" class="w-full h-64 object-cover hover:scale-105 transition duration-500">
+                <div class="gallery-item rounded-2xl shadow-lg overflow-hidden">
+                    <img src="https://codepluscanvas.com/pronto/cloris-ying-rmdo8r9iGfw-unsplash.jpg" alt="A glass of red wine" class="w-full h-80 object-cover">
                 </div>
-                <div class="overflow-hidden rounded-lg shadow-lg">
-                    <img src="https://codepluscanvas.com/pronto/emanuel-ekstrom-KJOUnsGXq58-unsplash.jpg" alt="A plate of fresh pasta" class="w-full h-64 object-cover hover:scale-105 transition duration-500">
+                <div class="gallery-item rounded-2xl shadow-lg overflow-hidden">
+                    <img src="https://codepluscanvas.com/pronto/emanuel-ekstrom-KJOUnsGXq58-unsplash.jpg" alt="A plate of fresh pasta" class="w-full h-80 object-cover">
                 </div>
-                <div class="overflow-hidden rounded-lg shadow-lg">
-                    <img src="https://codepluscanvas.com/pronto/micheile-henderson-_wE42nzFAz0-unsplash.jpg" alt="A tasty dessert on a plate" class="w-full h-64 object-cover hover:scale-105 transition duration-500">
+                <div class="gallery-item rounded-2xl shadow-lg overflow-hidden">
+                    <img src="https://codepluscanvas.com/pronto/micheile-henderson-_wE42nzFAz0-unsplash.jpg" alt="A tasty dessert on a plate" class="w-full h-80 object-cover">
                 </div>
-                <div class="overflow-hidden rounded-lg shadow-lg">
-                    <img src="https://codepluscanvas.com/pronto/pinar-kucuk-rq0GMrnLj8c-unsplash.jpg" alt="The interior of a cozy restaurant" class="w-full h-64 object-cover hover:scale-105 transition duration-500">
+                <div class="gallery-item rounded-2xl shadow-lg overflow-hidden">
+                    <img src="https://codepluscanvas.com/pronto/pinar-kucuk-rq0GMrnLj8c-unsplash.jpg" alt="The interior of a cozy restaurant" class="w-full h-80 object-cover">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Google Reviews Section -->
-    <section id="reviews" class="py-20 bg-white">
+    <section id="reviews" class="py-24 bg-white">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="playfair text-3xl md:text-4xl font-bold mb-4 text-gray-800">What Our Guests Say</h2>
-                <div class="w-24 h-1 bg-amber-700 mx-auto mb-4"></div>
-                <div class="flex items-center justify-center text-gray-700">
-                    <span class="text-2xl font-bold mr-2">4.4</span>
-                    <div class="flex text-amber-500 mr-2">
+            <div class="text-center mb-20">
+                <h2 class="playfair text-4xl md:text-5xl font-bold mb-6 text-gray-800">What Our Guests Say</h2>
+                <div class="section-divider mx-auto mb-6"></div>
+                <div class="flex items-center justify-center text-gray-700 bg-gray-50 inline-block px-8 py-4 rounded-full">
+                    <span class="text-3xl font-bold mr-3">4.4</span>
+                    <div class="flex text-amber-500 mr-3 text-xl">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star-half-alt"></i>
                     </div>
-                    <span class="text-lg">(129 Reviews)</span>
+                    <span class="text-lg font-medium">(129 Reviews)</span>
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <!-- Review 1 -->
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md flex flex-col">
-                    <div class="flex items-center mb-4">
-                        <div class="flex text-amber-500 mr-3">
+                <div class="review-card p-8 rounded-2xl card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="flex text-amber-500 mr-4 text-lg">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
-                        <span class="text-gray-500 text-sm">a month ago</span>
+                        <span class="text-gray-500 text-sm bg-gray-100 px-3 py-1 rounded-full">a month ago</span>
                     </div>
-                    <h4 class="font-semibold text-lg text-gray-800 mb-2">Klaus Schmidt</h4>
-                    <p class="text-gray-600 italic mb-4">"My wife and I decided to try Belissimo on a quiet Tuesday evening, and what a fantastic choice that turned out to be! From the moment we stepped inside, we were greeted with such warmth and genuine Italian hospitality that immediately set the tone for the entire evening. The food was absolutely incredible! I ordered the carbonara, and it was hands down the best I've had outside of Italy—perfectly creamy, with just the right balance of pancetta and pecorino. The pasta was cooked to perfection, al dente as it should be. My wife's pizza was equally impressive, with a beautifully crispy crust and fresh, high-quality toppings that really let the flavors shine through. We ultimately decided to go with the Chef's Meal, and I can honestly say it was worth every penny. The portions were incredibly generous—we left completely satisfied and even had some delicious leftovers to enjoy the next day. Each course was thoughtfully prepared and showcased the kitchen's real expertise with authentic Italian cuisine. The service throughout the evening was attentive but never intrusive, and you could really feel the passion the staff has for what they do. It's rare to find a restaurant that delivers so consistently on both food quality and atmosphere. We're already planning our next visit and will absolutely be bringing friends along. I couldn't recommend Belissimo any higher—this is what authentic Italian dining should be!"</p>
+                    <h4 class="font-bold text-xl text-gray-800 mb-4 playfair">Klaus Schmidt</h4>
+                    <p class="text-gray-600 leading-relaxed line-clamp-6">"My wife and I decided to try Belissimo on a quiet Tuesday evening, and what a fantastic choice that turned out to be! From the moment we stepped inside, we were greeted with such warmth and genuine Italian hospitality. The food was absolutely incredible! I ordered the carbonara, and it was hands down the best I've had outside of Italy. We ultimately decided to go with the Chef's Meal, and I can honestly say it was worth every penny. We're already planning our next visit and will absolutely be bringing friends along."</p>
                 </div>
 
                 <!-- Review 2 -->
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md flex flex-col">
-                    <div class="flex items-center mb-4">
-                        <div class="flex text-amber-500 mr-3">
+                <div class="review-card p-8 rounded-2xl card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="flex text-amber-500 mr-4 text-lg">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
-                        <span class="text-gray-500 text-sm">2 months ago</span>
+                        <span class="text-gray-500 text-sm bg-gray-100 px-3 py-1 rounded-full">2 months ago</span>
                     </div>
-                    <h4 class="font-semibold text-lg text-gray-800 mb-2">Carlos Hernández</h4>
-                    <p class="text-gray-600 italic mb-4">"What an incredible evening at Belissimo with my family! From the moment we arrived, Sofia and Marco provided outstanding service that made our night truly special. Despite it being an unexpectedly busy Sunday evening, the entire staff handled everything with such professionalism and grace. The food was absolutely divine. The mushroom risotto was a standout—rich, creamy, and bursting with earthy flavors that transported me straight to Italy. And the desserts! You could see the artistry and care in every detail of the presentation. It's clear the kitchen takes immense pride in their craft. Even with the restaurant bustling, we never felt rushed or overlooked. The team at Belissimo knows how to make every guest feel valued and special. It's that combination of exceptional food and genuine hospitality that sets this place apart. We're already planning our return visit and will absolutely be recommending Belissimo to everyone we know. If you want an authentic Italian experience with heart and soul, this is your place. Grazie mille, Belissimo team!"</p>
+                    <h4 class="font-bold text-xl text-gray-800 mb-4 playfair">Carlos Hernández</h4>
+                    <p class="text-gray-600 leading-relaxed line-clamp-6">"What an incredible evening at Belissimo with my family! Sofia and Marco provided outstanding service that made our night truly special. The food was absolutely divine. The mushroom risotto was a standout—rich, creamy, and bursting with earthy flavors that transported me straight to Italy. Even with the restaurant bustling, we never felt rushed or overlooked. The team at Belissimo knows how to make every guest feel valued and special."</p>
                 </div>
 
                 <!-- Review 3 -->
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md flex flex-col">
-                    <div class="flex items-center mb-4">
-                        <div class="flex text-amber-500 mr-3">
+                <div class="review-card p-8 rounded-2xl card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="flex text-amber-500 mr-4 text-lg">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
-                        <span class="text-gray-500 text-sm">a month ago</span>
+                        <span class="text-gray-500 text-sm bg-gray-100 px-3 py-1 rounded-full">a month ago</span>
                     </div>
-                    <h4 class="font-semibold text-lg text-gray-800 mb-2">Marco Benedetti</h4>
-                    <p class="text-gray-600 italic mb-4">"Belissimo made my husband's birthday celebration absolutely perfect! From the moment we walked in, the warm and inviting atmosphere set the tone for a memorable evening. The restaurant strikes that ideal balance—elegant enough for special occasions but comfortable and unpretentious. The food was exceptional. We opted for the chef's special menu and were blown away by every single course. Each dish was bursting with authentic flavors and presented beautifully—you can taste the passion and skill that goes into every plate. The variety on the menu is impressive, and honestly, everything exceeded our already high expectations. What really stood out was the service. The staff weren't just professional; they were genuinely warm and attentive, making us feel truly special throughout the night. It's those personal touches that turn a good meal into an unforgettable experience. We left feeling completely satisfied and already planning our next visit. If you're looking for outstanding Italian cuisine with that authentic neighborhood feel, Belissimo is an absolute must-try. We can't wait to return!"</p>
+                    <h4 class="font-bold text-xl text-gray-800 mb-4 playfair">Marco Benedetti</h4>
+                    <p class="text-gray-600 leading-relaxed line-clamp-6">"Belissimo made my husband's birthday celebration absolutely perfect! The warm and inviting atmosphere set the tone for a memorable evening. The restaurant strikes that ideal balance—elegant enough for special occasions but comfortable and unpretentious. We opted for the chef's special menu and were blown away by every single course. The staff weren't just professional; they were genuinely warm and attentive, making us feel truly special throughout the night."</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Reservation Section -->
-    <section id="reservation" class="py-20 bg-white">
+    <section id="reservation" class="py-24 bg-gradient-to-br from-amber-50 to-yellow-50">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="playfair text-3xl md:text-4xl font-bold mb-4 text-gray-800">Book a Table</h2>
-                <div class="w-24 h-1 bg-amber-700 mx-auto"></div>
+                <h2 class="playfair text-4xl md:text-5xl font-bold mb-6 text-gray-800">Book a Table</h2>
+                <div class="section-divider mx-auto mb-4"></div>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Reserve your table for an unforgettable Italian dining experience in the heart of Rome.</p>
             </div>
             
-            <div class="max-w-3xl mx-auto bg-gray-50 p-8 rounded-lg shadow-lg text-center">
-                 <a href="#" 
-                    target="_blank"
-                    class="bg-amber-700 text-white px-8 py-3 hover:bg-amber-800 transition duration-300 playfair inline-block rounded-md"
-                    aria-label="Book a table (opens in new tab)">
-                    BOOK YOUR TABLE
+            <div class="max-w-2xl mx-auto bg-white p-12 rounded-2xl shadow-xl text-center">
+                <div class="mb-8">
+                    <i class="fas fa-calendar-alt text-4xl text-amber-600 mb-4"></i>
+                    <h3 class="playfair text-2xl font-semibold text-gray-800 mb-4">Ready to dine with us?</h3>
+                    <p class="text-gray-600">Join us for an authentic Italian experience you'll never forget.</p>
+                </div>
+                <a href="#" 
+                   target="_blank"
+                   class="btn-primary text-white px-12 py-4 playfair font-semibold text-lg rounded-full inline-block transition-all duration-300"
+                   aria-label="Book a table (opens in new tab)">
+                    <i class="fas fa-utensils mr-3"></i>BOOK YOUR TABLE
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-50">
+    <section id="contact" class="py-24 bg-white">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="playfair text-3xl md:text-4xl font-bold mb-4 text-gray-800">Contact Us</h2>
-                <div class="w-24 h-1 bg-amber-700 mx-auto"></div>
+            <div class="text-center mb-20">
+                <h2 class="playfair text-4xl md:text-5xl font-bold mb-6 text-gray-800">Contact Us</h2>
+                <div class="section-divider mx-auto mb-4"></div>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Visit us in the heart of Rome's charming Trastevere district.</p>
             </div>
             
-            <div class="max-w-xl mx-auto">
-                <div class="text-center">
-                    <div class="bg-white p-8 rounded-lg shadow-lg h-full">
-                        <a href="https://maps.google.com/maps?q=Via+della+Scala+47,+Trastevere,+Rome+00153" target="_blank" aria-label="Get directions to our location (opens in new tab)">
-                            <i class="fas fa-map-marker-alt text-3xl text-amber-700 mb-4 hover:text-amber-600 transition"></i>
-                        </a>
-                        <h3 class="playfair text-xl font-bold mb-3">Our Location</h3>
-                        <p class="text-gray-600 mb-2">Via della Scala 47, Trastevere, Rome 00153</p>
-                        <p class="text-gray-600"><i class="fas fa-phone-alt mr-2"></i>+39 06 5812 4567</p>
-                        <p class="text-gray-600"><i class="fas fa-envelope mr-2"></i>ciao@belissimo.com</p>
-                        <a href="#" 
-                            target="_blank"
-                            class="mt-4 bg-amber-700 text-white px-8 py-3 hover:bg-amber-800 transition duration-300 playfair inline-block rounded-md"
-                            aria-label="Purchase gift card (opens in new tab)">
-                            PURCHASE GIFT CARD
-                        </a>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gradient-to-br from-gray-50 to-white p-12 rounded-2xl shadow-xl text-center">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                        <div class="text-center">
+                            <a href="https://maps.google.com/maps?q=Via+della+Scala+47,+Trastevere,+Rome+00153" target="_blank" aria-label="Get directions to our location (opens in new tab)" class="inline-block">
+                                <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4 hover:bg-amber-200 transition-colors duration-300">
+                                    <i class="fas fa-map-marker-alt text-2xl text-amber-700"></i>
+                                </div>
+                            </a>
+                            <h3 class="playfair text-xl font-bold mb-3">Location</h3>
+                            <p class="text-gray-600">Via della Scala 47<br>Trastevere, Rome 00153</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-phone-alt text-2xl text-amber-700"></i>
+                            </div>
+                            <h3 class="playfair text-xl font-bold mb-3">Phone</h3>
+                            <p class="text-gray-600">+39 06 5812 4567</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-envelope text-2xl text-amber-700"></i>
+                            </div>
+                            <h3 class="playfair text-xl font-bold mb-3">Email</h3>
+                            <p class="text-gray-600">email@address</p>
+                        </div>
                     </div>
+                    
+                    <a href="#" 
+                       target="_blank"
+                       class="btn-primary text-white px-10 py-4 playfair font-semibold text-lg rounded-full inline-block transition-all duration-300"
+                       aria-label="Purchase gift card (opens in new tab)">
+                        <i class="fas fa-gift mr-3"></i>PURCHASE GIFT CARD
+                    </a>
                 </div>
             </div>
             
-            <div class="mt-16 max-w-3xl mx-auto">
-                <h3 class="playfair text-2xl font-bold mb-6 text-center flex justify-center items-center">
-                    Opening Hours
-                    <!-- This span will be populated by JavaScript -->
-                    <span id="status-indicator" class="ml-3"></span>
-                </h3>
-                <div class="bg-white p-8 rounded-lg shadow-lg text-center">
-                    <p class="text-gray-600">Tuesday - Sunday: 12:00 PM - 11:00 PM</p>
-                    <p class="text-gray-600 font-semibold mt-2">Closed Mondays</p>
+            <div class="mt-16 max-w-2xl mx-auto">
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-8 rounded-2xl shadow-lg text-center">
+                    <h3 class="playfair text-2xl font-bold mb-6 text-gray-800 flex justify-center items-center">
+                        <i class="fas fa-clock mr-3 text-amber-600"></i>
+                        Opening Hours
+                        <span id="status-indicator" class="ml-4"></span>
+                    </h3>
+                    <div class="space-y-2">
+                        <p class="text-gray-700 text-lg font-medium">Tuesday - Sunday: 12:00 PM - 11:00 PM</p>
+                        <p class="text-gray-600 font-semibold bg-red-100 text-red-800 inline-block px-4 py-2 rounded-full">Closed Mondays</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="footer-gradient text-white py-16">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
                 <div>
-                    <h3 class="playfair text-xl font-bold mb-4">BELISSIMO.</h3>
-                    <p class="text-gray-400">Authentic Italian Dining in the Heart of Rome.</p>
+                    <h3 class="playfair text-2xl font-bold mb-6 bg-gradient-to-r from-amber-400 to-yellow-400 bg-clip-text text-transparent">BELISSIMO.</h3>
+                    <p class="text-gray-300 leading-relaxed">Authentic Italian Dining in the Heart of Rome, where tradition meets excellence.</p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" target="_blank" class="w-10 h-10 bg-amber-600 rounded-full flex items-center justify-center hover:bg-amber-700 transition-colors duration-300" aria-label="Follow us on Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" target="_blank" class="w-10 h-10 bg-amber-600 rounded-full flex items-center justify-center hover:bg-amber-700 transition-colors duration-300" aria-label="Follow us on Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" target="_blank" class="w-10 h-10 bg-amber-600 rounded-full flex items-center justify-center hover:bg-amber-700 transition-colors duration-300" aria-label="Find us on TripAdvisor">
+                            <i class="fab fa-tripadvisor"></i>
+                        </a>
+                    </div>
                 </div>
+                
                 <div>
-                    <h3 class="playfair text-xl font-bold mb-4">QUICK LINKS</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
-                        <li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
-                        <li><a href="#menu" class="text-gray-400 hover:text-white transition">Menu</a></li>
-                        <li><a href="#gallery" class="text-gray-400 hover:text-white transition">Gallery</a></li>
-                        <li><a href="#reviews" class="text-gray-400 hover:text-white transition">Reviews</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Gift Cards</a></li>
+                    <h3 class="playfair text-xl font-bold mb-6">QUICK LINKS</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-300 hover:text-amber-400 transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right mr-2 text-xs"></i>Home</a></li>
+                        <li><a href="#about" class="text-gray-300 hover:text-amber-400 transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right mr-2 text-xs"></i>About Us</a></li>
+                        <li><a href="#menu" class="text-gray-300 hover:text-amber-400 transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right mr-2 text-xs"></i>Menu</a></li>
+                        <li><a href="#gallery" class="text-gray-300 hover:text-amber-400 transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right mr-2 text-xs"></i>Gallery</a></li>
+                        <li><a href="#reviews" class="text-gray-300 hover:text-amber-400 transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right mr-2 text-xs"></i>Reviews</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-amber-400 transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right mr-2 text-xs"></i>Contact</a></li>
                     </ul>
                 </div>
+                
                 <div>
-                    <h3 class="playfair text-xl font-bold mb-4">CONTACT INFO</h3>
-                    <address class="text-gray-400 not-italic">
-                        <strong>Belissimo Trastevere</strong><br>
-                        Via della Scala 47<br>
-                        Trastevere, Rome 00153<br>
-                        Phone: +39 06 5812 4567<br>
-                        Email: ciao@belissimo.com
+                    <h3 class="playfair text-xl font-bold mb-6">CONTACT INFO</h3>
+                    <address class="text-gray-300 not-italic space-y-3">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-amber-400"></i>
+                            <div>
+                                <strong class="text-white">Belissimo Trastevere</strong><br>
+                                Via della Scala 47<br>
+                                Trastevere, Rome 00153
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-amber-400"></i>
+                            <span>+39 06 5812 4567</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-amber-400"></i>
+                            <span>email@address</span>
+                        </div>
                     </address>
                 </div>
+                
                 <div>
-                    <h3 class="playfair text-xl font-bold mb-4">FOLLOW US</h3>
-                    <div class="flex space-x-4">
-                        <a href="#" target="_blank" class="text-gray-400 hover:text-white text-xl transition" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" target="_blank" class="text-gray-400 hover:text-white text-xl transition" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" target="_blank" class="text-gray-400 hover:text-white text-xl transition" aria-label="Find us on TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
-                    </div>
-                    <div class="mt-6">
-                        <h4 class="playfair text-lg font-semibold mb-2">Newsletter</h4>
-                        <form action="#" class="flex" aria-label="Newsletter subscription form">
-                            <input type="email" placeholder="Your email" class="px-4 py-2 text-gray-800 rounded-l focus:outline-none w-full" aria-label="Enter your email for newsletter">
-                            <button type="submit" class="bg-amber-700 px-4 py-2 rounded-r hover:bg-amber-800 transition" aria-label="Subscribe to newsletter"><i class="fas fa-paper-plane"></i></button>
-                        </form>
-                    </div>
+                    <h3 class="playfair text-xl font-bold mb-6">NEWSLETTER</h3>
+                    <p class="text-gray-300 mb-4">Stay updated with our latest dishes and special offers.</p>
+                    <form action="#" class="space-y-3" aria-label="Newsletter subscription form">
+                        <input type="email" placeholder="Your email address" class="w-full px-4 py-3 text-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500" aria-label="Enter your email for newsletter">
+                        <button type="submit" class="w-full btn-primary text-white py-3 rounded-lg font-semibold transition-all duration-300" aria-label="Subscribe to newsletter">
+                            <i class="fas fa-paper-plane mr-2"></i>SUBSCRIBE
+                        </button>
+                    </form>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-10 pt-6 text-center text-gray-500">
-                <p>&copy; 2025 BELISSIMO. All Rights Reserved.</p>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+                <p class="text-gray-400 mb-4">&copy; 2025 BELISSIMO. All Rights Reserved. | Crafted with ❤️ in Rome</p>
+                <div class="flex justify-center">
+                    <a href="https://www.codepluscanvas.com" target="_blank" class="inline-flex items-center justify-center w-8 h-8 bg-red-600 hover:bg-red-700 rounded-full transition-all duration-300 hover:scale-110" aria-label="Visit Code Plus Canvas">
+                        <span class="text-white font-bold text-lg">+</span>
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
 
     <script>
     document.addEventListener('DOMContentLoaded', function() {
+        // Scroll progress indicator
+        const scrollIndicator = document.getElementById('scroll-indicator');
+        
+        function updateScrollProgress() {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollPercent = scrollTop / docHeight;
+            scrollIndicator.style.transform = `scaleX(${scrollPercent})`;
+        }
+        
+        window.addEventListener('scroll', updateScrollProgress);
+        
         // Get references to the navigation elements
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mainNavOverlay = document.getElementById('main-nav-overlay');
         const closeNavButton = document.getElementById('close-nav-button');
 
-        // Toggle the main navigation overlay when the hamburger button is clicked
+        // Toggle the main navigation overlay
         mobileMenuButton.addEventListener('click', function() {
             mainNavOverlay.classList.remove('-translate-x-full');
             mainNavOverlay.classList.add('translate-x-0');
+            document.body.style.overflow = 'hidden';
         });
 
-        // Close the main navigation overlay when the close button is clicked
+        // Close the main navigation overlay
         closeNavButton.addEventListener('click', function() {
             mainNavOverlay.classList.remove('translate-x-0');
             mainNavOverlay.classList.add('-translate-x-full');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close navigation when clicking on overlay
+        mainNavOverlay.addEventListener('click', function(e) {
+            if (e.target === mainNavOverlay) {
+                mainNavOverlay.classList.remove('translate-x-0');
+                mainNavOverlay.classList.add('-translate-x-full');
+                document.body.style.overflow = 'auto';
+            }
         });
 
         // Smooth scrolling for anchor links
@@ -582,67 +895,79 @@
                 const targetElement = document.querySelector(targetId);
                 
                 if (targetElement) {
-                    // Close the universal navigation overlay if open
+                    // Close the navigation overlay if open
                     if (mainNavOverlay.classList.contains('translate-x-0')) {
                        mainNavOverlay.classList.remove('translate-x-0');
                        mainNavOverlay.classList.add('-translate-x-full');
+                       document.body.style.overflow = 'auto';
                     }
                     
-                    // Scroll to target, accounting for the fixed header height
+                    // Scroll to target
                     const headerOffset = document.querySelector('header').offsetHeight;
                     const elementPosition = targetElement.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
                     window.scrollTo({
-                            top: offsetPosition,
-                            behavior: 'smooth'
+                        top: offsetPosition,
+                        behavior: 'smooth'
                     });
                 }
             });
         });
 
-        // Change header style on scroll
+        // Enhanced header on scroll
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
             if (window.scrollY > 50) {
-                header.classList.add('shadow-lg');
+                header.classList.add('bg-white/95');
+                header.classList.remove('bg-white/90');
             } else {
-                header.classList.remove('shadow-lg');
+                header.classList.add('bg-white/90');
+                header.classList.remove('bg-white/95');
             }
         });
 
-        // Menu tabs functionality
+        // Menu tabs functionality with enhanced animations
         document.querySelectorAll('.menu-tab').forEach(tab => {
             tab.addEventListener('click', function() {
-                // Remove active styles from all tabs and set aria-selected to false
+                // Remove active styles from all tabs
                 document.querySelectorAll('.menu-tab').forEach(t => {
-                    t.classList.remove('active', 'bg-amber-700', 'text-white');
-                    t.classList.add('bg-gray-200', 'text-gray-800');
+                    t.classList.remove('active');
+                    t.classList.remove('btn-primary', 'text-white');
+                    t.classList.add('bg-gray-100', 'text-gray-800');
                     t.setAttribute('aria-selected', 'false');
                 });
-                // Hide all menu content
-                document.querySelectorAll('.menu-content').forEach(c => c.classList.add('hidden'));
                 
-                // Add active styles to the clicked tab and set aria-selected to true
-                this.classList.remove('bg-gray-200', 'text-gray-800');
-                this.classList.add('active', 'bg-amber-700', 'text-white');
+                // Hide all menu content with fade effect
+                document.querySelectorAll('.menu-content').forEach(c => {
+                    c.classList.add('hidden');
+                    c.style.opacity = '0';
+                });
+                
+                // Add active styles to clicked tab
+                this.classList.remove('bg-gray-100', 'text-gray-800');
+                this.classList.add('active', 'btn-primary', 'text-white');
                 this.setAttribute('aria-selected', 'true');
                 
-                // Show the corresponding menu content
+                // Show corresponding menu content with fade in
                 const tabId = this.getAttribute('data-tab');
-                document.getElementById(tabId).classList.remove('hidden');
+                const targetContent = document.getElementById(tabId);
+                targetContent.classList.remove('hidden');
+                
+                // Fade in animation
+                setTimeout(() => {
+                    targetContent.style.opacity = '1';
+                    targetContent.style.transition = 'opacity 0.3s ease-in-out';
+                }, 10);
             });
         });
 
-        // Opening Status Indicator
+        // Enhanced opening status indicator
         function updateOpeningStatus() {
             const statusIndicator = document.getElementById('status-indicator');
             if (!statusIndicator) return;
 
             const openingHours = {
-                // day: { start, end }
-                // Sunday: 0, Monday: 1, ..., Saturday: 6
-                // Times are in hours (e.g., 17.5 = 5:30 PM)
                 0: { start: 12, end: 23 }, // Sun
                 1: null, // Mon - Closed
                 2: { start: 12, end: 23 }, // Tue
@@ -653,14 +978,13 @@
             };
             
             try {
-                // Get current time in Europe/Rome timezone
                 const now = new Date();
                 const options = { 
                     timeZone: 'Europe/Rome', 
                     hour: 'numeric', 
                     minute: 'numeric', 
-                    hour12: false, // Use 24-hour format for easier comparison
-                    weekday: 'long' // Get full weekday name
+                    hour12: false,
+                    weekday: 'long'
                 };
                 const formatter = new Intl.DateTimeFormat('en-GB', options);
                 const parts = formatter.formatToParts(now);
@@ -692,20 +1016,46 @@
                 }
 
                 if (isOpen) {
-                    statusIndicator.innerHTML = `<span class="bg-green-100 text-green-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">● Open Now</span>`;
+                    statusIndicator.innerHTML = `<span class="bg-green-100 text-green-800 text-sm font-medium px-4 py-2 rounded-full border border-green-200 status-badge">
+                        <i class="fas fa-circle text-green-500 mr-2"></i>Open Now
+                    </span>`;
                 } else {
-                    statusIndicator.innerHTML = `<span class="bg-red-100 text-red-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">● Closed</span>`;
+                    statusIndicator.innerHTML = `<span class="bg-red-100 text-red-800 text-sm font-medium px-4 py-2 rounded-full border border-red-200">
+                        <i class="fas fa-circle text-red-500 mr-2"></i>Closed
+                    </span>`;
                 }
             } catch (error) {
                 console.error("Could not determine opening status:", error);
-                statusIndicator.innerHTML = ''; // Hide on error
+                statusIndicator.innerHTML = '';
             }
         }
 
-        // Initial check on page load
+        // Initial check and periodic updates
         updateOpeningStatus();
-        // Update the status every 60 seconds
         setInterval(updateOpeningStatus, 60000);
+        
+        // Add subtle animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements for scroll animations
+        document.querySelectorAll('.card-hover, .gallery-item, .review-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(el);
+        });
     });
     </script>
 </body>
