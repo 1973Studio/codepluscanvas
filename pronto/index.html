@@ -136,70 +136,175 @@
                 <div class="w-24 h-1 bg-amber-700 mx-auto"></div>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <!-- Starters -->
-                <div>
-                    <h3 class="playfair text-2xl font-bold mb-6 text-gray-800 border-b pb-2">Starters</h3>
-                    <div class="space-y-6">
-                        <div class="menu-item relative group">
-                            <div class="flex justify-between">
-                                <h4 class="playfair text-xl font-semibold">Bruschetta Classica</h4>
-                                <span class="playfair text-amber-700">$12</span>
+            <div class="flex flex-wrap justify-center gap-4 mb-10">
+                <button class="menu-tab active px-6 py-2 bg-amber-700 text-white playfair rounded-md" data-tab="main">Main</button>
+                <button class="menu-tab px-6 py-2 bg-gray-200 text-gray-800 playfair rounded-md" data-tab="drinks">Drinks</button>
+                <button class="menu-tab px-6 py-2 bg-gray-200 text-gray-800 playfair rounded-md" data-tab="lunch">Lunch Special</button>
+                <button class="menu-tab px-6 py-2 bg-gray-200 text-gray-800 playfair rounded-md" data-tab="group">Group 10+</button>
+            </div>
+
+            <div class="menu-content active" id="main">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <!-- Starters -->
+                    <div>
+                        <h3 class="playfair text-2xl font-bold mb-6 text-gray-800 border-b pb-2">Starters</h3>
+                        <div class="space-y-6">
+                            <div class="menu-item relative group">
+                                <div class="flex justify-between">
+                                    <h4 class="playfair text-xl font-semibold">Bruschetta Classica</h4>
+                                    <span class="playfair text-amber-700">$12</span>
+                                </div>
+                                <p class="text-gray-600">Toasted bread topped with tomatoes, garlic, and fresh basil</p>
                             </div>
-                            <p class="text-gray-600">Toasted bread topped with tomatoes, garlic, and fresh basil</p>
+                            <div class="menu-item relative group">
+                                <div class="flex justify-between">
+                                    <h4 class="playfair text-xl font-semibold">Carpaccio di Manzo</h4>
+                                    <span class="playfair text-amber-700">$18</span>
+                                </div>
+                                <p class="text-gray-600">Thinly sliced raw beef with arugula, parmesan, and truffle oil</p>
+                            </div>
+                            <div class="menu-item relative group">
+                                <div class="flex justify-between">
+                                    <h4 class="playfair text-xl font-semibold">Fritto Misto</h4>
+                                    <span class="playfair text-amber-700">$16</span>
+                                </div>
+                                <p class="text-gray-600">Mixed fried seafood with lemon aioli</p>
+                            </div>
                         </div>
-                        
-                        <div class="menu-item relative group">
-                            <div class="flex justify-between">
-                                <h4 class="playfair text-xl font-semibold">Carpaccio di Manzo</h4>
-                                <span class="playfair text-amber-700">$18</span>
+                    </div>
+                    <!-- Pasta -->
+                    <div>
+                        <h3 class="playfair text-2xl font-bold mb-6 text-gray-800 border-b pb-2">Pasta</h3>
+                        <div class="space-y-6">
+                            <div class="menu-item relative group">
+                                <div class="flex justify-between">
+                                    <h4 class="playfair text-xl font-semibold">Spaghetti Carbonara</h4>
+                                    <span class="playfair text-amber-700">$22</span>
+                                </div>
+                                <p class="text-gray-600">Classic Roman pasta with eggs, cheese, pancetta, and black pepper</p>
                             </div>
-                            <p class="text-gray-600">Thinly sliced raw beef with arugula, parmesan, and truffle oil</p>
-                        </div>
-                        
-                        <div class="menu-item relative group">
-                            <div class="flex justify-between">
-                                <h4 class="playfair text-xl font-semibold">Fritto Misto</h4>
-                                <span class="playfair text-amber-700">$16</span>
+                            <div class="menu-item relative group">
+                                <div class="flex justify-between">
+                                    <h4 class="playfair text-xl font-semibold">Pappardelle al Ragù</h4>
+                                    <span class="playfair text-amber-700">$24</span>
+                                </div>
+                                <p class="text-gray-600">Wide pasta ribbons with slow-cooked beef ragù</p>
                             </div>
-                            <p class="text-gray-600">Mixed fried seafood with lemon aioli</p>
+                            <div class="menu-item relative group">
+                                <div class="flex justify-between">
+                                    <h4 class="playfair text-xl font-semibold">Gnocchi al Tartufo</h4>
+                                    <span class="playfair text-amber-700">$26</span>
+                                </div>
+                                <p class="text-gray-600">Homemade potato dumplings with black truffle cream</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Pasta -->
-                <div>
-                    <h3 class="playfair text-2xl font-bold mb-6 text-gray-800 border-b pb-2">Pasta</h3>
-                    <div class="space-y-6">
-                        <div class="menu-item relative group">
-                            <div class="flex justify-between">
-                                <h4 class="playfair text-xl font-semibold">Spaghetti Carbonara</h4>
-                                <span class="playfair text-amber-700">$22</span>
-                            </div>
-                            <p class="text-gray-600">Classic Roman pasta with eggs, cheese, pancetta, and black pepper</p>
-                        </div>
-                        
-                        <div class="menu-item relative group">
-                            <div class="flex justify-between">
-                                <h4 class="playfair text-xl font-semibold">Pappardelle al Ragù</h4>
-                                <span class="playfair text-amber-700">$24</span>
-                            </div>
-                            <p class="text-gray-600">Wide pasta ribbons with slow-cooked beef ragù</p>
-                        </div>
-                        
-                        <div class="menu-item relative group">
-                            <div class="flex justify-between">
-                                <h4 class="playfair text-xl font-semibold">Gnocchi al Tartufo</h4>
-                                <span class="playfair text-amber-700">$26</span>
-                            </div>
-                            <p class="text-gray-600">Homemade potato dumplings with black truffle cream</p>
-                        </div>
-                    </div>
+                <div class="text-center mt-16">
+                    <a href="https://codepluscanvas.com/pronto/PRONTO-Main-Menu-2024.pdf" target="_blank" class="border-2 border-amber-700 text-amber-700 px-8 py-3 hover:bg-amber-700 hover:text-white transition duration-300 playfair rounded-md">VIEW FULL MENU</a>
                 </div>
             </div>
-            
-            <div class="text-center mt-16">
-                <a href="#" class="border-2 border-amber-700 text-amber-700 px-8 py-3 hover:bg-amber-700 hover:text-white transition duration-300 playfair">VIEW FULL MENU</a>
+
+            <div class="menu-content hidden" id="drinks">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <!-- Wines -->
+                    <div>
+                        <h3 class="playfair text-2xl font-bold mb-6 text-gray-800 border-b pb-2">Wines</h3>
+                        <div class="space-y-6">
+                            <div class="menu-item relative group">
+                                <div class="flex justify-between">
+                                    <h4 class="playfair text-xl font-semibold">House Red</h4>
+                                    <span class="playfair text-amber-700">$9/glass</span>
+                                </div>
+                                <p class="text-gray-600">Our signature Italian red blend</p>
+                            </div>
+                            <div class="menu-item relative group">
+                                <div class="flex justify-between">
+                                    <h4 class="playfair text-xl font-semibold">Chianti Classico</h4>
+                                    <span class="playfair text-amber-700">$14/glass</span>
+                                </div>
+                                <p class="text-gray-600">Premium Tuscan red wine</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Cocktails -->
+                    <div>
+                        <h3 class="playfair text-2xl font-bold mb-6 text-gray-800 border-b pb-2">Cocktails</h3>
+                        <div class="space-y-6">
+                            <div class="menu-item relative group">
+                                <div class="flex justify-between">
+                                    <h4 class="playfair text-xl font-semibold">Aperol Spritz</h4>
+                                    <span class="playfair text-amber-700">$16</span>
+                                </div>
+                                <p class="text-gray-600">Classic Italian aperitif</p>
+                            </div>
+                            <div class="menu-item relative group">
+                                <div class="flex justify-between">
+                                    <h4 class="playfair text-xl font-semibold">Negroni</h4>
+                                    <span class="playfair text-amber-700">$18</span>
+                                </div>
+                                <p class="text-gray-600">Gin, Campari, sweet vermouth</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-16">
+                    <a href="https://codepluscanvas.com/pronto/PRONTO-Drinks-Menu-2024.pdf" target="_blank" class="border-2 border-amber-700 text-amber-700 px-8 py-3 hover:bg-amber-700 hover:text-white transition duration-300 playfair rounded-md">VIEW DRINKS MENU</a>
+                </div>
+            </div>
+
+            <div class="menu-content hidden" id="lunch">
+                <div class="grid grid-cols-1 gap-10">
+                    <div>
+                        <h3 class="playfair text-2xl font-bold mb-6 text-gray-800 border-b pb-2">Lunch Specials</h3>
+                        <div class="space-y-6">
+                            <div class="menu-item relative group">
+                                <div class="flex justify-between">
+                                    <h4 class="playfair text-xl font-semibold">Pizza + Drink</h4>
+                                    <span class="playfair text-amber-700">$22</span>
+                                </div>
+                                <p class="text-gray-600">Choice of Margherita or Pepperoni pizza with soft drink</p>
+                            </div>
+                            <div class="menu-item relative group">
+                                <div class="flex justify-between">
+                                    <h4 class="playfair text-xl font-semibold">Pasta Lunch</h4>
+                                    <span class="playfair text-amber-700">$18</span>
+                                </div>
+                                <p class="text-gray-600">Daily pasta special with garlic bread</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-16">
+                    <a href="https://codepluscanvas.com/pronto/PRONTO-Lunch-Menu-2024.pdf" target="_blank" class="border-2 border-amber-700 text-amber-700 px-8 py-3 hover:bg-amber-700 hover:text-white transition duration-300 playfair rounded-md">VIEW LUNCH MENU</a>
+                </div>
+            </div>
+
+            <div class="menu-content hidden" id="group">
+                <div class="grid grid-cols-1 gap-10">
+                    <div>
+                        <h3 class="playfair text-2xl font-bold mb-6 text-gray-800 border-b pb-2">Group Packages</h3>
+                        <div class="space-y-6">
+                            <div class="menu-item relative group">
+                                <div class="flex justify-between">
+                                    <h4 class="playfair text-xl font-semibold">Family Feast</h4>
+                                    <span class="playfair text-amber-700">$35/pp</span>
+                                </div>
+                                <p class="text-gray-600">3 pizzas, 2 pastas, 2 salads, and garlic bread for groups of 10+</p>
+                            </div>
+                            <div class="menu-item relative group">
+                                <div class="flex justify-between">
+                                    <h4 class="playfair text-xl font-semibold">Celebration Package</h4>
+                                    <span class="playfair text-amber-700">$45/pp</span>
+                                </div>
+                                <p class="text-gray-600">Full course meal with wine pairing for special occasions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-16">
+                    <a href="https://codepluscanvas.com/pronto/PRONTO-Banquet-Menu-2024.pdf" target="_blank" class="border-2 border-amber-700 text-amber-700 px-8 py-3 hover:bg-amber-700 hover:text-white transition duration-300 playfair rounded-md">VIEW GROUP 10+ MENU</a>
+                </div>
             </div>
         </div>
     </section>
@@ -251,12 +356,12 @@
                         <div class="flex flex-col space-y-4">
                             <a href="https://bookings.nowbookit.com/?accountid=fc7bf99a-adb4-4252-bdba-426b9ae31a3e&venueid=11971&theme=light&colors=hex,000000" 
                                target="_blank"
-                               class="bg-amber-700 text-white px-8 py-3 hover:bg-amber-800 transition duration-300 playfair inline-block">
+                               class="bg-amber-700 text-white px-8 py-3 hover:bg-amber-800 transition duration-300 playfair inline-block rounded-md">
                                 BOOK WESTON
                             </a>
                             <a href="https://www.meandu.app/pronto-weston" 
                                target="_blank"
-                               class="bg-gray-800 text-white px-8 py-3 hover:bg-gray-900 transition duration-300 playfair inline-block">
+                               class="bg-gray-800 text-white px-8 py-3 hover:bg-gray-900 transition duration-300 playfair inline-block rounded-md">
                                 ORDER ONLINE
                             </a>
                         </div>
@@ -266,12 +371,12 @@
                         <div class="flex flex-col space-y-4">
                             <a href="https://bookings.nowbookit.com/?accountid=fc7bf99a-adb4-4252-bdba-426b9ae31a3e&venueid=11970&theme=light&colors=hex,212121" 
                                target="_blank"
-                               class="bg-amber-700 text-white px-8 py-3 hover:bg-amber-800 transition duration-300 playfair inline-block">
+                               class="bg-amber-700 text-white px-8 py-3 hover:bg-amber-800 transition duration-300 playfair inline-block rounded-md">
                                 BOOK QUEANBEYAN
                             </a>
                             <a href="https://www.meandu.app/pronto" 
                                target="_blank"
-                               class="bg-gray-800 text-white px-8 py-3 hover:bg-gray-900 transition duration-300 playfair inline-block">
+                               class="bg-gray-800 text-white px-8 py-3 hover:bg-gray-900 transition duration-300 playfair inline-block rounded-md">
                                 ORDER ONLINE
                             </a>
                         </div>
@@ -315,7 +420,11 @@
             </div>
             
             <div class="mt-16 max-w-3xl mx-auto">
-                <h3 class="playfair text-2xl font-bold mb-6 text-center">Opening Hours</h3>
+                <h3 class="playfair text-2xl font-bold mb-6 text-center flex justify-center items-center">
+                    Opening Hours
+                    <!-- This span will be populated by JavaScript -->
+                    <span id="status-indicator" class="ml-3"></span>
+                </h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white p-8 rounded-lg shadow-lg">
                     <div>
                         <h4 class="playfair text-lg font-semibold mb-2">Lunch Service</h4>
@@ -386,6 +495,7 @@
     </footer>
 
     <script>
+    document.addEventListener('DOMContentLoaded', function() {
         // Mobile menu toggle
         document.getElementById('mobile-menu-button').addEventListener('click', function() {
             const menu = document.getElementById('mobile-menu');
@@ -403,12 +513,18 @@
                 if (targetElement) {
                     // Close mobile menu if open
                     const mobileMenu = document.getElementById('mobile-menu');
-                    mobileMenu.classList.add('hidden');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                       mobileMenu.classList.add('hidden');
+                    }
                     
-                    // Scroll to target
+                    // Scroll to target, accounting for the fixed header height
+                    const headerOffset = document.querySelector('header').offsetHeight;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
                     window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
+                         top: offsetPosition,
+                         behavior: 'smooth'
                     });
                 }
             });
@@ -417,12 +533,84 @@
         // Change header style on scroll
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
-            if (window.scrollY > 100) {
+            if (window.scrollY > 50) {
                 header.classList.add('shadow-lg');
             } else {
                 header.classList.remove('shadow-lg');
             }
         });
+
+        // Menu tabs functionality
+        document.querySelectorAll('.menu-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active styles from all tabs
+                document.querySelectorAll('.menu-tab').forEach(t => {
+                    t.classList.remove('active', 'bg-amber-700', 'text-white');
+                    t.classList.add('bg-gray-200', 'text-gray-800');
+                });
+                // Hide all menu content
+                document.querySelectorAll('.menu-content').forEach(c => c.classList.add('hidden'));
+                
+                // Add active styles to the clicked tab
+                this.classList.remove('bg-gray-200', 'text-gray-800');
+                this.classList.add('active', 'bg-amber-700', 'text-white');
+                
+                // Show the corresponding menu content
+                const tabId = this.getAttribute('data-tab');
+                document.getElementById(tabId).classList.remove('hidden');
+            });
+        });
+
+        // Opening Status Indicator
+        function updateOpeningStatus() {
+            const statusIndicator = document.getElementById('status-indicator');
+            if (!statusIndicator) return;
+
+            const openingHours = {
+                // day: { lunch: {start, end}, dinner: {start, end} }
+                // Sunday: 0, Monday: 1, ..., Saturday: 6
+                // Times are in hours (e.g., 17.5 = 5:30 PM)
+                0: { lunch: { start: 11.5, end: 15.5 }, dinner: { start: 17.5, end: 23 } }, // Sun
+                1: { lunch: { start: 12, end: 15 }, dinner: { start: 18, end: 22.5 } },   // Mon
+                2: { lunch: { start: 12, end: 15 }, dinner: { start: 18, end: 22.5 } },   // Tue
+                3: { lunch: { start: 12, end: 15 }, dinner: { start: 18, end: 22.5 } },   // Wed
+                4: { lunch: { start: 12, end: 15 }, dinner: { start: 18, end: 22.5 } },   // Thu
+                5: { lunch: { start: 12, end: 15 }, dinner: { start: 17.5, end: 23 } },   // Fri
+                6: { lunch: { start: 11.5, end: 15.5 }, dinner: { start: 17.5, end: 23 } }    // Sat
+            };
+            
+            try {
+                // We use 'Australia/Sydney' timezone for Canberra/Weston (AEST/AEDT)
+                const now = new Date();
+                const dayOfWeek = now.getDay(); // Sunday is 0, Monday is 1, etc.
+                const currentTime = now.getHours() + now.getMinutes() / 60;
+
+                const todaysHours = openingHours[dayOfWeek];
+                let isOpen = false;
+
+                if (todaysHours) {
+                    const { lunch, dinner } = todaysHours;
+                    if ((currentTime >= lunch.start && currentTime < lunch.end) || (currentTime >= dinner.start && currentTime < dinner.end)) {
+                        isOpen = true;
+                    }
+                }
+
+                if (isOpen) {
+                    statusIndicator.innerHTML = `<span class="bg-green-100 text-green-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">● Open Now</span>`;
+                } else {
+                    statusIndicator.innerHTML = `<span class="bg-red-100 text-red-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">● Closed</span>`;
+                }
+            } catch (error) {
+                console.error("Could not determine opening status:", error);
+                statusIndicator.innerHTML = ''; // Hide on error
+            }
+        }
+
+        // Initial check on page load
+        updateOpeningStatus();
+        // Update the status every 60 seconds
+        setInterval(updateOpeningStatus, 60000);
+    });
     </script>
 </body>
 </html>
