@@ -13,7 +13,8 @@
         body {
             font-family: 'Poppins', sans-serif;
         }
-        h1, h2, h3, h4, h5, h6, .font-serif {
+        /* Removed font-serif from h1 to use Poppins for a modern look */
+        h2, h3, h4, h5, h6, .font-serif {
             font-family: 'Playfair Display', serif;
         }
         .font-brand {
@@ -77,7 +78,8 @@
     <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-gray-900 font-brand">code+canvas</a>
-            <nav class="hidden md:flex space-x-8">
+            <!-- Desktop navigation links are now hidden, only the hamburger icon will show -->
+            <nav class="hidden space-x-8">
                 <a href="#about" class="text-gray-600 hover:text-rose-500 transition duration-300">About</a>
                 <a href="#process" class="text-gray-600 hover:text-rose-500 transition duration-300">Process</a>
                 <a href="#services" class="text-gray-600 hover:text-rose-500 transition duration-300">Services</a>
@@ -86,14 +88,15 @@
                 <a href="#faq" class="text-gray-600 hover:text-rose-500 transition duration-300">FAQ</a>
                 <a href="#contact" class="text-gray-600 hover:text-rose-500 transition duration-300">Contact</a>
             </nav>
-            <button id="mobile-menu-button" class="md:hidden">
+            <!-- Mobile menu button (hamburger icon) is now visible on all screen sizes -->
+            <button id="mobile-menu-button">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                 </svg>
             </button>
         </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+        <!-- Mobile Menu (now serves as the main menu toggled by the hamburger) -->
+        <div id="mobile-menu" class="hidden px-6 pb-4">
             <a href="#about" class="block py-2 text-gray-600 hover:text-rose-500">About</a>
             <a href="#process" class="block py-2 text-gray-600 hover:text-rose-500">Process</a>
             <a href="#services" class="block py-2 text-gray-600 hover:text-rose-500">Services</a>
@@ -108,26 +111,29 @@
     <main>
         <!-- Hero Section -->
         <section class="container mx-auto px-6 pt-24 pb-16 text-center">
-            <h1 class="text-5xl md:text-7xl font-bold font-serif mb-4">Crafting Beauty, One Detail at a Time.</h1>
-            <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-12">A boutique creative studio specialising in branding, web design, and digital experiences that captivate and inspire.</p>
+            <!-- Updated Headline for impact -->
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Your Professional Website. Unbeatable Value.</h1>
+            <!-- Updated Sub-text with details and price -->
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-12">Get a fully functional, HTML clean, and mobile-first website from our boutique creative studio. Built for your business, designed for your budget. Only $45 a month.</p>
 
             <!-- Video Player -->
             <div class="max-w-4xl mx-auto mb-12 shadow-2xl rounded-lg overflow-hidden aspect-video">
-                   <video id="hero-video" class="w-full h-full" autoplay loop muted playsinline>
+                    <video id="hero-video" class="w-full h-full" autoplay loop muted playsinline>
                     <source src="https://codepluscanvas.netlify.app/VideoVinci.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
 
-            <a href="#contact" class="bg-rose-400 text-white font-semibold py-3 px-8 rounded-full hover:bg-rose-500 transition duration-300 transform hover:scale-105">Let's Collaborate</a>
+            <!-- Updated Call to Action Button -->
+            <a href="#contact" class="bg-rose-400 text-white font-semibold py-3 px-8 rounded-full hover:bg-rose-500 transition duration-300 transform hover:scale-105">Launch Your Affordable Website</a>
         </section>
 
         <!-- About Us Section -->
         <section id="about" class="py-20 bg-white">
             <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                    <!-- Updated image source here -->
-                    <img src="https://codepluscanvas.com/meDogs.jpg" alt="code+canvas logo" class="rounded-lg shadow-xl object-cover w-full h-full max-h-[750px]">
+                    <!-- Reverted image source to the "me and my dogs" photo -->
+                    <img src="https://codepluscanvas.com/meDogs.jpg" alt="Jay from code+canvas with his dogs" class="rounded-lg shadow-xl object-cover w-full h-full max-h-[750px]">
                 </div>
                 <div class="text-left">
                     <h2 class="text-4xl font-bold font-serif mb-6">Web Design That Puts You First</h2>
@@ -150,23 +156,23 @@
                     <!-- Step 1 -->
                     <div class="text-center">
                         <div class="flex items-center justify-center h-16 w-16 bg-rose-400 text-white rounded-full mx-auto mb-4">
-                           <span class="text-2xl font-bold">1</span>
+                            <span class="text-2xl font-bold">1</span>
                         </div>
                         <h3 class="text-2xl font-semibold font-serif mb-2">Discovery & Design</h3>
                         <p class="text-gray-600">We'll start with a deep dive into your business, goals, and vision. I'll then create a custom design concept that perfectly captures your brand's unique story and personality.</p>
                     </div>
                     <!-- Step 2 -->
                     <div class="text-center">
-                           <div class="flex items-center justify-center h-16 w-16 bg-rose-400 text-white rounded-full mx-auto mb-4">
-                           <span class="text-2xl font-bold">2</span>
+                            <div class="flex items-center justify-center h-16 w-16 bg-rose-400 text-white rounded-full mx-auto mb-4">
+                            <span class="text-2xl font-bold">2</span>
                         </div>
                         <h3 class="text-2xl font-semibold font-serif mb-2">Craft & Refine</h3>
                         <p class="text-gray-600">This is where the magic happens. I'll personally hand-code your website with meticulous attention to detail. We'll review it together in a true partnership to ensure every element is perfect.</p>
                     </div>
                     <!-- Step 3 -->
                     <div class="text-center">
-                           <div class="flex items-center justify-center h-16 w-16 bg-rose-400 text-white rounded-full mx-auto mb-4">
-                           <span class="text-2xl font-bold">3</span>
+                            <div class="flex items-center justify-center h-16 w-16 bg-rose-400 text-white rounded-full mx-auto mb-4">
+                            <span class="text-2xl font-bold">3</span>
                         </div>
                         <h3 class="text-2xl font-semibold font-serif mb-2">Launch & Support</h3>
                         <p class="text-gray-600">I handle the entire technical launch process to get your new website live. After launch, your plan includes ongoing support, so I'm always here to help your website evolve as your business grows.</p>
@@ -208,7 +214,7 @@
                                 </div>
                             </button>
                              <button data-service="ai" class="service-tab w-full text-left p-4 rounded-lg flex items-center gap-4 transition-colors duration-300">
-                               <svg class="h-8 w-8 text-rose-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.898 20.543L16.5 21.75l-.398-1.207a3.375 3.375 0 00-2.455-2.456L12.75 18l1.207-.398a3.375 3.375 0 002.455-2.456L16.5 14.25l.398 1.207a3.375 3.375 0 002.456 2.456L20.25 18l-1.207.398a3.375 3.375 0 00-2.456 2.456z" /></svg>
+                               <svg class="h-8 w-8 text-rose-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09L16.5 14.25l.398 1.207a3.375 3.375 0 002.456 2.456L20.25 18l-1.207.398a3.375 3.375 0 00-2.456 2.456zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.898 20.543L16.5 21.75l-.398-1.207a3.375 3.375 0 00-2.455-2.456L12.75 18l1.207-.398a3.375 3.375 0 002.456 2.456L16.5 14.25l.398 1.207a3.375 3.375 0 002.456 2.456L20.25 18l-1.207.398a3.375 3.375 0 00-2.456 2.456z" /></svg>
                                 <div>
                                     <h3 class="font-semibold font-serif text-lg">AI Creative Suite</h3>
                                 </div>
@@ -234,7 +240,7 @@
 
                     <div class="grid md:grid-cols-2 gap-12 items-center">
                         <div>
-                             <div class="text-center p-6 bg-stone-50 rounded-lg">
+                            <div class="text-center p-6 bg-stone-50 rounded-lg">
                                 <div class="text-5xl font-bold text-gray-800">
                                     <span id="currency-symbol">$</span><span id="price-value">45</span>
                                     <span class="text-lg font-normal text-gray-600">/month</span>
@@ -249,7 +255,7 @@
                                     <button data-currency="GBP" class="currency-btn bg-gray-200 text-gray-700 text-xs font-semibold py-1 px-3 rounded-full hover:bg-gray-300 transition duration-300">GBP</button>
                                 </div>
                             </div>
-                             <a href="#contact" class="bg-rose-400 text-white font-semibold py-3 px-8 rounded-full hover:bg-rose-500 transition duration-300 w-full block text-center mt-6">Start Building Your Website</a>
+                            <a href="#contact" class="bg-rose-400 text-white font-semibold py-3 px-8 rounded-full hover:bg-rose-500 transition duration-300 w-full block text-center mt-6">Start Building Your Website</a>
                         </div>
                         <div class="space-y-4">
                             <div class="flex items-center"><svg class="h-5 w-5 text-green-500 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg><span>Bespoke design, tailored to your brand</span></div>
@@ -262,7 +268,7 @@
                     </div>
                     
                     <div class="mt-12">
-                           <div class="overflow-x-auto rounded-lg border border-gray-200">
+                            <div class="overflow-x-auto rounded-lg border border-gray-200">
                             <table class="w-full text-sm comparison-table">
                                 <thead class="bg-gray-50">
                                     <tr>
@@ -333,7 +339,7 @@
 
                     <!-- Project Card: The Friendly Groomer (Image Right) -->
                     <div class="bg-stone-50 rounded-lg shadow-lg p-8 grid md:grid-cols-2 gap-12 items-center">
-                           <div class="text-left md:order-last">
+                            <div class="text-left md:order-last">
                             <h4 class="text-2xl font-bold font-serif mb-2">The Friendly Groomer</h4>
                             <p class="text-gray-600 mb-4">For The Friendly Groomer, I'm building a brand new digital home from the ground up. This warm and welcoming website for a local dog grooming studio focuses on an approachable and friendly design, complete with cute, custom icons and an intuitive, easy-to-use online booking system to make pampering your pet simple.</p>
                             <span class="inline-block bg-rose-200 text-rose-800 text-sm font-semibold mr-3 px-2.5 py-0.5 rounded-full">In Development</span>
@@ -366,8 +372,8 @@
                         <h3 class="text-2xl font-bold font-serif mb-4">A Magical Digital Experience</h3>
                         <p class="text-gray-600 mb-6">For Santa's Secret, I designed and built a completely custom, hand-coded website to capture the magic of their boutique Christmas shop. The project included a whimsical, festive design, complete with an interactive snow effect to delight visitors. I ensured the site was fully mobile-optimised for shoppers on the go and built with clean, fast-loading code to provide a seamless experience.</p>
                         <div class="bg-rose-50 p-6 rounded-lg border-l-4 border-rose-400">
-                               <p class="text-gray-600 italic text-lg mb-4">"Working with code+canvas was a dream. They truly understood our vision and translated it into a beautiful, functional website that we're incredibly proud of. Their attention to detail is unmatched."</p>
-                               <p class="font-semibold font-serif text-rose-500">- Kim B, Owner, Santa's Secret</p>
+                                <p class="text-gray-600 italic text-lg mb-4">"Working with code+canvas was a dream. They truly understood our vision and translated it into a beautiful, functional website that we're incredibly proud of. Their attention to detail is unmatched."</p>
+                                <p class="font-semibold font-serif text-rose-500">- Kim B, Owner, Santa's Secret</p>
                         </div>
                         <a href="https://santasecret.com.au/" target="_blank" rel="noopener noreferrer" class="bg-rose-400 text-white font-semibold py-3 px-6 rounded-full hover:bg-rose-500 transition duration-300 inline-block mt-6">Visit Website &rarr;</a>
                     </div>
@@ -480,10 +486,10 @@
         <div class="container mx-auto px-6 py-8 text-center text-gray-600">
             <!-- Removed Contact Me and Privacy Policy links -->
             <p class="mb-6">&copy; <span id="copyright-year"></span> code+canvas. All Rights Reserved.</p>
-               <div class="max-w-3xl mx-auto text-xs text-gray-500">
-                   <h4 class="font-semibold font-serif mb-2">Acknowledgement of Country</h4>
-                   <p>code+canvas acknowledges Traditional Owners of Country throughout Australia and recognises the continuing connection to lands, waters and communities. We pay our respect to Aboriginal and Torres Strait Islander cultures; and to Elders past and present.</p>
-               </div>
+                <div class="max-w-3xl mx-auto text-xs text-gray-500">
+                    <h4 class="font-semibold font-serif mb-2">Acknowledgement of Country</h4>
+                    <p>code+canvas acknowledges Traditional Owners of Country throughout Australia and recognises the continuing connection to lands, waters and communities. We pay our respect to Aboriginal and Torres Strait Islander cultures; and to Elders past and present.</p>
+                </div>
         </div>
     </footer>
     
@@ -528,7 +534,7 @@
                 webdesign: {
                     title: 'Web Design & Development',
                     description: 'I design and build intuitive, beautiful, and responsive websites that provide an exceptional user experience. Every site is hand-coded for lightning-fast performance and meticulously optimized for mobile devices, ensuring you make a great impression, wherever your customers find you.',
-                     features: [
+                    features: [
                         'Custom Hand-Coded Design',
                         'Mobile-First & Responsive',
                         'User Experience (UX) Design',
@@ -550,7 +556,7 @@
                 content: {
                     title: 'Digital Content Creation',
                     description: 'Engaging content is key to connecting with your audience. I produce a range of digital assets, from eye-catching social media graphics and animations to professional email marketing campaigns, helping you tell your story and grow your business.',
-                     features: [
+                    features: [
                         'Social Media Graphics',
                         'Custom Illustrations & Icons',
                         'Email Campaign Design',
