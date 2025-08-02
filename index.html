@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code + Canvas | A Digital Development Studio</title>
+    <!-- Use the Inter font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a1a1a;
+            color: #e5e7eb;
+        }
+        /* Custom scrollbar for a sleeker look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #2a2a2a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #6b7280;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-black/80 backdrop-blur-lg">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-bold text-white tracking-widest">Code + Canvas</a>
+            <div class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="#about" class="text-gray-300 hover:text-white transition-colors duration-200">About</a>
+                <a href="#services" class="text-gray-300 hover:text-white transition-colors duration-200">Services</a>
+                <a href="#projects" class="text-gray-300 hover:text-white transition-colors duration-200">Projects</a>
+                <a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-200">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-white focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black/80 backdrop-blur-lg w-full">
+            <a href="#about" class="block py-3 px-6 text-gray-300 hover:bg-gray-800 hover:text-white">About</a>
+            <a href="#services" class="block py-3 px-6 text-gray-300 hover:bg-gray-800 hover:text-white">Services</a>
+            <a href="#projects" class="block py-3 px-6 text-gray-300 hover:bg-gray-800 hover:text-white">Projects</a>
+            <a href="#contact" class="block py-3 px-6 text-gray-300 hover:bg-gray-800 hover:text-white">Contact</a>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- Hero Section with Video Background -->
+        <section id="hero" class="relative min-h-screen flex items-center justify-center p-6">
+            <!-- Video background element -->
+            <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+                <source src="https://codepluscanvas.com/VideoVinci.mp4" type="video/mp4">
+                <!-- Fallback background image for browsers that don't support video -->
+                <img src="https://placehold.co/1920x1080/282828/e5e7eb?text=Digital+Studio+Background" alt="Digital studio background" class="w-full h-full object-cover">
+            </video>
+            <!-- Overlay to make text readable -->
+            <div class="absolute inset-0 bg-black/60 z-10"></div>
+            <!-- Content on top of the video -->
+            <div class="relative z-20 text-center space-y-6 max-w-4xl p-8 rounded-xl backdrop-blur-sm">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white">Your Vision. Our Code.</h1>
+                <p class="text-lg sm:text-xl text-gray-300 leading-relaxed">
+                    We are a digital development studio at the intersection of technology and design. We build bespoke web experiences and innovative platforms for forward-thinking brands.
+                </p>
+                <a href="#services" class="inline-block px-8 py-3 bg-indigo-600 text-white font-medium rounded-full shadow-lg hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105">
+                    Explore Our Services
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">About the Studio</h2>
+                        <p class="text-gray-400 mb-6 leading-relaxed">
+                            Code + Canvas is more than a development shop—it's a partnership. We specialize in bringing ambitious digital projects to life, from elegant front-end designs to robust, scalable backend solutions. Our team leverages the latest technology and a human-centered approach to ensure every project is not just functional, but exceptional.
+                        </p>
+                        <p class="text-gray-400 leading-relaxed">
+                            Our philosophy is simple: transparent processes, clear communication, and a relentless focus on delivering value. We are the architects behind your digital presence, building the tools you need to succeed in a competitive landscape.
+                        </p>
+                    </div>
+                    <div class="hidden md:flex justify-center">
+                        <img src="https://placehold.co/600x400/333333/e5e7eb?text=Studio+Image" alt="Abstract studio graphic" class="rounded-xl shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Services Section -->
+        <section id="services" class="py-20 bg-gray-800">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Our Offering</h2>
+                <p class="text-gray-400 mb-12 max-w-2xl mx-auto">
+                    We've simplified our model to provide a single, powerful package that covers all your needs. From concept to launch and beyond, we handle the entire process so you can focus on your business.
+                </p>
+                <div class="bg-gray-900 p-8 rounded-xl shadow-xl max-w-3xl mx-auto">
+                    <h3 class="text-2xl font-bold text-indigo-400 mb-2">The Digital Foundation Package</h3>
+                    <p class="text-4xl font-extrabold text-white mb-6">
+                        $55 <span class="text-xl font-medium text-gray-500">/mo</span>
+                    </p>
+                    <ul class="text-left space-y-4 mb-8 text-gray-400">
+                        <li class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                            Custom, Bespoke Website Design
+                        </li>
+                        <li class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                            AI-Powered Content & SEO Tools
+                        </li>
+                        <li class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                            Secure & High-Performance Hosting
+                        </li>
+                        <li class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                            Ongoing Maintenance & Support
+                        </li>
+                    </ul>
+                    <a href="#contact" class="inline-block px-8 py-3 bg-indigo-600 text-white font-medium rounded-full shadow-lg hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105">
+                        Start Your Project
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 bg-gray-900">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Our Work & Platforms</h2>
+                <p class="text-gray-400 mb-12 max-w-2xl mx-auto">
+                    We are the development studio behind a variety of innovative projects and platforms. This is a glimpse into what we build.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Featured Project: Santa's Secret -->
+                    <div class="relative bg-gray-800 rounded-xl shadow-lg group md:col-span-2">
+                        <img src="https://codepluscanvas.netlify.app/santatoon.webp" alt="Santa's Secret" class="w-full h-72 object-cover rounded-t-xl group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-2">Featured Project: Santa's Secret</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                                For Santa's Secret, we designed and built a completely custom, hand-coded website to capture the magic of their boutique Christmas shop. The project included a whimsical, festive design, complete with an interactive snow effect to delight visitors, ensuring the site was fully mobile-optimised for shoppers on the go and built with clean, fast-loading code to provide a seamless experience.
+                            </p>
+                            <a href="https://santasecret.com.au/" target="_blank" class="inline-block text-indigo-400 hover:text-indigo-300 transition-colors duration-200 text-sm font-semibold">
+                                View Live Site &rarr;
+                            </a>
+                            <div class="mt-4 p-4 border-l-4 border-indigo-500 bg-gray-900 rounded-r-lg">
+                                <p class="italic text-gray-300">
+                                    "Working with code+canvas was a dream. They truly understood our vision and translated it into a beautiful, functional website that we're incredibly proud of. Their attention to detail is unmatched."
+                                </p>
+                                <p class="font-medium text-right mt-2 text-indigo-400">- Kim B, Owner, Santa's Secret</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Other Projects -->
+                    <div class="grid grid-cols-1 gap-8">
+                        <div class="relative bg-gray-800 rounded-xl shadow-lg group">
+                            <img src="https://codepluscanvas.netlify.app/montoon.webp" alt="Mon Perry Bakery" class="w-full h-48 object-cover rounded-t-xl group-hover:scale-105 transition-transform duration-300">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-2">Mon Perry Bakery</h3>
+                                <p class="text-gray-400 text-sm">
+                                    A bespoke e-commerce solution for a modern bakery, focusing on stunning visuals and a seamless user experience.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="relative bg-gray-800 rounded-xl shadow-lg group">
+                            <img src="https://codepluscanvas.com/TheFriendlyGroomer.png" alt="The Friendly Groomer" class="w-full h-48 object-cover rounded-t-xl group-hover:scale-105 transition-transform duration-300">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-2">The Friendly Groomer</h3>
+                                <p class="text-gray-400 text-sm">
+                                    A custom booking and management platform for a local pet grooming service, built for efficiency and ease of use.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-20 bg-gray-800">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-12 text-center">Frequently Asked Questions</h2>
+                <div class="space-y-6 max-w-3xl mx-auto">
+                    <!-- FAQ Item 1 -->
+                    <details class="bg-gray-900 rounded-lg p-6 group">
+                        <summary class="flex justify-between items-center font-semibold text-white cursor-pointer">
+                            What technology do you use?
+                            <span class="ml-auto group-open:rotate-180 transition-transform duration-200">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </span>
+                        </summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            We specialize in modern web technologies including HTML, CSS (Tailwind), and JavaScript for the front-end. We use serverless architecture with platforms like Netlify and Firebase for robust, scalable backend solutions.
+                        </p>
+                    </details>
+                    <!-- FAQ Item 2 -->
+                    <details class="bg-gray-900 rounded-lg p-6 group">
+                        <summary class="flex justify-between items-center font-semibold text-white cursor-pointer">
+                            How does your single package work?
+                            <span class="ml-auto group-open:rotate-180 transition-transform duration-200">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </span>
+                        </summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            We provide a full-service solution with a single monthly payment. This covers everything from the initial custom design and development to hosting, ongoing support, and maintenance. There are no large upfront costs and no lock-in contracts.
+                        </p>
+                    </details>
+                    <!-- FAQ Item 3 -->
+                    <details class="bg-gray-900 rounded-lg p-6 group">
+                        <summary class="flex justify-between items-center font-semibold text-white cursor-pointer">
+                            Who owns the website and content?
+                            <span class="ml-auto group-open:rotate-180 transition-transform duration-200">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </span>
+                        </summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            You do. All the content, imagery, and intellectual property are 100% yours. We simply provide the platform and services to bring it to life and keep it running smoothly.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-gray-900">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Let's Build Something Great</h2>
+                <p class="text-gray-400 mb-12 max-w-2xl mx-auto">
+                    Ready to start your next project? We're excited to hear about your vision. Fill out the form below and we'll get back to you shortly.
+                </p>
+                <form class="max-w-2xl mx-auto space-y-6">
+                    <div class="flex flex-col sm:flex-row gap-6">
+                        <input type="text" placeholder="Your Name" class="w-full px-6 py-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-colors duration-200">
+                        <input type="email" placeholder="Your Email" class="w-full px-6 py-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-colors duration-200">
+                    </div>
+                    <input type="text" placeholder="Subject" class="w-full px-6 py-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-colors duration-200">
+                    <textarea placeholder="Your Message" rows="6" class="w-full px-6 py-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-colors duration-200"></textarea>
+                    <button type="submit" class="w-full px-8 py-3 bg-indigo-600 text-white font-medium rounded-lg shadow-lg hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8 px-6 text-center text-gray-500 text-sm">
+        <p>&copy; 2025 Code + Canvas. All Rights Reserved.</p>
+        <p class="mt-4 max-w-3xl mx-auto text-xs leading-relaxed">
+            Acknowledgement of Country: In the spirit of reconciliation, Code + Canvas acknowledges the Traditional Custodians of country throughout Australia and their connections to land, sea and community. We pay our respect to their Elders past and present and extend that respect to all Aboriginal and Torres Strait Islander peoples today.
+        </p>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            var menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
