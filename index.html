@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>code+canvas | A Digital Development Studio</title>
+    <title>code+canvas | Professional Websites for Small Business - Just $2/Day</title>
     <!-- Favicon matching the blue bold + in the logo -->
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50%25' y='50%25' font-size='90' font-weight='bold' font-family='sans-serif' text-anchor='middle' dominant-baseline='central' fill='%233B82F6'%3E%2B%3C/text%3E%3C/svg%3E">
     <!-- Use the Inter font from Google Fonts -->
@@ -29,6 +29,25 @@
             background: #6b7280;
             border-radius: 4px;
         }
+        
+        /* Price highlight animation */
+        .price-highlight {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        /* Value card hover effects */
+        .value-card {
+            transition: all 0.3s ease;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -40,10 +59,10 @@
                 code<span class="text-blue-500 font-bold">+</span>canvas
             </a>
             <div class="hidden md:flex space-x-6 text-sm font-medium">
-                <a href="#about" class="text-gray-300 hover:text-white transition-colors duration-200">About</a>
-                <a href="#services" class="text-gray-300 hover:text-white transition-colors duration-200">Services</a>
-              
-                <a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-200">Contact</a>
+                <a href="#pricing" class="text-gray-300 hover:text-white transition-colors duration-200">Pricing</a>
+                <a href="#features" class="text-gray-300 hover:text-white transition-colors duration-200">Features</a>
+                <a href="#why-us" class="text-gray-300 hover:text-white transition-colors duration-200">Why Us</a>
+                <a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-200">Get Started</a>
             </div>
             <!-- Mobile Menu Button -->
             <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-white focus:outline-none">
@@ -54,10 +73,10 @@
         </nav>
         <!-- Mobile Menu (Hidden by default) -->
         <div id="mobile-menu" class="hidden md:hidden bg-black/80 backdrop-blur-lg w-full">
-            <a href="#about" class="block py-3 px-6 text-gray-300 hover:bg-gray-800 hover:text-white">About</a>
-            <a href="#services" class="block py-3 px-6 text-gray-300 hover:bg-gray-800 hover:text-white">Services</a>
-           
-            <a href="#contact" class="block py-3 px-6 text-gray-300 hover:bg-gray-800 hover:text-white">Contact</a>
+            <a href="#pricing" class="block py-3 px-6 text-gray-300 hover:bg-gray-800 hover:text-white">Pricing</a>
+            <a href="#features" class="block py-3 px-6 text-gray-300 hover:bg-gray-800 hover:text-white">Features</a>
+            <a href="#why-us" class="block py-3 px-6 text-gray-300 hover:bg-gray-800 hover:text-white">Why Us</a>
+            <a href="#contact" class="block py-3 px-6 text-gray-300 hover:bg-gray-800 hover:text-white">Get Started</a>
         </div>
     </header>
 
@@ -72,96 +91,291 @@
                 <img src="https://placehold.co/1920x1080/282828/e5e7eb?text=Digital+Studio+Background" alt="Digital studio background" class="w-full h-full object-cover">
             </video>
             <!-- Overlay to make text readable -->
-            <div class="absolute inset-0 bg-black/60 z-10"></div>
+            <div class="absolute inset-0 bg-black/70 z-10"></div>
             <!-- Content on top of the video -->
-            <div class="relative z-20 text-center space-y-6 max-w-4xl p-8 rounded-xl backdrop-blur-sm">
-                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white">Your Vision. Our Code.</h1>
-                <p class="text-lg sm:text-xl text-gray-300 leading-relaxed">
-                    We are a digital development studio at the intersection of technology and design. We build bespoke web experiences and innovative platforms for forward-thinking brands.
+            <div class="relative z-20 text-center space-y-8 max-w-5xl p-8">
+                <!-- Big Price Hook -->
+                <div class="price-highlight bg-blue-600 text-white px-8 py-4 rounded-full inline-block text-2xl font-bold mb-6">
+                    Just $2 per day
+                </div>
+                
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight">
+                    Professional Websites for <span class="text-blue-500">Small Business</span>
+                </h1>
+                
+                <p class="text-xl sm:text-2xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
+                    Get a stunning, feature-packed website that actually works for your business. No massive upfront costs, no surprises - just $60/month for everything.
                 </p>
-                <a href="#services" class="inline-block px-8 py-3 bg-indigo-600 text-white font-medium rounded-full shadow-lg hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105">
-                    Explore Our Services
-                </a>
+                
+                <!-- Value Props -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12 max-w-4xl mx-auto">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+                        <div class="text-3xl mb-3">⚡</div>
+                        <h3 class="text-lg font-semibold text-white mb-2">Fast & Modern</h3>
+                        <p class="text-gray-300 text-sm">Lightning-fast websites that load in under 3 seconds</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+                        <div class="text-3xl mb-3">📱</div>
+                        <h3 class="text-lg font-semibold text-white mb-2">Mobile Perfect</h3>
+                        <p class="text-gray-300 text-sm">Looks amazing on phones, tablets, and desktops</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+                        <div class="text-3xl mb-3">🚀</div>
+                        <h3 class="text-lg font-semibold text-white mb-2">Everything Included</h3>
+                        <p class="text-gray-300 text-sm">Hosting, security, updates, and support included</p>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mt-12">
+                    <a href="#contact" class="inline-block px-10 py-4 bg-blue-600 text-white font-bold rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 text-lg">
+                        Get Your Website Today
+                    </a>
+                    <a href="#features" class="inline-block px-8 py-4 border-2 border-white text-white font-medium rounded-full hover:bg-white hover:text-gray-900 transition-all duration-300">
+                        See What's Included
+                    </a>
+                </div>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="py-20 bg-gray-900">
-            <div class="container mx-auto px-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">About the Studio</h2>
-                        <p class="text-gray-400 mb-6 leading-relaxed">
-                            Code+Canvas is more than a development shop—it's a partnership. We specialise in bringing ambitious digital projects to life, from elegant front-end designs to robust, scalable backend solutions. Our team leverages the latest technology and a human-centered approach to ensure every project is not just functional, but exceptional.
-                        </p>
-                        <p class="text-gray-400 leading-relaxed">
-                            Our philosophy is simple: transparent processes, clear communication, and a relentless focus on delivering value. We are the architects behind your digital presence, building the tools you need to succeed in a competitive landscape.
-                        </p>
+        <!-- Pricing Section -->
+        <section id="pricing" class="py-20 bg-gray-900">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl sm:text-5xl font-bold text-white mb-6">Simple, Honest Pricing</h2>
+                <p class="text-xl text-gray-400 mb-12 max-w-3xl mx-auto">
+                    No hidden fees, no setup costs, no surprises. One monthly payment covers everything your business needs online.
+                </p>
+                
+                <!-- Main Pricing Card -->
+                <div class="max-w-md mx-auto">
+                    <div class="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-8 shadow-2xl relative overflow-hidden">
+                        <!-- Popular badge -->
+                        <div class="absolute top-0 right-0 bg-yellow-400 text-gray-900 px-4 py-2 rounded-bl-lg font-bold text-sm">
+                            MOST POPULAR
+                        </div>
+                        
+                        <div class="text-center mb-8">
+                            <h3 class="text-2xl font-bold text-white mb-2">Complete Website</h3>
+                            <div class="text-6xl font-bold text-white mb-2">$60</div>
+                            <div class="text-blue-200 text-lg">per month</div>
+                            <div class="text-blue-200 text-sm mt-2">That's just $2 per day!</div>
+                        </div>
+                        
+                        <ul class="space-y-4 mb-8 text-left">
+                            <li class="flex items-center text-white">
+                                <svg class="w-5 h-5 text-green-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                Custom Design & Development
+                            </li>
+                            <li class="flex items-center text-white">
+                                <svg class="w-5 h-5 text-green-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                Mobile-Responsive Design
+                            </li>
+                            <li class="flex items-center text-white">
+                                <svg class="w-5 h-5 text-green-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                Fast, Secure Hosting Included
+                            </li>
+                            <li class="flex items-center text-white">
+                                <svg class="w-5 h-5 text-green-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                SSL Security Certificate
+                            </li>
+                            <li class="flex items-center text-white">
+                                <svg class="w-5 h-5 text-green-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                Ongoing Support & Updates
+                            </li>
+                            <li class="flex items-center text-white">
+                                <svg class="w-5 h-5 text-green-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                Contact Forms & Analytics
+                            </li>
+                            <li class="flex items-center text-white">
+                                <svg class="w-5 h-5 text-green-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                No Setup Fees or Hidden Costs
+                            </li>
+                        </ul>
+                        
+                        <a href="#contact" class="block w-full bg-white text-blue-600 font-bold py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+                            Start My Website Today
+                        </a>
                     </div>
-                    <div class="hidden md:flex justify-center">
-                        <img src="https://images.unsplash.com/photo-1663174495175-088493482631?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Abstract studio graphic" class="rounded-xl shadow-lg">
+                </div>
+                
+                <!-- Comparison -->
+                <div class="mt-16 max-w-4xl mx-auto">
+                    <h3 class="text-2xl font-bold text-white mb-8">Compare the Alternatives</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-gray-800 rounded-lg p-6 opacity-60">
+                            <h4 class="text-lg font-semibold text-white mb-4">Typical Web Agency</h4>
+                            <div class="text-3xl font-bold text-red-400 mb-4">$5,000+</div>
+                            <p class="text-gray-400 text-sm">Plus monthly hosting fees, maintenance costs, and update charges</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg p-6 transform scale-105">
+                            <h4 class="text-lg font-semibold text-white mb-4">code+canvas</h4>
+                            <div class="text-3xl font-bold text-white mb-4">$60/mo</div>
+                            <p class="text-blue-200 text-sm">Everything included, no surprises, professional results</p>
+                        </div>
+                        <div class="bg-gray-800 rounded-lg p-6 opacity-60">
+                            <h4 class="text-lg font-semibold text-white mb-4">DIY Website Builder</h4>
+                            <div class="text-3xl font-bold text-yellow-400 mb-4">$20-50/mo</div>
+                            <p class="text-gray-400 text-sm">Plus your time, plus limitations, plus it looks like everyone else's</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        
-        <!-- Services Section -->
-        <section id="services" class="py-20 bg-gray-800">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-12">Our Technology Stack</h2>
-                <!-- New Technology Stack Section -->
-                <div class="mt-16 text-center">
-                    <h3 class="text-2xl font-bold text-white mb-6"></h3>
-                    <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
-                        We build with  modern, robust, and scalable tools to ensure your project is fast, secure, and ready for the future.
+
+        <!-- Features Section -->
+        <section id="features" class="py-20 bg-gray-800">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl sm:text-5xl font-bold text-white mb-6">Everything Your Business Needs</h2>
+                    <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                        While others nickel and dime you for extras, we include everything you need to succeed online from day one.
                     </p>
-                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 max-w-5xl mx-auto">
-                        <!-- Technology Card: HTML -->
-                        <div class="flex flex-col items-center p-4 bg-gray-900 rounded-lg shadow-md hover:bg-indigo-600 transition-colors duration-200">
-                            <p class="text-4xl">
-                                <!-- Icon for HTML -->
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-orange-500" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M5.4 20.35l-1.41-1.63L3 17.5 4.8 19 6.8 20.35H5.4zM22 19.35l-1.41 1.63L18 19 19.8 17.5 22 19.35zM12 22l-1.41-1.63L10.5 19 12 20.35H12zM21 21l-1.41-1.63L18.5 19 21 21zM9 16.5l-1.41-1.63L6.5 15 8.5 16.5H9zM15 16.5l-1.41-1.63L13.5 15 15.5 16.5H15zM12 10.5l-1.41-1.63L10.5 9 12 10.5H12zM21 16.5l-1.41-1.63L19.5 15 21.5 16.5H21zM18 13.5l-1.41-1.63L16.5 12 18.5 13.5H18zM15 13.5l-1.41-1.63L13.5 12 15.5 13.5H15zM12 7.5l-1.41-1.63L10.5 6 12 7.5H12zM9 13.5l-1.41-1.63L6.5 12 8.5 13.5H9zM6 10.5l-1.41-1.63L4.5 9 6.5 10.5H6zM15 4.5l-1.41-1.63L13.5 3 15.5 4.5H15zM12 4.5l-1.41-1.63L10.5 3 12 4.5H12zM9 4.5l-1.41-1.63L6.5 3 8.5 4.5H9zM6 7.5l-1.41-1.63L4.5 6 6.5 7.5H6zM18 4.5l-1.41-1.63L16.5 3 18.5 4.5H18zM21 7.5l-1.41-1.63L19.5 6 21.5 7.5H21z"/></svg>
-                            </p>
-                            <p class="mt-2 text-white font-medium">HTML</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="value-card bg-gray-900 rounded-xl p-8 text-center">
+                        <div class="text-5xl mb-6">🎨</div>
+                        <h3 class="text-xl font-semibold text-white mb-4">Custom Design</h3>
+                        <p class="text-gray-400">No templates. No cookie-cutter designs. Your website is built specifically for your business and brand.</p>
+                    </div>
+                    
+                    <!-- Feature 2 -->
+                    <div class="value-card bg-gray-900 rounded-xl p-8 text-center">
+                        <div class="text-5xl mb-6">⚡</div>
+                        <h3 class="text-xl font-semibold text-white mb-4">Lightning Fast</h3>
+                        <p class="text-gray-400">Modern technology means your site loads in under 3 seconds. Fast sites rank better and convert more visitors.</p>
+                    </div>
+                    
+                    <!-- Feature 3 -->
+                    <div class="value-card bg-gray-900 rounded-xl p-8 text-center">
+                        <div class="text-5xl mb-6">📱</div>
+                        <h3 class="text-xl font-semibold text-white mb-4">Mobile First</h3>
+                        <p class="text-gray-400">Perfect on every device. With 60% of web traffic from mobile, your site will look amazing everywhere.</p>
+                    </div>
+                    
+                    <!-- Feature 4 -->
+                    <div class="value-card bg-gray-900 rounded-xl p-8 text-center">
+                        <div class="text-5xl mb-6">🔒</div>
+                        <h3 class="text-xl font-semibold text-white mb-4">Secure & Reliable</h3>
+                        <p class="text-gray-400">SSL certificates, security monitoring, and 99.9% uptime. Your customers' data stays safe.</p>
+                    </div>
+                    
+                    <!-- Feature 5 -->
+                    <div class="value-card bg-gray-900 rounded-xl p-8 text-center">
+                        <div class="text-5xl mb-6">📈</div>
+                        <h3 class="text-xl font-semibold text-white mb-4">SEO Ready</h3>
+                        <p class="text-gray-400">Built to be found. We optimize your site structure, speed, and content to help customers find you.</p>
+                    </div>
+                    
+                    <!-- Feature 6 -->
+                    <div class="value-card bg-gray-900 rounded-xl p-8 text-center">
+                        <div class="text-5xl mb-6">🛠️</div>
+                        <h3 class="text-xl font-semibold text-white mb-4">Always Updated</h3>
+                        <p class="text-gray-400">We handle all the technical stuff. Security updates, performance improvements, and feature additions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Us Section -->
+        <section id="why-us" class="py-20 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl sm:text-5xl font-bold text-white mb-6">Why Small Businesses Choose Us</h2>
+                    <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                        We understand small business because we are one. No corporate nonsense, just honest service and great results.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-8">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
+                                <span class="text-white font-bold">1</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-white mb-2">No Massive Upfront Costs</h3>
+                                <p class="text-gray-400">Most agencies want $5,000+ before they even start. We believe great websites should be affordable for every business.</p>
+                            </div>
                         </div>
-                        <!-- Technology Card: CSS -->
-                        <div class="flex flex-col items-center p-4 bg-gray-900 rounded-lg shadow-md hover:bg-indigo-600 transition-colors duration-200">
-                            <p class="text-4xl">
-                                <!-- Icon for CSS -->
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-blue-500" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 22l-1.4-1.5L4 14.5V10h16v4.5l-6.6 6zm-8-12V5.5l1.4-1.5L12 2l6.6 1.5L20 5.5V10H4zM22 15l-3.6 4-2.4 2v-6l6-6V15zM2 15l-3.6 4-2.4 2v-6l6-6V15z"/></svg>
-                            </p>
-                            <p class="mt-2 text-white font-medium">CSS</p>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
+                                <span class="text-white font-bold">2</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-white mb-2">Everything Included</h3>
+                                <p class="text-gray-400">Hosting, security, updates, support - it's all covered. No surprise bills or hidden fees later.</p>
+                            </div>
                         </div>
-                        <!-- Technology Card: JavaScript -->
-                        <div class="flex flex-col items-center p-4 bg-gray-900 rounded-lg shadow-md hover:bg-indigo-600 transition-colors duration-200">
-                            <p class="text-4xl">
-                                <!-- Icon for JavaScript -->
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-yellow-400" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 22l-1.4-1.5L4 14.5V10h16v4.5l-6.6 6zM4 10V5.5l1.4-1.5L12 2l6.6 1.5L20 5.5V10H4zM22 15l-3.6 4-2.4 2v-6l6-6V15zM2 15l-3.6 4-2.4 2v-6l6-6V15z"/></svg>
-                            </p>
-                            <p class="mt-2 text-white font-medium">JavaScript</p>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
+                                <span class="text-white font-bold">3</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-white mb-2">Built for Results</h3>
+                                <p class="text-gray-400">Pretty websites don't pay the bills. We build sites that get found, load fast, and turn visitors into customers.</p>
+                            </div>
                         </div>
-                        <!-- Technology Card: Tailwind CSS -->
-                        <div class="flex flex-col items-center p-4 bg-gray-900 rounded-lg shadow-md hover:bg-indigo-600 transition-colors duration-200">
-                            <p class="text-4xl">
-                                <!-- Icon for Tailwind -->
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-sky-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12s4.477 10 10 10 10-4.477 10-10zM12 12a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 1 1H7"/></svg>
-                            </p>
-                            <p class="mt-2 text-white font-medium">Tailwind CSS</p>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
+                                <span class="text-white font-bold">4</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-white mb-2">You Own Everything</h3>
+                                <p class="text-gray-400">Your content, your domain, your website. We're the service provider, not the owner.</p>
+                            </div>
                         </div>
-                        <!-- Technology Card: Netlify -->
-                        <div class="flex flex-col items-center p-4 bg-gray-900 rounded-lg shadow-md hover:bg-indigo-600 transition-colors duration-200">
-                            <p class="text-4xl">
-                                <!-- Icon for Netlify -->
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-emerald-500" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2L2 22h20L12 2zm0 14l-4-4h8l-4 4z"/></svg>
-                            </p>
-                            <p class="mt-2 text-white font-medium">Netlify</p>
-                        </div>
-                        <!-- Technology Card: GitHub -->
-                        <div class="flex flex-col items-center p-4 bg-gray-900 rounded-lg shadow-md hover:bg-indigo-600 transition-colors duration-200">
-                            <p class="mt-2 text-white font-medium">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.73.084-.73 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.13-3.18 0 0 1.005-.322 3.315 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.31-1.552 3.315-1.23 3.315-1.23.67 1.657.26 2.877.13 3.18.77.84 1.235 1.91 1.235 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-                            </p>
-                            <p class="mt-2 text-white font-medium">GitHub</p>
+                    </div>
+                    
+                    <div class="bg-gray-800 rounded-2xl p-8">
+                        <h3 class="text-2xl font-bold text-white mb-6 text-center">What You Get vs What You Pay</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-300">Custom Design & Development</span>
+                                <span class="text-green-400 font-semibold">$3,000 value</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-300">Premium Hosting & Security</span>
+                                <span class="text-green-400 font-semibold">$200/year value</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-300">Ongoing Support & Updates</span>
+                                <span class="text-green-400 font-semibold">$100/month value</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-300">SEO Optimization</span>
+                                <span class="text-green-400 font-semibold">$500 value</span>
+                            </div>
+                            
+                            <hr class="border-gray-700 my-4">
+                            
+                            <div class="flex justify-between items-center text-xl font-bold">
+                                <span class="text-white">Total Value:</span>
+                                <span class="text-green-400">$4,500+</span>
+                            </div>
+                            
+                            <div class="text-center mt-6">
+                                <div class="text-3xl font-bold text-blue-500 mb-2">You Pay: $60/month</div>
+                                <div class="text-gray-400">That's less than your phone bill!</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -176,7 +390,7 @@
                     <!-- FAQ Item 1 -->
                     <details class="bg-gray-900 rounded-lg p-6 group">
                         <summary class="flex justify-between items-center font-semibold text-white cursor-pointer">
-                            What technology do you use?
+                            Is there really no setup fee?
                             <span class="ml-auto group-open:rotate-180 transition-transform duration-200">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -184,13 +398,13 @@
                             </span>
                         </summary>
                         <p class="mt-4 text-gray-400 leading-relaxed">
-                            We specialise in modern web technologies including HTML, CSS (Tailwind), and JavaScript for the front-end. We use serverless architecture with platforms like Netlify and Firebase for robust, scalable backend solutions.
+                            Absolutely none. We start working on your website as soon as you sign up, and you only pay the monthly fee. No hidden costs, no surprises.
                         </p>
                     </details>
                     <!-- FAQ Item 2 -->
                     <details class="bg-gray-900 rounded-lg p-6 group">
                         <summary class="flex justify-between items-center font-semibold text-white cursor-pointer">
-                            How does your single package work?
+                            How quickly can my website be ready?
                             <span class="ml-auto group-open:rotate-180 transition-transform duration-200">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -198,68 +412,17 @@
                             </span>
                         </summary>
                         <p class="mt-4 text-gray-400 leading-relaxed">
-                            We provide a full-service solution with a single monthly payment. This covers everything from the initial custom design and development to hosting, ongoing support, and maintenance. There are no large upfront costs and no lock-in contracts.
+                            Most websites are completed within 1-2 weeks. We'll keep you updated throughout the process and launch as soon as you're happy with everything.
                         </p>
                     </details>
                     <!-- FAQ Item 3 -->
                     <details class="bg-gray-900 rounded-lg p-6 group">
                         <summary class="flex justify-between items-center font-semibold text-white cursor-pointer">
-                            Who owns the website and content?
+                            What if I want to cancel?
                             <span class="ml-auto group-open:rotate-180 transition-transform duration-200">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                                 </svg>
                             </span>
                         </summary>
-                        <p class="mt-4 text-gray-400 leading-relaxed">
-                            You do. All the content, imagery, and intellectual property are 100% yours. We simply provide the platform and services to bring it to life and keep it running smoothly.
-                        </p>
-                    </details>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="py-20 bg-gray-900">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Let's Build Something Great</h2>
-                <p class="text-gray-400 mb-12 max-w-2xl mx-auto">
-                    Ready to start your next project? We're excited to hear about your vision. Fill out the form below and we'll get back to you shortly.
-                </p>
-                <form name="contact" netlify class="max-w-2xl mx-auto space-y-6">
-                    <div class="flex flex-col sm:flex-row gap-6">
-                        <input type="text" name="name" placeholder="Your Name" class="w-full px-6 py-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-colors duration-200">
-                        <input type="email" name="email" placeholder="Your Email" class="w-full px-6 py-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-colors duration-200">
-                    </div>
-                    <input type="text" name="subject" placeholder="Subject" class="w-full px-6 py-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-colors duration-200">
-                    <textarea name="message" placeholder="Your Message" rows="6" class="w-full px-6 py-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-colors duration-200"></textarea>
-                    <button type="submit" class="w-full px-8 py-3 bg-indigo-600 text-white font-medium rounded-lg shadow-lg hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105">
-                        Send Message
-                    </button>
-                </form>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-black py-8 px-6 text-center text-gray-500 text-sm">
-        <p>&copy; 2025 code+canvas. All Rights Reserved.</p>
-        <p class="mt-4 max-w-3xl mx-auto text-xs leading-relaxed">
-            Acknowledgement of Country: In the spirit of reconciliation, code+canvas acknowledges the Traditional Custodians of country throughout Australia and their connections to land, sea and community. We pay our respect to their Elders past and present and extend that respect to all Aboriginal and Torres Strait Islander peoples today.
-        </p>
-    </footer>
-
-    <!-- JavaScript for Mobile Menu -->
-    <script>
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            var menu = document.getElementById('mobile-menu');
-            if (menu.classList.contains('hidden')) {
-                menu.classList.remove('hidden');
-            } else {
-                menu.classList.add('hidden');
-            }
-        });
-
-    </script>
-</body>
-</html>
+                        <p class="mt-4 text
